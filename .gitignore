@@ -1,0 +1,6 @@
+output/
+semantic_editor/exports/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store

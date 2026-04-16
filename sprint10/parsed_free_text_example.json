@@ -1,0 +1,219 @@
+{
+  "source_type": "free_text",
+  "parsed_at": "2026-04-10T14:36:50.414743",
+  "parser_version": "1.0.0",
+  "stats": {
+    "total_lines": 23,
+    "items_extracted": 23,
+    "by_type": {
+      "fact_candidate": 13,
+      "interpretation_candidate": 6,
+      "instruction": 1,
+      "limitation_note": 3
+    }
+  },
+  "items": [
+    {
+      "item_type": "fact_candidate",
+      "text": "Sprint 9.3 Review Notes — ESL SROI Report",
+      "confidence": 0.6
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "Beberapa hal yang perlu dirapikan sebelum laporan final:",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "1. Gunakan hanya dua istilah resmi:",
+      "confidence": 0.6
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Observed direct return",
+      "confidence": 0.6,
+      "terminology": [
+        {
+          "term": "Observed direct return",
+          "semantic_tag": "observed_direct_return"
+        }
+      ],
+      "semantic_tag": "observed_direct_return"
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Blended SROI",
+      "confidence": 0.6,
+      "terminology": [
+        {
+          "term": "Blended SROI",
+          "semantic_tag": "blended_sroi"
+        }
+      ],
+      "semantic_tag": "blended_sroi"
+    },
+    {
+      "item_type": "instruction",
+      "text": "Jangan campur dengan \"observed blended direct return\" atau istilah tidak konsisten.",
+      "confidence": 0.95,
+      "semantic_tag": "instruction"
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "2. Fakta terukur yang sudah dikonfirmasi:",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Blended SROI 1 : 1,03 (evaluatif, 2023-2025)",
+      "confidence": 0.85,
+      "numbers": [
+        {
+          "value_type": "ratio",
+          "value": 1.03,
+          "raw": "SROI 1 : 1,03"
+        },
+        {
+          "value_type": "ratio",
+          "value": 1.03,
+          "raw": "1 : 1,03 ("
+        }
+      ],
+      "terminology": [
+        {
+          "term": "Blended SROI",
+          "semantic_tag": "blended_sroi"
+        }
+      ],
+      "semantic_tag": "blended_sroi"
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Total investasi Rp 502.460.181",
+      "confidence": 0.85,
+      "numbers": [
+        {
+          "value_type": "currency_idr",
+          "value": 502460181.0,
+          "raw": "Rp 502.460.181"
+        }
+      ]
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Net benefit compounded Rp 519.625.266",
+      "confidence": 0.85,
+      "numbers": [
+        {
+          "value_type": "currency_idr",
+          "value": 519625266.0,
+          "raw": "Rp 519.625.266"
+        }
+      ]
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Observed direct return 1 : 0,29 (hanya transaksi tercatat)",
+      "confidence": 0.85,
+      "numbers": [
+        {
+          "value_type": "ratio",
+          "value": 0.29,
+          "raw": "return 1 : 0,29"
+        },
+        {
+          "value_type": "ratio",
+          "value": 0.29,
+          "raw": "1 : 0,29 ("
+        }
+      ],
+      "terminology": [
+        {
+          "term": "Observed direct return",
+          "semantic_tag": "observed_direct_return"
+        }
+      ],
+      "semantic_tag": "observed_direct_return"
+    },
+    {
+      "item_type": "limitation_note",
+      "text": "3. Keterbatasan yang harus diakui:",
+      "confidence": 0.9,
+      "semantic_tag": "data_limitation"
+    },
+    {
+      "item_type": "limitation_note",
+      "text": "- Data investasi 2023 dan 2024 berstatus under_confirmation",
+      "confidence": 0.9,
+      "terminology": [
+        {
+          "term": "under_confirmation",
+          "semantic_tag": "status_under_confirmation"
+        }
+      ],
+      "semantic_tag": "status_under_confirmation"
+    },
+    {
+      "item_type": "limitation_note",
+      "text": "- Proxy REINT dan CONF belum diverifikasi dari survei peserta",
+      "confidence": 0.9,
+      "semantic_tag": "data_limitation"
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "- Bab IV masih menggunakan baseline programatik, bukan data BPS",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "4. Instruksi tambahan:",
+      "confidence": 0.6
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "- Hapus semua kalimat \"SROI final belum dihitung\"",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Tambahkan definisi tegas perbedaan Observed direct return vs Blended SROI",
+      "confidence": 0.6,
+      "terminology": [
+        {
+          "term": "Observed direct return",
+          "semantic_tag": "observed_direct_return"
+        },
+        {
+          "term": "Blended SROI",
+          "semantic_tag": "blended_sroi"
+        }
+      ],
+      "semantic_tag": "observed_direct_return"
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- Bab VIII jangan lagi memunculkan angka yang bertentangan dengan Bab VII",
+      "confidence": 0.6
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "5. Penilaian evaluatif:",
+      "confidence": 0.6
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "- Pipeline orkestrasi sudah sehat end-to-end",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "interpretation_candidate",
+      "text": "- Narasi Bab VII kuat, Bab IV masih lemah",
+      "confidence": 0.7
+    },
+    {
+      "item_type": "fact_candidate",
+      "text": "- QA 0 error, renderer_ready = True",
+      "confidence": 0.6
+    }
+  ]
+}

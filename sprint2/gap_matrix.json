@@ -1,0 +1,22 @@
+[
+  {
+    "chapter_id": "bab_4",
+    "chapter_title": "Identifikasi Kondisi Awal",
+    "status": "partial",
+    "missing_fields": [],
+    "weak_fields": [],
+    "required_missing": [],
+    "recommendation": "full",
+    "note": "Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia secara derived. Builder tulis placeholder terstruktur untuk data wilayah."
+  },
+  {
+    "chapter_id": "bab_5",
+    "chapter_title": "Identifikasi Kondisi Ideal",
+    "status": "partial",
+    "missing_fields": [],
+    "weak_fields": [],
+    "required_missing": [],
+    "recommendation": "full",
+    "note": "Kondisi ideal tersedia sebagai derived. Kualitas cukup untuk bab partial."
+  }
+]

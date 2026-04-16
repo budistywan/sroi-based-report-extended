@@ -1,0 +1,87 @@
+[
+  {
+    "chapter_id": "bab_9",
+    "chapter_type": "penutup",
+    "source_outline_ref": "bab_9",
+    "builder_mode": "learning",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277337",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB IX PENUTUP"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "9.1 Kesimpulan"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Program Enduro Sahabat Lapas terbukti menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan SROI blended 1 : 1.03 selama periode 2023–2025."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dari total investasi Rp 502,460,181, program menghasilkan net benefit compounded sebesar Rp 519,625,266 — mencerminkan positive return yang konsisten di seluruh tahun evaluasi.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated"
+        ]
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "SROI Blended",
+            "value": "1 : 1.03",
+            "sublabel": "2023–2025"
+          },
+          {
+            "label": "Total Investasi",
+            "value": "Rp 502,460,181",
+            "sublabel": "kumulatif"
+          },
+          {
+            "label": "Net Benefit Compounded",
+            "value": "Rp 519,625,266",
+            "sublabel": "terminal 2025"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Tiga temuan utama yang perlu ditekankan: (1) Aspek REINT mendominasi nilai — menunjukkan bahwa nilai reintegrasi sosial-ekonomi adalah dampak paling signifikan dari intervensi ini. (2) Node Lapas Palembang belum menghasilkan transaksi — mengindikasikan potensi kenaikan SROI yang belum terealisasi. (3) Milenial Motor membuktikan bahwa model reintegrasi produktif bukan sekadar aspirasi — ini adalah template yang dapat direplikasi."
+      },
+      {
+        "type": "heading_2",
+        "text": "9.2 Rekomendasi / Usulan Tindak Lanjut"
+      },
+      {
+        "type": "numbered_list",
+        "items": [
+          {
+            "text": "Aktivasi Node Lapas Palembang: tetapkan milestone spesifik dan target transaksi pertama pada 2026 — node ini adalah peluang kenaikan SROI terbesar tanpa investasi tambahan yang proporsional"
+          },
+          {
+            "text": "Verifikasi jumlah peserta aktual: data 70/70/80 peserta per tahun adalah estimasi konservatif yang perlu diverifikasi dari data absensi pelatihan dan dokumentasi pendampingan"
+          },
+          {
+            "text": "Replikasi model Milenial Motor: dokumentasi jalur Lapas → pelatihan → usaha mandiri sebagai SOP yang dapat diadopsi node lain"
+          },
+          {
+            "text": "Penguatan data baseline: survei kepuasan dan profil sosial-ekonomi peserta sebelum dan sesudah program untuk memperkuat proxy REINT dan CONF"
+          },
+          {
+            "text": "Pembaruan kajian SROI: lakukan pembaruan tahunan untuk merekam trajectory dampak jangka menengah — terutama retensi pekerjaan dan keberlangsungan usaha"
+          }
+        ]
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Laporan ini disusun berdasarkan data yang tersedia per 2025 dan mencerminkan status evaluatif. Angka investasi 2023–2024 berstatus under_confirmation dan perlu diverifikasi dari dokumen keuangan resmi."
+      }
+    ]
+  }
+]

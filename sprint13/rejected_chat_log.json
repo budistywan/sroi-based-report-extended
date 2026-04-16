@@ -1,0 +1,11 @@
+[
+  {
+    "commit_id": "commit_79ef8ff0",
+    "patch_id": "pilot_rejected_001",
+    "decision": "reject",
+    "rejection_reason": "Terminologi sudah konsisten di laporan final — suggestion duplikatif",
+    "original_text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy referenc...",
+    "applied": false,
+    "committed_at": "2026-04-10T16:24:32.932965"
+  }
+]

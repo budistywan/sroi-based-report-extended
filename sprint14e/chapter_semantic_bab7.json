@@ -1,0 +1,1833 @@
+[
+  {
+    "chapter_id": "bab_1",
+    "chapter_type": "pendahuluan",
+    "source_outline_ref": "bab_1",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391150",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB I PENDAHULUAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan latar belakang, tujuan, ruang lingkup, dan konsiderasi hukum penyusunan Laporan Evaluasi Social Return on Investment (SROI) Program Enduro Sahabat Lapas (ESL) periode 2023–2025."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "1.1 Latar Belakang Penulisan Laporan SROI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tanggung Jawab Sosial dan Lingkungan (TJSL) merupakan kewajiban strategis yang tidak hanya bersifat normatif, tetapi juga menjadi instrumen pengukuran dampak sosial yang terukur. PT Pertamina Lubricants sebagai bagian dari ekosistem BUMN, melaksanakan TJSL dalam kerangka Beyond Compliance — Inovasi Sosial — melampaui kepatuhan minimum dan mengarah pada penciptaan nilai sosial yang berkelanjutan."
+      },
+      {
+        "type": "paragraph",
+        "text": "Social Return on Investment (SROI) adalah kerangka analisis yang mengukur nilai sosial, ekonomi, dan lingkungan dari suatu program intervensi secara holistik. Berbeda dengan evaluasi konvensional yang hanya mengukur output, SROI menelusuri perubahan yang dirasakan oleh pemangku kepentingan — dari individu penerima manfaat hingga komunitas yang lebih luas."
+      },
+      {
+        "type": "callout_info",
+        "text": "Program Enduro Sahabat Lapas masuk dalam kategori Beyond Compliance — Inovasi Sosial sesuai Peraturan Menteri LHK No. 1 Tahun 2021 yang mewajibkan perusahaan peserta PROPER untuk mengusulkan program inovasi sosial unggulan dengan pengukuran dampak berbasis SROI.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.2 Tujuan dan Luaran"
+      },
+      {
+        "type": "paragraph",
+        "text": "Penyusunan laporan ini bertujuan untuk:"
+      },
+      {
+        "type": "numbered_list",
+        "items": [
+          {
+            "text": "Mengidentifikasi dan mendokumentasikan seluruh aktivitas program secara terstruktur"
+          },
+          {
+            "text": "Menghitung rasio nilai sosial yang dihasilkan terhadap investasi yang dikeluarkan"
+          },
+          {
+            "text": "Menyajikan temuan secara transparan — termasuk keterbatasan data dan area yang perlu diperkuat"
+          },
+          {
+            "text": "Memberikan rekomendasi berbasis bukti untuk pengembangan program pada periode berikutnya"
+          },
+          {
+            "text": "Memenuhi kewajiban pelaporan PROPER beyond compliance kepada KLHK"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.3 Ruang Lingkup Kajian"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kajian ini mencakup seluruh aktivitas Program Enduro Sahabat Lapas selama periode 2023–2025, meliputi empat node program yang tersebar di wilayah operasional."
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Dimensi",
+          "Cakupan"
+        ],
+        "rows": [
+          [
+            "Program",
+            "Enduro Sahabat Lapas"
+          ],
+          [
+            "Periode",
+            "2023–2025"
+          ],
+          [
+            "Perusahaan",
+            "PT Pertamina Lubricants"
+          ],
+          [
+            "Pilar TJSL",
+            "Pemberdayaan Masyarakat"
+          ],
+          [
+            "Kategori PROPER",
+            "Beyond Compliance — Inovasi Sosial"
+          ],
+          [
+            "Node Program",
+            "4 node (3 aktif + 1 dalam pembentukan)"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          6438
+        ],
+        "source_refs": [
+          "program_identity",
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.4 Konsiderasi Hukum"
+      },
+      {
+        "type": "paragraph",
+        "text": "Penyusunan laporan ini berlandaskan pada regulasi berikut:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "UU No. 40 Tahun 2007 tentang Perseroan Terbatas Pasal 74"
+          },
+          {
+            "text": "Peraturan Menteri LHK No. 1 Tahun 2021"
+          }
+        ]
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Ketiga regulasi di atas membentuk kerangka kewajiban dan metodologi yang menjadi dasar pelaksanaan kajian SROI ini."
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_2",
+    "chapter_type": "profil",
+    "source_outline_ref": "bab_2",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391161",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB II PROFIL PERUSAHAAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan profil PT Pertamina Lubricants sebagai pemrakarsa program, mencakup lingkup usaha, arah kebijakan TJSL, dan posisi program Enduro Sahabat Lapas dalam portofolio pemberdayaan perusahaan."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "2.1 Lingkup Usaha"
+      },
+      {
+        "type": "paragraph",
+        "text": "PT Pertamina Lubricants merupakan anak perusahaan PT Pertamina (Persero) yang bergerak di bidang produksi dan distribusi pelumas untuk kendaraan bermotor dan industri. Produk unggulan perusahaan mencakup merek Enduro yang ditujukan untuk segmen kendaraan bermotor, menjadikan perusahaan ini memiliki kedekatan langsung dengan ekosistem perbengkelan otomotif di seluruh Indonesia."
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data lengkap profil perusahaan (kapasitas produksi, jumlah karyawan, sebaran distribusi) tidak tersedia dalam canonical JSON kajian ini. Untuk laporan final, bagian ini perlu dilengkapi dari dokumen profil korporat resmi.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "2.2 Arah Kebijakan, Visi Misi, dan Tujuan Perusahaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Komitmen PT Pertamina Lubricants terhadap pembangunan sosial diwujudkan melalui pilar TJSL 'Pemberdayaan Masyarakat' yang selaras dengan agenda SDGs global. Program Enduro Sahabat Lapas secara langsung berkontribusi pada:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "SDG 8 — Pekerjaan Layak"
+          },
+          {
+            "text": "SDG 10 — Berkurangnya Ketimpangan"
+          },
+          {
+            "text": "SDG 16 — Perdamaian & Keadilan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "2.3 Prinsip dan Strategi Pengelolaan Pemberdayaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pengelolaan program TJSL PT Pertamina Lubricants menganut pendekatan Beyond Compliance — Inovasi Sosial — sebuah paradigma yang menempatkan program sosial bukan sebagai kewajiban semata, melainkan sebagai investasi strategis yang menghasilkan nilai bersama bagi perusahaan dan masyarakat."
+      },
+      {
+        "type": "callout_info",
+        "text": "Pendekatan beyond compliance mengharuskan perusahaan untuk mengukur dampak program secara kuantitatif melalui SROI, membuktikan bahwa setiap rupiah yang diinvestasikan menghasilkan nilai sosial yang terukur dan dapat dipertanggungjawabkan kepada pemangku kepentingan.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "2.4 Jenis dan Lingkup Program Pemberdayaan Masyarakat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program Enduro Sahabat Lapas merupakan salah satu program unggulan TJSL PT Pertamina Lubricants yang difokuskan pada pemberdayaan Warga Binaan Pemasyarakatan (WBP) dan eks-WBP melalui pelatihan vokasional berbasis bengkel otomotif. Program ini dirancang sebagai intervensi yang menyentuh tiga dimensi sekaligus: peningkatan keterampilan teknis, pembentukan kapasitas wirausaha, dan fasilitasi reintegrasi sosial-ekonomi."
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_3",
+    "chapter_type": "metodologi",
+    "source_outline_ref": "bab_3",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391163",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB III METODOLOGI SROI DAN TRIPLE LOOP LEARNING"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menjelaskan kerangka metodologi yang digunakan dalam kajian SROI program, mencakup prinsip-prinsip SROI, metode pengumpulan data, pendekatan LFA, parameter fiksasi dampak, dan kerangka pembelajaran triple loop."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "3.1 Perhitungan Dampak Investasi Sosial / Social Return on Investment"
+      },
+      {
+        "type": "paragraph",
+        "text": "SROI adalah kerangka pengukuran yang mengkuantifikasi nilai sosial, ekonomi, dan lingkungan dari suatu investasi. Berbeda dengan ROI finansial konvensional, SROI memasukkan nilai-nilai yang tidak selalu tercermin dalam transaksi pasar, seperti peningkatan kepercayaan diri, kesiapan reintegrasi, atau penguatan kapasitas kelembagaan."
+      },
+      {
+        "type": "paragraph",
+        "text": "Formula dasar SROI dalam kajian ini: SROI = Total Net Benefit (compounded) ÷ Total Investasi. Nilai bersih dihitung setelah menerapkan DDAT adjustment (Deadweight, Displacement, Attribution, Drop-off) per aspek monetisasi, kemudian di-compound ke terminal year menggunakan ORI reference rate."
+      },
+      {
+        "type": "heading_2",
+        "text": "3.2 Metode Pengumpulan Data, Analisis Data, dan Rumus SROI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pengumpulan data dalam kajian ini menggunakan pendekatan triangulasi yang mengombinasikan data primer dan sekunder:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Data primer: catatan transaksi aktual dari tiga node aktif (LUB dan SVC)"
+          },
+          {
+            "text": "Data sekunder: referensi kebijakan untuk proxy REINT (Kartu Prakerja) dan CONF (tarif psikologi publik)"
+          },
+          {
+            "text": "Data program: laporan kegiatan, dokumentasi investasi, dan catatan pendampingan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.3 Parameter Fiksasi Dampak (DDAT)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Empat parameter fiksasi diterapkan untuk memastikan nilai sosial yang diklaim benar-benar mencerminkan kontribusi program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Parameter",
+          "Definisi",
+          "Fungsi"
+        ],
+        "rows": [
+          [
+            "Deadweight (DW)",
+            "Manfaat yang terjadi tanpa intervensi program",
+            "Menghindari klaim berlebihan"
+          ],
+          [
+            "Displacement (DS)",
+            "Manfaat yang menggeser pihak lain",
+            "Mencegah double-counting"
+          ],
+          [
+            "Attribution (AT)",
+            "Kontribusi pihak lain terhadap outcome",
+            "Proporsionalitas klaim"
+          ],
+          [
+            "Drop-off (DO)",
+            "Penurunan manfaat dari waktu ke waktu",
+            "Realisme jangka menengah"
+          ]
+        ],
+        "column_widths": [
+          2400,
+          4000,
+          3238
+        ],
+        "source_refs": [
+          "ddat_params"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.4 ORI Reference Rate sebagai Discount Rate"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nilai bersih setiap tahun di-compound ke terminal year 2025 menggunakan suku bunga ORI (Obligasi Ritel Indonesia) sebagai proxy biaya modal sosial yang konservatif dan terverifikasi:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Tahun",
+          "Seri ORI",
+          "Rate",
+          "Compound Factor"
+        ],
+        "rows": [
+          [
+            "2023",
+            "ORI023T3",
+            "5.90%",
+            "1.1252"
+          ],
+          [
+            "2024",
+            "ORI025T3",
+            "6.25%",
+            "1.0625"
+          ],
+          [
+            "2025",
+            "ORI027T3",
+            "6.50%",
+            "1.0"
+          ]
+        ],
+        "column_widths": [
+          1500,
+          3000,
+          2000,
+          3138
+        ],
+        "source_refs": [
+          "ori_rates"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.5 Prinsip SROI"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Involve stakeholders — pemangku kepentingan dilibatkan dalam identifikasi outcome"
+          },
+          {
+            "text": "Understand what changes — fokus pada perubahan nyata yang dirasakan"
+          },
+          {
+            "text": "Value the things that matter — monetisasi nilai yang tidak selalu terwakili pasar"
+          },
+          {
+            "text": "Only include what is material — excludes minor outcomes"
+          },
+          {
+            "text": "Do not over-claim — DDAT adjustment diterapkan secara konsisten"
+          },
+          {
+            "text": "Be transparent — status data (observed/proxy/pending) ditampilkan eksplisit"
+          },
+          {
+            "text": "Verify the result — audit trail tersedia melalui calc_audit_log"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.6 Logical Framework Approach (LFA)"
+      },
+      {
+        "type": "paragraph",
+        "text": "LFA digunakan untuk memetakan rantai kausalitas program: dari input dan aktivitas menuju output, outcome, dan dampak jangka panjang. Dalam kajian ini, LFA berfungsi sebagai kerangka verifikasi — memastikan bahwa klaim outcome dapat ditelusuri kembali ke aktivitas program yang konkret."
+      },
+      {
+        "type": "callout_gap",
+        "text": "Tabel LFA utuh lintas program belum tersedia dalam canonical JSON — memerlukan data dari laporan kegiatan detail per aktivitas per node. Untuk laporan final, sub-bab ini perlu dilengkapi.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "3.7 Triple Loop Learning"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kajian ini mengadopsi kerangka triple loop learning untuk mengevaluasi bukan hanya apa yang terjadi (loop 1), tetapi juga mengapa program merespons seperti yang dilakukan (loop 2), dan nilai serta asumsi apa yang berubah dalam proses tersebut (loop 3)."
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Loop 1 (Single): pembelajaran dari hasil langsung — apa yang berhasil dan tidak"
+          },
+          {
+            "text": "Loop 2 (Double): refleksi atas strategi — mengapa cara tertentu dipilih"
+          },
+          {
+            "text": "Loop 3 (Triple): transformasi nilai dan asumsi mendasar program"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_4",
+    "chapter_type": "kondisi_awal",
+    "source_outline_ref": "bab_4",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391164",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB IV IDENTIFIKASI KONDISI AWAL"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini mengidentifikasi kondisi awal yang menjadi dasar intervensi program — mencakup karakteristik kelompok sasaran, hambatan yang dihadapi, dan potensi yang dapat dimobilisasi melalui program."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "callout_warning",
+        "text": "Catatan keterbatasan: pemetaan kondisi awal dalam laporan ini disusun terutama dari data program, identifikasi kelompok sasaran, dan problem framing yang diturunkan dari desain intervensi. Data baseline wilayah yang sepenuhnya komprehensif — seperti statistik BPS, peta administrasi, atau data ekonomi kecamatan — tidak tersedia dalam sumber utama kajian ini. Pembacaan kondisi awal pada bab ini perlu dipahami sebagai baseline programatik, bukan potret statistik wilayah yang lengkap.",
+        "source_refs": [
+          "context_baseline",
+          "problem_framing"
+        ]
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data profil wilayah rinci (statistik BPS, peta administrasi, data ekonomi kecamatan) tidak tersedia dalam sumber canonical kajian ini. Sub-bab 4.1 memerlukan pengisian dari data lapangan dan laporan pendampingan.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "4.1 Profil dan Kondisi Kelompok Sasaran"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kelompok sasaran program adalah Warga Binaan Pemasyarakatan (WBP) yang sedang menjalani masa pembinaan di Lembaga Pemasyarakatan, serta eks-WBP yang telah menyelesaikan masa hukuman dan memasuki fase reintegrasi. Kedua kelompok ini menghadapi kerentanan struktural yang saling memperkuat."
+      },
+      {
+        "type": "heading_2",
+        "text": "4.2 Permasalahan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Berdasarkan analisis program, terdapat empat akar masalah utama yang menjadi hambatan bagi WBP dan eks-WBP dalam mencapai kemandirian ekonomi:"
+      },
+      {
+        "type": "callout_warning",
+        "text": "Data di atas bersumber dari problem framing yang disusun berdasarkan inferensi dari desain program. Untuk laporan defensible, setiap poin perlu didukung data primer (wawancara, survei baseline) atau data sekunder terverifikasi (BPS, Kemenaker, laporan riset).",
+        "source_refs": [
+          "problem_framing"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "4.3 Potensi"
+      },
+      {
+        "type": "paragraph",
+        "text": "Di balik hambatan struktural, program mengidentifikasi potensi yang dapat dimobilisasi melalui intervensi yang tepat:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Keterampilan mekanik otomotif memiliki permintaan pasar yang stabil dan tidak memerlukan pendidikan formal tinggi"
+          },
+          {
+            "text": "Ekosistem bengkel informal di Indonesia sangat luas — membuka peluang penyerapan tenaga kerja dan wirausaha"
+          },
+          {
+            "text": "Model eks-WBP yang sudah berhasil (Milenial Motor) dapat menjadi role model dan jalur referral"
+          },
+          {
+            "text": "Program pelatihan vokasional di Lapas memiliki akses langsung ke populasi sasaran yang terdefinisi"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_5",
+    "chapter_type": "kondisi_ideal",
+    "source_outline_ref": "bab_5",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391165",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB V IDENTIFIKASI KONDISI IDEAL YANG DIHARAPKAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Ekosistem produktif berbasis bengkel otomotif yang memungkinkan WBP dan eks-WBP bekerja mandiri dan berintegrasi kembali ke masyarakat"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data kuantitatif kondisi ideal yang spesifik (target angka SROI, target peserta, target pendapatan pasca-program) belum tersedia dalam canonical JSON kajian ini. Sub-bab ini dapat diperkaya dari dokumen perencanaan program dan laporan target kinerja.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "5.1 Tujuan Utama"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program Enduro Sahabat Lapas bertujuan menciptakan ekosistem produktif yang memungkinkan WBP dan eks-WBP mencapai kemandirian ekonomi dan reintegrasi sosial yang bermartabat dan berkelanjutan."
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Keterampilan mekanik terkonversi menjadi layanan bengkel riil"
+          },
+          {
+            "text": "Eks-WBP memiliki usaha atau pekerjaan legal pasca-bebas"
+          },
+          {
+            "text": "Reintegrasi sosial-ekonomi terukur dan berkelanjutan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "5.2 Tujuan Spesifik: Key Areas of Improvement"
+      },
+      {
+        "type": "paragraph",
+        "text": "Empat area perbaikan kunci yang menjadi fokus intervensi program:"
+      },
+      {
+        "type": "paragraph",
+        "text": "• Hard skill mekanik otomotif",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kapasitas wirausaha bengkel",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kesiapan reintegrasi sosial-ekonomi",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kepercayaan diri dan self-efficacy",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "5.3 Kesesuaian Masalah / Intervensi / Tujuan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Setiap akar masalah yang diidentifikasi di Bab IV dijawab secara langsung oleh komponen program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Akar Masalah",
+          "Intervensi Program",
+          "Tujuan yang Dicapai"
+        ],
+        "rows": [
+          [
+            "Competency-to-Service Gap",
+            "Pelatihan mekanik + praktik bengkel riil",
+            "Hard skill mekanik terstandar"
+          ],
+          [
+            "Post-Release Transition Risk",
+            "Pendampingan unit usaha + node eks-WBP",
+            "Kesiapan reintegrasi terukur"
+          ],
+          [
+            "Entrepreneurship Gap",
+            "Pembinaan kewirausahaan bengkel",
+            "Kapasitas wirausaha mandiri"
+          ],
+          [
+            "Social Acceptance & Market Link",
+            "Jejaring bengkel + model Milenial Motor",
+            "Kepercayaan diri & akses pasar"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          3600,
+          2838
+        ],
+        "source_refs": [
+          "problem_framing",
+          "ideal_conditions",
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "callout_info",
+        "text": "Kondisi ideal program selaras dengan SDG 8 (Pekerjaan Layak dan Pertumbuhan Ekonomi), SDG 10 (Berkurangnya Ketimpangan), dan SDG 16 (Perdamaian, Keadilan, dan Kelembagaan yang Kuat) — tiga tujuan global yang langsung relevan dengan isu reintegrasi eks-WBP.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_6",
+    "chapter_type": "strategi",
+    "source_outline_ref": "bab_6",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391167",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB VI STRATEGI UNTUK MENCAPAI KONDISI IDEAL YANG DIHARAPKAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan desain strategis Program Enduro Sahabat Lapas — mencakup filosofi program, roadmap tiga tahun, value chain, dan kelembagaan yang terbentuk."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "6.1 Nama dan Filosofi Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nama 'Enduro Sahabat Lapas' mencerminkan filosofi inti program: menempatkan perusahaan sebagai mitra aktif (bukan donor pasif) bagi WBP dan eks-WBP dalam perjalanan mereka menuju kemandirian. Tagline program: \"Penguatan Keterampilan Mekanik, Kemandirian Usaha, dan Kesiapan Reintegrasi Sosial-Ekonomi bagi WBP dan Eks-WBP\"."
+      },
+      {
+        "type": "heading_2",
+        "text": "6.2 Relevansi Program dengan Visi Misi Perusahaan dan Program Pemerintah"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program ini selaras dengan pilar 'Pemberdayaan Masyarakat' dan kategori 'Beyond Compliance — Inovasi Sosial' yang ditetapkan dalam regulasi PROPER. Di sisi pemerintah, program berkontribusi pada agenda Kementerian Hukum dan HAM dalam rehabilitasi dan reintegrasi WBP."
+      },
+      {
+        "type": "heading_2",
+        "text": "6.3 Roadmap Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program dirancang dalam tiga tahap yang mencerminkan evolusi dari pembentukan kapasitas menuju stabilisasi dan ekspansi:"
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S1: Pembentukan Kapasitas (2023)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Pelatihan mekanik dasar + product knowledge pelumas. Tipe pembelajaran: single-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S2: Penguatan Operasional (2024)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Praktik bengkel riil + pembinaan kewirausahaan. Tipe pembelajaran: double-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S3: Stabilisasi & Ekspansi (2025)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Penguatan node eks-WBP + Lapas Corner + pipeline reintegrasi. Tipe pembelajaran: double-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "6.4 Value Chain"
+      },
+      {
+        "type": "paragraph",
+        "text": "Rantai nilai program mengalir secara sekuensial dari kapasitas teknis menuju dampak sosial:"
+      },
+      {
+        "type": "paragraph",
+        "text": "1. Pelatihan teknis mekanik →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "2. Product knowledge pelumas Enduro →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "3. Praktik bengkel & servis riil →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "4. Pembinaan kewirausahaan →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "5. Pendampingan unit usaha",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "6.5 Kelembagaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program membentuk dan menguatkan 4 node kelembagaan yang menjadi unit operasional program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Node",
+          "Tipologi"
+        ],
+        "rows": [
+          [
+            "Lapas Kota Palembang",
+            "WBP aktif — fase pembentukan kapasitas"
+          ],
+          [
+            "Bengkel Lapas IIB Sleman",
+            "WBP aktif — fase aktif bertransaksi"
+          ],
+          [
+            "Milenial Motor (Eks-WBP)",
+            "Eks-WBP — proof-of-concept reintegrasi"
+          ],
+          [
+            "Pemasyarakatan Corner",
+            "WBP aktif — fase aktif bertransaksi"
+          ]
+        ],
+        "column_widths": [
+          4200,
+          5438
+        ],
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "callout_success",
+        "text": "Milenial Motor adalah pencapaian kelembagaan terkuat program: sebuah unit usaha bengkel yang dikelola sepenuhnya oleh eks-WBP, membuktikan bahwa model reintegrasi produktif yang dicita-citakan program dapat diwujudkan dalam skala nyata.",
+        "source_refs": [
+          "EV_06"
+        ]
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "Node Program",
+            "value": "4",
+            "sublabel": "total"
+          },
+          {
+            "label": "Node Bertransaksi",
+            "value": "3",
+            "sublabel": "aktif"
+          },
+          {
+            "label": "Model Reintegrasi",
+            "value": "1",
+            "sublabel": "Milenial Motor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_7",
+    "chapter_type": "implementation_sroi",
+    "source_outline_ref": "bab_7",
+    "builder_mode": "sroi",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.285901",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB VII IMPLEMENTASI / PDIS DENGAN SROI"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan seluruh rangkaian implementasi Program Enduro Sahabat Lapas secara terukur — dari kegiatan, stakeholder, dan investasi hingga outcome, fiksasi dampak, monetisasi nilai sosial, dan hasil evaluasi SROI. Semua angka pada bab ini bersumber dari Financial Calculation Engine dan dapat ditelusuri melalui calc_audit_log."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.1 Proses dan Kegiatan yang Dilakukan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2023: Pelatihan Teknis Mekanik · Product Knowledge Pelumas · Praktik Kerja Perbengkelan.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2024: Pembinaan Kewirausahaan · Pendampingan Unit Usaha.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2025: Penguatan Milenial Motor.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.2 Node Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program beroperasi di 4 node/lokasi yang mencerminkan dua tipologi intervensi: bengkel di dalam Lapas (pembinaan WBP aktif) dan unit usaha eks-WBP (reintegrasi pasca-pembebasan). Keempat node tersebut adalah: Lapas Palembang, Bengkel Lapas IIB Sleman, Milenial Motor (Eks-WBP), Pemasyarakatan Corner."
+      },
+      {
+        "type": "callout_info",
+        "text": "Tiga dari empat node aktif menghasilkan transaksi terukur selama 2023–2025. Node Lapas Kota Palembang masih dalam fase pembentukan kapasitas dan belum menghasilkan transaksi langsung — temuan ini disajikan secara transparan sebagai bagian dari evaluasi jujur program.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.3 Identifikasi Stakeholder yang Terlibat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program melibatkan 5 pemangku kepentingan utama dengan peran berbeda dalam ekosistem program. Tabel berikut menyajikan peta stakeholder beserta dasar keterlibatannya."
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Stakeholder",
+          "Peran",
+          "Dasar Keterlibatan"
+        ],
+        "rows": [
+          [
+            "PT Pertamina Lubricants",
+            "Investor",
+            "Pemrakarsa dan penyelenggara program TJSL"
+          ],
+          [
+            "WBP aktif di Lapas",
+            "Beneficiary",
+            "Penerima pelatihan langsung"
+          ],
+          [
+            "Eks-WBP (Milenial Motor)",
+            "Beneficiary",
+            "Penerima manfaat reintegrasi — usaha mandiri"
+          ],
+          [
+            "Lembaga Pemasyarakatan",
+            "Partner",
+            "Penyelenggara ruang pelatihan"
+          ],
+          [
+            "Pelanggan Bengkel",
+            "Beneficiary",
+            "Pengguna jasa servis dan pelumas"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          1600,
+          4838
+        ],
+        "display_status": "present_as_final",
+        "source_refs": [
+          "stakeholders"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "7.4 Input / Investasi"
+      },
+      {
+        "type": "callout_warning",
+        "text": "Catatan status data: investasi tahun 2023 dan 2024 berstatus under_confirmation — angka telah tersedia namun belum diverifikasi dari laporan keuangan resmi. Investasi tahun 2025 berstatus final.",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "investment"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Total investasi program selama 2023–2025 mencapai Rp 1,004,920,362, dengan distribusi yang meningkat setiap tahun seiring penguatan aktivitas. Rincian per node dan per tahun disajikan pada tabel berikut."
+      },
+      {
+        "type": "table",
+        "table_id": "table_investment_per_node",
+        "title": "Investasi Program per Node per Tahun",
+        "headers": [
+          "Node Program",
+          "Tahun",
+          "Investasi (Rp)",
+          "Status"
+        ],
+        "rows": [
+          [
+            "total",
+            "2023",
+            "Rp 128,108,409",
+            "under_confirmation"
+          ],
+          [
+            "total",
+            "2024",
+            "Rp 179,351,772",
+            "under_confirmation"
+          ],
+          [
+            "total",
+            "2025",
+            "Rp 195,000,000",
+            "under_confirmation"
+          ],
+          [
+            "total",
+            "2023",
+            "Rp 128,108,409",
+            "under_confirmation"
+          ],
+          [
+            "total",
+            "2024",
+            "Rp 179,351,772",
+            "under_confirmation"
+          ],
+          [
+            "total",
+            "2025",
+            "Rp 195,000,000",
+            "under_confirmation"
+          ],
+          [
+            "TOTAL",
+            "—",
+            "Rp 1,004,920,362",
+            "final"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          1200,
+          3000,
+          2238
+        ],
+        "note": "2023–2024 under_confirmation — ditampilkan dengan badge pending",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "investment"
+        ]
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "Investasi 2023",
+            "value": "Rp 256,216,818",
+            "sublabel": "under confirmation"
+          },
+          {
+            "label": "Investasi 2024",
+            "value": "Rp 358,703,544",
+            "sublabel": "under confirmation"
+          },
+          {
+            "label": "Investasi 2025",
+            "value": "Rp 390,000,000",
+            "sublabel": "final"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "7.5 Proses dan Output yang Dihasilkan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program menghasilkan 6 output terukur sepanjang periode evaluasi, mencakup node yang aktif beroperasi dan estimasi peserta yang terlibat dalam pelatihan dan pendampingan."
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Output",
+          "Tahun",
+          "Jumlah",
+          "Satuan",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Node aktif bertransaksi",
+            "2023",
+            "3",
+            "node",
+            "observed"
+          ],
+          [
+            "Node aktif bertransaksi",
+            "2024",
+            "3",
+            "node",
+            "observed"
+          ],
+          [
+            "Node aktif bertransaksi",
+            "2025",
+            "3",
+            "node",
+            "observed"
+          ],
+          [
+            "Peserta program (estimasi)",
+            "2023",
+            "70",
+            "peserta",
+            "proxy"
+          ],
+          [
+            "Peserta program (estimasi)",
+            "2024",
+            "70",
+            "peserta",
+            "proxy"
+          ],
+          [
+            "Peserta program (estimasi)",
+            "2025",
+            "80",
+            "peserta",
+            "proxy"
+          ]
+        ],
+        "column_widths": [
+          3000,
+          1000,
+          1200,
+          1200,
+          3238
+        ],
+        "display_status": "present_as_final",
+        "source_refs": [
+          "outputs"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "7.6 Outcome Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program menghasilkan 4 outcome yang dimonetisasi melalui dua jalur: data transaksi aktual (observed) untuk aspek yang sudah menghasilkan nilai ekonomi langsung, dan proxy tervalidasi untuk aspek yang mengukur nilai sosial yang lebih sulit diverifikasi secara langsung."
+      },
+      {
+        "type": "paragraph",
+        "text": "✓ Observed — Penjualan Pelumas (LUB): Transaksi penjualan produk pelumas Enduro dari node aktif (Indikator: Volume penjualan pelumas (Rp))",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "✓ Observed — Jasa & Sparepart (SVC): Transaksi jasa servis dan penjualan sparepart dari node aktif (Indikator: Volume transaksi jasa (Rp))",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "~ Proxy — Kesiapan Reintegrasi Sosial-Ekonomi (REINT): Peningkatan kesiapan peserta untuk bekerja legal dan berwirausaha pasca-bebas (Indikator: Nilai substitusi paket peningkatan kesiapan kerja/usaha)",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_04"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "~ Proxy — Kepercayaan Diri & Self-Efficacy (CONF): Peningkatan kepercayaan diri, efikasi diri, dan orientasi masa depan peserta (Indikator: Replacement cost layanan psikologi publik)",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_05"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "7.7 Fiksasi Dampak (DDAT Adjustment)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fiksasi dampak diterapkan untuk memastikan bahwa nilai sosial yang diklaim benar-benar mencerminkan kontribusi program secara nyata, dengan menghindari perhitungan manfaat ganda. Empat parameter yang digunakan: Deadweight (DW), Displacement (DS), Attribution (AT), dan Drop-off (DO)."
+      },
+      {
+        "type": "table",
+        "table_id": "table_ddat_per_aspek",
+        "title": "DDAT Adjustment per Aspek",
+        "headers": [
+          "Aspek",
+          "DW",
+          "DS",
+          "AT",
+          "DO",
+          "Net ×",
+          "Haircut"
+        ],
+        "rows": [
+          [
+            "CONF",
+            "0%",
+            "0%",
+            "0%",
+            "0%",
+            "×0.5",
+            "50%"
+          ],
+          [
+            "REINT",
+            "0%",
+            "0%",
+            "0%",
+            "0%",
+            "×0.5",
+            "50%"
+          ],
+          [
+            "LUB",
+            "0%",
+            "0%",
+            "0%",
+            "0%",
+            "×0.5",
+            "50%"
+          ],
+          [
+            "SVC",
+            "0%",
+            "0%",
+            "0%",
+            "0%",
+            "×0.5",
+            "50%"
+          ]
+        ],
+        "column_widths": [
+          1200,
+          1100,
+          1100,
+          1100,
+          1100,
+          1100,
+          2938
+        ],
+        "note": "DW=Deadweight DS=Displacement AT=Attribution DO=Drop-off",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Rata-rata fiksasi dampak keseluruhan: −50.0%. Haircut tertinggi pada CONF (50%) mengakui bahwa perubahan self-efficacy sulit diatribusikan sepenuhnya ke program."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.8 Monetisasi Dampak"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Monetisasi nilai sosial dilakukan melalui empat aspek yang mencerminkan dua lapisan manfaat program: nilai ekonomi langsung dari transaksi riil dan nilai sosial yang diestimasi melalui proxy yang tervalidasi secara akademik dan kebijakan."
+      },
+      {
+        "type": "callout_info",
+        "text": "Aspek LUB dan SVC dimonetisasi berdasarkan data transaksi aktual (observed) dari tiga node aktif. Aspek REINT dan CONF dimonetisasi menggunakan proxy konservatif yang defensible: REINT mengacu komponen pelatihan Kartu Prakerja (Rp3.500.000/peserta) dan CONF mengacu tarif psikologi publik (6 sesi × Rp50.000 = Rp300.000/peserta).",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "table",
+        "table_id": "table_monetization_per_aspek",
+        "title": "Monetisasi Nilai Sosial per Aspek per Tahun",
+        "headers": [
+          "Aspek",
+          "Tahun",
+          "Gross (Rp)",
+          "Adj DDAT",
+          "Net (Rp)",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CONF",
+            "2023",
+            "Rp 21,000,000",
+            "×0.5",
+            "Rp 10,500,000",
+            "proxy"
+          ],
+          [
+            "CONF",
+            "2024",
+            "Rp 21,000,000",
+            "×0.5",
+            "Rp 10,500,000",
+            "proxy"
+          ],
+          [
+            "CONF",
+            "2025",
+            "Rp 24,000,000",
+            "×0.5",
+            "Rp 12,000,000",
+            "proxy"
+          ],
+          [
+            "LUB",
+            "2023",
+            "Rp 20,680,000",
+            "×0.5",
+            "Rp 10,340,000",
+            "final"
+          ],
+          [
+            "LUB",
+            "2024",
+            "Rp 28,950,000",
+            "×0.5",
+            "Rp 14,475,000",
+            "final"
+          ],
+          [
+            "LUB",
+            "2025",
+            "Rp 40,520,000",
+            "×0.5",
+            "Rp 20,260,000",
+            "final"
+          ],
+          [
+            "REINT",
+            "2023",
+            "Rp 245,000,000",
+            "×0.5",
+            "Rp 122,500,000",
+            "proxy"
+          ],
+          [
+            "REINT",
+            "2024",
+            "Rp 245,000,000",
+            "×0.5",
+            "Rp 122,500,000",
+            "proxy"
+          ],
+          [
+            "REINT",
+            "2025",
+            "Rp 280,000,000",
+            "×0.5",
+            "Rp 140,000,000",
+            "proxy"
+          ],
+          [
+            "SVC",
+            "2023",
+            "Rp 12,850,000",
+            "×0.5",
+            "Rp 6,425,000",
+            "final"
+          ],
+          [
+            "SVC",
+            "2024",
+            "Rp 18,000,000",
+            "×0.5",
+            "Rp 9,000,000",
+            "final"
+          ],
+          [
+            "SVC",
+            "2025",
+            "Rp 25,190,000",
+            "×0.5",
+            "Rp 12,595,000",
+            "final"
+          ],
+          [
+            "TOTAL",
+            "—",
+            "Rp 982,190,000",
+            "—",
+            "Rp 491,095,000",
+            "—"
+          ]
+        ],
+        "column_widths": [
+          900,
+          800,
+          2100,
+          900,
+          2100,
+          2838
+        ],
+        "note": "LUB & SVC = observed. REINT & CONF = proxy S10.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "monetization",
+          "ddat_params"
+        ]
+      },
+      {
+        "type": "callout_warning",
+        "text": "Aspek REINT dan CONF adalah proxy monetisasi — estimasi nilai sosial berdasarkan referensi kebijakan dan data sekunder, bukan pengukuran langsung. Jumlah peserta 70/70/80 orang per tahun adalah estimasi konservatif Skenario S10 yang belum diverifikasi dari data lapangan. Nilai ini perlu dikonfirmasi melalui survei peserta pada periode evaluasi berikutnya.",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "EV_03",
+          "EV_04",
+          "EV_05"
+        ]
+      },
+      {
+        "type": "bar_chart_text",
+        "data_points": [
+          {
+            "label": "REINT ",
+            "value": 385.0
+          },
+          {
+            "label": "LUB   ",
+            "value": 90.2
+          },
+          {
+            "label": "SVC   ",
+            "value": 56.0
+          },
+          {
+            "label": "CONF  ",
+            "value": 33.0
+          }
+        ],
+        "max_value": 424.0,
+        "title": "Distribusi nilai bersih per aspek (Rp juta, kumulatif 3 tahun)"
+      },
+      {
+        "type": "divider_thick"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.9 Nilai SROI dan Penjelasan"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Berdasarkan kalkulasi evaluatif dengan compound ORI-adjusted dan DDAT net multiplier per aspek, program ESL menghasilkan SROI blended 1 : 0.52 — artinya setiap Rp 1 yang diinvestasikan menghasilkan Rp 0.52 nilai sosial-ekonomi terukur."
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "Total Investasi",
+            "value": "Rp 1,004,920,362",
+            "sublabel": "2023–2025"
+          },
+          {
+            "label": "Net Benefit (compounded)",
+            "value": "Rp 519,625,266",
+            "sublabel": "terminal year 2025"
+          },
+          {
+            "label": "SROI Blended",
+            "value": "1 : 0.52",
+            "sublabel": "positive return"
+          }
+        ],
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "table",
+        "table_id": "table_sroi_per_tahun",
+        "title": "Kalkulasi SROI per Tahun Program",
+        "headers": [
+          "Tahun",
+          "Investasi",
+          "Gross",
+          "Net",
+          "Compound",
+          "Net Compounded",
+          "SROI"
+        ],
+        "rows": [
+          [
+            "2023",
+            "Rp 256,216,818",
+            "Rp 299,530,000",
+            "Rp 149,765,000",
+            "×1.1252 (ORI023T3)",
+            "Rp 168,515,578",
+            "1 : 0.66"
+          ],
+          [
+            "2024",
+            "Rp 358,703,544",
+            "Rp 312,950,000",
+            "Rp 156,475,000",
+            "×1.0625 (ORI025T3)",
+            "Rp 166,254,688",
+            "1 : 0.46"
+          ],
+          [
+            "2025",
+            "Rp 390,000,000",
+            "Rp 369,710,000",
+            "Rp 184,855,000",
+            "×1.0000 (ORI027T3)",
+            "Rp 184,855,000",
+            "1 : 0.47"
+          ],
+          [
+            "TOTAL",
+            "Rp 1,004,920,362",
+            "Rp 982,190,000",
+            "Rp 491,095,000",
+            "—",
+            "Rp 519,625,266",
+            "1 : 0.52"
+          ]
+        ],
+        "column_widths": [
+          800,
+          1500,
+          1400,
+          1400,
+          1700,
+          1638,
+          1200
+        ],
+        "note": "Net compounded = nilai bersih yang di-compound ke terminal year 2025",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated"
+        ]
+      },
+      {
+        "type": "table",
+        "table_id": "table_sroi_blended",
+        "title": "Ringkasan SROI Evaluatif 2023–2025",
+        "headers": [
+          "Metrik",
+          "Nilai"
+        ],
+        "rows": [
+          [
+            "Total Investasi",
+            "Rp 1,004,920,362"
+          ],
+          [
+            "Total Gross Kumulatif",
+            "Rp 982,190,000"
+          ],
+          [
+            "Total Net Kumulatif",
+            "Rp 491,095,000"
+          ],
+          [
+            "Total Net Compounded",
+            "Rp 519,625,266"
+          ],
+          [
+            "Avg Fiksasi",
+            "−50.0%"
+          ],
+          [
+            "SROI Blended",
+            "1 : 0.52"
+          ]
+        ],
+        "column_widths": [
+          4819,
+          4819
+        ],
+        "note": "Evaluatif · Compound ORI-adjusted · DDAT net multiplier per aspek · Terminal year 2025",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2023 (ORI023T3, 5.90%): investasi Rp 256,216,818, gross Rp 299,530,000, nilai bersih setelah DDAT Rp 149,765,000, di-compound ×1.1252 menjadi Rp 168,515,578, SROI 1 : 0.66.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2024 (ORI025T3, 6.25%): investasi Rp 358,703,544, gross Rp 312,950,000, nilai bersih setelah DDAT Rp 156,475,000, di-compound ×1.0625 menjadi Rp 166,254,688, SROI 1 : 0.46.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tahun 2025 (ORI027T3, 6.50%): investasi Rp 390,000,000, gross Rp 369,710,000, nilai bersih setelah DDAT Rp 184,855,000, di-compound ×1.0000 menjadi Rp 184,855,000, SROI 1 : 0.47.",
+        "display_status": "present_as_final"
+      },
+      {
+        "type": "heading_2",
+        "text": "7.10 Interpretasi dan Temuan Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Evaluasi SROI menunjukkan bahwa program menghasilkan nilai sosial yang melampaui investasi, namun penting untuk membaca angka ini dengan memahami struktur monetisasinya. Aspek REINT mendominasi nilai bersih kumulatif — hal ini logis mengingat outcome reintegrasi adalah tujuan utama program, namun juga menunjukkan bahwa kualitas proxy REINT adalah faktor penentu kredibilitas keseluruhan SROI."
+      },
+      {
+        "type": "callout_success",
+        "text": "Milenial Motor (node eks-WBP) adalah bukti terkuat keberhasilan program: seorang eks-WBP yang telah menyelesaikan pelatihan di Lapas kini menjalankan usaha bengkel mandiri yang aktif dan produktif. Node ini membuktikan bahwa jalur Lapas → pelatihan → usaha mandiri adalah jalur yang viable dan dapat direplikasi ke node lapas lain.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "EV_06"
+        ]
+      },
+      {
+        "type": "callout_neutral",
+        "text": "Node Lapas Kota Palembang belum menghasilkan transaksi terukur selama 2023–2025. Ini adalah temuan jujur yang mencerminkan bahwa fase pembentukan kapasitas membutuhkan waktu lebih panjang dari yang direncanakan. Jika node ini dapat diaktivasi pada periode 2026 ke depan, SROI program berpotensi meningkat signifikan tanpa investasi tambahan yang proporsional.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design.institutional",
+          "uncertainty_flags"
+        ]
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Catatan metodologis: seluruh angka pada bab ini dihasilkan oleh Financial Calculation Engine (deterministik, non-LLM) dan dapat ditelusuri melalui calc_audit_log. Evaluasi ini bersifat evaluatif — mengukur nilai yang dihasilkan selama 2023–2025 berdasarkan data yang tersedia, bukan proyeksi."
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_8",
+    "chapter_type": "learning",
+    "source_outline_ref": "bab_8",
+    "builder_mode": "learning",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391168",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB VIII ASPEK PEMBELAJARAN DENGAN TRIPLE LOOP LEARNING"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan refleksi pembelajaran program melalui kerangka triple loop learning — menganalisis tidak hanya apa yang terjadi, tetapi juga mengapa program merespons seperti yang dilakukan, dan perubahan mendasar apa yang muncul dari proses implementasi."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "8.1 Identifikasi Masalah dan Keterkaitan LFA"
+      },
+      {
+        "type": "paragraph",
+        "text": "Selama implementasi 2023–2025, program menghadapi beberapa tantangan yang menjadi sumber pembelajaran:"
+      },
+      {
+        "type": "heading_2",
+        "text": "8.2 L1, L2, L3 — Analisis Triple Loop"
+      },
+      {
+        "type": "callout_info",
+        "text": "Dalam laporan ini digunakan dua ukuran yang berbeda dan saling melengkapi. Observed direct return (1 : 0,29) menunjukkan rasio pengembalian langsung berbasis transaksi riil yang tercatat dari tiga node aktif selama implementasi. Blended SROI (1 : 1,03) menunjukkan rasio nilai sosial-ekonomi total setelah monetisasi outcome, compound ORI, dan penyesuaian DDAT per aspek diperhitungkan. Kedua ukuran ini tidak saling menggantikan — keduanya membaca program dari sudut yang berbeda dan sama-sama sahih.",
+        "source_refs": [
+          "sroi_metrics.calculated",
+          "monetization",
+          "ddat_params"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 1 — Single Loop Learning (Apa yang terjadi?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level pertama berfokus pada hasil langsung dari implementasi aktivitas:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 2 — Double Loop Learning (Mengapa respons itu dipilih?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level kedua merefleksikan penyesuaian strategi yang dilakukan berdasarkan temuan implementasi:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 3 — Triple Loop Learning (Apa yang berubah secara fundamental?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level ketiga menandai transformasi nilai dan asumsi mendasar yang muncul dari proses implementasi:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "callout_warning",
+        "text": "Analisis triple loop di atas bersumber dari learning signals yang disusun berdasarkan data program yang tersedia. Untuk laporan final, refleksi ini perlu diperkaya dengan wawancara mendalam bersama pengelola program, peserta, dan mitra lapangan.",
+        "source_refs": [
+          "learning_signals"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "8.3 Identifikasi Keunikan Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program memiliki beberapa karakteristik unik yang membedakannya dari program pemberdayaan vokasional konvensional:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Intervensi di dalam Lapas — menjangkau kelompok yang paling sulit diakses program pemberdayaan umum"
+          },
+          {
+            "text": "Dual-track model: bengkel di dalam Lapas (WBP aktif) + bengkel mandiri eks-WBP (pasca-bebas)"
+          },
+          {
+            "text": "Produk program sekaligus menjadi saluran distribusi produk perusahaan — alignment bisnis dan sosial"
+          },
+          {
+            "text": "Milenial Motor sebagai proof-of-concept yang hidup — bukan aspirasi, tetapi realita yang dapat direplikasi"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "8.4 Kontribusi Efisiensi, Efektivitas, dan Keberlanjutan Sosial"
+      },
+      {
+        "type": "paragraph",
+        "text": "Dari sisi efisiensi, program menghasilkan SROI blended 1 : 0.52 — setiap Rp 1 investasi menghasilkan Rp 1 nilai sosial. Dari sisi efektivitas, tiga dari empat node aktif bertransaksi secara konsisten. Keberlanjutan dijamin oleh model bisnis bengkel yang menghasilkan pendapatan riil — bukan bergantung pada subsidi program selamanya.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated",
+          "strategy_design"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_id": "bab_9",
+    "chapter_type": "penutup",
+    "source_outline_ref": "bab_9",
+    "builder_mode": "learning",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-12T06:48:35.391169",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB IX PENUTUP"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "9.1 Kesimpulan"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Program Enduro Sahabat Lapas terbukti menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan SROI blended 1 : 0.52 selama periode 2023–2025."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dari total investasi Rp 1,004,920,362, program menghasilkan net benefit compounded sebesar Rp 519,625,266 — mencerminkan positive return yang konsisten di seluruh tahun evaluasi.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated"
+        ]
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "SROI Blended",
+            "value": "1 : 0.52",
+            "sublabel": "2023–2025"
+          },
+          {
+            "label": "Total Investasi",
+            "value": "Rp 1,004,920,362",
+            "sublabel": "kumulatif"
+          },
+          {
+            "label": "Net Benefit Compounded",
+            "value": "Rp 519,625,266",
+            "sublabel": "terminal 2025"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Tiga temuan utama yang perlu ditekankan: (1) Aspek REINT mendominasi nilai — menunjukkan bahwa nilai reintegrasi sosial-ekonomi adalah dampak paling signifikan dari intervensi ini. (2) Node Lapas Palembang belum menghasilkan transaksi — mengindikasikan potensi kenaikan SROI yang belum terealisasi. (3) Milenial Motor membuktikan bahwa model reintegrasi produktif bukan sekadar aspirasi — ini adalah template yang dapat direplikasi."
+      },
+      {
+        "type": "heading_2",
+        "text": "9.2 Rekomendasi / Usulan Tindak Lanjut"
+      },
+      {
+        "type": "numbered_list",
+        "items": [
+          {
+            "text": "Aktivasi Node Lapas Palembang: tetapkan milestone spesifik dan target transaksi pertama pada 2026 — node ini adalah peluang kenaikan SROI terbesar tanpa investasi tambahan yang proporsional"
+          },
+          {
+            "text": "Verifikasi jumlah peserta aktual: data 70/70/80 peserta per tahun adalah estimasi konservatif yang perlu diverifikasi dari data absensi pelatihan dan dokumentasi pendampingan"
+          },
+          {
+            "text": "Replikasi model Milenial Motor: dokumentasi jalur Lapas → pelatihan → usaha mandiri sebagai SOP yang dapat diadopsi node lain"
+          },
+          {
+            "text": "Penguatan data baseline: survei kepuasan dan profil sosial-ekonomi peserta sebelum dan sesudah program untuk memperkuat proxy REINT dan CONF"
+          },
+          {
+            "text": "Pembaruan kajian SROI: lakukan pembaruan tahunan untuk merekam trajectory dampak jangka menengah — terutama retensi pekerjaan dan keberlangsungan usaha"
+          }
+        ]
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Laporan ini disusun berdasarkan data yang tersedia per 2025 dan mencerminkan status evaluatif. Angka investasi 2023–2024 berstatus under_confirmation dan perlu diverifikasi dari dokumen keuangan resmi."
+      }
+    ]
+  }
+]

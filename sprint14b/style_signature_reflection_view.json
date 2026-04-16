@@ -1,0 +1,63 @@
+{
+  "view_type": "style_signature_reflection",
+  "generated_at": "2026-04-11T03:21:36.027790",
+  "source_seed": "style_signature_seed_v1",
+  "exemplar_count": 5,
+  "message": "Ini pola yang saya pelajari dari contoh paragraf Anda. Silakan review setiap dimensi dan konfirmasi, revisi, atau tolak.",
+  "what_i_learned": {
+    "opening_style": {
+      "finding": "Paragraf Anda cenderung membuka dengan konteks terlebih dahulu sebelum klaim (4/5 exemplar).",
+      "dominant": "evaluative_frame",
+      "examples": [
+        "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai ...",
+        "Kajian SROI ini menjadi instrumen evaluasi strategis untuk menilai nilai sosial ..."
+      ],
+      "question": "Apakah ini memang pendekatan yang Anda inginkan, atau ada exemplar tertentu yang justru tidak mewakili preferensi Anda?",
+      "confidence": 0.8
+    },
+    "hedging_degree": {
+      "finding": "Tingkat kehati-hatian klaim Anda berada di level 'moderate'. Marker yang paling sering muncul: ['menunjukkan bahwa', 'menunjukkan', 'masih membutuhkan verifikasi'].",
+      "dominant": "moderate",
+      "question": "Apakah level hedging ini sudah tepat? Atau ada dimensi tertentu di mana Anda ingin lebih/kurang tegas?",
+      "confidence": 0.6
+    },
+    "transition_style": {
+      "finding": "Anda menggunakan transisi halus berbasis logika. Connector yang paling sering muncul: ['Dengan demikian', 'Lebih lanjut'].",
+      "question": "Apakah ada connector yang menurut Anda terlalu sering dipakai? Atau ada yang ingin ditambahkan?",
+      "confidence": 0.9
+    },
+    "closing_style": {
+      "finding": "Penutup paragraf Anda cenderung 'open_elaboration' (2/5 exemplar) — kalimat terakhir mengunci makna.",
+      "dominant": "open_elaboration",
+      "examples": [
+        "Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekon",
+        "Nilai proxy yang digunakan bersifat konservatif dan akan semakin kuat seiring te"
+      ],
+      "question": "Apakah pola penutup ini konsisten dengan yang Anda inginkan?",
+      "confidence": 0.4
+    },
+    "rhetorical_movement": {
+      "finding": "Gerakan retorika dominan: 'free_form'.",
+      "question": "Apakah formula paragraf ini sudah mencerminkan cara Anda ingin teks bergerak?",
+      "confidence": 0.4
+    }
+  },
+  "what_i_am_less_sure_about": {
+    "dimensions": [
+      "closing_style"
+    ],
+    "note": "Dimensi berikut menunjukkan variasi yang cukup besar di antara exemplar — mungkin ini memang variasi yang disengaja, atau mungkin ada exemplar yang kurang representatif.",
+    "question": "Apakah variasi pada dimensi ini memang disengaja, atau ada exemplar yang sebaiknya diabaikan?"
+  },
+  "what_i_avoided_learning": [
+    "Saya tidak menyalin frasa atau kalimat dari exemplar secara verbatim ke dalam signature.",
+    "Saya mengekstrak pola dan prinsip, bukan template kalimat.",
+    "Saya mempertahankan 14A guard rails (anti-bombastic, anti-AI-generic, anti-mechanical) sebagai batas atas."
+  ],
+  "review_options": {
+    "accept_all": "Signature diterima sepenuhnya — lanjut ke style_signature_reviewed.json",
+    "revise_dimension": "Ubah satu atau lebih dimensi sebelum menerima",
+    "reject_exemplar": "Tandai exemplar tertentu sebagai tidak representatif dan re-extract",
+    "add_note": "Tambahkan catatan pada dimensi tertentu"
+  }
+}

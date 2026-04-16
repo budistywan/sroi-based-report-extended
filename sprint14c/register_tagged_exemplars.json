@@ -1,0 +1,129 @@
+{
+  "version":     "1.0",
+  "created_at":  "2026-04-11",
+  "description": "Exemplar yang diklasifikasi per register. Minimal 1 anchor per register. Bersumber dari 14B raw_exemplars + exemplar tambahan per register yang belum terwakili.",
+  "source_14b":  "raw_exemplars.json",
+
+  "registers": [
+    {
+      "register":       "framing_register",
+      "bab_coverage":   ["bab_1","bab_2","bab_3"],
+      "function":       "Metodologis, orientasi, penjelasan kerangka kajian",
+      "tone_emphasis":  "ekspositori, mendahulukan konteks, transisi ke tujuan, penutup orientatif",
+      "exemplars": [
+        {
+          "exemplar_id":    "ex_fr_01",
+          "source_type":    "user_favorite",
+          "source_context": "bab_3_metodologi_pembuka",
+          "register":       "framing_register",
+          "text": "Kajian ini menggunakan pendekatan Social Return on Investment (SROI) sebagai kerangka utama untuk mengukur nilai sosial yang dihasilkan oleh program. Pendekatan ini dipilih karena kemampuannya untuk mengintegrasikan dimensi ekonomi dan sosial dalam satu rasio yang dapat dikomunikasikan secara ringkas kepada pemangku kepentingan. Dalam konteks program pemberdayaan berbasis vokasional seperti Enduro Sahabat Lapas, SROI memberikan kerangka yang cukup fleksibel untuk menangkap nilai observasional sekaligus nilai estimatif yang bersifat proxy.",
+          "notes": "Pembuka metodologi — mendahulukan positioning kerangka sebelum prosedur teknis. Penutup bersifat orientatif ke konteks program."
+        },
+        {
+          "exemplar_id":    "ex_fr_02",
+          "source_type":    "user_revision",
+          "source_context": "bab_1_pendahuluan_konteks",
+          "register":       "framing_register",
+          "text": "Program Tanggung Jawab Sosial dan Lingkungan (TJSL) PT Pertamina Lubricants berdiri pada persimpangan antara kewajiban regulatoris dan komitmen strategis perusahaan terhadap nilai sosial. Dalam kerangka kebijakan PROPER KLHK, program-program kategori Beyond Compliance dituntut untuk tidak sekadar memenuhi standar minimum, tetapi membuktikan dampak sosial yang terukur dan dapat dipertanggungjawabkan. Di sinilah kajian SROI mengambil peran sebagai instrumen verifikasi yang menjembatani niat program dengan bukti dampaknya.",
+          "notes": "Pembuka konteks regulatoris — dari kewajiban ke komitmen ke instrumen. Penutup mengikat kalimat jembatan."
+        }
+      ]
+    },
+    {
+      "register":       "analytic_register",
+      "bab_coverage":   ["bab_4","bab_5","bab_6"],
+      "function":       "Diagnosis, baseline, problematisasi, pemetaan kondisi",
+      "tone_emphasis":  "investigatif, kehati-hatian tinggi, jujur tentang keterbatasan, tidak defensif",
+      "exemplars": [
+        {
+          "exemplar_id":    "ex_an_01",
+          "source_type":    "user_revision",
+          "source_context": "bab_4_pembuka",
+          "register":       "analytic_register",
+          "text": "Bab ini menyusun kondisi awal program berdasarkan data yang tersedia — terutama data program, identifikasi kelompok sasaran, dan analisis hambatan yang diturunkan dari desain intervensi. Karena data statistik wilayah yang komprehensif tidak tersedia sebagai sumber utama kajian ini, pembacaan kondisi awal pada bab ini lebih tepat dipahami sebagai baseline programatik. Ini bukan kelemahan metodologis, melainkan transparansi tentang sumber data yang digunakan.",
+          "notes": "Sprint 13 pilot — framing keterbatasan baseline yang jujur tanpa defensif. Kalimat penutup mengunci posisi metodologis."
+        },
+        {
+          "exemplar_id":    "ex_an_02",
+          "source_type":    "user_favorite",
+          "source_context": "bab_5_kondisi_ideal",
+          "register":       "analytic_register",
+          "text": "Jika ditelaah lebih jauh, hambatan terbesar bagi reintegrasi produktif eks-WBP bukan terletak pada kemampuan teknis semata, melainkan pada terbatasnya akses terhadap ekosistem usaha yang mendukung. Keterampilan mekanik yang dikuasai selama pembinaan tidak otomatis menjadi kapasitas ekonomi tanpa adanya jaringan pelanggan, modal awal, dan legitimasi sosial dari lingkungan penerima. Kondisi inilah yang menjadi target intervensi program — bukan hanya melatih, tetapi membangun jembatan dari kapasitas ke keberlanjutan.",
+          "notes": "Register analitik — problematisasi berlapis: keterampilan → akses → ekosistem. Penutup mengikat kembali ke tujuan program."
+        }
+      ]
+    },
+    {
+      "register":       "evaluative_register",
+      "bab_coverage":   ["bab_7"],
+      "function":       "Terukur, data-grounded, firm but guarded, membedakan observed/proxy/final",
+      "tone_emphasis":  "terminology konsisten, firmness terkontrol, clarity over flourish, caution note kompatibel",
+      "exemplars": [
+        {
+          "exemplar_id":    "ex_ev_01",
+          "source_type":    "user_favorite",
+          "source_context": "bab_7_sroi_pembuka",
+          "register":       "evaluative_register",
+          "text": "Kajian SROI ini menjadi instrumen evaluasi strategis untuk menilai nilai sosial yang dihasilkan oleh investasi sosial perusahaan. Dalam konteks program Enduro Sahabat Lapas, penilaian ini tidak hanya mengukur output yang terlihat secara langsung, tetapi juga berupaya mengkuantifikasi dampak yang bersifat laten — khususnya yang menyentuh dimensi reintegrasi sosial-ekonomi dan penguatan kepercayaan diri peserta. Dengan demikian, kajian ini menempatkan diri sebagai evaluasi yang jujur tentang apa yang terukur, apa yang dapat diestimasikan, dan apa yang masih membutuhkan verifikasi lebih lanjut.",
+          "notes": "Pembuka evaluatif — posisi tiga lapisan: terukur / dapat diestimasikan / masih perlu verifikasi."
+        },
+        {
+          "exemplar_id":    "ex_ev_02",
+          "source_type":    "user_revision",
+          "source_context": "bab_7_proxy_caution",
+          "register":       "evaluative_register",
+          "text": "Dua dari empat aspek monetisasi — Kesiapan Reintegrasi Sosial-Ekonomi (REINT) dan Kepercayaan Diri/Self-Efficacy (CONF) — menggunakan nilai proxy yang diturunkan dari referensi kebijakan publik. Hal ini bukan anomali metodologis, melainkan praktik yang lazim dalam kajian SROI ketika outcome bersifat laten dan belum dapat diukur secara langsung melalui transaksi. Nilai proxy yang digunakan bersifat konservatif dan akan semakin kuat seiring tersedianya data verifikasi dari survei peserta pada periode evaluasi berikutnya.",
+          "notes": "Proxy caution — tidak melemahkan klaim. Framing metodologis yang tenang."
+        }
+      ]
+    },
+    {
+      "register":       "reflective_register",
+      "bab_coverage":   ["bab_8"],
+      "function":       "Pembelajaran, refleksi, integrasi makna, menjembatani hasil ke implikasi",
+      "tone_emphasis":  "dialogis, learning-oriented closing, gentle transition, reflective but not vague",
+      "exemplars": [
+        {
+          "exemplar_id":    "ex_rf_01",
+          "source_type":    "user_written_from_scratch",
+          "source_context": "bab_8_reflektif",
+          "register":       "reflective_register",
+          "text": "Perbedaan antara observed direct return dan blended SROI bukan sekadar selisih angka. Ia mencerminkan dua cara membaca program yang sama: satu dari sudut transaksi yang sudah terjadi, satu lagi dari sudut nilai sosial yang lebih luas namun lebih sulit diverifikasi. Di sinilah pembelajaran terpenting program ini terletak — bukan pada angka final, tetapi pada pemahaman bahwa nilai sebuah intervensi sosial selalu lebih kaya dari apa yang bisa ditangkap oleh data yang tersedia.",
+          "notes": "Register reflektif — ritme lebih pendek di akhir, membuka ruang untuk berpikir, tidak menutup dengan kepastian."
+        },
+        {
+          "exemplar_id":    "ex_rf_02",
+          "source_type":    "user_favorite",
+          "source_context": "bab_8_triple_loop",
+          "register":       "reflective_register",
+          "text": "Node Lapas Palembang yang belum menghasilkan transaksi terukur bukan semata-mata kegagalan operasional. Ia adalah sinyal bahwa kesiapan institusional — baik dari sisi program maupun dari sisi lingkungan penerima — membutuhkan waktu pematangan yang tidak bisa dipercepat hanya dengan penambahan anggaran. Dalam kerangka Triple Loop Learning, kondisi ini justru menjadi titik refleksi paling berharga: bukan apa yang tidak berhasil, tetapi mengapa kondisi tersebut terjadi dan apa yang perlu didesain ulang.",
+          "notes": "Reflektif yang substantif — tidak sekadar menghibur, tetapi mengidentifikasi makna pembelajaran di balik data."
+        }
+      ]
+    },
+    {
+      "register":       "conclusive_register",
+      "bab_coverage":   ["bab_9"],
+      "function":       "Pengunci, implikatif, forward-looking, ringkas namun kuat",
+      "tone_emphasis":  "strong closing pattern, implication-forward, concise firmness, tidak hiperbolik",
+      "exemplars": [
+        {
+          "exemplar_id":    "ex_cl_01",
+          "source_type":    "user_revision",
+          "source_context": "bab_9_kesimpulan",
+          "register":       "conclusive_register",
+          "text": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai sosial-ekonomi yang melampaui investasi selama periode evaluasi 2023–2025. Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekonomi mendominasi nilai bersih kumulatif; (2) Node Lapas Kota Palembang belum menghasilkan transaksi terukur dan merepresentasikan potensi kenaikan nilai yang belum terealisasi; dan (3) keberhasilan Milenial Motor membuktikan bahwa model reintegrasi produktif dapat direplikasi ke node lain pada periode berikutnya.",
+          "notes": "Sprint 13 pilot revision — format (1)(2)(3) lebih formal, 'menunjukkan' bukan 'terbukti'."
+        },
+        {
+          "exemplar_id":    "ex_cl_02",
+          "source_type":    "user_favorite",
+          "source_context": "bab_9_rekomendasi",
+          "register":       "conclusive_register",
+          "text": "Ke depan, penguatan program perlu diarahkan pada tiga prioritas yang saling melengkapi: pertama, verifikasi data proxy REINT dan CONF melalui survei peserta yang terstruktur; kedua, aktivasi penuh Node Lapas Palembang dengan pendampingan yang lebih intensif pada fase awal; dan ketiga, formalisasi model Milenial Motor sebagai template replikasi yang dapat didokumentasikan dan ditransfer ke konteks serupa. Dengan demikian, nilai sosial program tidak hanya tercatat dalam laporan evaluasi, tetapi terus tumbuh pada periode berikutnya.",
+          "notes": "Penutup rekomendasi — tiga prioritas terstruktur, closing kalimat forward-looking yang mengunci."
+        }
+      ]
+    }
+  ]
+}

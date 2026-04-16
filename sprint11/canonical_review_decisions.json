@@ -1,0 +1,24 @@
+{
+  "review_id": "4b540b71",
+  "review_target_type": "canonical",
+  "review_target_id": "ESL",
+  "program_code": "ESL",
+  "decision": "approve_with_notes",
+  "pipeline_gate": "review_point_a",
+  "reviewer": "user",
+  "timestamp": "2026-04-10T15:02:15.842503",
+  "notes": "Canonical approved — investasi 2023-2024 masih under_confirmation",
+  "changes": [
+    {
+      "change_type": "approve_without_change",
+      "field_path": "program_identity.program_name",
+      "note": "Sudah benar"
+    },
+    {
+      "change_type": "downgrade_confidence",
+      "field_path": "sroi_metrics.calculated.sroi_blended",
+      "new_status": "proxy",
+      "reason": "DDAT params dari extracted — belum sempurna"
+    }
+  ]
+}

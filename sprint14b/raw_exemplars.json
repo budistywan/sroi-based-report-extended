@@ -1,0 +1,54 @@
+{
+  "exemplars_version": "1.0",
+  "created_at":        "2026-04-11",
+  "description":       "Kumpulan paragraf contoh dari laporan ESL dan koreksi user. Disimpan verbatim — tidak boleh diubah sebelum tagging.",
+  "source_document":   "ESL SROI Report 2023-2025 / Sprint 14B pilot",
+
+  "exemplars": [
+    {
+      "exemplar_id":     "ex_001",
+      "source_type":     "user_revision",
+      "source_context":  "bab_4_pembuka",
+      "register_hint":   "analytic",
+      "text": "Bab ini menyusun kondisi awal program berdasarkan data yang tersedia — terutama data program, identifikasi kelompok sasaran, dan analisis hambatan yang diturunkan dari desain intervensi. Karena data statistik wilayah yang komprehensif tidak tersedia sebagai sumber utama kajian ini, pembacaan kondisi awal pada bab ini lebih tepat dipahami sebagai baseline programatik. Ini bukan kelemahan metodologis, melainkan transparansi tentang sumber data yang digunakan.",
+      "notes": "Revisi dari Sprint 13 pilot — tone baseline programatik yang jujur tanpa terkesan defensif. Contoh framing keterbatasan yang elegan.",
+      "quality_signal": "approved"
+    },
+    {
+      "exemplar_id":     "ex_002",
+      "source_type":     "user_revision",
+      "source_context":  "bab_9_kesimpulan",
+      "register_hint":   "conclusive",
+      "text": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai sosial-ekonomi yang melampaui investasi selama periode evaluasi 2023–2025. Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekonomi mendominasi nilai bersih kumulatif; (2) Node Lapas Kota Palembang belum menghasilkan transaksi terukur dan merepresentasikan potensi kenaikan nilai yang belum terealisasi; dan (3) keberhasilan Milenial Motor membuktikan bahwa model reintegrasi produktif dapat direplikasi ke node lain pada periode berikutnya.",
+      "notes": "Revisi dari Sprint 13 pilot — format penomoran (1)(2)(3) lebih formal untuk laporan PROPER. 'Terbukti' diganti 'menunjukkan'.",
+      "quality_signal": "approved"
+    },
+    {
+      "exemplar_id":     "ex_003",
+      "source_type":     "user_favorite",
+      "source_context":  "bab_7_sroi_pembuka",
+      "register_hint":   "evaluative",
+      "text": "Kajian SROI ini menjadi instrumen evaluasi strategis untuk menilai nilai sosial yang dihasilkan oleh investasi sosial perusahaan. Dalam konteks program Enduro Sahabat Lapas, penilaian ini tidak hanya mengukur output yang terlihat secara langsung, tetapi juga berupaya mengkuantifikasi dampak yang bersifat laten — khususnya yang menyentuh dimensi reintegrasi sosial-ekonomi dan penguatan kepercayaan diri peserta. Dengan demikian, kajian ini menempatkan diri sebagai evaluasi yang jujur tentang apa yang terukur, apa yang dapat diestimasikan, dan apa yang masih membutuhkan verifikasi lebih lanjut.",
+      "notes": "Paragraf favorit — membuka dengan posisi evaluatif, elaborasi bertahap, dan penutup yang mengunci tiga lapisan pembacaan sekaligus.",
+      "quality_signal": "approved"
+    },
+    {
+      "exemplar_id":     "ex_004",
+      "source_type":     "user_revision",
+      "source_context":  "bab_7_proxy_caution",
+      "register_hint":   "evaluative",
+      "text": "Dua dari empat aspek monetisasi — Kesiapan Reintegrasi Sosial-Ekonomi (REINT) dan Kepercayaan Diri/Self-Efficacy (CONF) — menggunakan nilai proxy yang diturunkan dari referensi kebijakan publik. Hal ini bukan anomali metodologis, melainkan praktik yang lazim dalam kajian SROI ketika outcome bersifat laten dan belum dapat diukur secara langsung melalui transaksi. Nilai proxy yang digunakan bersifat konservatif dan akan semakin kuat seiring tersedianya data verifikasi dari survei peserta pada periode evaluasi berikutnya.",
+      "notes": "Proxy caution yang tidak melemahkan klaim — framing defensif diubah menjadi framing metodologis yang tenang.",
+      "quality_signal": "approved"
+    },
+    {
+      "exemplar_id":     "ex_005",
+      "source_type":     "user_written_from_scratch",
+      "source_context":  "bab_8_reflektif",
+      "register_hint":   "reflective",
+      "text": "Perbedaan antara observed direct return dan blended SROI bukan sekadar selisih angka. Ia mencerminkan dua cara membaca program yang sama: satu dari sudut transaksi yang sudah terjadi, satu lagi dari sudut nilai sosial yang lebih luas namun lebih sulit diverifikasi. Di sinilah pembelajaran terpenting program ini terletak — bukan pada angka final, tetapi pada pemahaman bahwa nilai sebuah intervensi sosial selalu lebih kaya dari apa yang bisa ditangkap oleh data yang tersedia.",
+      "notes": "Register reflektif — lebih dialogis, membuka pertanyaan daripada menutup kesimpulan. Ritme lebih pendek di akhir untuk efek penegasan.",
+      "quality_signal": "approved"
+    }
+  ]
+}

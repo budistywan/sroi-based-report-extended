@@ -1,0 +1,19 @@
+[
+  {
+    "chapter_id": "closing",
+    "applicability_context": "ESL_Pertamina_2025",
+    "_chat_review_patches": [
+      {
+        "commit_id": "commit_19269a44",
+        "packet_type": "closing_paragraph",
+        "target_id": "bab_9.kesimpulan",
+        "decision": "revise",
+        "original_text": "Program Enduro Sahabat Lapas terbukti menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan Blended SROI 1 : 1.14 selama periode 2023–2025. Tiga temuan utama: aspek REINT mendominasi nilai — menunjukkan bahwa nilai reintegrasi adalah dampak paling signifikan; Node Lapas Palembang belum menghasilkan transaksi aktif; dan Milenial Motor membuktikan bahwa model reintegrasi produktif bukan sekadar aspirasi melainkan template yang dapat direplikasi.",
+        "final_text": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai sosial-ekonomi yang melampaui investasi selama periode evaluasi 2023–2025. Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekonomi mendominasi nilai bersih kumulatif; (2) Node Lapas Kota Palembang belum menghasilkan transaksi terukur dan merepresentasikan potensi kenaikan nilai yang belum terealisasi; dan (3) keberhasilan Milenial Motor membuktikan bahwa model reintegrasi produktif dapat direplikasi ke node lain pada periode berikutnya.",
+        "reviewer_note": "Format penomoran (1)(2)(3) lebih formal untuk laporan PROPER. 'Terbukti' diganti 'menunjukkan'.",
+        "committed_at": "2026-04-10T16:24:32.932552",
+        "applicability_context": "ESL_Pertamina_2025"
+      }
+    ]
+  }
+]

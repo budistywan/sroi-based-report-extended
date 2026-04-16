@@ -1,0 +1,48 @@
+{
+  "run_id": "batch_refine_esl_v1",
+  "generated_at": "2026-04-12T04:07:09.557620",
+  "summary": {
+    "total_packets": 11,
+    "accepted": 0,
+    "kept_original": 0,
+    "manual_revision": 0,
+    "pending_review": 11
+  },
+  "by_type": {
+    "closing_lock": 11,
+    "transition_smooth": 11,
+    "opening_refine": 10,
+    "pattern_removal": 3
+  },
+  "by_chapter": {
+    "bab_8": 6,
+    "bab_9": 3,
+    "bab_7": 2
+  },
+  "trust_tier_analysis": {
+    "tier_2_candidates": [
+      {
+        "refinement_type": "closing_lock",
+        "count": 11,
+        "tier_2_candidate": true,
+        "note": "Frekuensi tinggi + low-risk — kandidat auto-accept masa depan"
+      },
+      {
+        "refinement_type": "transition_smooth",
+        "count": 11,
+        "tier_2_candidate": true,
+        "note": "Frekuensi tinggi + low-risk — kandidat auto-accept masa depan"
+      }
+    ],
+    "tier_3_always_manual": [
+      "hedging_adjustment",
+      "claim_softening",
+      "opening_refine"
+    ],
+    "recommendation": "Aktifkan tier_2 untuk closing_lock dan transition_smooth setelah satu full-report pass selesai dan analytics dikonfirmasi."
+  },
+  "narrative_builder_insights": {
+    "dominant_gap_type": "closing_lock",
+    "note": "'closing_lock' adalah gap paling sering (11x). Ini mengindikasikan area yang perlu diperkuat di narrative builder."
+  }
+}

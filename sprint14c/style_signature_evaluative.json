@@ -1,0 +1,74 @@
+{
+  "signature_id": "style_signature_evaluative",
+  "register": "evaluative_register",
+  "bab_coverage": [
+    "bab_7"
+  ],
+  "function": "Terukur, data-grounded, firm but guarded, membedakan observed/proxy/final",
+  "parent_global_signature": "style_signature_reviewed",
+  "parent_style_profile": "style_profile_reviewed",
+  "created_at": "2026-04-11T03:36:01.328116",
+  "dimensions": {
+    "opening_style": {
+      "pattern": "evaluative_frame",
+      "description": "Paragraf membuka dengan posisi evaluatif yang tegas — kajian sebagai instrumen, data sebagai dasar",
+      "examples": [
+        "Kajian SROI ini menjadi instrumen evaluasi...",
+        "Dua dari empat aspek monetisasi..."
+      ],
+      "variation_note": "Boleh dimulai dengan jumlah/proporsi data, posisi kajian, atau aspek yang dievaluasi"
+    },
+    "hedging_degree": {
+      "level": "moderate_high",
+      "preferred_markers": [
+        "menunjukkan bahwa",
+        "mengindikasikan",
+        "dapat diestimasikan",
+        "bersifat konservatif",
+        "hal ini bukan anomali",
+        "lazim dalam kajian"
+      ],
+      "avoided_markers": [
+        "terbukti mutlak",
+        "tidak diragukan",
+        "sangat jelas"
+      ],
+      "firmness": "high"
+    },
+    "transition_style": {
+      "style": "evaluative_logical",
+      "preferred_connectors": [
+        "Dalam konteks ini",
+        "Hal ini bukan anomali melainkan",
+        "Dengan demikian",
+        "Di sisi lain",
+        "Nilai ini mencerminkan"
+      ]
+    },
+    "closing_style": {
+      "pattern": "evaluative_locked",
+      "description": "Penutup mengunci posisi evaluatif — jelas tentang apa yang terukur, apa yang diestimasi"
+    },
+    "sentence_rhythm": {
+      "style": "mixed_medium_long"
+    }
+  },
+  "variation_rules": {
+    "terminology_consistency": true,
+    "proxy_label_discipline": true,
+    "connector_rotation": true
+  },
+  "special_emphasis": [
+    "data_grounded_claims",
+    "proxy_transparency",
+    "observed_vs_blended_distinction",
+    "caution_note_compatible",
+    "clarity_over_flourish"
+  ],
+  "guard_rails": {
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "anti_mechanical": true,
+    "no_mixing_observed_proxy": true
+  }
+}

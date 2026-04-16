@@ -1,0 +1,115 @@
+{
+  "profile_id": "style_profile_reviewed",
+  "profile_version": "1.0",
+  "created_at": "2026-04-11",
+  "target_style": "indonesian_academic_evaluative",
+  "target_domain": "SROI report — TJSL / CSR evaluation",
+  "source": "extracted from Sprint 9–13 chat history + explicit style formulation",
+  "tone": {
+    "formal": true,
+    "descriptive_argumentative": true,
+    "firm_but_guarded": true,
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "anti_copywriting": true,
+    "anti_mechanical": true,
+    "natural_academic_indonesian": true
+  },
+  "paragraph_formula": {
+    "preferred_pattern": "context → claim → elaboration → implication",
+    "prefers_locked_closing": true,
+    "prefers_soft_transition": true,
+    "notes": "Pembuka harus mendahulukan konteks atau posisi persoalan sebelum klaim inti. Penutup paragraf harus mengunci makna, bukan sekadar berhenti."
+  },
+  "coherence_preferences": {
+    "paragraph_internal_flow": true,
+    "inter_paragraph_bridge": true,
+    "subchapter_transition": true,
+    "notes": "Setiap paragraf harus terasa lahir dari paragraf sebelumnya. Subbab baru harus punya satu-dua kalimat transisi sebelum masuk ke poin baru."
+  },
+  "variation_preferences": {
+    "opening_diversity": true,
+    "sentence_length_mix": true,
+    "functionally_distinct_paragraphs": true,
+    "preferred_opening_variations": [
+      "Dalam konteks pelaksanaan program, …",
+      "Secara substantif, …",
+      "Di sisi lain, …",
+      "Pada tahap ini, …",
+      "Jika ditelaah lebih jauh, …",
+      "Kondisi tersebut menunjukkan bahwa …",
+      "Berangkat dari kondisi tersebut, …",
+      "Lebih lanjut, …",
+      "Dalam kaitan ini, …"
+    ],
+    "sentence_rhythm_note": "Campurkan kalimat sedang untuk framing, kalimat agak panjang untuk elaborasi, kalimat lebih pendek untuk penegasan. Jangan semua kalimat sama panjang."
+  },
+  "hedging_profile": {
+    "level": "moderate_high",
+    "preferred_markers": [
+      "menunjukkan",
+      "mengindikasikan",
+      "dapat dipahami sebagai",
+      "memperlihatkan kecenderungan",
+      "cenderung",
+      "mengindikasikan adanya",
+      "dapat dikatakan bahwa",
+      "tampak bahwa"
+    ],
+    "avoided_markers": [
+      "terbukti mutlak",
+      "tidak diragukan lagi",
+      "sudah pasti",
+      "sangat jelas bahwa",
+      "membuktikan keberhasilan mutlak",
+      "secara sempurna",
+      "tidak dapat disangkal"
+    ]
+  },
+  "preferred_connectors": {
+    "intra_paragraph": [
+      "Dalam konteks ini, …",
+      "Hal ini menunjukkan bahwa …",
+      "Kondisi tersebut menegaskan bahwa …",
+      "Dengan demikian, …",
+      "Secara lebih lanjut, …"
+    ],
+    "inter_paragraph": [
+      "Lebih lanjut, …",
+      "Dalam kaitan ini, …",
+      "Di sisi lain, …",
+      "Berangkat dari kondisi tersebut, …",
+      "Temuan ini kemudian menjadi penting karena …",
+      "Pada titik inilah …"
+    ],
+    "closing_patterns": [
+      "Dengan demikian, program tidak hanya …, tetapi juga …",
+      "Pada titik inilah terlihat bahwa …",
+      "Hal tersebut menegaskan bahwa …",
+      "Dalam kerangka evaluatif, kondisi ini memperlihatkan bahwa …"
+    ]
+  },
+  "paragraph_function_types": [
+    "framing",
+    "elaboration",
+    "evidence",
+    "comparison",
+    "affirmation",
+    "transition"
+  ],
+  "notes": [
+    "Utamakan framing sebelum klaim.",
+    "Jaga transisi halus antar paragraf dan antar subbab.",
+    "Gunakan tone formal, evaluatif, dan argumentatif — bukan deskriptif semata.",
+    "Beri satu kalimat penegas di akhir paragraf.",
+    "Variasikan pembuka paragraf — hindari repetisi yang kentara.",
+    "Jangan overclaim.",
+    "Jangan terdengar seperti template AI.",
+    "Pertahankan nuansa akademik Indonesia yang natural."
+  ],
+  "parent_profile_id": "style_profile_v1",
+  "reviewed_by": "user",
+  "review_timestamp": "2026-04-12T06:48:36.769996",
+  "changes_summary": [],
+  "import_source": "demo_mode"
+}

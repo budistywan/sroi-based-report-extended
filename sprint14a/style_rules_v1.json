@@ -1,0 +1,85 @@
+{
+  "rules_version": "1.0",
+  "parent_profile": "style_profile_v1",
+  "created_at":     "2026-04-11",
+  "description":    "Aturan operasional yang diturunkan dari style_profile_v1. Dipakai oleh packet generation, refinement suggestion, validator, dan warning system.",
+
+  "rules": [
+    {
+      "rule_id":     "SR_OPENING_CONTEXT",
+      "description": "Paragraf sebaiknya membuka dengan konteks atau posisi persoalan sebelum klaim inti — bukan langsung meloncat ke klaim.",
+      "severity":    "medium",
+      "check_type":  "opening_pattern",
+      "guidance":    "Jika paragraf langsung dimulai dengan klaim ('Program ini...', 'Hal ini terbukti...'), pertimbangkan untuk menambahkan kalimat orientasi konteks sebelumnya."
+    },
+    {
+      "rule_id":     "SR_LOCKED_CLOSING",
+      "description": "Paragraf sebaiknya ditutup dengan kalimat yang mengunci makna — bukan berhenti begitu saja setelah elaborasi.",
+      "severity":    "medium",
+      "check_type":  "closing_pattern",
+      "guidance":    "Kalimat penutup yang kuat biasanya menggunakan pola: 'Dengan demikian, …', 'Hal tersebut menegaskan bahwa …', 'Pada titik inilah terlihat bahwa …'."
+    },
+    {
+      "rule_id":     "SR_NO_BOMBASTIC_CLAIM",
+      "description": "Hindari klaim evaluatif yang berlebihan atau overclaim tanpa dasar.",
+      "severity":    "high",
+      "check_type":  "hedging_violation",
+      "trigger_markers": [
+        "terbukti mutlak", "tidak diragukan lagi", "sudah pasti",
+        "sangat luar biasa", "membuktikan keberhasilan mutlak",
+        "secara sempurna", "tidak dapat disangkal"
+      ],
+      "guidance":    "Ganti dengan: 'menunjukkan', 'mengindikasikan', 'dapat dipahami sebagai', 'memperlihatkan kecenderungan'."
+    },
+    {
+      "rule_id":     "SR_NO_AI_GENERIC",
+      "description": "Hindari ritme paragraf yang terdengar generik dan template AI — terlalu simetris, semua paragraf terdengar sama.",
+      "severity":    "high",
+      "check_type":  "rhythm_pattern",
+      "guidance":    "Variasikan pembuka, panjang kalimat, dan fungsi paragraf. Pastikan setiap paragraf punya identitas retorika yang berbeda."
+    },
+    {
+      "rule_id":     "SR_INTER_PARAGRAPH_BRIDGE",
+      "description": "Paragraf baru sebaiknya terasa lahir dari paragraf sebelumnya — ada jembatan logis atau transisi yang menyambungkan.",
+      "severity":    "medium",
+      "check_type":  "coherence_bridge",
+      "guidance":    "Gunakan connector seperti 'Lebih lanjut, …', 'Dalam kaitan ini, …', 'Berangkat dari kondisi tersebut, …' sebagai jembatan."
+    },
+    {
+      "rule_id":     "SR_OPENING_DIVERSITY",
+      "description": "Pembuka paragraf harus bervariasi — hindari memulai tiga paragraf berturut-turut dengan pola yang identik.",
+      "severity":    "medium",
+      "check_type":  "opening_repetition",
+      "trigger_if":  "same_opening_pattern_3_consecutive",
+      "guidance":    "Variasikan dengan: 'Secara substantif, …', 'Di sisi lain, …', 'Jika ditelaah lebih jauh, …', 'Kondisi tersebut menunjukkan bahwa …'"
+    },
+    {
+      "rule_id":     "SR_SENTENCE_RHYTHM",
+      "description": "Campurkan panjang kalimat — sedang untuk framing, agak panjang untuk elaborasi, pendek untuk penegasan.",
+      "severity":    "low",
+      "check_type":  "rhythm_variation",
+      "guidance":    "Jangan semua kalimat sama panjang. Satu kalimat pendek setelah dua-tiga kalimat panjang sering menjadi penanda retorika yang kuat."
+    },
+    {
+      "rule_id":     "SR_PARAGRAPH_FUNCTION",
+      "description": "Setiap paragraf harus punya fungsi yang jelas: framing, elaborasi, pembuktian, perbandingan, penegasan, atau transisi.",
+      "severity":    "medium",
+      "check_type":  "paragraph_function",
+      "guidance":    "Hindari paragraf yang hanya mengulang isi paragraf sebelumnya dengan sinonim tanpa menambahkan gerakan argumentatif baru."
+    },
+    {
+      "rule_id":     "SR_NO_MECHANICAL_EXPANSION",
+      "description": "Jangan mengembangkan poin menjadi paragraf secara mekanis — satu poin satu kalimat tanpa alur argumentatif.",
+      "severity":    "high",
+      "check_type":  "structural_pattern",
+      "guidance":    "Paragraf harus punya alur, bukan daftar. Hubungkan poin-poin dengan argumen, bukan sekadar juxtaposisi."
+    },
+    {
+      "rule_id":     "SR_SUBCHAPTER_TRANSITION",
+      "description": "Awal subbab harus punya satu-dua kalimat transisi yang menghubungkan ke subbab sebelumnya.",
+      "severity":    "low",
+      "check_type":  "subchapter_opening",
+      "guidance":    "Jangan langsung masuk ke poin subbab baru tanpa kontekstualisasi singkat."
+    }
+  ]
+}

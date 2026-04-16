@@ -1,0 +1,137 @@
+{
+  "view_type": "canonical_review",
+  "program_code": "ESL",
+  "generated_at": "2026-04-10T15:02:01.475552",
+  "review_state": "pending_review",
+  "program_identity_summary": {
+    "program_name": "Enduro Sahabat Lapas",
+    "program_tagline": "Penguatan Keterampilan Mekanik, Kemandirian Usaha, dan Kesiapan Reintegrasi Sosi...",
+    "company": "PT Pertamina Lubricants",
+    "period": "2023–2025",
+    "review_fields": [
+      "program_name",
+      "program_tagline",
+      "company",
+      "period_start",
+      "period_end"
+    ]
+  },
+  "key_metrics": {
+    "sroi_blended": 1.1358,
+    "sroi_blended_status": "final",
+    "total_investment_idr": 502460181,
+    "net_compounded_idr": 570672410.79,
+    "avg_fiksasi_pct": 45.09
+  },
+  "investment_summary": {
+    "total_idr": 502460181,
+    "items": 12,
+    "statuses": [
+      "under_confirmation",
+      "final"
+    ],
+    "reviewable": true,
+    "note": "Investasi 2023-2024 under_confirmation — perlu verifikasi"
+  },
+  "monetization_summary": {
+    "aspects": {
+      "LUB": {
+        "gross_idr": 90145224,
+        "status": "observed",
+        "is_proxy": false
+      },
+      "SVC": {
+        "gross_idr": 56045864,
+        "status": "observed",
+        "is_proxy": false
+      },
+      "REINT": {
+        "gross_idr": 770000000,
+        "status": "proxy",
+        "is_proxy": true
+      },
+      "CONF": {
+        "gross_idr": 66000000,
+        "status": "proxy",
+        "is_proxy": true
+      }
+    }
+  },
+  "coverage_status": {
+    "bab_1": {
+      "status": "partial",
+      "risk": "thin"
+    },
+    "bab_2": {
+      "status": "partial",
+      "risk": "thin"
+    },
+    "bab_3": {
+      "status": "weak",
+      "risk": "thin"
+    },
+    "bab_4": {
+      "status": "weak",
+      "risk": "thin"
+    },
+    "bab_5": {
+      "status": "partial",
+      "risk": "reliable"
+    },
+    "bab_6": {
+      "status": "partial",
+      "risk": "reliable"
+    },
+    "bab_7": {
+      "status": "strong",
+      "risk": "reliable"
+    },
+    "bab_8": {
+      "status": "partial",
+      "risk": "thin"
+    },
+    "bab_9": {
+      "status": "partial",
+      "risk": "reliable"
+    }
+  },
+  "uncertainty_flags": [
+    {
+      "flag_id": "UF_01",
+      "reason": "Data investasi 2023 dan 2024 berstatus under_confirmation — belum diverifikasi d"
+    },
+    {
+      "flag_id": "UF_02",
+      "reason": "Jumlah peserta aktif per node belum terverifikasi dari data lapangan — menggunak"
+    },
+    {
+      "flag_id": "UF_03",
+      "reason": "Data profil wilayah dan populasi WBP per node belum tersedia"
+    },
+    {
+      "flag_id": "UF_04",
+      "reason": "Refleksi pembelajaran masih berupa inferensi dari data program — belum ada wawan"
+    }
+  ],
+  "review_prompts": [
+    "Apakah program_name sudah benar?",
+    "Apakah SROI blended sudah sesuai metodologi yang disepakati?",
+    "Apakah status investasi 2023-2024 sudah dikonfirmasi atau masih under_confirmation?",
+    "Apakah aspek proxy (REINT, CONF) perlu catatan tambahan?",
+    "Apakah ada bab yang coverage-nya perlu dinaikkan atau diturunkan?"
+  ],
+  "available_decisions": [
+    "approve",
+    "approve_with_notes",
+    "revise",
+    "defer"
+  ],
+  "available_changes": [
+    "replace_value",
+    "append_note",
+    "set_status",
+    "mark_as_gap",
+    "approve_without_change",
+    "downgrade_confidence"
+  ]
+}

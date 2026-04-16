@@ -1,0 +1,305 @@
+{
+  "source_id": "src_esp_01",
+  "source_type": "ppt_script",
+  "name": "TJSL_Scripts.md — esp sections",
+  "program_code": "ESP",
+  "parsed_at": "2026-04-10T10:03:12.023398",
+  "parser_version": "1.0.0",
+  "parsed_sections": {
+    "program_identity": {
+      "program_code": "ESP",
+      "program_name": "Enduro Student Program",
+      "program_tagline": "*Nilai 2023–2024 under confirmation  |  *EMP/WBL/CHR = proxy estimasi konservatif per unit aktif",
+      "company": "PT Pertamina Lubricants",
+      "unit": "TJSL CSV",
+      "period_start": 2023,
+      "period_end": 2025
+    },
+    "investment": [
+      {
+        "year": 2023,
+        "node": "total",
+        "amount_idr": 339222725,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2024,
+        "node": "total",
+        "amount_idr": 474951814,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2025,
+        "node": "total",
+        "amount_idr": 541652000,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "monetization": [
+      {
+        "monetization_id": "MON_JSP_2023",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2023,
+        "gross_idr": 228000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2024",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2024,
+        "gross_idr": 319000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2025",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2025,
+        "gross_idr": 447000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2023",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2023,
+        "gross_idr": 61000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2024",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2024,
+        "gross_idr": 85000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2025",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2025,
+        "gross_idr": 119000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_EMP_2023",
+        "aspect_code": "EMP",
+        "aspect_name": "EMP",
+        "year": 2023,
+        "gross_idr": 259000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_EMP_2024",
+        "aspect_code": "EMP",
+        "aspect_name": "EMP",
+        "year": 2024,
+        "gross_idr": 268000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_EMP_2025",
+        "aspect_code": "EMP",
+        "aspect_name": "EMP",
+        "year": 2025,
+        "gross_idr": 272000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_WBL_2023",
+        "aspect_code": "WBL",
+        "aspect_name": "WBL",
+        "year": 2023,
+        "gross_idr": 162000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_WBL_2024",
+        "aspect_code": "WBL",
+        "aspect_name": "WBL",
+        "year": 2024,
+        "gross_idr": 167000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_WBL_2025",
+        "aspect_code": "WBL",
+        "aspect_name": "WBL",
+        "year": 2025,
+        "gross_idr": 170000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CHR_2023",
+        "aspect_code": "CHR",
+        "aspect_name": "CHR",
+        "year": 2023,
+        "gross_idr": 81000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CHR_2024",
+        "aspect_code": "CHR",
+        "aspect_name": "CHR",
+        "year": 2024,
+        "gross_idr": 84000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CHR_2025",
+        "aspect_code": "CHR",
+        "aspect_name": "CHR",
+        "year": 2025,
+        "gross_idr": 85000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "ddat_params": {
+      "LUB": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "JSP": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "EMP": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "WBL": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "CHR": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      }
+    },
+    "ori_rates": {
+      "2023": {
+        "rate": 0.059000000000000004,
+        "series": "ORI023T3",
+        "compound_factor": 1.1252,
+        "terminal_year": false
+      },
+      "2024": {
+        "rate": 0.0625,
+        "series": "ORI025T3",
+        "compound_factor": 1.0625,
+        "terminal_year": false
+      },
+      "2025": {
+        "rate": 0.065,
+        "series": "ORI027T3",
+        "compound_factor": 1.0,
+        "terminal_year": true
+      }
+    },
+    "sroi_metrics": {
+      "status": "extracted",
+      "calculated": {
+        "sroi_blended": 1.17
+      }
+    },
+    "learning_signals": {
+      "loop_1": [
+        "*Nilai 2023–2024 under confirmation  |  *EMP/WBL/CHR = proxy estimasi konservatif per unit aktif",
+        "Total Nilai Bersih 3 Tahun: Rp 1,50 Miliar dari total investasi Rp 1,36 Miliar",
+        "lulusan SMK dalam pengangguran\\nterbuka nasional (BPS, 2025)"
+      ],
+      "loop_2": [],
+      "loop_3": [],
+      "lfa_reflections": [],
+      "data_status": "derived"
+    }
+  },
+  "uncertainty_flags": [],
+  "coverage": {
+    "investment": "strong",
+    "monetization": "strong",
+    "ddat": "strong",
+    "ori": "strong",
+    "sroi_metrics": "strong"
+  }
+}

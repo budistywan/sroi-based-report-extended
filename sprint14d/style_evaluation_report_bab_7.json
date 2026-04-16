@@ -1,0 +1,780 @@
+{
+  "report_id": "eval_bab_7_v1",
+  "chapter_id": "bab_7",
+  "register_used": "evaluative_register",
+  "signature_file": "style_signature_evaluative.json",
+  "evaluated_at": "2026-04-11T23:15:07.238135",
+  "summary": {
+    "total_blocks": 53,
+    "total_paragraphs": 22,
+    "clean": 0,
+    "needs_review": 2,
+    "flagged": 0,
+    "skip": 31
+  },
+  "paragraphs": [
+    {
+      "block_index": 0,
+      "block_type": "heading_1",
+      "text_preview": "BAB VII IMPLEMENTASI / PDIS DENGAN SROI",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 1,
+      "block_type": "paragraph_lead",
+      "full_text": "Bab ini menyajikan seluruh rangkaian implementasi Program Enduro Sahabat Lapas secara terukur — dari kegiatan, stakeholder, dan investasi hingga outcome, fiksasi dampak, monetisasi nilai sosial, dan hasil evaluasi SROI. Semua angka pada bab ini bersumber dari Financial Calculation Engine dan dapat ditelusuri melalui calc_audit_log.",
+      "text_preview": "Bab ini menyajikan seluruh rangkaian implementasi Program Enduro Sahabat Lapas secara terukur — dari...",
+      "status": "needs_review",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "disliked_pattern",
+          "pattern_id": "DP_FLAT_PARAGRAPH",
+          "severity": "low",
+          "note": "Disliked pattern terdeteksi: DP_FLAT_PARAGRAPH"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "context_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['disliked_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 2,
+      "block_type": "divider",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 3,
+      "block_type": "heading_2",
+      "text_preview": "7.1 Proses dan Kegiatan yang Dilakukan",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 4,
+      "block_type": "paragraph",
+      "full_text": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan.",
+      "text_preview": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjala...",
+      "status": "needs_review",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "evaluative_frame",
+          "detected": "claim_first",
+          "severity": "medium",
+          "note": "Pembuka 'claim_first' — register evaluative_register mengharapkan 'evaluative_frame'"
+        },
+        {
+          "dimension": "disliked_pattern",
+          "pattern_id": "DP_FLAT_PARAGRAPH",
+          "severity": "low",
+          "note": "Disliked pattern terdeteksi: DP_FLAT_PARAGRAPH"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "claim_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan.\n\n[Stylistic hints: Pertimbangkan membuka dengan framing evaluatif sebelum klaim inti. | Pertimbangkan menambahkan kalimat penutup yang mengunci makna paragraf.]",
+      "candidate_confidence": 0.6
+    },
+    {
+      "block_index": 5,
+      "block_type": "paragraph",
+      "full_text": "Tahun 2023: Pelatihan Teknis Mekanik · Product Knowledge Pelumas · Praktik Kerja Perbengkelan.",
+      "text_preview": "Tahun 2023: Pelatihan Teknis Mekanik · Product Knowledge Pelumas · Praktik Kerja Perbengkelan.",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 6,
+      "block_type": "paragraph",
+      "full_text": "Tahun 2024: Pembinaan Kewirausahaan · Pendampingan Unit Usaha.",
+      "text_preview": "Tahun 2024: Pembinaan Kewirausahaan · Pendampingan Unit Usaha.",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 7,
+      "block_type": "paragraph",
+      "text_preview": "Tahun 2025: Penguatan Milenial Motor.",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 8,
+      "block_type": "heading_2",
+      "text_preview": "7.2 Node Program",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 9,
+      "block_type": "paragraph",
+      "full_text": "Program beroperasi di 4 node/lokasi yang mencerminkan dua tipologi intervensi: bengkel di dalam Lapas (pembinaan WBP aktif) dan unit usaha eks-WBP (reintegrasi pasca-pembebasan). Keempat node tersebut adalah: Lapas Palembang, Bengkel Lapas IIB Sleman, Milenial Motor (Eks-WBP), Pemasyarakatan Corner.",
+      "text_preview": "Program beroperasi di 4 node/lokasi yang mencerminkan dua tipologi intervensi: bengkel di dalam Lapa...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 10,
+      "block_type": "callout_info",
+      "text_preview": "Tiga dari empat node aktif menghasilkan transaksi ",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 11,
+      "block_type": "heading_2",
+      "text_preview": "7.3 Identifikasi Stakeholder yang Terlibat",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 12,
+      "block_type": "paragraph",
+      "full_text": "Program melibatkan 5 pemangku kepentingan utama dengan peran berbeda dalam ekosistem program. Tabel berikut menyajikan peta stakeholder beserta dasar keterlibatannya.",
+      "text_preview": "Program melibatkan 5 pemangku kepentingan utama dengan peran berbeda dalam ekosistem program. Tabel ...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 13,
+      "block_type": "table_borderless",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 14,
+      "block_type": "heading_2",
+      "text_preview": "7.4 Input / Investasi",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 15,
+      "block_type": "callout_warning",
+      "text_preview": "Catatan status data: investasi tahun 2023 dan 2024",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 16,
+      "block_type": "paragraph",
+      "full_text": "Total investasi program selama 2023–2025 mencapai Rp 502,460,181, dengan distribusi yang meningkat setiap tahun seiring penguatan aktivitas. Rincian per node dan per tahun disajikan pada tabel berikut.",
+      "text_preview": "Total investasi program selama 2023–2025 mencapai Rp 502,460,181, dengan distribusi yang meningkat s...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 17,
+      "block_type": "table",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 18,
+      "block_type": "metric_card_3col",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 19,
+      "block_type": "heading_2",
+      "text_preview": "7.5 Proses dan Output yang Dihasilkan",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 20,
+      "block_type": "paragraph",
+      "full_text": "Program menghasilkan 6 output terukur sepanjang periode evaluasi, mencakup node yang aktif beroperasi dan estimasi peserta yang terlibat dalam pelatihan dan pendampingan.",
+      "text_preview": "Program menghasilkan 6 output terukur sepanjang periode evaluasi, mencakup node yang aktif beroperas...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 21,
+      "block_type": "table_borderless",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 22,
+      "block_type": "heading_2",
+      "text_preview": "7.6 Outcome Program",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 23,
+      "block_type": "paragraph",
+      "full_text": "Program menghasilkan 4 outcome yang dimonetisasi melalui dua jalur: data transaksi aktual (observed) untuk aspek yang sudah menghasilkan nilai ekonomi langsung, dan proxy tervalidasi untuk aspek yang mengukur nilai sosial yang lebih sulit diverifikasi secara langsung.",
+      "text_preview": "Program menghasilkan 4 outcome yang dimonetisasi melalui dua jalur: data transaksi aktual (observed)...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 24,
+      "block_type": "paragraph",
+      "full_text": "✓ Observed — Penjualan Pelumas (LUB): Transaksi penjualan produk pelumas Enduro dari node aktif (Indikator: Volume penjualan pelumas (Rp))",
+      "text_preview": "✓ Observed — Penjualan Pelumas (LUB): Transaksi penjualan produk pelumas Enduro dari node aktif (Ind...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 25,
+      "block_type": "paragraph",
+      "full_text": "✓ Observed — Jasa & Sparepart (SVC): Transaksi jasa servis dan penjualan sparepart dari node aktif (Indikator: Volume transaksi jasa (Rp))",
+      "text_preview": "✓ Observed — Jasa & Sparepart (SVC): Transaksi jasa servis dan penjualan sparepart dari node aktif (...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 26,
+      "block_type": "paragraph",
+      "full_text": "~ Proxy — Kesiapan Reintegrasi Sosial-Ekonomi (REINT): Peningkatan kesiapan peserta untuk bekerja legal dan berwirausaha pasca-bebas (Indikator: Nilai substitusi paket peningkatan kesiapan kerja/usaha)",
+      "text_preview": "~ Proxy — Kesiapan Reintegrasi Sosial-Ekonomi (REINT): Peningkatan kesiapan peserta untuk bekerja le...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 27,
+      "block_type": "paragraph",
+      "full_text": "~ Proxy — Kepercayaan Diri & Self-Efficacy (CONF): Peningkatan kepercayaan diri, efikasi diri, dan orientasi masa depan peserta (Indikator: Replacement cost layanan psikologi publik)",
+      "text_preview": "~ Proxy — Kepercayaan Diri & Self-Efficacy (CONF): Peningkatan kepercayaan diri, efikasi diri, dan o...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 28,
+      "block_type": "heading_2",
+      "text_preview": "7.7 Fiksasi Dampak (DDAT Adjustment)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 29,
+      "block_type": "paragraph",
+      "full_text": "Fiksasi dampak diterapkan untuk memastikan bahwa nilai sosial yang diklaim benar-benar mencerminkan kontribusi program secara nyata, dengan menghindari perhitungan manfaat ganda. Empat parameter yang digunakan: Deadweight (DW), Displacement (DS), Attribution (AT), dan Drop-off (DO).",
+      "text_preview": "Fiksasi dampak diterapkan untuk memastikan bahwa nilai sosial yang diklaim benar-benar mencerminkan ...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 30,
+      "block_type": "table",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 31,
+      "block_type": "paragraph_small",
+      "full_text": "Rata-rata fiksasi dampak keseluruhan: −50.0%. Haircut tertinggi pada CONF (50%) mengakui bahwa perubahan self-efficacy sulit diatribusikan sepenuhnya ke program.",
+      "text_preview": "Rata-rata fiksasi dampak keseluruhan: −50.0%. Haircut tertinggi pada CONF (50%) mengakui bahwa perub...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 32,
+      "block_type": "divider",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 33,
+      "block_type": "heading_2",
+      "text_preview": "7.8 Monetisasi Dampak",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 34,
+      "block_type": "paragraph_lead",
+      "full_text": "Monetisasi nilai sosial dilakukan melalui empat aspek yang mencerminkan dua lapisan manfaat program: nilai ekonomi langsung dari transaksi riil dan nilai sosial yang diestimasi melalui proxy yang tervalidasi secara akademik dan kebijakan.",
+      "text_preview": "Monetisasi nilai sosial dilakukan melalui empat aspek yang mencerminkan dua lapisan manfaat program:...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 35,
+      "block_type": "callout_info",
+      "text_preview": "Aspek LUB dan SVC dimonetisasi berdasarkan data tr",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 36,
+      "block_type": "table",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 37,
+      "block_type": "callout_warning",
+      "text_preview": "Aspek REINT dan CONF adalah proxy monetisasi — est",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 38,
+      "block_type": "bar_chart_text",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 39,
+      "block_type": "divider_thick",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 40,
+      "block_type": "heading_2",
+      "text_preview": "7.9 Nilai SROI dan Penjelasan",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 41,
+      "block_type": "paragraph_lead",
+      "full_text": "Berdasarkan kalkulasi evaluatif dengan compound ORI-adjusted dan DDAT net multiplier per aspek, program ESL menghasilkan SROI blended 1 : 1.03 — artinya setiap Rp 1 yang diinvestasikan menghasilkan Rp 1.03 nilai sosial-ekonomi terukur.",
+      "text_preview": "Berdasarkan kalkulasi evaluatif dengan compound ORI-adjusted dan DDAT net multiplier per aspek, prog...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 42,
+      "block_type": "metric_card_3col",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 43,
+      "block_type": "table",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 44,
+      "block_type": "table",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 45,
+      "block_type": "paragraph",
+      "full_text": "Tahun 2023 (ORI023T3, 5.90%): investasi Rp 128,108,409, gross Rp 299,530,000, nilai bersih setelah DDAT Rp 149,765,000, di-compound ×1.1252 menjadi Rp 168,515,578, SROI 1 : 1.32.",
+      "text_preview": "Tahun 2023 (ORI023T3, 5.90%): investasi Rp 128,108,409, gross Rp 299,530,000, nilai bersih setelah D...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 46,
+      "block_type": "paragraph",
+      "full_text": "Tahun 2024 (ORI025T3, 6.25%): investasi Rp 179,351,772, gross Rp 312,950,000, nilai bersih setelah DDAT Rp 156,475,000, di-compound ×1.0625 menjadi Rp 166,254,688, SROI 1 : 0.93.",
+      "text_preview": "Tahun 2024 (ORI025T3, 6.25%): investasi Rp 179,351,772, gross Rp 312,950,000, nilai bersih setelah D...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 47,
+      "block_type": "paragraph",
+      "full_text": "Tahun 2025 (ORI027T3, 6.50%): investasi Rp 195,000,000, gross Rp 369,710,000, nilai bersih setelah DDAT Rp 184,855,000, di-compound ×1.0000 menjadi Rp 184,855,000, SROI 1 : 0.95.",
+      "text_preview": "Tahun 2025 (ORI027T3, 6.50%): investasi Rp 195,000,000, gross Rp 369,710,000, nilai bersih setelah D...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "short_affirmation",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "short_affirmation",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 48,
+      "block_type": "heading_2",
+      "text_preview": "7.10 Interpretasi dan Temuan Program",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 49,
+      "block_type": "paragraph",
+      "full_text": "Evaluasi SROI menunjukkan bahwa program menghasilkan nilai sosial yang melampaui investasi, namun penting untuk membaca angka ini dengan memahami struktur monetisasinya. Aspek REINT mendominasi nilai bersih kumulatif — hal ini logis mengingat outcome reintegrasi adalah tujuan utama program, namun juga menunjukkan bahwa kualitas proxy REINT adalah faktor penentu kredibilitas keseluruhan SROI.",
+      "text_preview": "Evaluasi SROI menunjukkan bahwa program menghasilkan nilai sosial yang melampaui investasi, namun pe...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "evaluative_frame",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 50,
+      "block_type": "callout_success",
+      "text_preview": "Milenial Motor (node eks-WBP) adalah bukti terkuat",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 51,
+      "block_type": "callout_neutral",
+      "text_preview": "Node Lapas Kota Palembang belum menghasilkan trans",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 52,
+      "block_type": "paragraph_small",
+      "full_text": "Catatan metodologis: seluruh angka pada bab ini dihasilkan oleh Financial Calculation Engine (deterministik, non-LLM) dan dapat ditelusuri melalui calc_audit_log. Evaluasi ini bersifat evaluatif — mengukur nilai yang dihasilkan selama 2023–2025 berdasarkan data yang tersedia, bukan proyeksi.",
+      "text_preview": "Catatan metodologis: seluruh angka pada bab ini dihasilkan oleh Financial Calculation Engine (determ...",
+      "status": "noted",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_elaboration",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_review_metadata": {
+    "reviewed_at": "2026-04-10T15:02:06.704414",
+    "reviewer": "user",
+    "decision": "approve_with_notes",
+    "source_review_id": "94407b8e"
+  },
+  "gap_items": [
+    {
+      "chapter_id": "bab_4",
+      "chapter_title": "Identifikasi Kondisi Awal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "required_missing": [],
+      "recommendation": "full",
+      "note": "Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia secara derived. Builder tulis placeholder terstruktur untuk data wilayah.",
+      "_review_decision": "must_render_as_gap",
+      "_gap_type": "data_unavailable",
+      "_review_note": "Baseline wilayah tidak tersedia — harus diakui eksplisit di laporan"
+    },
+    {
+      "chapter_id": "bab_5",
+      "chapter_title": "Identifikasi Kondisi Ideal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "required_missing": [],
+      "recommendation": "full",
+      "note": "Kondisi ideal tersedia sebagai derived. Kualitas cukup untuk bab partial.",
+      "_review_decision": "ignorable",
+      "_review_note": "Gap kondisi ideal cukup ditangani dengan callout_gap"
+    }
+  ]
+}

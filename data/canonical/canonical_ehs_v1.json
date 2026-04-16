@@ -1,0 +1,734 @@
+{
+  "schema_version": "1.0",
+  "case_id": "ehs_2023_2025_v1",
+  "created_at": "2026-04-13",
+  "last_updated": "2026-04-13",
+  "data_status": "populated_from_ontology_v3",
+  "program_identity": {
+    "program_code": "EHS",
+    "program_name": "Enduro Home Service",
+    "program_tagline": "Vokasi Produktif Berbasis Bengkel Sekolah dan Layanan Home Service",
+    "company": "PT Pertamina Lubricants",
+    "period_start": 2023,
+    "period_end": 2025,
+    "period_label": "2023-2025",
+    "node_count": 10,
+    "node_names": [
+      "Sales Region I",
+      "Sales Region II",
+      "Sales Region III",
+      "Sales Region IV",
+      "Sales Region V",
+      "Sales Region VI",
+      "Sales Region VII",
+      "Production Unit Jakarta",
+      "Production Unit Gresik",
+      "Production Unit Cilacap"
+    ],
+    "target_group": "Siswa SMK mitra program dan sekolah (institusi) pelaksana bengkel TEFA Enduro"
+  },
+  "program_positioning": {
+    "tjsl_pillar": "Pendidikan Vokasi dan Pemberdayaan Ekonomi",
+    "sdg_alignment": [
+      "SDG 4 — Quality Education",
+      "SDG 8 — Decent Work and Economic Growth",
+      "SDG 17 — Partnerships for the Goals"
+    ],
+    "proper_category": "Beyond Compliance — Inovasi Sosial",
+    "policy_basis": [
+      "Inpres No. 9 Tahun 2016 tentang Revitalisasi SMK",
+      "Perpres No. 68 Tahun 2022 tentang Revitalisasi Pendidikan Vokasi dan Pelatihan Vokasi",
+      "Kemendikbud: Formula 8+i SMK Pusat Keunggulan",
+      "CP & ATP Teknik Sepeda Motor Fase F (Kemendikdasmen, 2025)"
+    ],
+    "program_category": "CSV — Creating Shared Value melalui penguatan ekosistem vokasi otomotif"
+  },
+  "source_registry": [
+    {
+      "source_id": "SRC_EHS_001",
+      "type": "government",
+      "description": "Kemendikdasmen, CP & ATP Teknik Sepeda Motor Fase F (2025)",
+      "url": "https://guru.kemendikdasmen.go.id/kurikulum/referensi-penerapan/capaian-pembelajaran/smk/teknik-sepeda-motor/fase-f/",
+      "data_status": "confirmed"
+    },
+    {
+      "source_id": "SRC_EHS_002",
+      "type": "government",
+      "description": "BPS, Pengangguran Terbuka Menurut Pendidikan Tertinggi yang Ditamatkan (2025)",
+      "url": "https://www.bps.go.id/id/statistics-table/2/Njc0IzI%3D/pengangguran-terbuka-menurut-pendidikan-tertinggi-yang-ditamatkan.html",
+      "data_status": "confirmed"
+    },
+    {
+      "source_id": "SRC_EHS_003",
+      "type": "government",
+      "description": "Presiden RI, Inpres No. 9 Tahun 2016 tentang Revitalisasi SMK",
+      "data_status": "confirmed"
+    },
+    {
+      "source_id": "SRC_EHS_004",
+      "type": "government",
+      "description": "Presiden RI, Perpres No. 68 Tahun 2022 tentang Revitalisasi Pendidikan Vokasi dan Pelatihan Vokasi",
+      "data_status": "confirmed"
+    },
+    {
+      "source_id": "SRC_EHS_005",
+      "type": "program_internal",
+      "description": "Rekapitulasi transaksi bengkel TEFA per SR/Unit per tahun — data program EHS",
+      "data_status": "under_confirmation"
+    }
+  ],
+  "context_baseline": {
+    "region": "Nasional (10 node: 7 Sales Region + 3 Production Unit)",
+    "target_area": "SMK program otomotif / teknik sepeda motor yang bermitra dengan PT Pertamina Lubricants",
+    "population_data": {
+      "smk_2023": 23,
+      "smk_2024": 32,
+      "smk_2025": 42,
+      "students_est_2023": 345,
+      "students_est_2024": 480,
+      "students_est_2025": 630,
+      "data_status": "under_confirmation (2023-2024); confirmed (2025)"
+    },
+    "socioeconomic": {
+      "problem_anchor": "Lulusan SMK menyumbang 1.923.756 orang dalam pengangguran terbuka nasional (BPS, 2025)",
+      "baseline_economic": "Siswa belum menghasilkan pendapatan jasa dari keterampilan mekanik; bengkel sekolah belum berfungsi sebagai unit produksi/jasa aktif",
+      "baseline_social": "Siswa belum banyak berinteraksi dengan pelanggan nyata; kultur praktik produktif di sekolah belum kuat",
+      "baseline_wellbeing": "Kesiapan kerja/usaha siswa belum kuat; lulusan SMK masih menghadapi tantangan transisi ke dunia kerja",
+      "data_status": "under_confirmation"
+    }
+  },
+  "problem_framing": {
+    "problem_tree": [
+      "PROB-01: Pembelajaran vokasional belum sepenuhnya terkonversi menjadi pengalaman layanan riil dan peluang ekonomi produktif",
+      "PROB-01.1: Kerentanan pada kapasitas praktik riil (human capital gap) — keterampilan belum menjadi kapasitas layanan siap pakai",
+      "PROB-01.2: Kerentanan transisi kerja (transition risk) — hasil pendidikan belum otomatis menjadi akses pendapatan stabil",
+      "PROB-01.3: Kerentanan fisik bengkel (physical capital gap) — fasilitas bengkel sekolah belum memadai sebagai unit jasa aktif",
+      "PROB-01.4: Kerentanan jaringan dan akses pasar (social capital gap) — siswa dan sekolah belum terhubung ke ekosistem layanan jasa otomotif"
+    ],
+    "barrier_types": [
+      "structural",
+      "economic",
+      "institutional",
+      "capability"
+    ],
+    "normative_basis": [
+      "Inpres No. 9 Tahun 2016",
+      "Perpres No. 68 Tahun 2022"
+    ],
+    "data_status": "confirmed (dari ontology v3)"
+  },
+  "ideal_conditions": {
+    "vision_statement": "Bengkel TEFA SMK mitra berfungsi sebagai unit produksi/jasa aktif yang menghasilkan pendapatan nyata, memperkuat kesiapan kerja siswa, dan menjadi ekosistem pemasaran produk Enduro berbasis kepercayaan komunitas sekolah",
+    "target_outcomes": [
+      "Siswa menghasilkan pendapatan jasa dan sparepart dari praktik bengkel dan home service",
+      "Terjadi penjualan pelumas Enduro melalui bengkel sekolah",
+      "Bengkel sekolah aktif menghasilkan omzet operasional",
+      "Lulusan SMK terserap ke dunia kerja otomotif dengan kesiapan yang lebih tinggi",
+      "Sekolah memiliki kultur praktik produktif (TEFA aktif) yang berkelanjutan"
+    ],
+    "key_improvements": [
+      "Aktivasi dan penguatan fungsi bengkel TEFA sebagai unit jasa aktif",
+      "Peningkatan volume transaksi home service berbasis sekolah",
+      "Peningkatan serapan lulusan SMK ke sektor otomotif",
+      "Penguatan penjualan Enduro melalui kanal bengkel sekolah"
+    ],
+    "data_status": "confirmed"
+  },
+  "strategy_design": {
+    "program_philosophy": "Program EHS menerapkan pendekatan Creating Shared Value (CSV): alih-alih sekadar donasi, program mengintegrasikan rantai nilai bisnis Pertamina Lubricants dengan penguatan kapasitas vokasional SMK — sehingga nilai ekonomi tercipta bagi siswa, sekolah, dan perusahaan secara bersamaan melalui model Teaching Factory (TEFA) Enduro.",
+    "roadmap": [
+      {
+        "year": 2023,
+        "phase": "Rintisan dan Aktivasi — mitra 23 SMK, pembentukan bengkel TEFA, pelatihan teknis mekanik, peluncuran layanan home service perdana"
+      },
+      {
+        "year": 2024,
+        "phase": "Konsolidasi dan Perluasan — mitra tumbuh ke 32 SMK, bengkel cohort 2023 mulai menghasilkan omzet, serapan kerja cohort awal mulai tercatat"
+      },
+      {
+        "year": 2025,
+        "phase": "Penguatan Ekosistem — mitra 42 SMK (confirmed), pendalaman layanan, peningkatan serapan kerja, dan perluasan penjualan Enduro"
+      }
+    ],
+    "value_chain": "Input (investasi per SR/Unit) → Aktivitas (pelatihan + bengkel TEFA + home service) → Output (SMK aktif + siswa terlibat) → Outcome (pendapatan jasa, penjualan Enduro, omzet bengkel, serapan kerja) → Impact (nilai bersih setelah DDAT adjustment)",
+    "institutional": {
+      "nodes": [
+        "Sales Region I",
+        "Sales Region II",
+        "Sales Region III",
+        "Sales Region IV",
+        "Sales Region V",
+        "Sales Region VI",
+        "Sales Region VII",
+        "Production Unit Jakarta",
+        "Production Unit Gresik",
+        "Production Unit Cilacap"
+      ],
+      "note": "Seluruh 10 node aktif menghasilkan transaksi terukur melalui bengkel TEFA Enduro di SMK mitra masing-masing wilayah."
+    }
+  },
+  "activities": [
+    {
+      "activity_id": "ACT_EHS_2023",
+      "year": 2023,
+      "name": "Pembelajaran vokasional produktif berbasis bengkel sekolah dan home service 2023",
+      "description": "Integrasi pelatihan teknis mekanik, penguatan fungsi bengkel sekolah, layanan home service kepada pelanggan, dan pendampingan operasional untuk membentuk pengalaman layanan riil dan peluang ekonomi produktif bagi siswa SMK.",
+      "activity_scope": [
+        "Pelatihan teknis mekanik",
+        "Praktik bengkel sekolah (TEFA Enduro)",
+        "Layanan home service",
+        "Pendampingan operasional layanan"
+      ],
+      "participants": 345
+    },
+    {
+      "activity_id": "ACT_EHS_2024",
+      "year": 2024,
+      "name": "Pembelajaran vokasional produktif berbasis bengkel sekolah dan home service 2024",
+      "description": "Integrasi pelatihan teknis mekanik, penguatan fungsi bengkel sekolah, layanan home service kepada pelanggan, dan pendampingan operasional — dengan perluasan ke 32 SMK mitra.",
+      "activity_scope": [
+        "Pelatihan teknis mekanik",
+        "Praktik bengkel sekolah (TEFA Enduro)",
+        "Layanan home service",
+        "Pendampingan operasional layanan"
+      ],
+      "participants": 480
+    },
+    {
+      "activity_id": "ACT_EHS_2025",
+      "year": 2025,
+      "name": "Pembelajaran vokasional produktif berbasis bengkel sekolah dan home service 2025",
+      "description": "Integrasi pelatihan teknis mekanik, penguatan fungsi bengkel sekolah, layanan home service kepada pelanggan, dan pendampingan operasional — dengan perluasan ke 42 SMK mitra (confirmed).",
+      "activity_scope": [
+        "Pelatihan teknis mekanik",
+        "Praktik bengkel sekolah (TEFA Enduro)",
+        "Layanan home service",
+        "Pendampingan operasional layanan"
+      ],
+      "participants": 630
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "OUT_EHS_2023",
+      "year": 2023,
+      "description": "Bengkel TEFA Enduro aktif di 23 SMK mitra secara nasional",
+      "quantity": 23,
+      "unit": "SMK",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_EHS_2024",
+      "year": 2024,
+      "description": "Bengkel TEFA Enduro aktif di 32 SMK mitra secara nasional",
+      "quantity": 32,
+      "unit": "SMK",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_EHS_2025",
+      "year": 2025,
+      "description": "Bengkel TEFA Enduro aktif di 42 SMK mitra secara nasional",
+      "quantity": 42,
+      "unit": "SMK",
+      "data_status": "confirmed"
+    }
+  ],
+  "stakeholders": [
+    {
+      "stakeholder_id": "STK_EHS_001",
+      "name": "PT Pertamina Lubricants",
+      "role": "Pemrakarsa dan penyelenggara program TJSL CSV melalui Sales Region dan Production Unit",
+      "involvement_type": "implementor"
+    },
+    {
+      "stakeholder_id": "STK_EHS_002",
+      "name": "Sekolah Menengah Kejuruan (SMK)",
+      "role": "Penyedia ruang, kelembagaan, dan bengkel sekolah; mitra pelaksanaan TEFA",
+      "involvement_type": "partner_and_direct_beneficiary"
+    },
+    {
+      "stakeholder_id": "STK_EHS_003",
+      "name": "Siswa SMK",
+      "role": "Penerima manfaat langsung; pelaksana layanan home service dan praktik bengkel",
+      "involvement_type": "direct_beneficiary"
+    },
+    {
+      "stakeholder_id": "STK_EHS_004",
+      "name": "Guru / Instruktur SMK",
+      "role": "Pendamping pembelajaran vokasional produktif",
+      "involvement_type": "partner"
+    },
+    {
+      "stakeholder_id": "STK_EHS_005",
+      "name": "Pelanggan",
+      "role": "Pengguna layanan home service dan bengkel sekolah",
+      "involvement_type": "indirect_beneficiary"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "group_id": "BEN_EHS_2023_SMK",
+      "name": "SMK mitra EHS 2023",
+      "count": 23,
+      "unit": "SMK",
+      "description": "Sekolah mitra yang menyelenggarakan bengkel TEFA Enduro tahun 2023 (under_confirmation)",
+      "students_est": 345,
+      "data_status": "under_confirmation"
+    },
+    {
+      "group_id": "BEN_EHS_2024_SMK",
+      "name": "SMK mitra EHS 2024",
+      "count": 32,
+      "unit": "SMK",
+      "description": "Sekolah mitra yang menyelenggarakan bengkel TEFA Enduro tahun 2024 (under_confirmation)",
+      "students_est": 480,
+      "data_status": "under_confirmation"
+    },
+    {
+      "group_id": "BEN_EHS_2025_SMK",
+      "name": "SMK mitra EHS 2025",
+      "count": 42,
+      "unit": "SMK",
+      "description": "Sekolah mitra yang menyelenggarakan bengkel TEFA Enduro tahun 2025",
+      "students_est": 630,
+      "data_status": "confirmed"
+    }
+  ],
+  "investment": [
+    {
+      "year": 2023,
+      "category": "Program EHS — Total Proyeksi Nasional",
+      "amount_idr": 2826748198,
+      "description": "Total proyeksi anggaran EHS 2023 dari seluruh Sales Region (I–VII) dan Production Unit (Jakarta, Gresik, Cilacap)",
+      "data_status": "planned"
+    },
+    {
+      "year": 2024,
+      "category": "Program EHS — Total Usulan Nasional",
+      "amount_idr": 2555000000,
+      "description": "Total usulan anggaran EHS 2024 dari seluruh Sales Region (I, II, III, IV, VI, VII) dan Production Unit",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program EHS — Total Usulan Nasional",
+      "amount_idr": 4616330000,
+      "description": "Total usulan anggaran EHS 2025 dari seluruh Sales Region (I, II, III, IV, V, VI, VII) dan Production Unit",
+      "data_status": "planned"
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_id": "OC_EHS_ECO_01",
+      "name": "Siswa menghasilkan pendapatan jasa dan sparepart",
+      "description": "Melalui praktik bengkel dan layanan home service, siswa menghasilkan pendapatan dari jasa servis dan penjualan sparepart.",
+      "measurement": "Nilai transaksi jasa dan sparepart per tahun (Rp)",
+      "dimension": "economic",
+      "data_status": "under_confirmation"
+    },
+    {
+      "outcome_id": "OC_EHS_ECO_02",
+      "name": "Terjadi penjualan pelumas Enduro",
+      "description": "Pelaksanaan program mendorong penggunaan dan penjualan pelumas Enduro dalam praktik servis di bengkel sekolah.",
+      "measurement": "Volume dan nilai penjualan pelumas Enduro per tahun (Rp)",
+      "dimension": "economic",
+      "data_status": "under_confirmation"
+    },
+    {
+      "outcome_id": "OC_EHS_ECO_03",
+      "name": "Bengkel sekolah menghasilkan omzet operasional",
+      "description": "Bengkel TEFA yang sudah aktif pada cohort sebelumnya mulai menghasilkan omzet operasional dari layanan servis kepada masyarakat (mulai 2024).",
+      "measurement": "Omzet bengkel sekolah per tahun (Rp)",
+      "dimension": "economic",
+      "first_year": 2024,
+      "data_status": "under_confirmation"
+    },
+    {
+      "outcome_id": "OC_EHS_SOC_01",
+      "name": "Siswa lebih siap menjalankan layanan riil",
+      "description": "Pengalaman praktik bengkel dan home service meningkatkan kesiapan siswa dalam menjalankan layanan jasa kepada pelanggan nyata.",
+      "measurement": "Estimasi jumlah siswa dengan pengalaman layanan riil",
+      "dimension": "social",
+      "data_status": "partial"
+    },
+    {
+      "outcome_id": "OC_EHS_SOC_02",
+      "name": "Serapan kerja lulusan SMK ke sektor otomotif",
+      "description": "Lulusan SMK mitra yang terserap ke dunia kerja formal maupun wirausaha di bidang otomotif.",
+      "measurement": "Jumlah lulusan terserap × estimasi nilai penghasilan setahun (Rp)",
+      "dimension": "social",
+      "first_year": 2024,
+      "data_status": "under_confirmation"
+    },
+    {
+      "outcome_id": "OC_EHS_SOC_03",
+      "name": "Sekolah memiliki kultur praktik produktif (TEFA aktif)",
+      "description": "Aktivasi bengkel TEFA Enduro membentuk kultur praktik produktif di sekolah yang berkelanjutan.",
+      "measurement": "Jumlah SMK dengan TEFA aktif",
+      "dimension": "social",
+      "data_status": "partial"
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_EHS_JSP_2023",
+      "aspect_id": "MON_EHS_JSP",
+      "aspect_code": "JSP",
+      "year": 2023,
+      "gross_idr": 286212494,
+      "proxy_basis": "nilai transaksi jasa servis dan penjualan sparepart di bengkel TEFA per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_JSP_2024",
+      "aspect_id": "MON_EHS_JSP",
+      "aspect_code": "JSP",
+      "year": 2024,
+      "gross_idr": 400697491,
+      "proxy_basis": "nilai transaksi jasa servis dan penjualan sparepart di bengkel TEFA per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_JSP_2025",
+      "aspect_id": "MON_EHS_JSP",
+      "aspect_code": "JSP",
+      "year": 2025,
+      "gross_idr": 560976489,
+      "proxy_basis": "nilai transaksi jasa servis dan penjualan sparepart di bengkel TEFA per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_LUB_2023",
+      "aspect_id": "MON_EHS_LUB",
+      "aspect_code": "LUB",
+      "year": 2023,
+      "gross_idr": 611929448,
+      "proxy_basis": "nilai penjualan pelumas Enduro melalui bengkel sekolah per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_LUB_2024",
+      "aspect_id": "MON_EHS_LUB",
+      "aspect_code": "LUB",
+      "year": 2024,
+      "gross_idr": 826676880,
+      "proxy_basis": "nilai penjualan pelumas Enduro melalui bengkel sekolah per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_LUB_2025",
+      "aspect_id": "MON_EHS_LUB",
+      "aspect_code": "LUB",
+      "year": 2025,
+      "gross_idr": 1129553481,
+      "proxy_basis": "nilai penjualan pelumas Enduro melalui bengkel sekolah per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_TEFA_2023",
+      "aspect_id": "MON_EHS_TEFA",
+      "aspect_code": "TEFA",
+      "year": 2023,
+      "gross_idr": 4600000000,
+      "proxy_basis": "proxy nilai aktivasi Teaching Factory per SMK",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_03",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_TEFA_2024",
+      "aspect_id": "MON_EHS_TEFA",
+      "aspect_code": "TEFA",
+      "year": 2024,
+      "gross_idr": 1800000000,
+      "proxy_basis": "proxy nilai aktivasi Teaching Factory per SMK",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_03",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_TEFA_2025",
+      "aspect_id": "MON_EHS_TEFA",
+      "aspect_code": "TEFA",
+      "year": 2025,
+      "gross_idr": 2000000000,
+      "proxy_basis": "proxy nilai aktivasi Teaching Factory per SMK",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_03",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_OMZ_2023",
+      "aspect_id": "MON_EHS_OMZ",
+      "aspect_code": "OMZ",
+      "year": 2023,
+      "gross_idr": 0,
+      "proxy_basis": "omzet operasional bengkel TEFA cohort sebelumnya",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_03",
+      "display_status": "not_applicable"
+    },
+    {
+      "monetization_id": "MON_EHS_OMZ_2024",
+      "aspect_id": "MON_EHS_OMZ",
+      "aspect_code": "OMZ",
+      "year": 2024,
+      "gross_idr": 828000000,
+      "proxy_basis": "omzet operasional bengkel TEFA cohort sebelumnya",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_03",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_OMZ_2025",
+      "aspect_id": "MON_EHS_OMZ",
+      "aspect_code": "OMZ",
+      "year": 2025,
+      "gross_idr": 1152000000,
+      "proxy_basis": "omzet operasional bengkel TEFA cohort sebelumnya",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_EHS_ECO_03",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_JOB_2023",
+      "aspect_id": "MON_EHS_JOB",
+      "aspect_code": "JOB",
+      "year": 2023,
+      "gross_idr": 0,
+      "proxy_basis": "jumlah lulusan terserap × estimasi penghasilan tahunan",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_02",
+      "display_status": "not_applicable"
+    },
+    {
+      "monetization_id": "MON_EHS_JOB_2024",
+      "aspect_id": "MON_EHS_JOB",
+      "aspect_code": "JOB",
+      "year": 2024,
+      "gross_idr": 2484000000,
+      "proxy_basis": "jumlah lulusan terserap × estimasi penghasilan tahunan",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_EHS_JOB_2025",
+      "aspect_id": "MON_EHS_JOB",
+      "aspect_code": "JOB",
+      "year": 2025,
+      "gross_idr": 5940000000,
+      "proxy_basis": "jumlah lulusan terserap × estimasi penghasilan tahunan",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_EHS_SOC_02",
+      "display_status": "present_as_final"
+    }
+  ],
+  "ddat_params": {
+    "JSP": {
+      "deadweight": 0.15,
+      "displacement": 0.05,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.6137,
+      "notes": "Sebagian jasa servis mungkin terjadi tanpa program (DW); home service berpotensi menggeser bengkel konvensional (DS); guru dan manajemen sekolah juga berkontribusi (AT); volume layanan bisa menurun tanpa pendampingan berkelanjutan (DO)",
+      "justification": "Jasa servis dan sparepart dihasilkan langsung oleh siswa melalui praktik bengkel TEFA dan home service — tanpa program, kapasitas layanan ini tidak terbentuk secara terstruktur."
+    },
+    "LUB": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.25,
+      "drop_off": 0.05,
+      "net_multiplier": 0.5415,
+      "notes": "Enduro sudah dikenal di pasar umum tanpa program (DW); mengganti merek pelumas lain (DS); distributor dan jaringan Pertamina juga berkontribusi (AT); loyalitas pelanggan bengkel bisa menurun (DO)",
+      "justification": "Penjualan pelumas Enduro melalui bengkel sekolah terjadi karena program secara aktif mengintegrasikan produk Enduro sebagai media praktik — tanpa program, kanal penjualan ini tidak ada."
+    },
+    "TEFA": {
+      "deadweight": 0.2,
+      "displacement": 0,
+      "attribution": 0.3,
+      "drop_off": 0.1,
+      "net_multiplier": 0.504,
+      "notes": "Sebagian aktivasi TEFA mungkin terjadi tanpa program dari Kemendikbud (DW); tidak ada displacement relevan; pemerintah dan sekolah juga berkontribusi kuat (AT); kapasitas bengkel bisa menurun tanpa dukungan berkelanjutan (DO)",
+      "justification": "Aktivasi bengkel TEFA membutuhkan investasi kelembagaan dan pendampingan yang tidak tersedia dari kurikulum reguler — program adalah enabling factor utama."
+    },
+    "OMZ": {
+      "deadweight": 0.15,
+      "displacement": 0,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.646,
+      "notes": "Sebagian omzet mungkin terjadi dari bengkel umum (DW); omzet berasal dari pasar baru bukan pengalihan (tidak ada DS); guru dan manajemen sekolah berkontribusi (AT); omzet bisa menurun jika pendampingan berhenti (DO)",
+      "justification": "Omzet bengkel berasal dari cohort SMK yang sudah mapan di tahun sebelumnya — merupakan efek lanjutan langsung dari program yang tidak terjadi tanpa intervensi awal."
+    },
+    "JOB": {
+      "deadweight": 0,
+      "displacement": 0,
+      "attribution": 0.3,
+      "drop_off": 0.1,
+      "net_multiplier": 0.63,
+      "notes": "Serapan kerja tidak terjadi tanpa program (DW=0); tidak ada pengalihan dari kelompok lain (DS=0); motivasi siswa dan kualitas SMK juga berkontribusi (AT); serapan bisa berkurang jika kualitas program menurun (DO)",
+      "justification": "Serapan kerja lulusan ke sektor otomotif meningkat karena pengalaman layanan riil dari program — tanpa program, lulusan hanya memiliki keterampilan teoretis tanpa portofolio praktik."
+    }
+  },
+  "ori_rates": {
+    "2023": {
+      "series": "ORI023T3",
+      "rate": 0.059,
+      "compound_factor": 1.1252
+    },
+    "2024": {
+      "series": "ORI025T3",
+      "rate": 0.0625,
+      "compound_factor": 1.0625
+    },
+    "2025": {
+      "series": "ORI027T3",
+      "rate": 0.065,
+      "compound_factor": 1
+    }
+  },
+  "sroi_metrics": {
+    "calculated": {
+      "sroi_blended": 0,
+      "sroi_observed": 0,
+      "total_investment_idr": 9998078198,
+      "total_net_compounded": 0,
+      "gross_net_by_year": {
+        "2023": {
+          "gross": 5498141942,
+          "net": 2806116571
+        },
+        "2024": {
+          "gross": 6338374271,
+          "net": 3689811199
+        },
+        "2025": {
+          "gross": 10782529970,
+          "net": 6450316481
+        }
+      },
+      "data_status": "pending — menunggu pipeline SROI calculation dengan DDAT compound"
+    },
+    "status": "pending"
+  },
+  "learning_signals": {
+    "loop_1": [
+      "Bengkel TEFA yang aktif pada tahun pertama menghasilkan omzet nyata pada tahun berikutnya — menunjukkan bahwa model TEFA memiliki kurva adopsi yang bisa diprediksi",
+      "Pertumbuhan volume transaksi JSP sekitar 40% per tahun mengindikasikan permintaan riil terhadap layanan home service SMK",
+      "Serapan kerja baru muncul secara signifikan pada tahun ke-2 program (2024), bukan tahun pertama"
+    ],
+    "loop_2": [
+      "Konsolidasi aktivitas menjadi 1 node payung per tahun (ACT_YYYY) lebih akurat merepresentasikan program ini sebagai ekosistem terpadu, bukan serangkaian kegiatan terpisah",
+      "Impact adjustment factors (DW/DS/AT/DO) masih under confirmation — validasi lapangan per SR/Unit diperlukan sebelum SROI final bisa dikunci",
+      "Nama SMK 2023-2024 masih under_confirmation; ketepatan data mitra adalah kunci validitas output pipeline"
+    ],
+    "loop_3": [
+      "Program EHS menciptakan nilai bersama (CSV) bukan hanya melalui donasi: nilai ekonomi tercipta sekaligus untuk siswa/sekolah DAN untuk perusahaan melalui penjualan Enduro",
+      "Model TEFA sebagai proxy investasi sosial perlu justifikasi metodologis yang kuat agar tidak dipandang sebagai double counting dengan investasi program",
+      "Pertumbuhan jangkauan (23→32→42 SMK) menunjukkan skalabilitas model yang perlu dipertahankan dengan standar mutu pendampingan"
+    ],
+    "lfa_reflections": [
+      "Gap terbesar dalam pipeline saat ini: data nama SMK 2023-2024 yang masih under_confirmation perlu dikonfirmasi sebelum laporan final",
+      "MON-JOB (serapan kerja) menggunakan proxy estimasi; verifikasi ke data tracking alumni diperlukan untuk meningkatkan confidence level"
+    ]
+  },
+  "evidence_registry": [
+    {
+      "evidence_id": "EV_EHS_001",
+      "type": "program_data",
+      "description": "Rekapitulasi transaksi jasa dan sparepart bengkel TEFA per SR/Unit per tahun 2023-2025",
+      "data_status": "under_confirmation"
+    },
+    {
+      "evidence_id": "EV_EHS_002",
+      "type": "program_data",
+      "description": "Data penjualan pelumas Enduro melalui bengkel sekolah per SR/Unit per tahun",
+      "data_status": "under_confirmation"
+    },
+    {
+      "evidence_id": "EV_EHS_003",
+      "type": "government_statistics",
+      "description": "BPS: Pengangguran Terbuka Menurut Pendidikan Tertinggi — lulusan SMK 1.923.756 orang (2025)",
+      "data_status": "confirmed"
+    },
+    {
+      "evidence_id": "EV_EHS_004",
+      "type": "program_data",
+      "description": "Data serapan kerja lulusan SMK mitra EHS (absorbed_total per cohort)",
+      "data_status": "partial — 2023: 69 orang, 2024: 96 orang, 2025: belum tersedia"
+    }
+  ],
+  "uncertainty_flags": [
+    {
+      "flag_id": "UF_EHS_001",
+      "field": "monetization.MON_EHS_JSP / MON_EHS_LUB — gross_values 2023-2024",
+      "description": "Angka JSP 2023 adalah proyeksi mundur dari 2024 dengan rerata pertumbuhan 40%; angka 2024 adalah proyeksi dari 2025. Bukan data observasi langsung.",
+      "severity": "high"
+    },
+    {
+      "flag_id": "UF_EHS_002",
+      "field": "beneficiaries — jumlah SMK 2023 (23) dan 2024 (32)",
+      "description": "Angka jumlah SMK mitra 2023 dan 2024 berstatus under_confirmation. Hanya 2025 (42 SMK) yang confirmed.",
+      "severity": "medium"
+    },
+    {
+      "flag_id": "UF_EHS_003",
+      "field": "ddat_params — semua faktor",
+      "description": "Semua impact adjustment factors (DW/DS/AT/DO) masih under confirmation; belum divalidasi per SR/Unit secara empiris.",
+      "severity": "high"
+    },
+    {
+      "flag_id": "UF_EHS_004",
+      "field": "monetization.MON_EHS_JOB",
+      "description": "Nilai serapan kerja menggunakan proxy estimasi (jumlah lulusan × UMP). Data tracking alumni belum terverifikasi.",
+      "severity": "medium"
+    },
+    {
+      "flag_id": "UF_EHS_005",
+      "field": "monetization.MON_EHS_TEFA — gross_values",
+      "description": "Nilai TEFA menggunakan proxy investasi (bukan observasi langsung); metodologi penetapan nilai perlu didokumentasikan lebih detail untuk menghindari kesan double counting.",
+      "severity": "medium"
+    }
+  ],
+  "coverage_status": {
+    "bab_1": "strong",
+    "bab_2": "strong",
+    "bab_3": "strong",
+    "bab_4": "strong",
+    "bab_5": "strong",
+    "bab_6": "strong",
+    "bab_7": "strong",
+    "bab_8": "partial",
+    "bab_9": "partial"
+  },
+  "_submit_ts": "2026-04-13T06:06:01.268Z"
+}

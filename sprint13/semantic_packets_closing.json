@@ -1,0 +1,76 @@
+[
+  {
+    "packet_id": "pkt_202604101620_c87427",
+    "packet_type": "closing_paragraph",
+    "target_id": "bab_9.kesimpulan",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "tone",
+        "wording",
+        "phrasing"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "sroi_values",
+        "financial_fields",
+        "data_status"
+      ]
+    },
+    "decision_prompt": "Ini adalah kandidat paragraf penutup Bab IX. Apakah tone-nya sudah tepat — cukup kuat untuk menyatakan keberhasilan, tapi tidak overclaim? Apakah tiga temuan yang disebut sudah merepresentasikan inti laporan dengan benar? Revisi jika perlu disesuaikan dengan gaya dan postur metodologis yang disepakati.",
+    "context": {
+      "current_text": "Program Enduro Sahabat Lapas terbukti menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan Blended SROI 1 : 1.14 selama periode 2023–2025. Tiga temuan utama: aspek REINT mendominasi nilai — menunjukkan bahwa nilai reintegrasi adalah dampak paling signifikan; Node Lapas Palembang belum menghasilkan transaksi aktif; dan Milenial Motor membuktikan bahwa model reintegrasi produktif bukan sekadar aspirasi melainkan template yang dapat direplikasi.",
+      "source": "narrative_builder_rest.py — bab_9 kesimpulan",
+      "confidence": 0.8,
+      "relevant_history": "Sprint 9.3: kontradiksi narasi sudah diselesaikan. Posisi final: Blended SROI adalah angka evaluatif final yang dipakai. Observed direct return sebagai metrik pembanding.",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_2031f3",
+    "packet_type": "executive_framing",
+    "target_id": "ringkasan_eksekutif.framing",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "tone",
+        "register",
+        "wording"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "financial_fields",
+        "data_status",
+        "methodology_claims"
+      ]
+    },
+    "decision_prompt": "Ini adalah kandidat kalimat framing untuk Ringkasan Eksekutif. Apakah nada dan posisinya tepat untuk pembaca eksekutif (klien, KLHK)? Apakah perlu lebih formal, lebih ringkas, atau ada istilah yang perlu disesuaikan?",
+    "context": {
+      "current_text": "Kajian SROI ini menunjukkan bahwa investasi dalam pemberdayaan vokasional berbasis reintegrasi — meskipun mengandung komponen proxy yang perlu penguatan verifikasi — menghasilkan nilai sosial yang terukur dan defensible. Model Milenial Motor adalah bukti hidup bahwa jalur Lapas → pelatihan → usaha mandiri bukan sekadar teori.",
+      "source": "learning_signals.loop_3 + narrative synthesis",
+      "confidence": 0.78,
+      "relevant_history": "Milenial Motor dikonfirmasi sebagai proof-of-concept di Sprint 3B",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  }
+]

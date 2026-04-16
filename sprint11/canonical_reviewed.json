@@ -1,0 +1,1836 @@
+{
+  "schema_version": "1.0",
+  "case_id": "esl_2023_2025_v1",
+  "created_at": "2026-04-10",
+  "last_updated": "2026-04-10",
+  "program_identity": {
+    "program_code": "ESL",
+    "program_name": "Enduro Sahabat Lapas",
+    "program_tagline": "Penguatan Keterampilan Mekanik, Kemandirian Usaha, dan Kesiapan Reintegrasi Sosial-Ekonomi bagi WBP dan Eks-WBP",
+    "company": "PT Pertamina Lubricants",
+    "unit": "TJSL CSV",
+    "period_start": 2023,
+    "period_end": 2025,
+    "palette": "B — Marine Teal"
+  },
+  "program_positioning": {
+    "tjsl_pillar": "Pemberdayaan Masyarakat",
+    "sdg_alignment": [
+      "SDG 8 — Pekerjaan Layak",
+      "SDG 10 — Berkurangnya Ketimpangan",
+      "SDG 16 — Perdamaian & Keadilan"
+    ],
+    "proper_category": "Beyond Compliance — Inovasi Sosial",
+    "policy_basis": [
+      "UU No. 22 Tahun 2022 tentang Pemasyarakatan",
+      "Peraturan Menteri LHK No. 1 Tahun 2021",
+      "UU No. 40 Tahun 2007 tentang Perseroan Terbatas Pasal 74"
+    ]
+  },
+  "source_registry": [
+    {
+      "source_id": "src_01",
+      "source_type": "ppt_script",
+      "name": "TJSL_Scripts.md — esl_batch1/2/3",
+      "parsed_at": "2026-04-10",
+      "reliability": "primary"
+    },
+    {
+      "source_id": "src_02",
+      "source_type": "ppt_script",
+      "name": "TJSL_Scripts.md — esl_slides78 (S10 final)",
+      "parsed_at": "2026-04-10",
+      "reliability": "primary"
+    },
+    {
+      "source_id": "src_03",
+      "source_type": "json",
+      "name": "TJSL_Handover.md — ESL section",
+      "parsed_at": "2026-04-10",
+      "reliability": "primary"
+    },
+    {
+      "source_id": "src_04",
+      "source_type": "secondary",
+      "name": "Kartu Prakerja — proxy REINT Rp3.500.000/peserta",
+      "parsed_at": "2026-04-10",
+      "reliability": "secondary"
+    },
+    {
+      "source_id": "src_05",
+      "source_type": "secondary",
+      "name": "RS Jiwa Grhasia + RSJ Soeharto Heerdjan — proxy CONF Rp50.000/sesi",
+      "parsed_at": "2026-04-10",
+      "reliability": "secondary"
+    }
+  ],
+  "context_baseline": {
+    "region": "Nasional — multi-lokasi",
+    "target_area": "Lembaga Pemasyarakatan dan komunitas eks-WBP",
+    "population_data": {
+      "note": "Data populasi WBP per node belum tersedia secara rinci"
+    },
+    "socioeconomic": {
+      "note": "Konteks sosial-ekonomi umum: WBP menghadapi barrier reintegrasi struktural — stigma, keterbatasan akses kerja, tidak ada modal usaha"
+    },
+    "data_status": "derived"
+  },
+  "problem_framing": {
+    "problem_tree": [
+      {
+        "problem_id": "P01",
+        "label": "Competency-to-Service Gap",
+        "description": "Keterampilan mekanik belum dapat dioperasionalisasikan menjadi layanan bengkel riil yang dapat dijual",
+        "barrier_type": "teknis",
+        "root_causes": [
+          "Pelatihan tidak kontekstual dengan ritme bengkel nyata"
+        ]
+      },
+      {
+        "problem_id": "P02",
+        "label": "Post-Release Transition Risk",
+        "description": "Fase pasca-bebas adalah fase paling rentan tanpa bekal kerja atau usaha yang nyata",
+        "barrier_type": "sosial-ekonomi",
+        "root_causes": [
+          "Tidak ada jalur transisi formal dari Lapas ke pasar kerja"
+        ]
+      },
+      {
+        "problem_id": "P03",
+        "label": "Entrepreneurship Gap",
+        "description": "Kemampuan mekanik belum berkembang menjadi kapasitas usaha",
+        "barrier_type": "kapasitas",
+        "root_causes": [
+          "Tidak ada pendampingan pengelolaan usaha"
+        ]
+      },
+      {
+        "problem_id": "P04",
+        "label": "Social Acceptance & Market Linkage",
+        "description": "Reintegrasi membutuhkan penerimaan sosial, jejaring, dan akses pasar",
+        "barrier_type": "sosial",
+        "root_causes": [
+          "Stigma eks-WBP di pasar kerja formal"
+        ]
+      }
+    ],
+    "barrier_types": [
+      "teknis",
+      "sosial-ekonomi",
+      "kapasitas",
+      "sosial"
+    ],
+    "data_status": "derived"
+  },
+  "ideal_conditions": {
+    "vision_statement": "Ekosistem produktif berbasis bengkel otomotif yang memungkinkan WBP dan eks-WBP bekerja mandiri dan berintegrasi kembali ke masyarakat",
+    "target_outcomes": [
+      "Keterampilan mekanik terkonversi menjadi layanan bengkel riil",
+      "Eks-WBP memiliki usaha atau pekerjaan legal pasca-bebas",
+      "Reintegrasi sosial-ekonomi terukur dan berkelanjutan"
+    ],
+    "key_improvements": [
+      "Hard skill mekanik otomotif",
+      "Kapasitas wirausaha bengkel",
+      "Kesiapan reintegrasi sosial-ekonomi",
+      "Kepercayaan diri dan self-efficacy"
+    ],
+    "data_status": "derived"
+  },
+  "strategy_design": {
+    "program_philosophy": "Intervensi vokasional produktif berbasis bengkel otomotif dengan jalur transisi langsung dari pembinaan di Lapas menuju usaha mandiri pasca-bebas",
+    "roadmap": [
+      {
+        "stage_id": "S1",
+        "label": "Pembentukan Kapasitas",
+        "period": "2023",
+        "focus": "Pelatihan mekanik dasar + product knowledge pelumas",
+        "loop_type": "single"
+      },
+      {
+        "stage_id": "S2",
+        "label": "Penguatan Operasional",
+        "period": "2024",
+        "focus": "Praktik bengkel riil + pembinaan kewirausahaan",
+        "loop_type": "double"
+      },
+      {
+        "stage_id": "S3",
+        "label": "Stabilisasi & Ekspansi",
+        "period": "2025",
+        "focus": "Penguatan node eks-WBP + Lapas Corner + pipeline reintegrasi",
+        "loop_type": "double"
+      }
+    ],
+    "value_chain": [
+      "Pelatihan teknis mekanik",
+      "Product knowledge pelumas Enduro",
+      "Praktik bengkel & servis riil",
+      "Pembinaan kewirausahaan",
+      "Pendampingan unit usaha"
+    ],
+    "institutional": {
+      "nodes": [
+        "Lapas Palembang",
+        "Bengkel Lapas IIB Sleman",
+        "Milenial Motor (Eks-WBP)",
+        "Pemasyarakatan Corner"
+      ],
+      "note": "4 node, 3 aktif bertransaksi, 1 dalam fase pembentukan"
+    },
+    "data_status": "observed"
+  },
+  "activities": [
+    {
+      "activity_id": "ACT_01",
+      "name": "Pelatihan Teknis Mekanik",
+      "year": 2023,
+      "description": "Servis ringan, penggantian oli, pemeriksaan komponen dasar",
+      "data_status": "observed"
+    },
+    {
+      "activity_id": "ACT_02",
+      "name": "Product Knowledge Pelumas",
+      "year": 2023,
+      "description": "Edukasi jenis dan fungsi pelumas, integrasi produk Enduro",
+      "data_status": "observed"
+    },
+    {
+      "activity_id": "ACT_03",
+      "name": "Praktik Kerja Perbengkelan",
+      "year": 2023,
+      "description": "Simulasi layanan bengkel dalam kondisi nyata",
+      "data_status": "observed"
+    },
+    {
+      "activity_id": "ACT_04",
+      "name": "Pembinaan Kewirausahaan",
+      "year": 2024,
+      "description": "Dasar pengelolaan bengkel, harga jasa, stok, pelayanan pelanggan",
+      "data_status": "observed"
+    },
+    {
+      "activity_id": "ACT_05",
+      "name": "Pendampingan Unit Usaha",
+      "year": 2024,
+      "description": "Penguatan bengkel Lapas, corner, dan bengkel eks-WBP",
+      "data_status": "observed"
+    },
+    {
+      "activity_id": "ACT_06",
+      "name": "Penguatan Milenial Motor",
+      "year": 2025,
+      "description": "Penguatan node eks-WBP sebagai proof-of-concept reintegrasi",
+      "data_status": "observed"
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "OUT_01",
+      "name": "Node aktif bertransaksi",
+      "year": 2023,
+      "quantity": 3,
+      "unit": "node",
+      "activity_refs": [
+        "ACT_01",
+        "ACT_02",
+        "ACT_03"
+      ],
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_02",
+      "name": "Node aktif bertransaksi",
+      "year": 2024,
+      "quantity": 3,
+      "unit": "node",
+      "activity_refs": [
+        "ACT_04",
+        "ACT_05"
+      ],
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_03",
+      "name": "Node aktif bertransaksi",
+      "year": 2025,
+      "quantity": 3,
+      "unit": "node",
+      "activity_refs": [
+        "ACT_06"
+      ],
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_04",
+      "name": "Peserta program (estimasi)",
+      "year": 2023,
+      "quantity": 70,
+      "unit": "peserta",
+      "activity_refs": [
+        "ACT_01"
+      ],
+      "data_status": "proxy"
+    },
+    {
+      "output_id": "OUT_05",
+      "name": "Peserta program (estimasi)",
+      "year": 2024,
+      "quantity": 70,
+      "unit": "peserta",
+      "activity_refs": [
+        "ACT_04"
+      ],
+      "data_status": "proxy"
+    },
+    {
+      "output_id": "OUT_06",
+      "name": "Peserta program (estimasi)",
+      "year": 2025,
+      "quantity": 80,
+      "unit": "peserta",
+      "activity_refs": [
+        "ACT_06"
+      ],
+      "data_status": "proxy"
+    }
+  ],
+  "stakeholders": [
+    {
+      "stakeholder_id": "STK_01",
+      "name": "PT Pertamina Lubricants",
+      "role": "investor",
+      "inclusion_basis": "Pemrakarsa dan penyelenggara program TJSL"
+    },
+    {
+      "stakeholder_id": "STK_02",
+      "name": "WBP aktif di Lapas",
+      "role": "beneficiary",
+      "inclusion_basis": "Penerima pelatihan langsung"
+    },
+    {
+      "stakeholder_id": "STK_03",
+      "name": "Eks-WBP (Milenial Motor)",
+      "role": "beneficiary",
+      "inclusion_basis": "Penerima manfaat reintegrasi — usaha mandiri"
+    },
+    {
+      "stakeholder_id": "STK_04",
+      "name": "Lembaga Pemasyarakatan",
+      "role": "partner",
+      "inclusion_basis": "Penyelenggara ruang pelatihan"
+    },
+    {
+      "stakeholder_id": "STK_05",
+      "name": "Pelanggan Bengkel",
+      "role": "beneficiary",
+      "inclusion_basis": "Pengguna jasa servis dan pelumas"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "group_id": "BNF_01",
+      "name": "WBP peserta pelatihan",
+      "count": 70,
+      "count_basis": "Estimasi konservatif S10: 10 peserta per node aktif × 3 node + 4 dari Lapas Palembang",
+      "data_status": "proxy"
+    },
+    {
+      "group_id": "BNF_02",
+      "name": "Eks-WBP Milenial Motor",
+      "count": 5,
+      "count_basis": "Estimasi dari node eks-WBP yang aktif",
+      "data_status": "proxy"
+    }
+  ],
+  "investment": [
+    {
+      "year": 2023,
+      "node": "Lapas Kota Palembang",
+      "amount_idr": 49983929,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2023,
+      "node": "Bengkel Lapas IIB Sleman",
+      "amount_idr": 20800000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2023,
+      "node": "Milenial Motor (Eks-WBP)",
+      "amount_idr": 36640000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2023,
+      "node": "Pemasyarakatan Corner",
+      "amount_idr": 20684480,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2024,
+      "node": "Lapas Kota Palembang",
+      "amount_idr": 69977500,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2024,
+      "node": "Bengkel Lapas IIB Sleman",
+      "amount_idr": 29120000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2024,
+      "node": "Milenial Motor (Eks-WBP)",
+      "amount_idr": 51296000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2024,
+      "node": "Pemasyarakatan Corner",
+      "amount_idr": 28958272,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending"
+    },
+    {
+      "year": 2025,
+      "node": "Lapas Kota Palembang",
+      "amount_idr": 30000000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "final",
+      "display_status": "present_as_final"
+    },
+    {
+      "year": 2025,
+      "node": "Bengkel Lapas IIB Sleman",
+      "amount_idr": 75000000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "final",
+      "display_status": "present_as_final"
+    },
+    {
+      "year": 2025,
+      "node": "Milenial Motor (Eks-WBP)",
+      "amount_idr": 30000000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "final",
+      "display_status": "present_as_final"
+    },
+    {
+      "year": 2025,
+      "node": "Pemasyarakatan Corner",
+      "amount_idr": 60000000,
+      "source_refs": [
+        "src_01"
+      ],
+      "data_status": "final",
+      "display_status": "present_as_final"
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_id": "OC_LUB",
+      "name": "Penjualan Pelumas (LUB)",
+      "description": "Transaksi penjualan produk pelumas Enduro dari node aktif",
+      "stakeholder_ref": "STK_05",
+      "indicator": "Volume penjualan pelumas (Rp)",
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "outcome_id": "OC_SVC",
+      "name": "Jasa & Sparepart (SVC)",
+      "description": "Transaksi jasa servis dan penjualan sparepart dari node aktif",
+      "stakeholder_ref": "STK_05",
+      "indicator": "Volume transaksi jasa (Rp)",
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "outcome_id": "OC_REINT",
+      "name": "Kesiapan Reintegrasi Sosial-Ekonomi (REINT)",
+      "description": "Peningkatan kesiapan peserta untuk bekerja legal dan berwirausaha pasca-bebas",
+      "stakeholder_ref": "STK_02",
+      "indicator": "Nilai substitusi paket peningkatan kesiapan kerja/usaha",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_04"
+      ]
+    },
+    {
+      "outcome_id": "OC_CONF",
+      "name": "Kepercayaan Diri & Self-Efficacy (CONF)",
+      "description": "Peningkatan kepercayaan diri, efikasi diri, dan orientasi masa depan peserta",
+      "stakeholder_ref": "STK_02",
+      "indicator": "Replacement cost layanan psikologi publik",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_05"
+      ]
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_LUB_2023",
+      "aspect_code": "LUB",
+      "aspect_name": "Penjualan Pelumas",
+      "outcome_ref": "OC_LUB",
+      "year": 2023,
+      "gross_idr": 20675510,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_LUB_2024",
+      "aspect_code": "LUB",
+      "aspect_name": "Penjualan Pelumas",
+      "outcome_ref": "OC_LUB",
+      "year": 2024,
+      "gross_idr": 28945714,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_LUB_2025",
+      "aspect_code": "LUB",
+      "aspect_name": "Penjualan Pelumas",
+      "outcome_ref": "OC_LUB",
+      "year": 2025,
+      "gross_idr": 40524000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_SVC_2023",
+      "aspect_code": "SVC",
+      "aspect_name": "Jasa & Sparepart",
+      "outcome_ref": "OC_SVC",
+      "year": 2023,
+      "gross_idr": 12854556,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_SVC_2024",
+      "aspect_code": "SVC",
+      "aspect_name": "Jasa & Sparepart",
+      "outcome_ref": "OC_SVC",
+      "year": 2024,
+      "gross_idr": 17996378,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_SVC_2025",
+      "aspect_code": "SVC",
+      "aspect_name": "Jasa & Sparepart",
+      "outcome_ref": "OC_SVC",
+      "year": 2025,
+      "gross_idr": 25194930,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_REINT_2023",
+      "aspect_code": "REINT",
+      "aspect_name": "Kesiapan Reintegrasi",
+      "outcome_ref": "OC_REINT",
+      "year": 2023,
+      "gross_idr": 245000000,
+      "proxy_basis": "Nilai komponen pelatihan Kartu Prakerja",
+      "proxy_value": 3500000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "70 peserta × Rp3.500.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_04"
+      ]
+    },
+    {
+      "monetization_id": "MON_REINT_2024",
+      "aspect_code": "REINT",
+      "aspect_name": "Kesiapan Reintegrasi",
+      "outcome_ref": "OC_REINT",
+      "year": 2024,
+      "gross_idr": 245000000,
+      "proxy_basis": "Nilai komponen pelatihan Kartu Prakerja",
+      "proxy_value": 3500000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "70 peserta × Rp3.500.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_04"
+      ]
+    },
+    {
+      "monetization_id": "MON_REINT_2025",
+      "aspect_code": "REINT",
+      "aspect_name": "Kesiapan Reintegrasi",
+      "outcome_ref": "OC_REINT",
+      "year": 2025,
+      "gross_idr": 280000000,
+      "proxy_basis": "Nilai komponen pelatihan Kartu Prakerja",
+      "proxy_value": 3500000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "80 peserta × Rp3.500.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_04"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2023",
+      "aspect_code": "CONF",
+      "aspect_name": "Kepercayaan Diri / Self-Efficacy",
+      "outcome_ref": "OC_CONF",
+      "year": 2023,
+      "gross_idr": 21000000,
+      "proxy_basis": "6 sesi × Rp50.000 tarif psikologi publik (RS Jiwa Grhasia)",
+      "proxy_value": 300000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "70 peserta × Rp300.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_05"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2024",
+      "aspect_code": "CONF",
+      "aspect_name": "Kepercayaan Diri / Self-Efficacy",
+      "outcome_ref": "OC_CONF",
+      "year": 2024,
+      "gross_idr": 21000000,
+      "proxy_basis": "6 sesi × Rp50.000 tarif psikologi publik",
+      "proxy_value": 300000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "70 peserta × Rp300.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_05"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2025",
+      "aspect_code": "CONF",
+      "aspect_name": "Kepercayaan Diri / Self-Efficacy",
+      "outcome_ref": "OC_CONF",
+      "year": 2025,
+      "gross_idr": 24000000,
+      "proxy_basis": "6 sesi × Rp50.000 tarif psikologi publik",
+      "proxy_value": 300000,
+      "proxy_unit": "Rp/peserta",
+      "quantity_basis": "80 peserta × Rp300.000",
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_05"
+      ]
+    }
+  ],
+  "ddat_params": {
+    "LUB": {
+      "deadweight": 0.2,
+      "displacement": 0.15,
+      "attribution": 0.1,
+      "dropoff": 0.1,
+      "net_multiplier": 0.54,
+      "justification": "Pelumas bersaing di pasar terbuka — displacement lebih tinggi",
+      "data_status": "final"
+    },
+    "SVC": {
+      "deadweight": 0.15,
+      "displacement": 0.08,
+      "attribution": 0.1,
+      "dropoff": 0.08,
+      "net_multiplier": 0.61,
+      "justification": "Layanan bengkel di Lapas tidak bersaing langsung dengan pasar — displacement lebih rendah",
+      "data_status": "final"
+    },
+    "REINT": {
+      "deadweight": 0.2,
+      "displacement": 0.0,
+      "attribution": 0.15,
+      "dropoff": 0.1,
+      "net_multiplier": 0.55,
+      "justification": "DW+AT+DO — tidak ada DS karena bukan market substitution. Haircut moderat 45% mengacu probabilitas konversi kesiapan reintegrasi menjadi outcome nyata",
+      "data_status": "final"
+    },
+    "CONF": {
+      "deadweight": 0.2,
+      "displacement": 0.0,
+      "attribution": 0.2,
+      "dropoff": 0.1,
+      "net_multiplier": 0.5,
+      "justification": "Haircut lebih tinggi: perubahan self-efficacy sulit diatribusikan penuh ke program. Faktor pribadi dan lingkungan turut berperan signifikan",
+      "data_status": "final"
+    }
+  },
+  "ori_rates": {
+    "2023": {
+      "rate": 0.059,
+      "compound_factor": 1.1252,
+      "series": "ORI023T3",
+      "terminal_year": false
+    },
+    "2024": {
+      "rate": 0.0625,
+      "compound_factor": 1.0625,
+      "series": "ORI025T3",
+      "terminal_year": false
+    },
+    "2025": {
+      "rate": 0.065,
+      "compound_factor": 1.0,
+      "series": "ORI027T3",
+      "terminal_year": true
+    }
+  },
+  "sroi_metrics": {
+    "calculated": {
+      "total_investment_idr": 502460181,
+      "total_gross_idr": 982191088,
+      "total_net_idr": 539366398.0,
+      "total_net_compounded_idr": 570672410.79,
+      "sroi_blended": 1.1358,
+      "avg_fiksasi_pct": 45.09,
+      "per_year": [
+        {
+          "year": 2023,
+          "investment": 128108409,
+          "gross": 299530066,
+          "net": 164256054.56,
+          "compounded": 184820912.59,
+          "sroi_ratio": 1.4427,
+          "cf_applied": 1.1252
+        },
+        {
+          "year": 2024,
+          "investment": 179351772,
+          "gross": 312942092,
+          "net": 171858476.14,
+          "compounded": 182599630.9,
+          "sroi_ratio": 1.0181,
+          "cf_applied": 1.0625
+        },
+        {
+          "year": 2025,
+          "investment": 195000000,
+          "gross": 369718930,
+          "net": 203251867.3,
+          "compounded": 203251867.3,
+          "sroi_ratio": 1.0423,
+          "cf_applied": 1.0
+        }
+      ],
+      "financial_tables": [
+        {
+          "table_id": "table_investment_per_node",
+          "title": "Investasi Program per Node per Tahun",
+          "headers": [
+            "Node Program",
+            "Tahun",
+            "Investasi (Rp)",
+            "Status"
+          ],
+          "rows": [
+            [
+              "Lapas Kota Palembang",
+              "2023",
+              "Rp 49,983,929",
+              "under_confirmation"
+            ],
+            [
+              "Bengkel Lapas IIB Sleman",
+              "2023",
+              "Rp 20,800,000",
+              "under_confirmation"
+            ],
+            [
+              "Milenial Motor (Eks-WBP)",
+              "2023",
+              "Rp 36,640,000",
+              "under_confirmation"
+            ],
+            [
+              "Pemasyarakatan Corner",
+              "2023",
+              "Rp 20,684,480",
+              "under_confirmation"
+            ],
+            [
+              "Lapas Kota Palembang",
+              "2024",
+              "Rp 69,977,500",
+              "under_confirmation"
+            ],
+            [
+              "Bengkel Lapas IIB Sleman",
+              "2024",
+              "Rp 29,120,000",
+              "under_confirmation"
+            ],
+            [
+              "Milenial Motor (Eks-WBP)",
+              "2024",
+              "Rp 51,296,000",
+              "under_confirmation"
+            ],
+            [
+              "Pemasyarakatan Corner",
+              "2024",
+              "Rp 28,958,272",
+              "under_confirmation"
+            ],
+            [
+              "Lapas Kota Palembang",
+              "2025",
+              "Rp 30,000,000",
+              "final"
+            ],
+            [
+              "Bengkel Lapas IIB Sleman",
+              "2025",
+              "Rp 75,000,000",
+              "final"
+            ],
+            [
+              "Milenial Motor (Eks-WBP)",
+              "2025",
+              "Rp 30,000,000",
+              "final"
+            ],
+            [
+              "Pemasyarakatan Corner",
+              "2025",
+              "Rp 60,000,000",
+              "final"
+            ],
+            [
+              "TOTAL",
+              "—",
+              "Rp 502,460,181",
+              "final"
+            ]
+          ],
+          "column_widths": [
+            3200,
+            1200,
+            3000,
+            2238
+          ],
+          "note": "2023–2024 under_confirmation — ditampilkan dengan badge pending"
+        },
+        {
+          "table_id": "table_monetization_per_aspek",
+          "title": "Monetisasi Nilai Sosial per Aspek per Tahun",
+          "headers": [
+            "Aspek",
+            "Tahun",
+            "Gross (Rp)",
+            "Adj DDAT",
+            "Net (Rp)",
+            "Status"
+          ],
+          "rows": [
+            [
+              "CONF",
+              "2023",
+              "Rp 21,000,000",
+              "×0.5",
+              "Rp 10,500,000",
+              "proxy"
+            ],
+            [
+              "CONF",
+              "2024",
+              "Rp 21,000,000",
+              "×0.5",
+              "Rp 10,500,000",
+              "proxy"
+            ],
+            [
+              "CONF",
+              "2025",
+              "Rp 24,000,000",
+              "×0.5",
+              "Rp 12,000,000",
+              "proxy"
+            ],
+            [
+              "LUB",
+              "2023",
+              "Rp 20,675,510",
+              "×0.54",
+              "Rp 11,164,775",
+              "final"
+            ],
+            [
+              "LUB",
+              "2024",
+              "Rp 28,945,714",
+              "×0.54",
+              "Rp 15,630,686",
+              "final"
+            ],
+            [
+              "LUB",
+              "2025",
+              "Rp 40,524,000",
+              "×0.54",
+              "Rp 21,882,960",
+              "final"
+            ],
+            [
+              "REINT",
+              "2023",
+              "Rp 245,000,000",
+              "×0.55",
+              "Rp 134,750,000",
+              "proxy"
+            ],
+            [
+              "REINT",
+              "2024",
+              "Rp 245,000,000",
+              "×0.55",
+              "Rp 134,750,000",
+              "proxy"
+            ],
+            [
+              "REINT",
+              "2025",
+              "Rp 280,000,000",
+              "×0.55",
+              "Rp 154,000,000",
+              "proxy"
+            ],
+            [
+              "SVC",
+              "2023",
+              "Rp 12,854,556",
+              "×0.61",
+              "Rp 7,841,279",
+              "final"
+            ],
+            [
+              "SVC",
+              "2024",
+              "Rp 17,996,378",
+              "×0.61",
+              "Rp 10,977,791",
+              "final"
+            ],
+            [
+              "SVC",
+              "2025",
+              "Rp 25,194,930",
+              "×0.61",
+              "Rp 15,368,907",
+              "final"
+            ],
+            [
+              "TOTAL",
+              "—",
+              "Rp 982,191,088",
+              "—",
+              "Rp 539,366,398",
+              "—"
+            ]
+          ],
+          "column_widths": [
+            900,
+            800,
+            2100,
+            900,
+            2100,
+            2838
+          ],
+          "note": "LUB & SVC = observed. REINT & CONF = proxy S10."
+        },
+        {
+          "table_id": "table_ddat_per_aspek",
+          "title": "DDAT Adjustment per Aspek",
+          "headers": [
+            "Aspek",
+            "DW",
+            "DS",
+            "AT",
+            "DO",
+            "Net ×",
+            "Haircut"
+          ],
+          "rows": [
+            [
+              "LUB",
+              "20%",
+              "15%",
+              "10%",
+              "10%",
+              "×0.54",
+              "46%"
+            ],
+            [
+              "SVC",
+              "15%",
+              "8%",
+              "10%",
+              "8%",
+              "×0.61",
+              "39%"
+            ],
+            [
+              "REINT",
+              "20%",
+              "0%",
+              "15%",
+              "10%",
+              "×0.55",
+              "45%"
+            ],
+            [
+              "CONF",
+              "20%",
+              "0%",
+              "20%",
+              "10%",
+              "×0.5",
+              "50%"
+            ]
+          ],
+          "column_widths": [
+            1200,
+            1100,
+            1100,
+            1100,
+            1100,
+            1100,
+            2938
+          ],
+          "note": "DW=Deadweight DS=Displacement AT=Attribution DO=Drop-off"
+        },
+        {
+          "table_id": "table_sroi_per_tahun",
+          "title": "Kalkulasi SROI per Tahun Program",
+          "headers": [
+            "Tahun",
+            "Investasi",
+            "Gross",
+            "Net",
+            "Compound",
+            "Net Compounded",
+            "SROI"
+          ],
+          "rows": [
+            [
+              "2023",
+              "Rp 128,108,409",
+              "Rp 299,530,066",
+              "Rp 164,256,055",
+              "×1.1252 (ORI023T3)",
+              "Rp 184,820,913",
+              "1 : 1.44"
+            ],
+            [
+              "2024",
+              "Rp 179,351,772",
+              "Rp 312,942,092",
+              "Rp 171,858,476",
+              "×1.0625 (ORI025T3)",
+              "Rp 182,599,631",
+              "1 : 1.02"
+            ],
+            [
+              "2025",
+              "Rp 195,000,000",
+              "Rp 369,718,930",
+              "Rp 203,251,867",
+              "×1.0000 (ORI027T3)",
+              "Rp 203,251,867",
+              "1 : 1.04"
+            ],
+            [
+              "TOTAL",
+              "Rp 502,460,181",
+              "Rp 982,191,088",
+              "Rp 539,366,398",
+              "—",
+              "Rp 570,672,411",
+              "1 : 1.14"
+            ]
+          ],
+          "column_widths": [
+            800,
+            1500,
+            1400,
+            1400,
+            1700,
+            1638,
+            1200
+          ],
+          "note": "Net compounded = nilai bersih yang di-compound ke terminal year 2025"
+        },
+        {
+          "table_id": "table_sroi_blended",
+          "title": "Ringkasan SROI Evaluatif 2023–2025",
+          "headers": [
+            "Metrik",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "Total Investasi",
+              "Rp 502,460,181"
+            ],
+            [
+              "Total Gross Kumulatif",
+              "Rp 982,191,088"
+            ],
+            [
+              "Total Net Kumulatif",
+              "Rp 539,366,398"
+            ],
+            [
+              "Total Net Compounded",
+              "Rp 570,672,411"
+            ],
+            [
+              "Avg Fiksasi",
+              "−45.1%"
+            ],
+            [
+              "SROI Blended",
+              "1 : 1.14"
+            ]
+          ],
+          "column_widths": [
+            4819,
+            4819
+          ],
+          "note": "Evaluatif · Compound ORI-adjusted · DDAT net multiplier per aspek · Terminal year 2025"
+        }
+      ],
+      "calc_audit_log": [
+        {
+          "field": "investment_total_2023",
+          "value": 128108409,
+          "formula": "SUM(investment[year=2023].amount_idr)",
+          "inputs_used": [
+            "investment[year=2023]"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244015Z"
+        },
+        {
+          "field": "investment_total_2024",
+          "value": 179351772,
+          "formula": "SUM(investment[year=2024].amount_idr)",
+          "inputs_used": [
+            "investment[year=2024]"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244066Z"
+        },
+        {
+          "field": "investment_total_2025",
+          "value": 195000000,
+          "formula": "SUM(investment[year=2025].amount_idr)",
+          "inputs_used": [
+            "investment[year=2025]"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244123Z"
+        },
+        {
+          "field": "total_investment",
+          "value": 502460181,
+          "formula": "SUM(investment_total_*)",
+          "inputs_used": [
+            2023,
+            2024,
+            2025
+          ],
+          "timestamp": "2026-04-10T06:20:17.244157Z"
+        },
+        {
+          "field": "gross_LUB_2023",
+          "value": 20675510,
+          "formula": "monetization[MON_LUB_2023].gross_idr",
+          "inputs_used": [
+            "MON_LUB_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244192Z"
+        },
+        {
+          "field": "gross_LUB_2024",
+          "value": 28945714,
+          "formula": "monetization[MON_LUB_2024].gross_idr",
+          "inputs_used": [
+            "MON_LUB_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244211Z"
+        },
+        {
+          "field": "gross_LUB_2025",
+          "value": 40524000,
+          "formula": "monetization[MON_LUB_2025].gross_idr",
+          "inputs_used": [
+            "MON_LUB_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244231Z"
+        },
+        {
+          "field": "gross_SVC_2023",
+          "value": 12854556,
+          "formula": "monetization[MON_SVC_2023].gross_idr",
+          "inputs_used": [
+            "MON_SVC_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244252Z"
+        },
+        {
+          "field": "gross_SVC_2024",
+          "value": 17996378,
+          "formula": "monetization[MON_SVC_2024].gross_idr",
+          "inputs_used": [
+            "MON_SVC_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244268Z"
+        },
+        {
+          "field": "gross_SVC_2025",
+          "value": 25194930,
+          "formula": "monetization[MON_SVC_2025].gross_idr",
+          "inputs_used": [
+            "MON_SVC_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244282Z"
+        },
+        {
+          "field": "gross_REINT_2023",
+          "value": 245000000,
+          "formula": "monetization[MON_REINT_2023].gross_idr",
+          "inputs_used": [
+            "MON_REINT_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244295Z"
+        },
+        {
+          "field": "gross_REINT_2024",
+          "value": 245000000,
+          "formula": "monetization[MON_REINT_2024].gross_idr",
+          "inputs_used": [
+            "MON_REINT_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244309Z"
+        },
+        {
+          "field": "gross_REINT_2025",
+          "value": 280000000,
+          "formula": "monetization[MON_REINT_2025].gross_idr",
+          "inputs_used": [
+            "MON_REINT_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244322Z"
+        },
+        {
+          "field": "gross_CONF_2023",
+          "value": 21000000,
+          "formula": "monetization[MON_CONF_2023].gross_idr",
+          "inputs_used": [
+            "MON_CONF_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244341Z"
+        },
+        {
+          "field": "gross_CONF_2024",
+          "value": 21000000,
+          "formula": "monetization[MON_CONF_2024].gross_idr",
+          "inputs_used": [
+            "MON_CONF_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244364Z"
+        },
+        {
+          "field": "gross_CONF_2025",
+          "value": 24000000,
+          "formula": "monetization[MON_CONF_2025].gross_idr",
+          "inputs_used": [
+            "MON_CONF_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244384Z"
+        },
+        {
+          "field": "net_LUB_2023",
+          "value": 11164775.4,
+          "formula": "gross_LUB_2023 × net_multiplier(0.54)",
+          "inputs_used": [
+            "gross_LUB_2023",
+            "ddat_params.LUB.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244420Z"
+        },
+        {
+          "field": "net_LUB_2024",
+          "value": 15630685.56,
+          "formula": "gross_LUB_2024 × net_multiplier(0.54)",
+          "inputs_used": [
+            "gross_LUB_2024",
+            "ddat_params.LUB.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244447Z"
+        },
+        {
+          "field": "net_LUB_2025",
+          "value": 21882960.0,
+          "formula": "gross_LUB_2025 × net_multiplier(0.54)",
+          "inputs_used": [
+            "gross_LUB_2025",
+            "ddat_params.LUB.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244474Z"
+        },
+        {
+          "field": "net_SVC_2023",
+          "value": 7841279.16,
+          "formula": "gross_SVC_2023 × net_multiplier(0.61)",
+          "inputs_used": [
+            "gross_SVC_2023",
+            "ddat_params.SVC.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244493Z"
+        },
+        {
+          "field": "net_SVC_2024",
+          "value": 10977790.58,
+          "formula": "gross_SVC_2024 × net_multiplier(0.61)",
+          "inputs_used": [
+            "gross_SVC_2024",
+            "ddat_params.SVC.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244510Z"
+        },
+        {
+          "field": "net_SVC_2025",
+          "value": 15368907.3,
+          "formula": "gross_SVC_2025 × net_multiplier(0.61)",
+          "inputs_used": [
+            "gross_SVC_2025",
+            "ddat_params.SVC.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244525Z"
+        },
+        {
+          "field": "net_REINT_2023",
+          "value": 134750000.0,
+          "formula": "gross_REINT_2023 × net_multiplier(0.55)",
+          "inputs_used": [
+            "gross_REINT_2023",
+            "ddat_params.REINT.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244542Z"
+        },
+        {
+          "field": "net_REINT_2024",
+          "value": 134750000.0,
+          "formula": "gross_REINT_2024 × net_multiplier(0.55)",
+          "inputs_used": [
+            "gross_REINT_2024",
+            "ddat_params.REINT.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244572Z"
+        },
+        {
+          "field": "net_REINT_2025",
+          "value": 154000000.0,
+          "formula": "gross_REINT_2025 × net_multiplier(0.55)",
+          "inputs_used": [
+            "gross_REINT_2025",
+            "ddat_params.REINT.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244591Z"
+        },
+        {
+          "field": "net_CONF_2023",
+          "value": 10500000.0,
+          "formula": "gross_CONF_2023 × net_multiplier(0.5)",
+          "inputs_used": [
+            "gross_CONF_2023",
+            "ddat_params.CONF.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244607Z"
+        },
+        {
+          "field": "net_CONF_2024",
+          "value": 10500000.0,
+          "formula": "gross_CONF_2024 × net_multiplier(0.5)",
+          "inputs_used": [
+            "gross_CONF_2024",
+            "ddat_params.CONF.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244624Z"
+        },
+        {
+          "field": "net_CONF_2025",
+          "value": 12000000.0,
+          "formula": "gross_CONF_2025 × net_multiplier(0.5)",
+          "inputs_used": [
+            "gross_CONF_2025",
+            "ddat_params.CONF.net_multiplier"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244646Z"
+        },
+        {
+          "field": "gross_total_2023",
+          "value": 299530066,
+          "formula": "SUM(gross_*_2023)",
+          "inputs_used": [
+            "gross_*_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244689Z"
+        },
+        {
+          "field": "net_total_2023",
+          "value": 164256054.56,
+          "formula": "SUM(net_*_2023)",
+          "inputs_used": [
+            "net_*_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244694Z"
+        },
+        {
+          "field": "fiksasi_pct_2023",
+          "value": 45.16,
+          "formula": "(1 - net_total_2023 / gross_total_2023) × 100",
+          "inputs_used": [
+            "gross_total_2023",
+            "net_total_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244697Z"
+        },
+        {
+          "field": "gross_total_2024",
+          "value": 312942092,
+          "formula": "SUM(gross_*_2024)",
+          "inputs_used": [
+            "gross_*_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244728Z"
+        },
+        {
+          "field": "net_total_2024",
+          "value": 171858476.14,
+          "formula": "SUM(net_*_2024)",
+          "inputs_used": [
+            "net_*_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244731Z"
+        },
+        {
+          "field": "fiksasi_pct_2024",
+          "value": 45.08,
+          "formula": "(1 - net_total_2024 / gross_total_2024) × 100",
+          "inputs_used": [
+            "gross_total_2024",
+            "net_total_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244738Z"
+        },
+        {
+          "field": "gross_total_2025",
+          "value": 369718930,
+          "formula": "SUM(gross_*_2025)",
+          "inputs_used": [
+            "gross_*_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244756Z"
+        },
+        {
+          "field": "net_total_2025",
+          "value": 203251867.3,
+          "formula": "SUM(net_*_2025)",
+          "inputs_used": [
+            "net_*_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244759Z"
+        },
+        {
+          "field": "fiksasi_pct_2025",
+          "value": 45.03,
+          "formula": "(1 - net_total_2025 / gross_total_2025) × 100",
+          "inputs_used": [
+            "gross_total_2025",
+            "net_total_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244761Z"
+        },
+        {
+          "field": "net_compounded_2023",
+          "value": 184820912.59,
+          "formula": "net_total_2023 × compound_factor(1.1252) [ORI023T3]",
+          "inputs_used": [
+            "net_total_2023",
+            "ori_rates.2023.compound_factor"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244802Z"
+        },
+        {
+          "field": "net_compounded_2024",
+          "value": 182599630.9,
+          "formula": "net_total_2024 × compound_factor(1.0625) [ORI025T3]",
+          "inputs_used": [
+            "net_total_2024",
+            "ori_rates.2024.compound_factor"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244825Z"
+        },
+        {
+          "field": "net_compounded_2025",
+          "value": 203251867.3,
+          "formula": "net_total_2025 × compound_factor(1.0) [ORI027T3]",
+          "inputs_used": [
+            "net_total_2025",
+            "ori_rates.2025.compound_factor"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244842Z"
+        },
+        {
+          "field": "sroi_ratio_2023",
+          "value": 1.44,
+          "formula": "net_compounded_2023 / investment_total_2023",
+          "inputs_used": [
+            "net_compounded_2023",
+            "investment_total_2023"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244876Z"
+        },
+        {
+          "field": "sroi_ratio_2024",
+          "value": 1.02,
+          "formula": "net_compounded_2024 / investment_total_2024",
+          "inputs_used": [
+            "net_compounded_2024",
+            "investment_total_2024"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244897Z"
+        },
+        {
+          "field": "sroi_ratio_2025",
+          "value": 1.04,
+          "formula": "net_compounded_2025 / investment_total_2025",
+          "inputs_used": [
+            "net_compounded_2025",
+            "investment_total_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244913Z"
+        },
+        {
+          "field": "total_net_compounded",
+          "value": 570672410.79,
+          "formula": "SUM(net_compounded_*)",
+          "inputs_used": [
+            "net_compounded_2023",
+            "net_compounded_2024",
+            "net_compounded_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244949Z"
+        },
+        {
+          "field": "sroi_blended",
+          "value": 1.14,
+          "formula": "total_net_compounded / total_investment",
+          "inputs_used": [
+            "total_net_compounded",
+            "total_investment"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244951Z"
+        },
+        {
+          "field": "avg_fiksasi_pct",
+          "value": 45.09,
+          "formula": "AVG(fiksasi_pct_*)",
+          "inputs_used": [
+            "fiksasi_pct_2023",
+            "fiksasi_pct_2024",
+            "fiksasi_pct_2025"
+          ],
+          "timestamp": "2026-04-10T06:20:17.244954Z"
+        }
+      ],
+      "sensitivity": {
+        "LUB": {
+          "delta_per_1pp_multiplier": 2.288,
+          "description": "Kenaikan 1pp net_multiplier LUB → SROI naik 2.2880"
+        },
+        "SVC": {
+          "delta_per_1pp_multiplier": 2.2873,
+          "description": "Kenaikan 1pp net_multiplier SVC → SROI naik 2.2873"
+        },
+        "REINT": {
+          "delta_per_1pp_multiplier": 2.3023,
+          "description": "Kenaikan 1pp net_multiplier REINT → SROI naik 2.3023"
+        },
+        "CONF": {
+          "delta_per_1pp_multiplier": 2.2875,
+          "description": "Kenaikan 1pp net_multiplier CONF → SROI naik 2.2875"
+        }
+      },
+      "calculated_at": "2026-04-10T06:20:17.245365Z",
+      "engine_version": "1.0.0",
+      "sroi_blended_data_status": "proxy"
+    },
+    "status": "calculated"
+  },
+  "learning_signals": {
+    "loop_1": [
+      "Pelatihan teknis dasar mekanik terlaksana dan peserta mulai berinteraksi dengan bengkel"
+    ],
+    "loop_2": [
+      "Node Lapas Palembang belum menghasilkan transaksi — program merespons dengan penguatan node lain",
+      "Ritme kerja bengkel membutuhkan pendampingan lebih intensif dari yang direncanakan awal"
+    ],
+    "loop_3": [
+      "Milenial Motor (node eks-WBP) menjadi proof-of-concept bahwa reintegrasi produktif bisa dicapai",
+      "Model bengkel eks-WBP berpotensi direplikasi ke node lapas lain di periode berikutnya"
+    ],
+    "lfa_reflections": [
+      {
+        "activity_ref": "ACT_01",
+        "lfa_gap": "Asumsi awal: pelatihan teknis cukup untuk menghasilkan transaksi langsung",
+        "lesson_learned": "Perlu fase pendampingan operasional antara pelatihan dan transaksi riil"
+      },
+      {
+        "activity_ref": "ACT_06",
+        "lfa_gap": "Lapas Palembang tidak menghasilkan transaksi selama 3 tahun",
+        "lesson_learned": "Node pembentukan kapasitas membutuhkan milestone aktivasi yang lebih eksplisit"
+      }
+    ],
+    "data_status": "derived"
+  },
+  "evidence_registry": [
+    {
+      "evidence_id": "EV_01",
+      "claim": "Gross LUB 2023 = Rp20.675.510",
+      "source_ref": "src_01",
+      "reliability": "primary"
+    },
+    {
+      "evidence_id": "EV_02",
+      "claim": "Gross SVC 2023 = Rp12.854.556",
+      "source_ref": "src_01",
+      "reliability": "primary"
+    },
+    {
+      "evidence_id": "EV_03",
+      "claim": "Proxy REINT = Rp3.500.000/peserta dari komponen pelatihan Kartu Prakerja",
+      "source_ref": "src_04",
+      "reliability": "secondary"
+    },
+    {
+      "evidence_id": "EV_04",
+      "claim": "Proxy CONF = Rp300.000/peserta dari 6 sesi psikologi publik Rp50.000/sesi",
+      "source_ref": "src_05",
+      "reliability": "secondary"
+    },
+    {
+      "evidence_id": "EV_05",
+      "claim": "Skenario S10: 70/70/80 peserta per tahun — konservatif 10 peserta/node aktif",
+      "source_ref": "src_02",
+      "reliability": "primary"
+    },
+    {
+      "evidence_id": "EV_06",
+      "claim": "Milenial Motor adalah node eks-WBP yang terbukti bertransisi menjadi usaha mandiri",
+      "source_ref": "src_01",
+      "reliability": "primary"
+    }
+  ],
+  "uncertainty_flags": [
+    {
+      "flag_id": "UF_01",
+      "field_path": "investment[year=2023]",
+      "reason": "Data investasi 2023 dan 2024 berstatus under_confirmation — belum diverifikasi dari laporan keuangan resmi",
+      "severity": "medium"
+    },
+    {
+      "flag_id": "UF_02",
+      "field_path": "monetization[aspect=REINT]",
+      "reason": "Jumlah peserta aktif per node belum terverifikasi dari data lapangan — menggunakan estimasi konservatif S10",
+      "severity": "medium"
+    },
+    {
+      "flag_id": "UF_03",
+      "field_path": "context_baseline",
+      "reason": "Data profil wilayah dan populasi WBP per node belum tersedia",
+      "severity": "high"
+    },
+    {
+      "flag_id": "UF_04",
+      "field_path": "learning_signals",
+      "reason": "Refleksi pembelajaran masih berupa inferensi dari data program — belum ada wawancara stakeholder formal",
+      "severity": "low"
+    }
+  ],
+  "coverage_status": {
+    "bab_1": {
+      "status": "partial",
+      "inputs": [
+        "program_identity",
+        "program_positioning"
+      ],
+      "risk": "thin",
+      "notes": "Latar belakang hukum PROPER bisa diinferensi dari program_positioning"
+    },
+    "bab_2": {
+      "status": "partial",
+      "inputs": [
+        "program_identity",
+        "program_positioning"
+      ],
+      "risk": "thin",
+      "notes": "Profil perusahaan PT Pertamina Lubricants perlu sumber tambahan"
+    },
+    "bab_3": {
+      "status": "weak",
+      "inputs": [
+        "source_registry"
+      ],
+      "risk": "thin",
+      "notes": "Metodologi SROI + LFA + Triple Loop perlu narasi metodologis yang tidak ada di deck"
+    },
+    "bab_4": {
+      "status": "weak",
+      "inputs": [
+        "context_baseline",
+        "problem_framing"
+      ],
+      "risk": "thin",
+      "notes": "Data baseline wilayah tidak tersedia di deck — hanya problem framing"
+    },
+    "bab_5": {
+      "status": "partial",
+      "inputs": [
+        "ideal_conditions"
+      ],
+      "risk": "reliable",
+      "notes": "Kondisi ideal bisa diturunkan dari problem_framing dan strategy_design"
+    },
+    "bab_6": {
+      "status": "partial",
+      "inputs": [
+        "strategy_design"
+      ],
+      "risk": "reliable",
+      "notes": "Roadmap, value chain, dan kelembagaan tersedia cukup"
+    },
+    "bab_7": {
+      "status": "strong",
+      "inputs": [
+        "activities",
+        "investment",
+        "outputs",
+        "outcomes",
+        "monetization",
+        "ddat_params",
+        "ori_rates",
+        "sroi_metrics"
+      ],
+      "risk": "reliable",
+      "notes": "Bab terkuat — semua data tersedia dari deck S10"
+    },
+    "bab_8": {
+      "status": "partial",
+      "inputs": [
+        "learning_signals"
+      ],
+      "risk": "thin",
+      "notes": "Learning signals tersedia sebagian — triple loop refleksi mendalam perlu pengembangan"
+    },
+    "bab_9": {
+      "status": "partial",
+      "inputs": [
+        "learning_signals",
+        "sroi_metrics"
+      ],
+      "risk": "reliable",
+      "notes": "Kesimpulan bisa diturunkan dari SROI dan pembelajaran"
+    }
+  },
+  "_review_metadata": {
+    "reviewed_at": "2026-04-10T15:02:31.583908",
+    "reviewer": "user",
+    "decision": "approve_with_notes",
+    "changes_count": 2,
+    "applied_log": [
+      "approve_without_change: program_identity.program_name",
+      "downgrade_confidence: sroi_metrics.calculated.sroi_blended → 'proxy'"
+    ],
+    "source_review_id": "4b540b71"
+  }
+}

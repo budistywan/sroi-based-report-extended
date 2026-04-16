@@ -1,0 +1,24 @@
+{
+  "review_id": "94407b8e",
+  "review_target_type": "gap_matrix",
+  "review_target_id": "all_babs",
+  "decision": "approve_with_notes",
+  "pipeline_gate": "review_point_a",
+  "reviewer": "user",
+  "timestamp": "2026-04-10T15:02:01.591729",
+  "notes": "Gap Bab IV diakui eksplisit; Bab V cukup callout_gap",
+  "changes": [
+    {
+      "change_type": "mark_as_gap",
+      "field_path": "bab_4",
+      "gap_type": "data_unavailable",
+      "note": "Baseline wilayah tidak tersedia — harus diakui eksplisit di laporan"
+    },
+    {
+      "change_type": "set_status",
+      "field_path": "bab_5",
+      "new_status": "ignorable",
+      "note": "Gap kondisi ideal cukup ditangani dengan callout_gap"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "map_version":    "1.0",
+  "created_at":     "2026-04-11",
+  "description":    "Pemetaan bab ke register. Machine-readable — dipakai packet exporter dan refinement layer berikutnya.",
+  "source_profiles": [
+    "sprint14a/style_profile_reviewed.json",
+    "sprint14b/style_signature_reviewed.json"
+  ],
+
+  "mapping": [
+    {
+      "bab":               ["bab_1","bab_2","bab_3"],
+      "register":          "framing_register",
+      "signature_file":    "style_signature_framing.json",
+      "function":          "Metodologis, orientasi, penjelasan kerangka kajian",
+      "tone_key":          "ekspositori, orientatif"
+    },
+    {
+      "bab":               ["bab_4","bab_5","bab_6"],
+      "register":          "analytic_register",
+      "signature_file":    "style_signature_analytic.json",
+      "function":          "Diagnosis, baseline, problematisasi, pemetaan kondisi",
+      "tone_key":          "investigatif, jujur tentang keterbatasan"
+    },
+    {
+      "bab":               ["bab_7"],
+      "register":          "evaluative_register",
+      "signature_file":    "style_signature_evaluative.json",
+      "function":          "Terukur, data-grounded, firm but guarded",
+      "tone_key":          "evaluatif, terminology konsisten"
+    },
+    {
+      "bab":               ["bab_8"],
+      "register":          "reflective_register",
+      "signature_file":    "style_signature_reflective.json",
+      "function":          "Pembelajaran, refleksi, integrasi makna",
+      "tone_key":          "dialogis, learning-oriented"
+    },
+    {
+      "bab":               ["bab_9"],
+      "register":          "conclusive_register",
+      "signature_file":    "style_signature_conclusive.json",
+      "function":          "Pengunci, implikatif, forward-looking",
+      "tone_key":          "ringkas, kuat, forward-looking"
+    }
+  ],
+
+  "default_register":  "framing_register",
+  "override_allowed":  true,
+  "override_rules": {
+    "description":     "Override bisa diterapkan per paragraf jika konteks retorika berbeda dari default bab",
+    "example":         "Paragraf transisi di akhir bab_6 bisa menggunakan evaluative_register sebagai preview ke bab_7",
+    "override_fields": ["register","signature_file","tone_key"]
+  },
+
+  "lookup": {
+    "bab_1": "framing_register",
+    "bab_2": "framing_register",
+    "bab_3": "framing_register",
+    "bab_4": "analytic_register",
+    "bab_5": "analytic_register",
+    "bab_6": "analytic_register",
+    "bab_7": "evaluative_register",
+    "bab_8": "reflective_register",
+    "bab_9": "conclusive_register"
+  }
+}

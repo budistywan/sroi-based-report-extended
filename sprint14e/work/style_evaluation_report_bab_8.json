@@ -1,0 +1,338 @@
+{
+  "report_id": "eval_bab_8_v1",
+  "chapter_id": "bab_8",
+  "register_used": "reflective_register",
+  "signature_file": "style_signature_reflective.json",
+  "evaluated_at": "2026-04-12T06:48:37.464009",
+  "summary": {
+    "total_blocks": 22,
+    "total_paragraphs": 7,
+    "clean": 0,
+    "needs_review": 6,
+    "flagged": 0,
+    "skip": 15
+  },
+  "paragraphs": [
+    {
+      "block_index": 0,
+      "block_type": "heading_1",
+      "text_preview": "BAB VIII ASPEK PEMBELAJARAN DENGAN TRIPLE LOOP LEA",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 1,
+      "block_type": "paragraph_lead",
+      "full_text": "Bab ini menyajikan refleksi pembelajaran program melalui kerangka triple loop learning — menganalisis tidak hanya apa yang terjadi, tetapi juga mengapa program merespons seperti yang dilakukan, dan perubahan mendasar apa yang muncul dari proses implementasi.",
+      "text_preview": "Bab ini menyajikan refleksi pembelajaran program melalui kerangka triple loop learning — menganalisi...",
+      "status": "noted",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "context_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 2,
+      "block_type": "divider",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 3,
+      "block_type": "heading_2",
+      "text_preview": "8.1 Identifikasi Masalah dan Keterkaitan LFA",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 4,
+      "block_type": "paragraph",
+      "full_text": "Selama implementasi 2023–2025, program menghadapi beberapa tantangan yang menjadi sumber pembelajaran:",
+      "text_preview": "Selama implementasi 2023–2025, program menghadapi beberapa tantangan yang menjadi sumber pembelajara...",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 5,
+      "block_type": "heading_2",
+      "text_preview": "8.2 L1, L2, L3 — Analisis Triple Loop",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 6,
+      "block_type": "callout_info",
+      "text_preview": "Dalam laporan ini digunakan dua ukuran yang berbed",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 7,
+      "block_type": "heading_3",
+      "text_preview": "Loop 1 — Single Loop Learning (Apa yang terjadi?)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 8,
+      "block_type": "paragraph",
+      "full_text": "Pembelajaran level pertama berfokus pada hasil langsung dari implementasi aktivitas:",
+      "text_preview": "Pembelajaran level pertama berfokus pada hasil langsung dari implementasi aktivitas:",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 9,
+      "block_type": "bullet_list",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 10,
+      "block_type": "heading_3",
+      "text_preview": "Loop 2 — Double Loop Learning (Mengapa respons itu",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 11,
+      "block_type": "paragraph",
+      "full_text": "Pembelajaran level kedua merefleksikan penyesuaian strategi yang dilakukan berdasarkan temuan implementasi:",
+      "text_preview": "Pembelajaran level kedua merefleksikan penyesuaian strategi yang dilakukan berdasarkan temuan implem...",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 12,
+      "block_type": "bullet_list",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 13,
+      "block_type": "heading_3",
+      "text_preview": "Loop 3 — Triple Loop Learning (Apa yang berubah se",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 14,
+      "block_type": "paragraph",
+      "full_text": "Pembelajaran level ketiga menandai transformasi nilai dan asumsi mendasar yang muncul dari proses implementasi:",
+      "text_preview": "Pembelajaran level ketiga menandai transformasi nilai dan asumsi mendasar yang muncul dari proses im...",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 15,
+      "block_type": "bullet_list",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 16,
+      "block_type": "callout_warning",
+      "text_preview": "Analisis triple loop di atas bersumber dari learni",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 17,
+      "block_type": "heading_2",
+      "text_preview": "8.3 Identifikasi Keunikan Program",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 18,
+      "block_type": "paragraph",
+      "full_text": "Program memiliki beberapa karakteristik unik yang membedakannya dari program pemberdayaan vokasional konvensional:",
+      "text_preview": "Program memiliki beberapa karakteristik unik yang membedakannya dari program pemberdayaan vokasional...",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "too_short",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    },
+    {
+      "block_index": 19,
+      "block_type": "bullet_list",
+      "text_preview": "(non-text block)",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 20,
+      "block_type": "heading_2",
+      "text_preview": "8.4 Kontribusi Efisiensi, Efektivitas, dan Keberla",
+      "status": "skip",
+      "gaps": []
+    },
+    {
+      "block_index": 21,
+      "block_type": "paragraph",
+      "full_text": "Dari sisi efisiensi, program menghasilkan SROI blended 1 : 1.03 — setiap Rp 1 investasi menghasilkan Rp 1 nilai sosial. Dari sisi efektivitas, tiga dari empat node aktif bertransaksi secara konsisten. Keberlanjutan dijamin oleh model bisnis bengkel yang menghasilkan pendapatan riil — bukan bergantung pada subsidi program selamanya.",
+      "text_preview": "Dari sisi efisiensi, program menghasilkan SROI blended 1 : 1.03 — setiap Rp 1 investasi menghasilkan...",
+      "status": "needs_review",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "gaps": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "conceptual_contrast_or_question",
+          "detected": "subject_first",
+          "severity": "medium",
+          "note": "Pembuka 'subject_first' — register reflective_register mengharapkan 'conceptual_contrast_or_question'"
+        },
+        {
+          "dimension": "disliked_pattern",
+          "pattern_id": "DP_FLAT_PARAGRAPH",
+          "severity": "low",
+          "note": "Disliked pattern terdeteksi: DP_FLAT_PARAGRAPH"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "learning_forward",
+          "detected": "open_reflection",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "opening_detected": "subject_first",
+      "closing_detected": "open_reflection",
+      "rhythm_detected": "mixed",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['opening_pattern', 'disliked_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual."
+    }
+  ]
+}

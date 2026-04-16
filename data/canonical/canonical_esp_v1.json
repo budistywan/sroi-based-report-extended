@@ -1,0 +1,676 @@
+{
+  "schema_version": "1.0",
+  "case_id": "esp_2023_2025_v1",
+  "program_identity": {
+    "program_name": "Enduro Student Program",
+    "program_code": "ESP",
+    "company": "PT Pertamina Lubricants",
+    "program_tagline": "Penguatan Kesiapan Kerja Vokasional Peserta melalui Pelatihan BLKI, Pemagangan Bengkel, dan Pembiasaan Dunia Kerja Otomotif",
+    "period_start": 2023,
+    "period_end": 2025,
+    "period_label": "2023–2025",
+    "target_group": "Peserta pelatihan vokasional, peserta magang, dan unit bengkel mitra dalam ekosistem kerja otomotif",
+    "nodes": [
+      "11 unit ekosistem monetisasi",
+      "BLKI / lembaga pelatihan",
+      "bengkel mitra",
+      "peserta program"
+    ]
+  },
+  "program_positioning": {
+    "portfolio_role": "Program transisi vokasional-ke-kerja dalam portfolio TJSL otomotif PT Pertamina Lubricants.",
+    "signature_value": "Menjembatani pelatihan teknis ke workforce entry melalui work-based learning, magang, dan pembentukan karakter kerja.",
+    "comparative_note": "Berbeda dari program yang bertumpu pada pemberdayaan komunitas sektoral, ESP berfokus pada jalur transisi peserta menuju dunia kerja otomotif."
+  },
+  "source_registry": [
+    {
+      "source_id": "SRC_ESP_DECK",
+      "source_type": "internal_script",
+      "title": "TJSL_Scripts.md — esp_batch1/2/3",
+      "description": "Sumber utama identitas program, investasi, aspek monetisasi, SROI ratio, stakeholder, dan narasi slide Enduro Student Program."
+    },
+    {
+      "source_id": "SRC_ESP_SCHEMA",
+      "source_type": "spec_prompt",
+      "title": "PROMPT_CANONICAL_BARU_fixed_ESP.md",
+      "description": "Sumber aturan schema canonical dan struktur field wajib."
+    },
+    {
+      "source_id": "SRC_ESP_VALIDATOR",
+      "source_type": "validator",
+      "title": "canonical_validator_fixed_ESP.js",
+      "description": "Validator patched dengan mapping ESP = Enduro Student Program."
+    }
+  ],
+  "context_baseline": {
+    "summary": "Peserta pelatihan vokasional otomotif menghadapi jarak nyata antara pelatihan teknis dan masuk kerja. Pelatihan dasar belum otomatis berubah menjadi kesiapan kerja, pengalaman kerja bengkel, disiplin kerja, serta akses awal ke dunia kerja otomotif.",
+    "baseline_points": [
+      "Keterampilan hasil pelatihan belum sepenuhnya menjadi kesiapan kerja bengkel nyata.",
+      "Peserta belum selalu terbiasa dengan ritme kerja, target layanan, dan budaya kerja bengkel.",
+      "Pembelajaran belum sepenuhnya selaras dengan praktik kerja otomotif sehari-hari.",
+      "Skill teknis belum otomatis disertai soft skill, etos kerja, dan kesiapan memasuki dunia kerja.",
+      "Peserta masih membutuhkan jalur transisi, pengalaman magang, dan jejaring awal untuk masuk sektor otomotif."
+    ],
+    "barrier_dimensions": [
+      "training_to_work_gap",
+      "workplace_adaptation_gap",
+      "industry_alignment_gap",
+      "employability_readiness_gap",
+      "entry_access_gap"
+    ],
+    "transition_risk": "Tanpa jembatan institusional seperti BLKI, magang, mentorship bengkel, dan pembiasaan dunia kerja, pelatihan vokasional berisiko berhenti pada level sertifikasi atau exposure tanpa berlanjut menjadi workforce entry yang nyata."
+  },
+  "problem_framing": {
+    "problem_statement": "Vocational-to-Employment Transition Barrier",
+    "narrative": "Masalah utama ESP bukan sekadar kurangnya pelatihan teknis, tetapi belum optimalnya transformasi pelatihan vokasional menjadi kesiapan kerja, pengalaman kerja riil, dan akses awal ke pasar kerja otomotif.",
+    "problem_nodes": [
+      {
+        "code": "PROB_ESP_01",
+        "label": "Training-to-Work Gap",
+        "description": "Keterampilan hasil pelatihan belum sepenuhnya menjadi kesiapan kerja bengkel nyata."
+      },
+      {
+        "code": "PROB_ESP_02",
+        "label": "Workplace Adaptation Gap",
+        "description": "Peserta belum terbiasa dengan ritme kerja, target layanan, dan budaya kerja bengkel."
+      },
+      {
+        "code": "PROB_ESP_03",
+        "label": "Industry Alignment Gap",
+        "description": "Pembelajaran belum sepenuhnya selaras dengan praktik kerja otomotif sehari-hari."
+      },
+      {
+        "code": "PROB_ESP_04",
+        "label": "Employability Readiness Gap",
+        "description": "Skill teknis belum otomatis disertai soft skill, etos kerja, dan kesiapan memasuki dunia kerja."
+      },
+      {
+        "code": "PROB_ESP_05",
+        "label": "Entry Access Gap",
+        "description": "Peserta masih membutuhkan jalur transisi, pengalaman magang, dan jejaring awal untuk masuk sektor otomotif."
+      }
+    ]
+  },
+  "ideal_conditions": {
+    "vision_statement": "Peserta vokasional memiliki jalur transisi yang jelas dari pelatihan menuju dunia kerja otomotif melalui penguatan teknis, exposure bengkel, pembiasaan budaya kerja, dan dukungan jejaring awal kerja.",
+    "success_markers": [
+      "Pelatihan teknis terhubung dengan ruang kerja riil di bengkel mitra.",
+      "Peserta menunjukkan kesiapan kerja, work-based learning, dan pembentukan disiplin kerja.",
+      "Bengkel mitra berfungsi sebagai simpul magang, mentorship, dan aktivitas ekonomi aktual.",
+      "Program menghasilkan workforce entry pathway yang lebih nyata bagi peserta."
+    ]
+  },
+  "strategy_design": {
+    "program_philosophy": "ESP dirancang sebagai jembatan transisi dari pelatihan vokasional menuju dunia kerja otomotif, bukan sebagai pelatihan teknis yang berdiri sendiri.",
+    "program_logic": [
+      "technical capability formation",
+      "workplace immersion",
+      "employment pathway activation",
+      "character and work-discipline strengthening"
+    ],
+    "causal_chain": [
+      "Pelatihan BLKI dan penguatan teknis",
+      "Pemagangan di bengkel mitra",
+      "Mentorship mekanik senior",
+      "Pembiasaan soft skill dan karakter kerja",
+      "Workforce readiness yang lebih tinggi",
+      "Transisi kerja dan nilai ekonomi ekosistem bengkel"
+    ],
+    "institutional": {
+      "nodes": [
+        "PT Pertamina Lubricants",
+        "BLKI / lembaga pelatihan",
+        "bengkel mitra",
+        "peserta program",
+        "pelanggan bengkel"
+      ],
+      "note": "Distribusi node program menempatkan lembaga pelatihan sebagai pemasok penguatan teknis, bengkel mitra sebagai ruang magang dan aktivitas ekonomi, serta peserta sebagai penerima manfaat utama dalam jalur transisi kerja."
+    }
+  },
+  "activities": [
+    {
+      "year": 2023,
+      "name": "Pelatihan teknis BLKI",
+      "activity_scope": [
+        "Pelatihan teknis BLKI",
+        "Penguatan dasar kompetensi vokasional otomotif"
+      ]
+    },
+    {
+      "year": 2023,
+      "name": "Pemagangan di bengkel mitra",
+      "activity_scope": [
+        "Eksposur awal workplace",
+        "Product knowledge",
+        "Pembiasaan kerja"
+      ]
+    },
+    {
+      "year": 2024,
+      "name": "Penguatan magang dan pendampingan",
+      "activity_scope": [
+        "Peningkatan workplace exposure",
+        "Pendampingan operasional",
+        "Penguatan disiplin kerja"
+      ]
+    },
+    {
+      "year": 2024,
+      "name": "Mentorship mekanik senior",
+      "activity_scope": [
+        "Mentorship teknis",
+        "Penguatan kesiapan kerja",
+        "Work-based learning"
+      ]
+    },
+    {
+      "year": 2025,
+      "name": "Pemantapan pathway masuk kerja",
+      "activity_scope": [
+        "Pendalaman work-based learning",
+        "Penguatan job readiness",
+        "Dukungan usaha bengkel"
+      ]
+    },
+    {
+      "year": 2025,
+      "name": "Soft skill dan character building",
+      "activity_scope": [
+        "Pembentukan karakter kerja",
+        "Etos kerja",
+        "Pembiasaan dunia kerja otomotif"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "OUT_ESP_01",
+      "year": 2023,
+      "description": "Ekosistem 11 unit monetisasi aktif dalam skema pelatihan, magang, dan mentoring.",
+      "quantity": 11,
+      "unit": "unit",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESP_02",
+      "year": 2023,
+      "description": "Pelatihan teknis, pembiasaan kerja, product knowledge, dan eksposur operasional mulai berjalan.",
+      "quantity": 1,
+      "unit": "paket intervensi",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESP_03",
+      "year": 2024,
+      "description": "Workplace exposure, disiplin kerja, dan penguatan operasional peserta meningkat.",
+      "quantity": 11,
+      "unit": "unit ekosistem",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_ESP_04",
+      "year": 2025,
+      "description": "Pathway masuk kerja diperdalam melalui work-based learning, kesiapan kerja, dan dukungan usaha bengkel.",
+      "quantity": 11,
+      "unit": "unit ekosistem",
+      "data_status": "observed"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "PT Pertamina Lubricants",
+      "role": "Pemrakarsa dan penyelenggara TJSL",
+      "involvement_type": "initiator"
+    },
+    {
+      "name": "BLKI / Lembaga Pelatihan",
+      "role": "Penyedia penguatan teknis peserta",
+      "involvement_type": "implementation_partner"
+    },
+    {
+      "name": "Bengkel Mitra",
+      "role": "Ruang magang, work-based learning, dan penguatan operasional",
+      "involvement_type": "implementation_partner"
+    },
+    {
+      "name": "Peserta Program",
+      "role": "Penerima manfaat langsung; peserta pelatihan dan magang",
+      "involvement_type": "direct_beneficiary"
+    },
+    {
+      "name": "Pelanggan Bengkel",
+      "role": "Pengguna jasa, sparepart, dan pelumas dalam ekosistem bengkel",
+      "involvement_type": "indirect_beneficiary"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "beneficiary_id": "BEN_ESP_01",
+      "name": "Peserta job-ready",
+      "type": "direct",
+      "estimated_count": 88,
+      "unit": "peserta per tahun",
+      "description": "Estimasi peserta yang mencapai status job-ready per tahun."
+    },
+    {
+      "beneficiary_id": "BEN_ESP_02",
+      "name": "Peserta WBL/CHR",
+      "type": "direct",
+      "estimated_count": 110,
+      "unit": "peserta per tahun",
+      "description": "Estimasi peserta yang menerima manfaat work-based learning dan pembentukan karakter kerja per tahun."
+    },
+    {
+      "beneficiary_id": "BEN_ESP_03",
+      "name": "Unit ekosistem monetisasi",
+      "type": "intermediate",
+      "estimated_count": 11,
+      "unit": "unit",
+      "description": "Total unit ekosistem monetisasi 2023–2025."
+    }
+  ],
+  "investment": [
+    {
+      "year": 2023,
+      "category": "Program ESP — Total",
+      "amount_idr": 339222725,
+      "description": "Total anggaran ESP 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program ESP — Total",
+      "amount_idr": 474951814,
+      "description": "Total anggaran ESP 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2025,
+      "category": "Program ESP — Total",
+      "amount_idr": 541652000,
+      "description": "Total anggaran ESP 2025",
+      "data_status": "observed"
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_id": "OC_ESP_ECO_01",
+      "name": "Aktivitas jasa dan sparepart ekosistem bengkel meningkat",
+      "description": "Ekosistem bengkel mitra menghasilkan aktivitas ekonomi aktual melalui jasa dan sparepart.",
+      "measurement": "Nilai transaksi jasa dan sparepart per tahun pada unit ekosistem monetisasi.",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_ESP_DECK"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESP_ECO_02",
+      "name": "Penjualan pelumas dalam ekosistem bengkel meningkat",
+      "description": "Program menghasilkan nilai ekonomi aktual melalui penjualan pelumas pada unit ekosistem bengkel.",
+      "measurement": "Nilai penjualan pelumas per tahun pada unit ekosistem monetisasi.",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_ESP_DECK"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESP_SOC_01",
+      "name": "Kesiapan kerja dan workforce entry peserta meningkat",
+      "description": "Peserta menunjukkan kesiapan kerja yang lebih tinggi sebagai hasil gabungan pelatihan, magang, dan mentoring.",
+      "measurement": "Proxy nilai kesiapan kerja / workforce entry per tahun.",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESP_SOC_02",
+      "name": "Work-based learning gain peserta meningkat",
+      "description": "Peserta memperoleh pengalaman kerja, exposure bengkel, dan pembelajaran berbasis kerja yang lebih nyata.",
+      "measurement": "Proxy nilai work-based learning per tahun.",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESP_SOC_03",
+      "name": "Karakter kerja dan disiplin peserta menguat",
+      "description": "Program memperkuat disiplin kerja, etos kerja, dan pembiasaan budaya kerja otomotif pada peserta.",
+      "measurement": "Proxy nilai character and work discipline per tahun.",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry"
+      ]
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_ESP_JSP_2023",
+      "aspect_id": "MON_ESP_JSP",
+      "aspect_code": "JSP",
+      "year": 2023,
+      "gross_idr": 227746520,
+      "proxy_basis": "actual value jasa dan sparepart per tahun dalam ekosistem bengkel",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_01",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_LUB_2023",
+      "aspect_id": "MON_ESP_LUB",
+      "aspect_code": "LUB",
+      "year": 2023,
+      "gross_idr": 60932183,
+      "proxy_basis": "actual value penjualan pelumas per tahun dalam ekosistem bengkel",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_02",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_EMP_2023",
+      "aspect_id": "MON_ESP_EMP",
+      "aspect_code": "EMP",
+      "year": 2023,
+      "gross_idr": 258712056,
+      "proxy_basis": "proxy nilai kesiapan kerja / workforce entry per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_01",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_WBL_2023",
+      "aspect_id": "MON_ESP_WBL",
+      "aspect_code": "WBL",
+      "year": 2023,
+      "gross_idr": 161819896,
+      "proxy_basis": "proxy nilai work-based learning gain per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_02",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_CHR_2023",
+      "aspect_id": "MON_ESP_CHR",
+      "aspect_code": "CHR",
+      "year": 2023,
+      "gross_idr": 80909948,
+      "proxy_basis": "proxy nilai character and work discipline per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_03",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_JSP_2024",
+      "aspect_id": "MON_ESP_JSP",
+      "aspect_code": "JSP",
+      "year": 2024,
+      "gross_idr": 318865503,
+      "proxy_basis": "actual value jasa dan sparepart per tahun dalam ekosistem bengkel",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_01",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_LUB_2024",
+      "aspect_id": "MON_ESP_LUB",
+      "aspect_code": "LUB",
+      "year": 2024,
+      "gross_idr": 84964162,
+      "proxy_basis": "actual value penjualan pelumas per tahun dalam ekosistem bengkel",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_02",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_EMP_2024",
+      "aspect_id": "MON_ESP_EMP",
+      "aspect_code": "EMP",
+      "year": 2024,
+      "gross_idr": 267887006,
+      "proxy_basis": "proxy nilai kesiapan kerja / workforce entry per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_01",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_WBL_2024",
+      "aspect_id": "MON_ESP_WBL",
+      "aspect_code": "WBL",
+      "year": 2024,
+      "gross_idr": 166929589,
+      "proxy_basis": "proxy nilai work-based learning gain per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_02",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_CHR_2024",
+      "aspect_id": "MON_ESP_CHR",
+      "aspect_code": "CHR",
+      "year": 2024,
+      "gross_idr": 83964584,
+      "proxy_basis": "proxy nilai character and work discipline per tahun",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_03",
+      "display_status": "present_as_pending"
+    },
+    {
+      "monetization_id": "MON_ESP_JSP_2025",
+      "aspect_id": "MON_ESP_JSP",
+      "aspect_code": "JSP",
+      "year": 2025,
+      "gross_idr": 420762538,
+      "proxy_basis": "actual value jasa dan sparepart per tahun dalam ekosistem bengkel",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESP_LUB_2025",
+      "aspect_id": "MON_ESP_LUB",
+      "aspect_code": "LUB",
+      "year": 2025,
+      "gross_idr": 112015083,
+      "proxy_basis": "actual value penjualan pelumas per tahun dalam ekosistem bengkel",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESP_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESP_EMP_2025",
+      "aspect_id": "MON_ESP_EMP",
+      "aspect_code": "EMP",
+      "year": 2025,
+      "gross_idr": 256034475,
+      "proxy_basis": "proxy nilai kesiapan kerja / workforce entry per tahun",
+      "data_status": "estimated",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESP_WBL_2025",
+      "aspect_id": "MON_ESP_WBL",
+      "aspect_code": "WBL",
+      "year": 2025,
+      "gross_idr": 160021547,
+      "proxy_basis": "proxy nilai work-based learning gain per tahun",
+      "data_status": "estimated",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_02",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESP_CHR_2025",
+      "aspect_id": "MON_ESP_CHR",
+      "aspect_code": "CHR",
+      "year": 2025,
+      "gross_idr": 80010773,
+      "proxy_basis": "proxy nilai character and work discipline per tahun",
+      "data_status": "estimated",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESP_SOC_03",
+      "display_status": "present_as_proxy"
+    }
+  ],
+  "ddat_params": {
+    "JSP": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.61,
+      "notes": "DW+DS+AT+DO · net ×0,61",
+      "justification": "Aspek jasa dan sparepart bersifat observed, namun tetap memerlukan penyesuaian moderat untuk deadweight, displacement, attribution, dan drop-off karena aktivitas ekonomi tidak sepenuhnya eksklusif berasal dari intervensi program."
+    },
+    "LUB": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.25,
+      "drop_off": 0.05,
+      "net_multiplier": 0.54,
+      "notes": "DW+DS+AT+DO · net ×0,54",
+      "justification": "Penjualan pelumas merupakan nilai ekonomi aktual dalam ekosistem bengkel, tetapi tetap membutuhkan penyesuaian konservatif karena ada kontribusi faktor pasar, pelanggan, dan operasional bengkel yang berada di luar program."
+    },
+    "EMP": {
+      "deadweight": 0.2,
+      "displacement": 0,
+      "attribution": 0.27,
+      "drop_off": 0,
+      "net_multiplier": 0.53,
+      "notes": "DW+AT · net ×0,53",
+      "justification": "Kesiapan kerja/workforce entry adalah proxy konservatif yang menangkap manfaat transisi kerja peserta; deadweight dan attribution dipertahankan moderat karena readiness tidak sepenuhnya hanya berasal dari program, namun program menjadi jembatan kunci menuju dunia kerja."
+    },
+    "WBL": {
+      "deadweight": 0.2,
+      "displacement": 0,
+      "attribution": 0.34,
+      "drop_off": 0,
+      "net_multiplier": 0.46,
+      "notes": "DW+AT · net ×0,46",
+      "justification": "Work-based learning gain adalah manfaat pembelajaran berbasis kerja yang lahir dari kombinasi magang, exposure bengkel, dan mentoring; proxy ini wajar diberi penyesuaian konservatif karena sebagian pembelajaran juga dipengaruhi kapasitas peserta dan lingkungan kerja."
+    },
+    "CHR": {
+      "deadweight": 0.2,
+      "displacement": 0,
+      "attribution": 0.41,
+      "drop_off": 0,
+      "net_multiplier": 0.39,
+      "notes": "DW+AT · net ×0,39",
+      "justification": "Character and work discipline merupakan aspek sosial-behavioural yang paling intangible, sehingga penyesuaian dibuat paling konservatif agar nilai sosial tidak berlebihan dan tetap defensible."
+    }
+  },
+  "evidence_registry": [
+    {
+      "evidence_id": "evidence_registry",
+      "title": "Evidence bundle for ESP proxy outcomes",
+      "description": "Outcome proxy EMP, WBL, dan CHR diturunkan dari logika program yang secara eksplisit menekankan vocational-to-employment transition barrier, BLKI training, pemagangan bengkel, mentorship, serta character building."
+    },
+    {
+      "evidence_id": "EV_ESP_01",
+      "title": "Vocational-to-Employment Transition Barrier",
+      "description": "Slide masalah menegaskan bahwa pelatihan vokasional belum cukup untuk melewati barrier masuk dunia kerja otomotif."
+    },
+    {
+      "evidence_id": "EV_ESP_02",
+      "title": "Employment Pathway",
+      "description": "Slide kesimpulan menegaskan ESP membangun jembatan dari pelatihan ke dunia kerja melalui BLKI, magang, dan mentorship bengkel."
+    },
+    {
+      "evidence_id": "EV_ESP_03",
+      "title": "Workforce Readiness",
+      "description": "Slide kesimpulan menegaskan nilai tambahan program muncul dari workforce readiness, work-based learning, serta pembentukan karakter dan disiplin kerja peserta."
+    }
+  ],
+  "uncertainty_flags": [
+    {
+      "description": "Terdapat mismatch nomenklatur legacy di prompt/validator awal yang masih memetakan ESP sebagai Enduro Sahabat Petani; canonical ini mengikuti source deck yang konsisten memakai Enduro Student Program.",
+      "severity": "low",
+      "field": "general"
+    },
+    {
+      "description": "Nilai 2023–2024 pada deck ditandai under confirmation.",
+      "severity": "medium",
+      "field": "investment"
+    },
+    {
+      "description": "Aspek EMP/WBL/CHR merupakan proxy estimasi konservatif per unit aktif.",
+      "severity": "medium",
+      "field": "monetization"
+    },
+    {
+      "description": "Nama rinci 11 unit ekosistem monetisasi tidak dieksplisitkan pada script yang tersedia.",
+      "severity": "low",
+      "field": "monetization"
+    }
+  ],
+  "learning_signals": {
+    "loop_1": [
+      "Pelatihan teknis saja tidak cukup; workplace immersion dan exposure bengkel menjadi jembatan penting menuju workforce entry.",
+      "Bengkel mitra bukan hanya tempat praktik, tetapi simpul transisi dari pelatihan ke aktivitas ekonomi riil."
+    ],
+    "loop_2": [
+      "Nilai program tidak berhenti pada transaksi bengkel; manfaat utama justru muncul dari kesiapan kerja, work-based learning, dan pembentukan karakter kerja peserta.",
+      "Soft skill, disiplin, dan pembiasaan budaya kerja perlu dibaca sebagai bagian integral dari employability outcome."
+    ],
+    "loop_3": [
+      "ESP paling kuat dibaca sebagai employment pathway program: training → magang → mentorship → workforce readiness → positive return.",
+      "Kombinasi observed economic value dan proxy employability value membuat ESP menjadi canonical yang kuat untuk program transisi kerja."
+    ]
+  },
+  "ori_rates": {
+    "2023": {
+      "series": "ORI023T3",
+      "rate": 0.059,
+      "compound_factor": 1.1252
+    },
+    "2024": {
+      "series": "ORI025T3",
+      "rate": 0.0625,
+      "compound_factor": 1.0625
+    },
+    "2025": {
+      "series": "ORI027T3",
+      "rate": 0.065,
+      "compound_factor": 1
+    }
+  },
+  "sroi_metrics": {
+    "status": "pending",
+    "calculated": {
+      "sroi_blended": 0,
+      "per_year": [],
+      "total_investment": 0,
+      "total_gross": 0,
+      "total_net": 0,
+      "total_net_compounded": 0
+    },
+    "note": "Dihitung otomatis oleh pipeline"
+  },
+  "coverage_status": {
+    "bab_1": "strong",
+    "bab_2": "strong",
+    "bab_3": "strong",
+    "bab_4": "strong",
+    "bab_5": "strong",
+    "bab_6": "strong",
+    "bab_7": "strong",
+    "bab_8": "partial",
+    "bab_9": "partial"
+  },
+  "last_updated": "2026-04-14",
+  "_submit_ts": "2026-04-14T04:24:09.723Z"
+}

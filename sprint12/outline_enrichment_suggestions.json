@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-04-10T15:39:39.400606",
+  "source_outline": "chapter_outline_reviewed_bab_7.json",
+  "suggestions": [
+    {
+      "suggestion_id": "sugg_er_outline_new_gaps_153939",
+      "rule_id": "ER_OUTLINE_NEW_GAPS",
+      "suggestion_type": "gap_note",
+      "text": "Bab bab_7 memiliki 1 gap baru dari hasil review. Pastikan gap ini muncul sebagai callout_gap di narasi.",
+      "confidence": 0.92,
+      "source": "review decisions",
+      "target": "bab_7",
+      "category": "gap_acknowledgement",
+      "generated_at": "2026-04-10T15:39:39.395327",
+      "status": "pending"
+    }
+  ]
+}

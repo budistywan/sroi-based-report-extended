@@ -1,0 +1,32 @@
+{
+  "review_id": "18a7bc87",
+  "review_target_type": "outline",
+  "review_target_id": "bab_7",
+  "program_code": "ESL",
+  "decision": "approve_with_notes",
+  "pipeline_gate": "review_point_b",
+  "reviewer": "user",
+  "timestamp": "2026-04-10T14:55:50.012183",
+  "notes": "Outline bab_7 disetujui — core_claim disesuaikan ke SROI 1:1.03 (pipeline value), point REINT/CONF ditandai partial",
+  "changes": [
+    {
+      "change_type": "replace_value",
+      "field_path": "core_claim",
+      "old_value": "Program ESL menghasilkan SROI blended 1 : 1.14 — positive re",
+      "new_value": "Program ESL menghasilkan SROI blended 1 : 1.03 (evaluatif, DDAT-adjusted, ORI-compounded) selama periode 2023–2025 — setiap Rp 1 investasi menghasilkan Rp 1.03 nilai sosial-ekonomi terukur.",
+      "reason": "Sesuaikan ke angka pipeline final, bukan nilai manual awal"
+    },
+    {
+      "change_type": "set_status",
+      "field_path": "argument_points.7.5.3",
+      "new_status": "partial",
+      "reason": "REINT masih proxy — belum diverifikasi survei peserta"
+    },
+    {
+      "change_type": "mark_as_gap",
+      "field_path": "participant_verification",
+      "gap_type": "pending_field_validation",
+      "note": "Jumlah peserta 70/70/80 belum dikonfirmasi dari data absensi"
+    }
+  ]
+}

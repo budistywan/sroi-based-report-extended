@@ -1,0 +1,116 @@
+[
+  {
+    "chapter_id": "bab_7",
+    "chapter_title": "Implementasi / PDIS dengan SROI",
+    "builder_mode": "sroi",
+    "coverage_status": "strong",
+    "purpose": "Menyajikan seluruh rangkaian implementasi program secara terukur — dari aktivitas, investasi, dan output hingga outcome, fiksasi dampak, monetisasi, dan hasil SROI evaluatif.",
+    "core_claim": "Program ESL menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan SROI blended 1:1,14 yang dicapai melalui kombinasi transaksi bengkel riil dan nilai reintegrasi sosial-ekonomi yang terproksikan secara konservatif.",
+    "core_claim_ref": "sroi_metrics.calculated",
+
+    "argument_points": [
+      {
+        "label": "7.1",
+        "point": "Program beroperasi di empat node dengan karakteristik dan tingkat aktivitas yang berbeda, tiga di antaranya aktif menghasilkan transaksi terukur.",
+        "evidence_refs": ["strategy_design.institutional", "outputs"],
+        "status": "supported"
+      },
+      {
+        "label": "7.2",
+        "point": "Total investasi program selama 2023–2025 mencapai Rp502,46 juta dengan distribusi yang meningkat per tahun seiring penguatan aktivitas.",
+        "evidence_refs": ["investment", "EV_01"],
+        "financial_ref": "table_investment_per_node",
+        "status": "supported",
+        "note": "Investasi 2023–2024 berstatus under_confirmation — ditampilkan dengan badge pending"
+      },
+      {
+        "label": "7.3",
+        "point": "Terdapat empat stakeholder utama yang terlibat dengan peran berbeda dalam ekosistem program.",
+        "evidence_refs": ["stakeholders"],
+        "status": "supported"
+      },
+      {
+        "label": "7.4",
+        "point": "Program menghasilkan empat aspek nilai terukur: dua aspek observed (LUB dan SVC) dan dua aspek proxy yang tervalidasi secara akademik dan kebijakan (REINT dan CONF).",
+        "evidence_refs": ["monetization", "outcomes", "EV_03", "EV_04"],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.4.1",
+        "point": "LUB — penjualan pelumas: data transaksi aktual dari tiga node aktif, adj ×0,54.",
+        "evidence_refs": ["MON_LUB_2023","MON_LUB_2024","MON_LUB_2025","EV_01"],
+        "status": "supported"
+      },
+      {
+        "label": "7.4.2",
+        "point": "SVC — jasa dan sparepart: data transaksi aktual, displacement lebih rendah karena bengkel Lapas tidak bersaing langsung dengan pasar, adj ×0,61.",
+        "evidence_refs": ["MON_SVC_2023","MON_SVC_2024","MON_SVC_2025","EV_02"],
+        "status": "supported"
+      },
+      {
+        "label": "7.4.3",
+        "point": "REINT — kesiapan reintegrasi: proxy Rp3.500.000/peserta mengacu komponen pelatihan Kartu Prakerja, defensible karena merepresentasikan willingness-to-pay pemerintah untuk peningkatan kesiapan kerja/usaha, adj ×0,55.",
+        "evidence_refs": ["MON_REINT_2023","MON_REINT_2024","MON_REINT_2025","EV_03","EV_05"],
+        "status": "supported",
+        "note": "Jumlah peserta 70/70/80 adalah estimasi S10 — konservatif dan defensible tapi belum terverifikasi lapangan"
+      },
+      {
+        "label": "7.4.4",
+        "point": "CONF — kepercayaan diri dan self-efficacy: proxy Rp300.000/peserta dari 6 sesi konseling psikologi publik Rp50.000/sesi, adj ×0,50.",
+        "evidence_refs": ["MON_CONF_2023","MON_CONF_2024","MON_CONF_2025","EV_04"],
+        "status": "supported",
+        "note": "Haircut lebih tinggi (50%) mengakui bahwa perubahan self-efficacy sulit diatribusikan penuh ke program"
+      },
+      {
+        "label": "7.5",
+        "point": "DDAT adjustment diterapkan per aspek dengan haircut rata-rata 45%, mencerminkan konservatisme metodologis yang konsisten.",
+        "evidence_refs": ["ddat_params"],
+        "financial_ref": "table_ddat_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.6",
+        "point": "Nilai bersih per tahun di-compound ke terminal year 2025 menggunakan ORI reference rate, menghasilkan net benefit kumulatif Rp570,67 juta dari investasi Rp502,46 juta.",
+        "evidence_refs": ["ori_rates", "sroi_metrics"],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported",
+        "note": "Angka ini dihasilkan oleh Financial Calculation Engine — tidak boleh ditulis ulang oleh Narrative Builder"
+      },
+      {
+        "label": "7.7",
+        "point": "SROI blended 2023–2025 adalah 1:1,14 — program positive return dengan setiap Rp1 investasi menghasilkan Rp1,14 nilai sosial-ekonomi terukur.",
+        "evidence_refs": ["sroi_metrics.calculated"],
+        "financial_ref": "table_sroi_blended",
+        "status": "supported",
+        "note": "Status: calculated by Financial Engine Sprint 1. Angka final dikunci, tidak boleh dinaikan atau diturunkan dalam narasi."
+      },
+      {
+        "label": "7.8",
+        "point": "SROI per tahun menunjukkan variasi: 2023 tertinggi (1:1,44 setelah compound) karena REINT sudah besar relatif terhadap investasi; 2024 dan 2025 lebih moderat (1:1,02 dan 1:1,04).",
+        "evidence_refs": ["sroi_metrics.calculated.per_year"],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.9",
+        "point": "Node Lapas Palembang belum menghasilkan transaksi selama periode evaluasi — potensi kenaikan SROI signifikan jika node ini dapat diaktivasi.",
+        "evidence_refs": ["strategy_design.institutional", "uncertainty_flags"],
+        "status": "supported",
+        "elaboration": "Ini bukan kelemahan yang harus disembunyikan — justru ini adalah temuan jujur yang memperkuat kredibilitas laporan dan memberi rekomendasi yang konkret."
+      }
+    ],
+
+    "known_gaps": [],
+
+    "financial_refs": [
+      "table_investment_per_node",
+      "table_monetization_per_aspek",
+      "table_ddat_per_aspek",
+      "table_sroi_per_tahun",
+      "table_sroi_blended"
+    ],
+
+    "narrative_notes": "Bab ini adalah bab terkuat. Semua angka harus datang dari sroi_metrics.calculated — Narrative Builder tidak boleh merangkum atau membulatkan angka secara mandiri. Gunakan tabel untuk angka, paragraf untuk interpretasi. Proxy REINT dan CONF harus selalu disertai badge dan catatan sumber."
+  }
+]

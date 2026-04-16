@@ -1,0 +1,72 @@
+{
+  "signature_id": "style_signature_reflective",
+  "register": "reflective_register",
+  "bab_coverage": [
+    "bab_8"
+  ],
+  "function": "Pembelajaran, refleksi, integrasi makna, menjembatani hasil ke implikasi",
+  "parent_global_signature": "style_signature_reviewed",
+  "parent_style_profile": "style_profile_reviewed",
+  "created_at": "2026-04-11T03:36:01.328125",
+  "dimensions": {
+    "opening_style": {
+      "pattern": "conceptual_contrast_or_question",
+      "description": "Paragraf membuka dengan kontras konseptual atau pertanyaan yang mengundang refleksi",
+      "examples": [
+        "Perbedaan antara observed direct return dan blended SROI bukan sekadar...",
+        "Node Lapas Palembang yang belum menghasilkan transaksi bukan semata-mata..."
+      ],
+      "variation_note": "Boleh dimulai dengan 'Perbedaan antara', 'Bukan sekadar', 'Di balik angka ini'"
+    },
+    "hedging_degree": {
+      "level": "moderate",
+      "preferred_markers": [
+        "mencerminkan",
+        "menjadi sinyal bahwa",
+        "mengundang pertanyaan",
+        "justru menjadi",
+        "bukan pada ... tetapi pada"
+      ],
+      "avoided_markers": [
+        "terbukti",
+        "sudah pasti berhasil",
+        "membuktikan secara mutlak"
+      ],
+      "firmness": "moderate"
+    },
+    "transition_style": {
+      "style": "dialogic_gentle",
+      "preferred_connectors": [
+        "Di sinilah pembelajaran terpenting",
+        "Dalam kerangka ini",
+        "Bukan ... tetapi",
+        "Kondisi ini justru",
+        "Yang perlu dicatat adalah"
+      ]
+    },
+    "closing_style": {
+      "pattern": "learning_forward",
+      "description": "Penutup membuka ruang refleksi atau pertanyaan lanjutan — bukan menutup dengan kepastian angka"
+    },
+    "sentence_rhythm": {
+      "style": "mixed_short_medium"
+    }
+  },
+  "variation_rules": {
+    "opening_diversity": true,
+    "sentence_length_mix": true,
+    "allow_shorter_closing": true
+  },
+  "special_emphasis": [
+    "learning_orientation",
+    "meaning_integration",
+    "gentle_transition",
+    "reflective_not_vague",
+    "no_number_destabilization"
+  ],
+  "guard_rails": {
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "no_contradicting_evaluative_numbers": true
+  }
+}

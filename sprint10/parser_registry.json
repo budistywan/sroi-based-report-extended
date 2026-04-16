@@ -1,0 +1,63 @@
+{
+  "version": "2.0",
+  "updated_at": "2026-04-10",
+  "description": "Registry semua parser dalam SROI Report Generation System",
+  "parsers": [
+    {
+      "name":        "deck_script_parser",
+      "module":      "sprint7/deck_script_parser.py",
+      "input_type":  "tjls_script_md",
+      "input_format":"markdown",
+      "status":      "stable",
+      "programs":    ["PSN","ESD","ESL","ETB","ESP","ESS"],
+      "outputs":     ["parsed_source_json","canonical_json"],
+      "limitations": ["ESS per-year breakdown tidak tersedia","ESL pres.title kosong — butuh fallback"],
+      "notes":       "Parser utama untuk TJSL_Scripts.md. Stabil untuk 5/6 program."
+    },
+    {
+      "name":        "doc_parser",
+      "module":      "sprint10/doc_parser.py",
+      "input_type":  "docx",
+      "input_format":"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "status":      "new",
+      "programs":    ["any"],
+      "outputs":     ["parsed_source_json"],
+      "limitations": [
+        "Semantic hints bersifat heuristik — tidak authoritative",
+        "Tidak melakukan OCR untuk gambar/diagram",
+        "TOC entries di-skip otomatis"
+      ],
+      "notes":       "Parser untuk dokumen .docx SROI. Preserves hierarchy dan tabel."
+    },
+    {
+      "name":        "free_text_parser",
+      "module":      "sprint10/free_text_parser.py",
+      "input_type":  "free_text",
+      "input_format":"text/plain",
+      "status":      "new",
+      "programs":    ["any"],
+      "outputs":     ["parsed_source_json"],
+      "limitations": [
+        "Pattern matching berbasis keyword — bisa miss edge cases",
+        "Confidence score tidak dikalibrasi secara empiris",
+        "Tidak menangani teks multi-bahasa mixed secara granular"
+      ],
+      "notes":       "Parser untuk catatan bebas. Memisahkan fact/instruction/limitation/interpretation."
+    },
+    {
+      "name":        "ess_specific_parser",
+      "module":      "sprint10/ess_parser.py",
+      "input_type":  "script_or_partial_structured",
+      "input_format":"markdown",
+      "status":      "new",
+      "programs":    ["ESS"],
+      "outputs":     ["canonical_json"],
+      "limitations": [
+        "SROI evaluatif tidak dapat dihitung — per-year breakdown tidak tersedia",
+        "Total investasi under_confirmation",
+        "Bab IV-VI canonical masih pending"
+      ],
+      "notes":       "Parser khusus ESS. Jujur tentang keterbatasan — tidak fabricate per-year."
+    }
+  ]
+}

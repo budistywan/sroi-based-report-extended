@@ -1,0 +1,14 @@
+{
+  "qa_version": "1.0.0",
+  "chapter_id": "bab_7",
+  "generated_at": "2026-04-10T09:24:31.850095",
+  "renderer_ready": true,
+  "summary": {
+    "total_blocks": 53,
+    "errors": 0,
+    "warnings": 0,
+    "checks_run": 9
+  },
+  "findings": [],
+  "revision_instructions": []
+}

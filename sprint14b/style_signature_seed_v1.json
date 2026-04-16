@@ -1,0 +1,93 @@
+{
+  "signature_id": "style_signature_seed_v1",
+  "parent_style_profile": "style_profile_reviewed",
+  "source_exemplars": "raw_exemplars.json",
+  "extracted_at": "2026-04-11T03:21:36.027415",
+  "exemplar_count": 5,
+  "dimensions": {
+    "opening_style": {
+      "dominant_pattern": "evaluative_frame",
+      "description": "Paragraf cenderung membuka dengan konteks atau posisi persoalan sebelum klaim inti",
+      "pattern_distribution": {
+        "context_first": 1,
+        "evaluative_frame": 4
+      },
+      "supporting_exemplars": [
+        "ex_002",
+        "ex_003",
+        "ex_004",
+        "ex_005"
+      ],
+      "variation_note": "context_first dominan tapi ada variasi — konsisten dengan preferensi diversitas pembuka"
+    },
+    "hedging_degree": {
+      "dominant_level": "moderate",
+      "level_distribution": {
+        "moderate": 3,
+        "high": 2
+      },
+      "preferred_markers": [
+        "menunjukkan bahwa",
+        "menunjukkan",
+        "masih membutuhkan verifikasi"
+      ],
+      "avoided_markers": [],
+      "note": "Firm but guarded — tegas tapi tidak overclaim"
+    },
+    "transition_style": {
+      "style": "soft_logical",
+      "preferred_connectors": [
+        "Dengan demikian",
+        "Lebih lanjut"
+      ],
+      "connector_frequency": {
+        "Dengan demikian": 1,
+        "Lebih lanjut": 1
+      },
+      "note": "Transisi halus menggunakan jembatan logis, bukan kata hubung kasar"
+    },
+    "closing_style": {
+      "dominant_pattern": "open_elaboration",
+      "pattern_distribution": {
+        "short_affirmation": 1,
+        "open_elaboration": 2,
+        "locked_implication": 2
+      },
+      "supporting_exemplars": [
+        "ex_002",
+        "ex_004"
+      ],
+      "note": "Penutup paragraf cenderung mengunci makna — bukan menggantung setelah elaborasi"
+    },
+    "sentence_rhythm": {
+      "dominant_style": "mixed_medium_long",
+      "style_distribution": {
+        "mixed_varied": 1,
+        "mixed_medium_long": 4
+      },
+      "note": "Campuran kalimat medium dan panjang, dengan kalimat pendek sebagai penegas"
+    },
+    "rhetorical_movement": {
+      "dominant_pattern": "free_form",
+      "pattern_distribution": {
+        "context → elaboration → open": 1,
+        "free_form": 2,
+        "claim → elaboration → implication": 2
+      },
+      "note": "Gerakan argumentatif dari konteks ke klaim ke elaborasi ke implikasi"
+    }
+  },
+  "variation_rules": {
+    "opening_diversity": true,
+    "rhythm_mix": true,
+    "connector_rotation": false,
+    "closing_variation": true,
+    "note": "Variasi diizinkan dan dianjurkan — konsistensi pada prinsip, bukan pada bentuk permukaan"
+  },
+  "guard_rails_from_14a": {
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "anti_mechanical": true,
+    "note": "Signature ini beroperasi di atas style_profile_reviewed — 14A tetap aktif sebagai guard rail"
+  }
+}

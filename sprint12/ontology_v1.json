@@ -1,0 +1,187 @@
+{
+  "ontology_version": "1.0",
+  "domain":           "TJSL SROI — Program Pemberdayaan Masyarakat",
+  "created_at":       "2026-04-10",
+  "description":      "Ontology domain untuk sistem SROI Report Generation. Berisi entitas, relasi, dan aturan semantik yang membantu enrichment engine memahami konteks program.",
+
+  "entities": {
+    "program_type": [
+      "livelihood",
+      "reintegration",
+      "inclusive_training",
+      "vocational",
+      "community_empowerment",
+      "environmental",
+      "education",
+      "health",
+      "fisheries",
+      "enterprise_development"
+    ],
+    "stakeholder_type": [
+      "investor",
+      "primary_beneficiary",
+      "secondary_beneficiary",
+      "implementing_partner",
+      "government_partner",
+      "community_partner",
+      "market_actor"
+    ],
+    "outcome_domain": [
+      "economic",
+      "social_reintegration",
+      "wellbeing",
+      "skills_development",
+      "environmental",
+      "institutional_capacity",
+      "market_access"
+    ],
+    "monetization_type": [
+      "observed_transaction",
+      "proxy_market_rate",
+      "proxy_policy_reference",
+      "willingness_to_pay",
+      "replacement_cost",
+      "avoided_cost"
+    ],
+    "evidence_type": [
+      "transaction_record",
+      "survey_data",
+      "administrative_data",
+      "secondary_reference",
+      "expert_estimate",
+      "policy_reference"
+    ],
+    "data_status": [
+      "observed",
+      "proxy",
+      "pending",
+      "final",
+      "under_confirmation",
+      "partial",
+      "inferred",
+      "derived"
+    ],
+    "gap_type": [
+      "data_unavailable",
+      "evidence_insufficient",
+      "pending_field_validation",
+      "out_of_scope"
+    ],
+    "risk_type": [
+      "overclaim",
+      "data_fabrication",
+      "proxy_instability",
+      "attribution_uncertainty",
+      "baseline_weakness"
+    ],
+    "metric_type": [
+      "sroi_ratio",
+      "gross_value",
+      "net_value",
+      "compounded_value",
+      "investment_total",
+      "fiksasi_pct",
+      "observed_direct_return"
+    ]
+  },
+
+  "relations": [
+    { "from": "activity",      "type": "produces",       "to": "output" },
+    { "from": "output",        "type": "leads_to",        "to": "outcome" },
+    { "from": "outcome",       "type": "experienced_by",  "to": "stakeholder" },
+    { "from": "outcome",       "type": "monetized_by",    "to": "proxy" },
+    { "from": "proxy",         "type": "adjustable_by",   "to": "ddat_params" },
+    { "from": "gap",           "type": "affects_quality", "to": "chapter" },
+    { "from": "investment",    "type": "enables",         "to": "activity" },
+    { "from": "program",       "type": "targets",         "to": "beneficiary" },
+    { "from": "program",       "type": "classified_as",   "to": "program_type" },
+    { "from": "evidence",      "type": "supports",        "to": "outcome_claim" },
+    { "from": "baseline_data", "type": "informs",         "to": "problem_framing" },
+    { "from": "strategy",      "type": "addresses",       "to": "barrier" },
+    { "from": "barrier",       "type": "blocks",          "to": "outcome" }
+  ],
+
+  "semantic_rules": [
+    {
+      "rule_id":    "SR_01",
+      "condition":  "gap_type = data_unavailable AND chapter IN [bab_4, bab_5]",
+      "action":     "suggest framing as baseline_programatik",
+      "suggestion": "Gunakan framing 'baseline programatik' karena evidence baseline wilayah terbatas — jangan overclaim kelengkapan data",
+      "category":   "framing"
+    },
+    {
+      "rule_id":    "SR_02",
+      "condition":  "monetization_type = proxy AND data_status IN [proxy, pending]",
+      "action":     "suggest proxy_caution_note",
+      "suggestion": "Aspek monetisasi ini menggunakan proxy — tambahkan catatan bahwa nilainya estimatif dan perlu verifikasi survei peserta",
+      "category":   "caution"
+    },
+    {
+      "rule_id":    "SR_03",
+      "condition":  "data_status = under_confirmation",
+      "action":     "suggest pending_flag",
+      "suggestion": "Field ini berstatus under_confirmation — tampilkan sebagai pending di laporan, bukan final",
+      "category":   "status"
+    },
+    {
+      "rule_id":    "SR_04",
+      "condition":  "outcome_domain = social_reintegration",
+      "action":     "suggest reintegration_context",
+      "suggestion": "Outcome reintegrasi sosial-ekonomi biasanya membutuhkan proxy replacement cost atau willingness-to-pay policy reference — pastikan metodologi terdokumentasi",
+      "category":   "methodology"
+    },
+    {
+      "rule_id":    "SR_05",
+      "condition":  "metric_type = sroi_ratio AND value < 1.0",
+      "action":     "suggest below_par_note",
+      "suggestion": "SROI < 1.0 berarti nilai sosial lebih kecil dari investasi — ini bukan kegagalan jika horizon evaluasi belum penuh atau ada outcome jangka panjang yang belum dimonetisasi",
+      "category":   "interpretation"
+    },
+    {
+      "rule_id":    "SR_06",
+      "condition":  "program_type = reintegration",
+      "action":     "suggest lfa_alignment",
+      "suggestion": "Program reintegrasi sebaiknya memiliki LFA yang eksplisit memetakan jalur Lapas → pelatihan → usaha/pekerjaan → reintegrasi — cek apakah jalur ini terdokumentasi",
+      "category":   "lfa"
+    },
+    {
+      "rule_id":    "SR_07",
+      "condition":  "stakeholder_type = primary_beneficiary AND outcome_domain = skills_development",
+      "action":     "suggest output_to_outcome_trace",
+      "suggestion": "Pastikan ada traceability dari output pelatihan (jumlah peserta) ke outcome (kesiapan kerja/usaha) — tanpa ini klaim outcome lemah",
+      "category":   "traceability"
+    },
+    {
+      "rule_id":    "SR_08",
+      "condition":  "chapter = bab_7 AND monetization coverage weak",
+      "action":     "suggest two_layer_reading",
+      "suggestion": "Gunakan dua lapis pembacaan: Observed direct return (transaksi riil) dan Blended SROI (nilai sosial total) — jangan campur tanpa definisi tegas",
+      "category":   "terminology"
+    }
+  ],
+
+  "program_archetypes": {
+    "reintegration_vocational": {
+      "description": "Program pelatihan vokasional untuk reintegrasi kelompok marginal",
+      "typical_outcomes":    ["skills_development","social_reintegration","economic"],
+      "typical_proxies":     ["replacement_cost","policy_reference"],
+      "common_gaps":         ["baseline_data","participant_tracking","long_term_followup"],
+      "key_risks":           ["proxy_instability","attribution_uncertainty"],
+      "relevant_sdgs":       ["SDG 8","SDG 10","SDG 16"]
+    },
+    "fisheries_empowerment": {
+      "description": "Program pemberdayaan nelayan melalui penguatan aset dan kapasitas",
+      "typical_outcomes":    ["economic","market_access","environmental"],
+      "typical_proxies":     ["replacement_cost","willingness_to_pay"],
+      "common_gaps":         ["environmental_impact_data"],
+      "relevant_sdgs":       ["SDG 8","SDG 14"]
+    },
+    "santri_vocational": {
+      "description": "Program pemberdayaan santri melalui literasi usaha dan vokasional",
+      "typical_outcomes":    ["skills_development","economic"],
+      "typical_proxies":     ["replacement_cost","policy_reference"],
+      "common_gaps":         ["institutional_capacity_data"],
+      "relevant_sdgs":       ["SDG 4","SDG 8"]
+    }
+  }
+}

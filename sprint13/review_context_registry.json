@@ -1,0 +1,29 @@
+{
+  "registry_version": "1.0",
+  "created_at":       "2026-04-10",
+  "description":      "Registry konteks review. Keputusan review di room chat TIDAK bersifat universal — berlaku hanya dalam konteks spesifik yang terdaftar di sini.",
+  "rule":             "No patch may be committed without a valid applicability_context that matches an entry in this registry.",
+  "contexts": [
+    {
+      "context_id":   "ESL_Pertamina_2025",
+      "program":      "ESL",
+      "program_name": "Enduro Sahabat Lapas",
+      "client":       "PT Pertamina Lubricants",
+      "period":       "2023-2025",
+      "reviewer":     "PT Dipa Konsultan Utama",
+      "notes":        "Chat review decisions dalam konteks ini tidak dapat digunakan ulang untuk program lain tanpa revalidasi. Judgement di sini mencerminkan preferensi metodologis, istilah, dan framing yang spesifik untuk klien dan program ini.",
+      "active":       true
+    },
+    {
+      "context_id":   "PSN_Pertamina_2025",
+      "program":      "PSN",
+      "program_name": "Pertamina Sahabat Nelayan",
+      "client":       "PT Pertamina Lubricants",
+      "period":       "2023-2025",
+      "reviewer":     "PT Dipa Konsultan Utama",
+      "notes":        "Konteks placeholder — belum ada review sessions. Aktifkan ketika PSN pipeline dijalankan.",
+      "active":       false
+    }
+  ],
+  "validation_note": "Sebelum commit-back, sistem harus memeriksa bahwa patch.applicability_context ada dalam registry ini dan context.active = true."
+}

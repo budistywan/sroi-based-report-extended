@@ -1,0 +1,46 @@
+{
+  "view_type": "gap_review",
+  "generated_at": "2026-04-10T15:02:01.591340",
+  "review_state": "pending_review",
+  "total_gaps": 2,
+  "gap_items": [
+    {
+      "chapter_id": "bab_4",
+      "chapter_title": "Identifikasi Kondisi Awal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "recommendation": "full",
+      "note": "Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia secara derived. Builder tulis placeholder terstruktur untuk data wilayah.",
+      "current_decision": null,
+      "available_decisions": [
+        "accepted",
+        "ignorable",
+        "must_render_as_gap",
+        "request_regeneration"
+      ]
+    },
+    {
+      "chapter_id": "bab_5",
+      "chapter_title": "Identifikasi Kondisi Ideal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "recommendation": "full",
+      "note": "Kondisi ideal tersedia sebagai derived. Kualitas cukup untuk bab partial.",
+      "current_decision": null,
+      "available_decisions": [
+        "accepted",
+        "ignorable",
+        "must_render_as_gap",
+        "request_regeneration"
+      ]
+    }
+  ],
+  "review_prompts": [
+    "Apakah gap di Bab IV (baseline wilayah) perlu diakui eksplisit di laporan?",
+    "Apakah gap di Bab V (kondisi ideal) cukup ditangani dengan callout_gap?",
+    "Apakah ada gap yang sebenarnya tidak material dan bisa diabaikan?",
+    "Apakah ada gap yang perlu memicu regenerasi outline?"
+  ]
+}

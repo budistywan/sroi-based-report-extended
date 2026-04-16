@@ -1,0 +1,142 @@
+[
+  {
+    "chapter_id": "bab_1",
+    "chapter_type": "pendahuluan",
+    "source_outline_ref": "bab_1",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277306",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB I PENDAHULUAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan latar belakang, tujuan, ruang lingkup, dan konsiderasi hukum penyusunan Laporan Evaluasi Social Return on Investment (SROI) Program Enduro Sahabat Lapas (ESL) periode 2023–2025."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "1.1 Latar Belakang Penulisan Laporan SROI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tanggung Jawab Sosial dan Lingkungan (TJSL) merupakan kewajiban strategis yang tidak hanya bersifat normatif, tetapi juga menjadi instrumen pengukuran dampak sosial yang terukur. PT Pertamina Lubricants sebagai bagian dari ekosistem BUMN, melaksanakan TJSL dalam kerangka Beyond Compliance — Inovasi Sosial — melampaui kepatuhan minimum dan mengarah pada penciptaan nilai sosial yang berkelanjutan."
+      },
+      {
+        "type": "paragraph",
+        "text": "Social Return on Investment (SROI) adalah kerangka analisis yang mengukur nilai sosial, ekonomi, dan lingkungan dari suatu program intervensi secara holistik. Berbeda dengan evaluasi konvensional yang hanya mengukur output, SROI menelusuri perubahan yang dirasakan oleh pemangku kepentingan — dari individu penerima manfaat hingga komunitas yang lebih luas."
+      },
+      {
+        "type": "callout_info",
+        "text": "Program Enduro Sahabat Lapas masuk dalam kategori Beyond Compliance — Inovasi Sosial sesuai Peraturan Menteri LHK No. 1 Tahun 2021 yang mewajibkan perusahaan peserta PROPER untuk mengusulkan program inovasi sosial unggulan dengan pengukuran dampak berbasis SROI.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.2 Tujuan dan Luaran"
+      },
+      {
+        "type": "paragraph",
+        "text": "Penyusunan laporan ini bertujuan untuk:"
+      },
+      {
+        "type": "numbered_list",
+        "items": [
+          {
+            "text": "Mengidentifikasi dan mendokumentasikan seluruh aktivitas program secara terstruktur"
+          },
+          {
+            "text": "Menghitung rasio nilai sosial yang dihasilkan terhadap investasi yang dikeluarkan"
+          },
+          {
+            "text": "Menyajikan temuan secara transparan — termasuk keterbatasan data dan area yang perlu diperkuat"
+          },
+          {
+            "text": "Memberikan rekomendasi berbasis bukti untuk pengembangan program pada periode berikutnya"
+          },
+          {
+            "text": "Memenuhi kewajiban pelaporan PROPER beyond compliance kepada KLHK"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.3 Ruang Lingkup Kajian"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kajian ini mencakup seluruh aktivitas Program Enduro Sahabat Lapas selama periode 2023–2025, meliputi empat node program yang tersebar di wilayah operasional."
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Dimensi",
+          "Cakupan"
+        ],
+        "rows": [
+          [
+            "Program",
+            "Enduro Sahabat Lapas"
+          ],
+          [
+            "Periode",
+            "2023–2025"
+          ],
+          [
+            "Perusahaan",
+            "PT Pertamina Lubricants"
+          ],
+          [
+            "Pilar TJSL",
+            "Pemberdayaan Masyarakat"
+          ],
+          [
+            "Kategori PROPER",
+            "Beyond Compliance — Inovasi Sosial"
+          ],
+          [
+            "Node Program",
+            "4 node (3 aktif + 1 dalam pembentukan)"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          6438
+        ],
+        "source_refs": [
+          "program_identity",
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "1.4 Konsiderasi Hukum"
+      },
+      {
+        "type": "paragraph",
+        "text": "Penyusunan laporan ini berlandaskan pada regulasi berikut:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "UU No. 40 Tahun 2007 tentang Perseroan Terbatas Pasal 74"
+          },
+          {
+            "text": "Peraturan Menteri LHK No. 1 Tahun 2021"
+          }
+        ]
+      },
+      {
+        "type": "paragraph_small",
+        "text": "Ketiga regulasi di atas membentuk kerangka kewajiban dan metodologi yang menjadi dasar pelaksanaan kajian SROI ini."
+      }
+    ]
+  }
+]

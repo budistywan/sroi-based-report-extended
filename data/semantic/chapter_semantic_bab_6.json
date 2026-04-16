@@ -1,0 +1,198 @@
+[
+  {
+    "chapter_id": "bab_6",
+    "chapter_type": "strategi",
+    "source_outline_ref": "bab_6",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277330",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB VI STRATEGI UNTUK MENCAPAI KONDISI IDEAL YANG DIHARAPKAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan desain strategis Program Enduro Sahabat Lapas — mencakup filosofi program, roadmap tiga tahun, value chain, dan kelembagaan yang terbentuk."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "6.1 Nama dan Filosofi Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nama 'Enduro Sahabat Lapas' mencerminkan filosofi inti program: menempatkan perusahaan sebagai mitra aktif (bukan donor pasif) bagi WBP dan eks-WBP dalam perjalanan mereka menuju kemandirian. Tagline program: \"Penguatan Keterampilan Mekanik, Kemandirian Usaha, dan Kesiapan Reintegrasi Sosial-Ekonomi bagi WBP dan Eks-WBP\"."
+      },
+      {
+        "type": "heading_2",
+        "text": "6.2 Relevansi Program dengan Visi Misi Perusahaan dan Program Pemerintah"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program ini selaras dengan pilar 'Pemberdayaan Masyarakat' dan kategori 'Beyond Compliance — Inovasi Sosial' yang ditetapkan dalam regulasi PROPER. Di sisi pemerintah, program berkontribusi pada agenda Kementerian Hukum dan HAM dalam rehabilitasi dan reintegrasi WBP."
+      },
+      {
+        "type": "heading_2",
+        "text": "6.3 Roadmap Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program dirancang dalam tiga tahap yang mencerminkan evolusi dari pembentukan kapasitas menuju stabilisasi dan ekspansi:"
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S1: Pembentukan Kapasitas (2023)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Pelatihan mekanik dasar + product knowledge pelumas. Tipe pembelajaran: single-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S2: Penguatan Operasional (2024)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Praktik bengkel riil + pembinaan kewirausahaan. Tipe pembelajaran: double-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Tahap S3: Stabilisasi & Ekspansi (2025)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fokus: Penguatan node eks-WBP + Lapas Corner + pipeline reintegrasi. Tipe pembelajaran: double-loop learning.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "6.4 Value Chain"
+      },
+      {
+        "type": "paragraph",
+        "text": "Rantai nilai program mengalir secara sekuensial dari kapasitas teknis menuju dampak sosial:"
+      },
+      {
+        "type": "paragraph",
+        "text": "1. Pelatihan teknis mekanik →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "2. Product knowledge pelumas Enduro →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "3. Praktik bengkel & servis riil →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "4. Pembinaan kewirausahaan →",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "5. Pendampingan unit usaha",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "6.5 Kelembagaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program membentuk dan menguatkan 4 node kelembagaan yang menjadi unit operasional program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Node",
+          "Tipologi"
+        ],
+        "rows": [
+          [
+            "Lapas Kota Palembang",
+            "WBP aktif — fase pembentukan kapasitas"
+          ],
+          [
+            "Bengkel Lapas IIB Sleman",
+            "WBP aktif — fase aktif bertransaksi"
+          ],
+          [
+            "Milenial Motor (Eks-WBP)",
+            "Eks-WBP — proof-of-concept reintegrasi"
+          ],
+          [
+            "Pemasyarakatan Corner",
+            "WBP aktif — fase aktif bertransaksi"
+          ]
+        ],
+        "column_widths": [
+          4200,
+          5438
+        ],
+        "source_refs": [
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "callout_success",
+        "text": "Milenial Motor adalah pencapaian kelembagaan terkuat program: sebuah unit usaha bengkel yang dikelola sepenuhnya oleh eks-WBP, membuktikan bahwa model reintegrasi produktif yang dicita-citakan program dapat diwujudkan dalam skala nyata.",
+        "source_refs": [
+          "EV_06"
+        ]
+      },
+      {
+        "type": "metric_card_3col",
+        "items": [
+          {
+            "label": "Node Program",
+            "value": "4",
+            "sublabel": "total"
+          },
+          {
+            "label": "Node Bertransaksi",
+            "value": "3",
+            "sublabel": "aktif"
+          },
+          {
+            "label": "Model Reintegrasi",
+            "value": "1",
+            "sublabel": "Milenial Motor"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0",
+  "case_id": "ess_2023_2025_v2",
+  "created_at": "2026-04-10",
+  "last_updated": "2026-04-10",
+  "parser_version": "1.0.0",
+  "parser_note": "ESS-specific parser v2 — jujur tentang keterbatasan data per-tahun",
+  "program_identity": {
+    "program_code": "ESS",
+    "program_name": "Enduro Sahabat Santri",
+    "program_tagline": "Pemberdayaan Santri melalui Literasi Pelumasan dan Kewirausahaan Bengkel Pesantren",
+    "company": "PT Pertamina Lubricants",
+    "unit": "TJSL CSV",
+    "period_start": 2023,
+    "period_end": 2025,
+    "palette": "A — Deep Ocean",
+    "data_status": "final"
+  },
+  "program_positioning": {
+    "tjsl_pillar": "Pemberdayaan Masyarakat",
+    "sdg_alignment": [
+      "SDG 4 — Pendidikan Berkualitas",
+      "SDG 8 — Pekerjaan Layak"
+    ],
+    "proper_category": "Beyond Compliance — Inovasi Sosial",
+    "policy_basis": [
+      "UU No. 40 Tahun 2007 tentang Perseroan Terbatas Pasal 74",
+      "Peraturan Menteri LHK No. 1 Tahun 2021"
+    ]
+  },
+  "source_registry": [
+    {
+      "source_id": "src_ess_01",
+      "source_type": "ppt_script",
+      "name": "TJSL_Scripts.md — ess sections",
+      "parsed_at": "2026-04-10",
+      "reliability": "primary",
+      "notes": "Script ESS tidak memiliki per-tahun investment breakdown"
+    }
+  ],
+  "context_baseline": {
+    "data_status": "pending"
+  },
+  "problem_framing": {
+    "problem_tree": [],
+    "data_status": "pending"
+  },
+  "ideal_conditions": {
+    "data_status": "pending"
+  },
+  "strategy_design": {
+    "data_status": "pending"
+  },
+  "activities": [],
+  "outputs": [],
+  "stakeholders": [],
+  "beneficiaries": [],
+  "outcomes": [],
+  "investment": [
+    {
+      "year": "2023-2025",
+      "node": "total",
+      "amount_idr": 402370000,
+      "data_status": "under_confirmation",
+      "display_status": "present_as_pending",
+      "source_refs": [
+        "src_ess_01"
+      ],
+      "note": "Total investasi 3 tahun — per-tahun breakdown tidak tersedia di script"
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_JSP_2023",
+      "aspect_code": "JSP",
+      "year": 2023,
+      "gross_idr": 18300000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_JSP_2024",
+      "aspect_code": "JSP",
+      "year": 2024,
+      "gross_idr": 25620000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_JSP_2025",
+      "aspect_code": "JSP",
+      "year": 2025,
+      "gross_idr": 35870000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_LUB_2023",
+      "aspect_code": "LUB",
+      "year": 2023,
+      "gross_idr": 25130000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_LUB_2024",
+      "aspect_code": "LUB",
+      "year": 2024,
+      "gross_idr": 35180000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_LUB_2025",
+      "aspect_code": "LUB",
+      "year": 2025,
+      "gross_idr": 49250000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_TRANS_2023",
+      "aspect_code": "TRANS",
+      "year": 2023,
+      "gross_idr": 14480000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_TRANS_2024",
+      "aspect_code": "TRANS",
+      "year": 2024,
+      "gross_idr": 20270000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_TRANS_2025",
+      "aspect_code": "TRANS",
+      "year": 2025,
+      "gross_idr": 28370000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_ENT_2023",
+      "aspect_code": "ENT",
+      "year": 2023,
+      "gross_idr": 28950000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_ENT_2024",
+      "aspect_code": "ENT",
+      "year": 2024,
+      "gross_idr": 40530000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_ENT_2025",
+      "aspect_code": "ENT",
+      "year": 2025,
+      "gross_idr": 56750000,
+      "data_status": "observed",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2023",
+      "aspect_code": "CONF",
+      "year": 2023,
+      "gross_idr": 3620000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2024",
+      "aspect_code": "CONF",
+      "year": 2024,
+      "gross_idr": 5070000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    },
+    {
+      "monetization_id": "MON_CONF_2025",
+      "aspect_code": "CONF",
+      "year": 2025,
+      "gross_idr": 7090000,
+      "data_status": "proxy",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_ess_01"
+      ]
+    }
+  ],
+  "ddat_params": {
+    "JSP": {
+      "net_multiplier": 0.5,
+      "data_status": "pending",
+      "justification": "default 0.5 — per-aspek ESS belum tersedia di script"
+    },
+    "LUB": {
+      "net_multiplier": 0.5,
+      "data_status": "pending",
+      "justification": "default 0.5 — per-aspek ESS belum tersedia di script"
+    },
+    "TRANS": {
+      "net_multiplier": 0.5,
+      "data_status": "pending",
+      "justification": "default 0.5 — per-aspek ESS belum tersedia di script"
+    },
+    "ENT": {
+      "net_multiplier": 0.5,
+      "data_status": "pending",
+      "justification": "default 0.5 — per-aspek ESS belum tersedia di script"
+    },
+    "CONF": {
+      "net_multiplier": 0.5,
+      "data_status": "pending",
+      "justification": "default 0.5 — per-aspek ESS belum tersedia di script"
+    }
+  },
+  "ori_rates": {
+    "2023": {
+      "rate": 0.059000000000000004,
+      "series": "ORI023T3",
+      "compound_factor": 1.1252,
+      "terminal_year": false
+    },
+    "2024": {
+      "rate": 0.0625,
+      "series": "ORI025T3",
+      "compound_factor": 1.065,
+      "terminal_year": false
+    },
+    "2025": {
+      "rate": 0.065,
+      "series": "ORI027T3",
+      "compound_factor": 1.0,
+      "terminal_year": true
+    }
+  },
+  "sroi_metrics": {
+    "status": "partial",
+    "note": "SROI final ESS tidak dapat dihitung deterministik dari script — per-tahun breakdown tidak tersedia. Angka di bawah bersifat preliminary dari gross total.",
+    "calculated": {
+      "total_gross_idr": 394480000,
+      "gross_data_status": "extracted",
+      "total_investment_idr": 402370000,
+      "investment_data_status": "under_confirmation",
+      "sroi_blended": null,
+      "sroi_blended_status": "pending",
+      "per_year": [],
+      "per_year_status": "pending — yearly breakdown tidak tersedia di script ESS"
+    }
+  },
+  "learning_signals": {
+    "loop_1": [],
+    "loop_2": [],
+    "loop_3": [],
+    "data_status": "pending"
+  },
+  "evidence_registry": [],
+  "uncertainty_flags": [
+    {
+      "flag_id": "UF_ESS_YEARLY",
+      "field_path": "sroi_metrics.calculated.per_year",
+      "reason": "Per-year investment breakdown tidak tersedia di script ESS — SROI evaluatif tidak dapat dihitung deterministik",
+      "severity": "high"
+    },
+    {
+      "flag_id": "UF_ESS_INV",
+      "field_path": "investment",
+      "reason": "Total investasi tersedia tapi berstatus under_confirmation",
+      "severity": "medium"
+    }
+  ],
+  "coverage_status": {
+    "bab_1": {
+      "status": "strong",
+      "inputs": [
+        "program_identity",
+        "program_positioning"
+      ],
+      "risk": "reliable"
+    },
+    "bab_2": {
+      "status": "strong",
+      "inputs": [
+        "program_identity",
+        "program_positioning"
+      ],
+      "risk": "reliable"
+    },
+    "bab_3": {
+      "status": "partial",
+      "inputs": [
+        "ddat_params",
+        "ori_rates"
+      ],
+      "risk": "thin"
+    },
+    "bab_4": {
+      "status": "missing",
+      "inputs": [],
+      "risk": "skeleton_only"
+    },
+    "bab_5": {
+      "status": "missing",
+      "inputs": [],
+      "risk": "skeleton_only"
+    },
+    "bab_6": {
+      "status": "missing",
+      "inputs": [],
+      "risk": "skeleton_only"
+    },
+    "bab_7": {
+      "status": "partial",
+      "inputs": [
+        "investment",
+        "monetization",
+        "ddat_params",
+        "ori_rates"
+      ],
+      "risk": "thin",
+      "notes": "SROI final pending — per-year breakdown tidak tersedia"
+    },
+    "bab_8": {
+      "status": "missing",
+      "inputs": [],
+      "risk": "skeleton_only"
+    },
+    "bab_9": {
+      "status": "partial",
+      "inputs": [
+        "sroi_metrics"
+      ],
+      "risk": "thin"
+    }
+  }
+}

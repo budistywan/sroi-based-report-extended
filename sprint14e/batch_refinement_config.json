@@ -1,0 +1,54 @@
+{
+  "run_id": "batch_refine_esl_v1",
+  "program": "ESL",
+  "applicability_context": "ESL_Pertamina_2025",
+  "created_at": "2026-04-11",
+  "mode": "priority_first",
+  "chapters": [
+    "bab_1",
+    "bab_2",
+    "bab_3",
+    "bab_4",
+    "bab_5",
+    "bab_6",
+    "bab_7",
+    "bab_8",
+    "bab_9"
+  ],
+  "priority_chapters": [
+    "bab_7",
+    "bab_9",
+    "bab_8",
+    "bab_4"
+  ],
+  "max_packets_per_batch": 10,
+  "review_policy": {
+    "tier_1_default": true,
+    "tier_2_enabled": false,
+    "tier_2_candidate_types": [
+      "closing_lock",
+      "transition_smooth"
+    ],
+    "tier_3_always_manual": [
+      "hedging_adjustment",
+      "opening_refine",
+      "claim_softening"
+    ],
+    "note": "Tier 2 tidak aktif untuk full report pass pertama. Aktifkan setelah analytics dari run ini dianalisis."
+  },
+  "consistency_checks": {
+    "enabled": true,
+    "require_before_merge": true,
+    "dimensions": [
+      "terminology_consistency",
+      "hedging_level_drift",
+      "closing_style_balance",
+      "connector_drift",
+      "tone_drift"
+    ]
+  },
+  "semantic_dir": "../sprint9/output/esl/work",
+  "sprint14d_dir": "../sprint14d",
+  "sprint14c_dir": "../sprint14c",
+  "output_dir": "."
+}

@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-04-10T15:39:39.400937",
+  "source_gap": "gap_matrix_reviewed.json",
+  "suggestions": [
+    {
+      "suggestion_id": "sugg_er_gap_bab_4_render_153939",
+      "rule_id": "ER_GAP_BAB_4_RENDER",
+      "suggestion_type": "gap_rendering_note",
+      "text": "Bab bab_4 harus menampilkan gap secara eksplisit (keputusan review: must_render_as_gap). Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia . Gunakan callout_gap dengan gap_type: data_unavailable.",
+      "confidence": 0.99,
+      "source": "review decision + gap_matrix",
+      "target": "bab_4",
+      "category": "gap_acknowledgement",
+      "generated_at": "2026-04-10T15:39:39.395354",
+      "status": "pending"
+    },
+    {
+      "suggestion_id": "sugg_er_gap_bab_5_ignore_153939",
+      "rule_id": "ER_GAP_BAB_5_IGNORE",
+      "suggestion_type": "gap_note",
+      "text": "Bab bab_5 gap ditandai ignorable oleh reviewer. Boleh tidak ditampilkan sebagai gap eksplisit, tetapi tetap jangan overclaim kelengkapan konten.",
+      "confidence": 0.9,
+      "source": "review decision",
+      "target": "bab_5",
+      "category": "status",
+      "generated_at": "2026-04-10T15:39:39.395364",
+      "status": "pending"
+    }
+  ]
+}

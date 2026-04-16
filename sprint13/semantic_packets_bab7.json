@@ -1,0 +1,177 @@
+[
+  {
+    "packet_id": "pkt_202604101620_531fd3",
+    "packet_type": "caution_note",
+    "target_id": "bab_7.proxy_caution",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording",
+        "tone"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "proxy_references",
+        "financial_fields",
+        "ddat_values"
+      ]
+    },
+    "decision_prompt": "Catatan ini memperingatkan bahwa aspek REINT dan CONF menggunakan proxy. Apakah formulasi peringatannya sudah tepat? Tidak terlalu melemahkan klaim tapi tetap jujur tentang sifat estimatif angka-angka tersebut?",
+    "context": {
+      "current_text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+      "source": "ontology_rule SR_02 + monetization",
+      "confidence": 0.95,
+      "relevant_history": "Proxy REINT dan CONF adalah estimasi konservatif Skenario S10 — belum diverifikasi survei peserta",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_24ec81",
+    "packet_type": "terminology_note",
+    "target_id": "bab_7.terminology",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording",
+        "phrasing"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "sroi_values",
+        "financial_fields",
+        "data_status",
+        "argument_points"
+      ]
+    },
+    "decision_prompt": "Apakah istilah 'Blended SROI' dan 'Observed direct return' sudah dipakai secara konsisten di Bab VII? Apakah definisi pembedanya sudah cukup jelas untuk pembaca laporan yang tidak familiar dengan metodologi SROI?",
+    "context": {
+      "current_text": "Gunakan istilah 'Blended SROI' secara konsisten untuk rasio evaluatif total (1 : 1.14). Bedakan secara eksplisit dari 'Observed direct return' jika keduanya disebut.",
+      "source": "domain_lexicon + ontology_rule SR_08",
+      "confidence": 0.98,
+      "relevant_history": "Sprint 9.3: kontradiksi 'SROI final belum dihitung' vs 'Blended SROI 1:1.03' diselesaikan — terminologi dibersihkan",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_f9b340",
+    "packet_type": "proxy_recommendation",
+    "target_id": "bab_7.proxy_documentation",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "placement_decision"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "proxy_values",
+        "financial_fields"
+      ]
+    },
+    "decision_prompt": "Rekomendasi proxy ini menyarankan dokumentasi sumber proxy untuk REINT/CONF. Apakah rekomendasi ini perlu ditambahkan ke narasi Bab VII sebagai catatan metodologis, atau cukup sebagai catatan kaki?",
+    "context": {
+      "current_text": "Outcome reintegrasi sosial-ekonomi membutuhkan proxy yang defensible. Proxy yang direkomendasikan: nilai pelatihan Kartu Prakerja (Rp 3.500.000/peserta) atau replacement cost program pemerintah sejenis. Dokumentasikan sumber proxy.",
+      "source": "ontology entity + domain_lexicon",
+      "confidence": 0.88,
+      "relevant_history": "",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_106374",
+    "packet_type": "proxy_recommendation",
+    "target_id": "bab_7.proxy_documentation",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "placement_decision"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "proxy_values",
+        "financial_fields"
+      ]
+    },
+    "decision_prompt": "Rekomendasi proxy ini menyarankan dokumentasi sumber proxy untuk REINT/CONF. Apakah rekomendasi ini perlu ditambahkan ke narasi Bab VII sebagai catatan metodologis, atau cukup sebagai catatan kaki?",
+    "context": {
+      "current_text": "Outcome kepercayaan diri (CONF) menggunakan proxy replacement cost layanan psikologi. Proxy yang direkomendasikan: tarif psikologi publik (6 sesi × Rp 50.000 = Rp 300.000/peserta). Pastikan sumber proxy terdokumentasi.",
+      "source": "domain_lexicon + ontology entity",
+      "confidence": 0.87,
+      "relevant_history": "",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_ea9f1c",
+    "packet_type": "caution_note",
+    "target_id": "bab_7.proxy_points",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording"
+      ],
+      "forbidden_changes": [
+        "argument_points_structure",
+        "numeric_values",
+        "financial_fields"
+      ]
+    },
+    "decision_prompt": "Beberapa argument point di Bab VII menggunakan data proxy. Apakah setiap point proxy sudah cukup diberi tanda dan konteks yang jelas di narasi? Apakah ada yang perlu penguatan?",
+    "context": {
+      "current_text": "Bab bab_7 memiliki 1 gap baru dari hasil review. Pastikan gap ini muncul sebagai callout_gap di narasi.",
+      "source": "review decisions",
+      "confidence": 0.92,
+      "relevant_history": "",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  }
+]

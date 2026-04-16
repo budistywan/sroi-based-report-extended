@@ -1,0 +1,56 @@
+{
+  "run_id": "batch_refine_esl_v1",
+  "merged_at": "2026-04-12T06:48:54.788411",
+  "total_chapters": 9,
+  "chapters_included": 9,
+  "merged_chapters": [
+    {
+      "chapter_id": "bab_1",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_1.json"
+    },
+    {
+      "chapter_id": "bab_2",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_2.json"
+    },
+    {
+      "chapter_id": "bab_3",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_3.json"
+    },
+    {
+      "chapter_id": "bab_4",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_4.json"
+    },
+    {
+      "chapter_id": "bab_5",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_5.json"
+    },
+    {
+      "chapter_id": "bab_6",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_6.json"
+    },
+    {
+      "chapter_id": "bab_7",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab7.json"
+    },
+    {
+      "chapter_id": "bab_8",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_8.json"
+    },
+    {
+      "chapter_id": "bab_9",
+      "source": "original",
+      "file": "/home/claude/production_bundle/output/esl/work/chapter_semantic_bab_9.json"
+    }
+  ],
+  "consistency_report": "batch_consistency_report.json",
+  "consistency_status": "warning",
+  "output_docx": "/home/claude/production_bundle/sprint14e/ESL_SROI_Full_Report_Refined.docx"
+}

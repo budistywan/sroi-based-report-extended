@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "chapter_outline_schema_v1",
+  "title": "Chapter Outline JSON — Point Builder Output",
+  "description": "Output Point Builder. Jembatan antara canonical JSON (fakta) dan chapter_semantic_json (prosa). Layer ini menyusun logika argumentasi sebelum narasi ditulis.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "chapter_id",
+      "chapter_title",
+      "builder_mode",
+      "purpose",
+      "core_claim",
+      "argument_points"
+    ],
+    "properties": {
+
+      "chapter_id": {
+        "type": "string",
+        "enum": ["bab_1","bab_2","bab_3","bab_4","bab_5","bab_6","bab_7","bab_8","bab_9"]
+      },
+
+      "chapter_title": { "type": "string" },
+
+      "builder_mode": {
+        "type": "string",
+        "enum": ["framing", "context", "sroi", "learning"]
+      },
+
+      "coverage_status": {
+        "type": "string",
+        "enum": ["strong", "partial", "weak", "missing"]
+      },
+
+      "purpose": {
+        "type": "string",
+        "description": "Tujuan bab dalam satu kalimat. Menjawab: mengapa bab ini ada di laporan ini?"
+      },
+
+      "core_claim": {
+        "type": "string",
+        "description": "Argumen utama bab. Harus bisa ditelusuri ke minimal satu field canonical JSON."
+      },
+
+      "core_claim_ref": {
+        "type": "string",
+        "description": "Nama field canonical JSON yang mendukung core_claim."
+      },
+
+      "argument_points": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["label", "point", "evidence_refs", "status"],
+          "properties": {
+
+            "label": {
+              "type": "string",
+              "description": "Nomor poin. Misal: 4.1, 4.2, 7.3.1"
+            },
+
+            "point": {
+              "type": "string",
+              "description": "Kalimat utama poin. Bukan narasi panjang — cukup satu pernyataan yang bisa dikembangkan."
+            },
+
+            "elaboration": {
+              "type": "string",
+              "description": "Opsional. Catatan pengembangan untuk Narrative Builder."
+            },
+
+            "evidence_refs": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Nama field canonical JSON atau evidence_id yang mendukung poin ini. WAJIB tidak kosong jika status = supported."
+            },
+
+            "financial_ref": {
+              "type": "string",
+              "description": "Opsional. table_id dari financial_tables jika poin ini membutuhkan tabel kalkulasi."
+            },
+
+            "status": {
+              "type": "string",
+              "enum": ["supported", "partial", "inferred", "pending"],
+              "description": "supported = ada evidensi kuat. partial = ada tapi tidak lengkap. inferred = logis tapi tidak tersebut eksplisit di data. pending = data belum tersedia."
+            },
+
+            "note": {
+              "type": "string",
+              "description": "Wajib diisi jika status bukan supported. Jelaskan keterbatasan atau cara inferensi."
+            },
+
+            "sub_points": {
+              "type": "array",
+              "description": "Opsional. Untuk poin yang perlu dipecah lebih dalam.",
+              "items": {
+                "type": "object",
+                "required": ["label", "point", "status"],
+                "properties": {
+                  "label":         { "type": "string" },
+                  "point":         { "type": "string" },
+                  "evidence_refs": { "type": "array", "items": { "type": "string" } },
+                  "status":        { "type": "string", "enum": ["supported","partial","inferred","pending"] },
+                  "note":          { "type": "string" }
+                }
+              }
+            }
+          },
+
+          "if": {
+            "properties": { "status": { "const": "supported" } }
+          },
+          "then": {
+            "properties": {
+              "evidence_refs": { "minItems": 1 }
+            }
+          }
+        }
+      },
+
+      "known_gaps": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Daftar hal yang seharusnya ada di bab ini tapi tidak tersedia di canonical JSON. Wajib diisi jika coverage_status weak atau missing."
+      },
+
+      "financial_refs": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "table_id dari Handoff B yang relevan untuk bab ini. Narrative Builder akan menarik tabel ini saat menulis chapter_semantic_json."
+      },
+
+      "narrative_notes": {
+        "type": "string",
+        "description": "Opsional. Catatan gaya untuk Narrative Builder — tone, pendekatan, hal yang perlu diperhatikan."
+      }
+    },
+
+    "if": {
+      "properties": {
+        "coverage_status": { "enum": ["weak", "missing"] }
+      },
+      "required": ["coverage_status"]
+    },
+    "then": {
+      "properties": {
+        "known_gaps": { "minItems": 1 }
+      },
+      "required": ["known_gaps"]
+    }
+  }
+}

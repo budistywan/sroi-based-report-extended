@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title":   "SROI Ontology Schema",
+  "type":    "object",
+  "required": ["ontology_version","entities","relations","semantic_rules"],
+  "properties": {
+    "ontology_version":  { "type": "string" },
+    "domain":            { "type": "string" },
+    "entities": {
+      "type": "object",
+      "additionalProperties": { "type": "array", "items": { "type": "string" } }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from","type","to"],
+        "properties": {
+          "from": { "type": "string" },
+          "type": { "type": "string" },
+          "to":   { "type": "string" }
+        }
+      }
+    },
+    "semantic_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id","condition","action","suggestion","category"],
+        "properties": {
+          "rule_id":    { "type": "string" },
+          "condition":  { "type": "string" },
+          "action":     { "type": "string" },
+          "suggestion": { "type": "string" },
+          "category":   { "type": "string" }
+        }
+      }
+    }
+  }
+}

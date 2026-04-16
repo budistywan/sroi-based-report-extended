@@ -1,0 +1,281 @@
+[
+  {
+    "chapter_id": "bab_7",
+    "chapter_title": "Implementasi / PDIS dengan SROI",
+    "builder_mode": "sroi",
+    "coverage_status": "strong",
+    "purpose": "Menyajikan seluruh rangkaian implementasi program secara terukur — dari aktivitas, stakeholder, investasi, dan output hingga outcome, fiksasi dampak, monetisasi, dan hasil SROI evaluatif.",
+    "core_claim": "Program ESL menghasilkan SROI blended 1 : 1.03 (evaluatif, DDAT-adjusted, ORI-compounded) selama periode 2023–2025 — setiap Rp 1 investasi menghasilkan Rp 1.03 nilai sosial-ekonomi terukur.",
+    "core_claim_ref": "sroi_metrics.calculated",
+    "argument_points": [
+      {
+        "label": "7.1",
+        "point": "Program beroperasi di 4 node dengan karakteristik dan tingkat aktivitas berbeda — 3 node aktif menghasilkan transaksi terukur dan 1 node dalam fase pembentukan kapasitas.",
+        "elaboration": "Node: Lapas Palembang, Bengkel Lapas IIB Sleman, Milenial Motor (Eks-WBP), Pemasyarakatan Corner. Catatan: 4 node, 3 aktif bertransaksi, 1 dalam fase pembentukan. Narasi harus menjelaskan peran berbeda tiap node dan mengapa Lapas Palembang belum menghasilkan transaksi — ini temuan jujur, bukan kelemahan yang disembunyikan.",
+        "evidence_refs": [
+          "strategy_design.institutional",
+          "outputs"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.2",
+        "point": "Program melibatkan 5 pemangku kepentingan utama dengan peran yang berbeda dalam ekosistem program.",
+        "elaboration": "Stakeholder: PT Pertamina Lubricants, WBP aktif di Lapas, Eks-WBP (Milenial Motor), Lembaga Pemasyarakatan, Pelanggan Bengkel.",
+        "evidence_refs": [
+          "stakeholders"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.3",
+        "point": "Total investasi program 2023–2025 mencapai Rp 502,460,181, meningkat setiap tahun seiring penguatan aktivitas program.",
+        "elaboration": "Per tahun: 2023 Rp 128,108,409, 2024 Rp 179,351,772, 2025 Rp 195,000,000. Investasi 2023–2024 berstatus under_confirmation — ditampilkan dengan badge pending, perlu diverifikasi dari laporan keuangan resmi.",
+        "evidence_refs": [
+          "investment"
+        ],
+        "financial_ref": "table_investment_per_node",
+        "status": "supported",
+        "note": "Investasi 2023–2024 under_confirmation — display_status present_as_pending"
+      },
+      {
+        "label": "7.4",
+        "point": "Program menghasilkan output berupa 6 aktivitas terstruktur yang mencakup pelatihan teknis, product knowledge, praktik bengkel, pembinaan kewirausahaan, dan pendampingan unit usaha.",
+        "evidence_refs": [
+          "activities",
+          "outputs"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.5",
+        "point": "Program menghasilkan empat aspek nilai terukur: dua aspek observed (LUB dan SVC dari transaksi aktual) dan dua aspek proxy yang tervalidasi secara akademik dan kebijakan (REINT dan CONF).",
+        "evidence_refs": [
+          "outcomes",
+          "monetization"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.5.1",
+        "point": "LUB — Penjualan Pelumas (observed): gross kumulatif Rp 90,145,224, adj ×0.54, net kumulatif Rp 48,678,421.",
+        "elaboration": "Data transaksi aktual dari tiga node aktif. Justifikasi DDAT: Pelumas bersaing di pasar terbuka — displacement lebih tinggi",
+        "evidence_refs": [
+          "monetization[aspect=LUB]",
+          "ddat_params.LUB",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": ""
+      },
+      {
+        "label": "7.5.2",
+        "point": "SVC — Jasa & Sparepart (observed): gross kumulatif Rp 56,045,864, adj ×0.61, net kumulatif Rp 34,187,977.",
+        "elaboration": "Data transaksi aktual dari tiga node aktif. Justifikasi DDAT: Layanan bengkel di Lapas tidak bersaing langsung dengan pasar — displacement lebih rendah",
+        "evidence_refs": [
+          "monetization[aspect=SVC]",
+          "ddat_params.SVC",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": ""
+      },
+      {
+        "label": "7.5.3",
+        "point": "REINT — Kesiapan Reintegrasi (proxy): gross kumulatif Rp 770,000,000, adj ×0.55, net kumulatif Rp 423,500,000.",
+        "elaboration": "Proxy: Nilai komponen pelatihan Kartu Prakerja. Basis kalkulasi: 70 peserta × Rp3.500.000 per tahun. Justifikasi DDAT: DW+AT+DO — tidak ada DS karena bukan market substitution. Haircut moderat 45% mengacu probabilitas konversi kesiapan reintegrasi menjadi outcome nyata",
+        "evidence_refs": [
+          "monetization[aspect=REINT]",
+          "ddat_params.REINT",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "partial",
+        "note": "Proxy — display_status present_as_proxy. Wajib disertai badge dan source_refs."
+      },
+      {
+        "label": "7.5.4",
+        "point": "CONF — Kepercayaan Diri / Self-Efficacy (proxy): gross kumulatif Rp 66,000,000, adj ×0.5, net kumulatif Rp 33,000,000.",
+        "elaboration": "Proxy: 6 sesi × Rp50.000 tarif psikologi publik (RS Jiwa Grhasia). Basis kalkulasi: 70 peserta × Rp300.000 per tahun. Justifikasi DDAT: Haircut lebih tinggi: perubahan self-efficacy sulit diatribusikan penuh ke program. Faktor pribadi dan lingkungan turut berperan signifikan",
+        "evidence_refs": [
+          "monetization[aspect=CONF]",
+          "ddat_params.CONF",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": "Proxy — display_status present_as_proxy. Wajib disertai badge dan source_refs."
+      },
+      {
+        "label": "7.6",
+        "point": "Fiksasi dampak (DDAT adjustment) diterapkan per aspek dengan haircut rata-rata 45.1%, mencerminkan konservatisme metodologis yang konsisten.",
+        "elaboration": "DDAT = Deadweight + Displacement + Attribution + Drop-off. LUB ×0,54 (46% haircut) · SVC ×0,61 (39% haircut) · REINT ×0,55 (45% haircut) · CONF ×0,50 (50% haircut). CONF mendapat haircut tertinggi karena perubahan self-efficacy sulit diatribusikan penuh ke program.",
+        "evidence_refs": [
+          "ddat_params"
+        ],
+        "financial_ref": "table_ddat_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.7",
+        "point": "Nilai bersih setiap tahun di-compound ke terminal year 2025 menggunakan ORI reference rate, untuk mencerminkan nilai waktu uang secara konservatif.",
+        "elaboration": "2023: ×1,1252 (ORI023T3, 5,90%) → Rp 184,820,913. 2024: ×1,0625 (ORI025T3, 6,25%) → Rp 182,599,631. 2025: ×1,0000 (terminal year) → Rp 203,251,867.",
+        "evidence_refs": [
+          "ori_rates"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.1",
+        "point": "Tahun 2023: investasi Rp 128,108,409, net compounded Rp 184,820,913, SROI 1 : 1.44.",
+        "elaboration": "Gross: Rp 299,530,066. Net setelah DDAT: Rp 164,256,055. Compound factor: ×1.1252.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2023]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.2",
+        "point": "Tahun 2024: investasi Rp 179,351,772, net compounded Rp 182,599,631, SROI 1 : 1.02.",
+        "elaboration": "Gross: Rp 312,942,092. Net setelah DDAT: Rp 171,858,476. Compound factor: ×1.0625.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2024]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.3",
+        "point": "Tahun 2025: investasi Rp 195,000,000, net compounded Rp 203,251,867, SROI 1 : 1.04.",
+        "elaboration": "Gross: Rp 369,718,930. Net setelah DDAT: Rp 203,251,867. Compound factor: ×1.0000.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2025]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.9",
+        "point": "SROI blended 2023–2025: 1 : 1.14 — dari investasi Rp 502,460,181 menghasilkan net benefit compounded Rp 570,672,411.",
+        "elaboration": "Setiap Rp 1 yang diinvestasikan menghasilkan Rp 1,14 nilai sosial-ekonomi terukur. Program dinyatakan positive return. Catatan: REINT dan CONF adalah proxy — jika hanya LUB+SVC (observed), SROI akan jauh lebih rendah. Transparansi ini penting untuk kredibilitas laporan.",
+        "evidence_refs": [
+          "sroi_metrics.calculated"
+        ],
+        "financial_ref": "table_sroi_blended",
+        "status": "supported"
+      },
+      {
+        "label": "7.10",
+        "point": "Node Lapas Palembang belum menghasilkan transaksi terukur selama 2023–2025 — ini adalah temuan jujur yang justru memperkuat kredibilitas laporan dan memberi dasar rekomendasi konkret.",
+        "elaboration": "Jika Lapas Palembang dapat diaktivasi pada periode berikutnya, SROI berpotensi meningkat signifikan tanpa investasi tambahan yang proporsional. Narasi harus menempatkan ini sebagai learning finding, bukan kegagalan.",
+        "evidence_refs": [
+          "strategy_design.institutional",
+          "uncertainty_flags"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.11",
+        "point": "Node Milenial Motor (eks-WBP) adalah bukti terkuat bahwa program dapat menghasilkan reintegrasi produktif nyata pasca-pembebasan.",
+        "elaboration": "Node ini membuktikan bahwa jalur Lapas → pelatihan → usaha mandiri adalah jalur yang viable, bukan sekadar aspirasi program. Posisikan sebagai model replikasi untuk node lapas lain.",
+        "evidence_refs": [
+          "EV_06",
+          "strategy_design.institutional"
+        ],
+        "status": "supported"
+      }
+    ],
+    "known_gaps": [
+      {
+        "gap_id": "gap_review_efd8",
+        "field": "participant_verification",
+        "gap_type": "pending_field_validation",
+        "note": "Jumlah peserta 70/70/80 belum dikonfirmasi dari data absensi",
+        "_from_review": true
+      }
+    ],
+    "financial_refs": [
+      "table_investment_per_node",
+      "table_monetization_per_aspek",
+      "table_ddat_per_aspek",
+      "table_sroi_per_tahun",
+      "table_sroi_blended"
+    ],
+    "narrative_notes": "PENTING untuk Narrative Builder: (1) Semua angka HARUS diambil dari sroi_metrics.calculated — jangan hitung ulang atau bulatkan secara mandiri. (2) Aspek REINT dan CONF wajib disertai badge proxy dan source_refs. (3) Lapas Palembang yang belum bertransaksi adalah temuan jujur — jangan dihilangkan atau disamarkan. (4) Investasi 2023–2024 berstatus under_confirmation — tampilkan dengan callout_warning atau badge pending. (5) Milenial Motor adalah proof-of-concept — posisikan sebagai highlight positif.",
+    "generated_at": "2026-04-10T07:23:52.821744",
+    "builder_version": "1.0.0",
+    "source_calc_at": "2026-04-10T06:20:17.245365Z",
+    "source_engine_ver": "1.0.0",
+    "_review_metadata": {
+      "reviewed_at": "2026-04-10T15:02:06.818276",
+      "reviewer": "user",
+      "decision": "approve_with_notes",
+      "changes_count": 3,
+      "applied_log": [
+        "replace core_claim: 'Program ESL menghasilkan SROI blended 1 ...' → 'Program ESL menghasilkan SROI blended 1 ...'",
+        "set_status point 7.5.3: supported → partial",
+        "mark_as_gap: participant_verification added to known_gaps"
+      ],
+      "source_review_id": "e666af15",
+      "review_state": "approved"
+    },
+    "_enrichment_hints": {
+      "generated_at": "2026-04-10T15:40:40.483383",
+      "total_hints": 5,
+      "hints": [
+        {
+          "hint_type": "caution_note",
+          "text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+          "confidence": 0.95,
+          "category": "caution",
+          "source": "ontology_rule SR_02 + monetization",
+          "rule_id": "ER_PROXY_CAUTION"
+        },
+        {
+          "hint_type": "status_note",
+          "text": "Investasi tahun 2023, 2024 berstatus under_confirmation. Tampilkan sebagai pending di laporan — jangan gunakan sebagai final dalam klaim evaluatif.",
+          "confidence": 0.97,
+          "category": "status",
+          "source": "ontology_rule SR_03 + investment",
+          "rule_id": "ER_INVESTMENT_PENDING"
+        },
+        {
+          "hint_type": "terminology_note",
+          "text": "Gunakan istilah 'Blended SROI' secara konsisten untuk rasio evaluatif total (1 : 1.14). Bedakan secara eksplisit dari 'Observed direct return' jika keduanya disebut.",
+          "confidence": 0.98,
+          "category": "terminology",
+          "source": "domain_lexicon + ontology_rule SR_08",
+          "rule_id": "ER_TERMINOLOGY_BLENDED"
+        },
+        {
+          "hint_type": "proxy_recommendation",
+          "text": "Outcome reintegrasi sosial-ekonomi membutuhkan proxy yang defensible. Proxy yang direkomendasikan: nilai pelatihan Kartu Prakerja (Rp 3.500.000/peserta) atau replacement cost program pemerintah sejenis. Dokumentasikan sumber proxy.",
+          "confidence": 0.88,
+          "category": "proxy_recommendation",
+          "source": "ontology entity + domain_lexicon",
+          "rule_id": "ER_REINTEGRATION_PROXY"
+        },
+        {
+          "hint_type": "proxy_validation",
+          "text": "Outcome kepercayaan diri (CONF) menggunakan proxy replacement cost layanan psikologi. Proxy yang direkomendasikan: tarif psikologi publik (6 sesi × Rp 50.000 = Rp 300.000/peserta). Pastikan sumber proxy terdokumentasi.",
+          "confidence": 0.87,
+          "category": "proxy_recommendation",
+          "source": "domain_lexicon + ontology entity",
+          "rule_id": "ER_CONF_PROXY"
+        }
+      ],
+      "usage_note": "Hints ini dari enrichment engine — builder boleh memakai atau mengabaikan. Tidak mengubah argument_points.",
+      "by_category": {
+        "caution": 1,
+        "status": 1,
+        "terminology": 1,
+        "proxy_recommendation": 2
+      }
+    }
+  }
+]

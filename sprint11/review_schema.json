@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title":   "SROI Review Record Schema",
+  "type":    "object",
+  "required": ["review_id","review_target_type","review_target_id","decision","reviewer","timestamp"],
+  "properties": {
+    "review_id":          { "type": "string", "minLength": 1 },
+    "review_target_type": { "type": "string", "enum": ["canonical","outline","gap_matrix"] },
+    "review_target_id":   { "type": "string", "minLength": 1 },
+    "program_code":       { "type": "string" },
+    "decision":           { "type": "string", "enum": ["approve","approve_with_notes","revise","defer"] },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["change_type"],
+        "properties": {
+          "change_type": {
+            "type": "string",
+            "enum": ["replace_value","append_note","set_status","mark_as_gap",
+                     "request_regeneration","approve_without_change","downgrade_confidence"]
+          },
+          "field_path":  { "type": "string" },
+          "old_value":   {},
+          "new_value":   {},
+          "new_status":  { "type": "string" },
+          "note":        { "type": "string" },
+          "reason":      { "type": "string" },
+          "target_id":   { "type": "string" },
+          "instruction": { "type": "string" },
+          "gap_type":    { "type": "string" }
+        }
+      }
+    },
+    "notes":        { "type": "string" },
+    "reviewer":     { "type": "string" },
+    "timestamp":    { "type": "string" },
+    "pipeline_gate":{ "type": "string", "enum": ["review_point_a","review_point_b"] },
+    "review_state": { "type": "string" }
+  },
+  "additionalProperties": false
+}

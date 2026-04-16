@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title":   "Chat Review Patch Schema",
+  "version": "1.0",
+  "description": "Schema untuk patch yang dihasilkan dari keputusan review di room chat.",
+  "type": "object",
+  "required": [
+    "patch_id", "source_packet_id", "decision",
+    "review_basis", "original_text", "final_text",
+    "timestamp", "review_context", "applicability_context"
+  ],
+  "properties": {
+    "patch_id": {
+      "type": "string", "minLength": 1
+    },
+    "source_packet_id": {
+      "type": "string", "minLength": 1,
+      "description": "packet_id yang menghasilkan patch ini"
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["accept", "reject", "revise"],
+      "description": "Keputusan reviewer"
+    },
+    "review_basis": {
+      "type": "string",
+      "enum": ["methodological", "editorial", "tone", "terminology", "factual_correction"],
+      "description": "Dasar keputusan review"
+    },
+    "original_text": {
+      "type": "string",
+      "description": "Teks sebelum perubahan — wajib ada untuk audit trail"
+    },
+    "final_text": {
+      "type": "string",
+      "description": "Teks setelah perubahan (sama dengan original jika accept, berbeda jika revise, kosong jika reject)"
+    },
+    "reviewer_note": {
+      "type": "string",
+      "description": "Catatan reviewer — wajib untuk rejected patches"
+    },
+    "rejection_reason": {
+      "type": ["string", "null"],
+      "description": "Alasan penolakan — wajib jika decision = reject"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "ISO 8601 timestamp"
+    },
+    "review_context": {
+      "type": "string",
+      "description": "Label sesi review (e.g. Sprint13_ESL_Pilot)"
+    },
+    "applicability_context": {
+      "type": "string",
+      "description": "Context label — patch ini hanya berlaku dalam konteks ini",
+      "minLength": 1
+    },
+    "target_field": {
+      "type": "string",
+      "description": "Field spesifik yang diubah (e.g. '_enrichment_hints.hints[0].text')"
+    },
+    "scope_verified": {
+      "type": "boolean",
+      "description": "Apakah patch sudah diverifikasi terhadap scope packet"
+    }
+  },
+  "additionalProperties": false,
+  "if": {
+    "properties": { "decision": { "const": "reject" } }
+  },
+  "then": {
+    "required": ["rejection_reason"]
+  }
+}

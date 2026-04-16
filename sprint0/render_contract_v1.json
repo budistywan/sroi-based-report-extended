@@ -1,0 +1,156 @@
+{
+  "renderer_version": "1.0",
+  "renderer_stack": "docx-js 9.x + LibreOffice validator",
+  "style_catalog_version": "1.0",
+  "effective_from": "Sprint 0",
+
+  "supported_block_types": [
+    "heading_1", "heading_2", "heading_3", "heading_4",
+    "paragraph", "paragraph_lead", "paragraph_small", "paragraph_mono",
+    "table", "table_borderless", "table_accent_col", "table_total_row",
+    "callout_info", "callout_warning", "callout_success",
+    "callout_danger", "callout_neutral", "callout_gap",
+    "metric_card_3col", "metric_card_4col",
+    "metric_card_fullwidth", "scorecard",
+    "bar_chart_text",
+    "bullet_list", "numbered_list", "definition_list", "checklist",
+    "blockquote", "blockquote_accent",
+    "divider", "divider_thick", "divider_dashed",
+    "page_break"
+  ],
+
+  "required_fields_per_block": {
+    "heading_1":              ["text"],
+    "heading_2":              ["text"],
+    "heading_3":              ["text"],
+    "heading_4":              ["text"],
+    "paragraph":              ["text"],
+    "paragraph_lead":         ["text"],
+    "paragraph_small":        ["text"],
+    "paragraph_mono":         ["text"],
+    "table":                  ["headers", "rows", "column_widths"],
+    "table_borderless":       ["headers", "rows"],
+    "table_accent_col":       ["headers", "rows", "accent_column_index"],
+    "table_total_row":        ["headers", "rows", "column_widths"],
+    "callout_info":           ["text"],
+    "callout_warning":        ["text"],
+    "callout_success":        ["text"],
+    "callout_danger":         ["text"],
+    "callout_neutral":        ["text"],
+    "callout_gap":            ["text", "gap_type"],
+    "metric_card_3col":       ["items"],
+    "metric_card_4col":       ["items"],
+    "metric_card_fullwidth":  ["items"],
+    "scorecard":              ["items"],
+    "bar_chart_text":         ["data_points", "max_value"],
+    "bullet_list":            ["items"],
+    "numbered_list":          ["items"],
+    "definition_list":        ["items"],
+    "checklist":              ["items"],
+    "blockquote":             ["text"],
+    "blockquote_accent":      ["text"],
+    "divider":                [],
+    "divider_thick":          [],
+    "divider_dashed":         [],
+    "page_break":             []
+  },
+
+  "field_schemas": {
+    "items_metric_card": {
+      "required": ["label", "value"],
+      "optional": ["sublabel", "value_color"]
+    },
+    "items_bar_chart": {
+      "required": ["label", "value"],
+      "optional": ["color_hint"]
+    },
+    "items_list": {
+      "required": ["text"],
+      "optional": ["indent_level"]
+    },
+    "items_definition": {
+      "required": ["term", "definition"]
+    },
+    "items_checklist": {
+      "required": ["text", "checked"]
+    },
+    "gap_type_enum": [
+      "data_unavailable",
+      "evidence_insufficient",
+      "pending_field_validation",
+      "out_of_scope"
+    ]
+  },
+
+  "display_status_to_style_mapping": {
+    "present_as_final":    "normal rendering, no badge",
+    "present_as_proxy":    "amber badge label PROXY, italic source note",
+    "present_as_pending":  "callout_warning dengan catatan status",
+    "present_as_inferred": "italic + footnote inferensi"
+  },
+
+  "qa_render_signals_accepted": {
+    "outline_alignment_status": ["aligned", "partial", "diverged"],
+    "render_gap_note":          "boolean — jika true, render callout_gap di awal bab",
+    "render_inference_note":    "boolean — jika true, tambahkan catatan inferensi di footer bab"
+  },
+
+  "style_hints_accepted": [
+    "proxy_badge",
+    "warning_callout",
+    "pending_note",
+    "gap_note",
+    "inference_note"
+  ],
+
+  "unsupported_block_types": [
+    "diagram",
+    "image",
+    "chart_native",
+    "timeline",
+    "map",
+    "video_embed"
+  ],
+
+  "unsupported_behavior": "Jika Narrative Builder mengirim block type tidak dikenal, Renderer akan: (1) log error ke render_error_log, (2) render placeholder callout_warning dengan teks 'Block type tidak didukung: {type}', (3) tidak menghentikan render bab secara keseluruhan.",
+
+  "page_format": {
+    "paper": "A4",
+    "width_dxa": 11906,
+    "height_dxa": 16838,
+    "margin_dxa": 1134,
+    "content_width_dxa": 9638,
+    "font_default": "Arial",
+    "font_mono": "Courier New",
+    "font_size_body_pt": 11
+  },
+
+  "constraints_for_upstream_agents": [
+    "Jangan gunakan block type di luar supported_block_types.",
+    "Setiap table harus menyertakan column_widths yang totalnya = 9638 DXA.",
+    "metric_card items maksimal 4 item untuk 4col, 3 untuk 3col.",
+    "bar_chart_text: label maksimal 24 karakter untuk mencegah overflow.",
+    "callout_gap wajib menyertakan gap_type dari enum yang tersedia.",
+    "Jangan masukkan angka kalkulasi di paragraph — hanya di table atau metric_card.",
+    "Setiap blok dengan display_status proxy atau pending wajib punya source_refs di parent block.",
+    "page_break hanya digunakan sebelum heading_1 (pergantian bab)."
+  ],
+
+  "handoff_f_schema": {
+    "renderer_ready":       "boolean",
+    "chapter_id":           "string",
+    "blocks":               "Block[]",
+    "reference_outline": {
+      "chapter_id":         "string",
+      "core_claim":         "string",
+      "argument_points":    "ArgumentPoint[]",
+      "known_gaps":         "string[]"
+    },
+    "qa_render_signals": {
+      "outline_alignment_status": "string",
+      "render_gap_note":          "boolean",
+      "render_inference_note":    "boolean"
+    },
+    "style_hints":          "object"
+  }
+}

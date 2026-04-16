@@ -1,0 +1,310 @@
+{
+  "view_type": "outline_review",
+  "chapter_id": "bab_7",
+  "chapter_title": "Implementasi / PDIS dengan SROI",
+  "generated_at": "2026-04-10T15:02:01.702948",
+  "review_state": "pending_review",
+  "core_claim": {
+    "text": "Program ESL menghasilkan SROI blended 1 : 1.14 — positive return yang dicapai melalui kombinasi transaksi bengkel riil (observed) dan nilai reintegrasi sosial-ekonomi yang terproksikan secara konservatif dan defensible.",
+    "ref": "sroi_metrics.calculated",
+    "current_review": null,
+    "available_actions": [
+      "approve",
+      "revise_text"
+    ]
+  },
+  "purpose": "Menyajikan seluruh rangkaian implementasi program secara terukur — dari aktivitas, stakeholder, investasi, dan output hingga outcome, fiksasi dampak, monetisasi, dan hasil SROI evaluatif.",
+  "argument_points_summary": {
+    "total": 17,
+    "proxy_points": 0,
+    "points": [
+      {
+        "label": "7.1",
+        "point": "Program beroperasi di 4 node dengan karakteristik dan tingkat aktivitas berbeda — 3 node aktif mengh...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.2",
+        "point": "Program melibatkan 5 pemangku kepentingan utama dengan peran yang berbeda dalam ekosistem program.",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.3",
+        "point": "Total investasi program 2023–2025 mencapai Rp 502,460,181, meningkat setiap tahun seiring penguatan ...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.4",
+        "point": "Program menghasilkan output berupa 6 aktivitas terstruktur yang mencakup pelatihan teknis, product k...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.5",
+        "point": "Program menghasilkan empat aspek nilai terukur: dua aspek observed (LUB dan SVC dari transaksi aktua...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.5.1",
+        "point": "LUB — Penjualan Pelumas (observed): gross kumulatif Rp 90,145,224, adj ×0.54, net kumulatif Rp 48,67...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.5.2",
+        "point": "SVC — Jasa & Sparepart (observed): gross kumulatif Rp 56,045,864, adj ×0.61, net kumulatif Rp 34,187...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.5.3",
+        "point": "REINT — Kesiapan Reintegrasi (proxy): gross kumulatif Rp 770,000,000, adj ×0.55, net kumulatif Rp 42...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.5.4",
+        "point": "CONF — Kepercayaan Diri / Self-Efficacy (proxy): gross kumulatif Rp 66,000,000, adj ×0.5, net kumula...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.6",
+        "point": "Fiksasi dampak (DDAT adjustment) diterapkan per aspek dengan haircut rata-rata 45.1%, mencerminkan k...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.7",
+        "point": "Nilai bersih setiap tahun di-compound ke terminal year 2025 menggunakan ORI reference rate, untuk me...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.8.1",
+        "point": "Tahun 2023: investasi Rp 128,108,409, net compounded Rp 184,820,913, SROI 1 : 1.44.",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.8.2",
+        "point": "Tahun 2024: investasi Rp 179,351,772, net compounded Rp 182,599,631, SROI 1 : 1.02.",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.8.3",
+        "point": "Tahun 2025: investasi Rp 195,000,000, net compounded Rp 203,251,867, SROI 1 : 1.04.",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.9",
+        "point": "SROI blended 2023–2025: 1 : 1.14 — dari investasi Rp 502,460,181 menghasilkan net benefit compounded...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.10",
+        "point": "Node Lapas Palembang belum menghasilkan transaksi terukur selama 2023–2025 — ini adalah temuan jujur...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      },
+      {
+        "label": "7.11",
+        "point": "Node Milenial Motor (eks-WBP) adalah bukti terkuat bahwa program dapat menghasilkan reintegrasi prod...",
+        "is_proxy": false,
+        "status": "supported",
+        "fin_ref": "",
+        "available_actions": [
+          "approve",
+          "set_status_partial",
+          "set_status_unsupported",
+          "revise_text",
+          "add_note",
+          "remove"
+        ],
+        "current_review": null
+      }
+    ]
+  },
+  "known_gaps": [],
+  "financial_refs_count": 5,
+  "review_prompts": [
+    "Apakah core_claim sudah mencerminkan SROI final yang disepakati?",
+    "Apakah ada argument point yang terlalu kuat klaimnya dan perlu diturunkan?",
+    "Apakah known_gaps sudah lengkap atau ada gap yang belum tercatat?",
+    "Apakah point proxy (REINT, CONF) sudah diberi tanda is_proxy = True?",
+    "Apakah urutan argument_points sudah logis dari input → output → outcome → dampak?"
+  ],
+  "available_decisions": [
+    "approve",
+    "approve_with_notes",
+    "revise",
+    "defer"
+  ]
+}

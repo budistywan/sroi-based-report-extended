@@ -1,0 +1,219 @@
+{
+  "report_blueprint_json": {
+    "blueprint_version": "1.0",
+    "case_id": "esl_2023_2025_v1",
+    "program_code": "ESL",
+    "report_mode": "partial",
+    "mode_reason": "Bab 7 strong · 2 bab partial · tidak ada yang missing/weak",
+    "generated_at": "2026-04-10T07:19:23.845728",
+    "architect_version": "1.1.0",
+    "chapters": [
+      {
+        "chapter_id": "bab_1",
+        "chapter_title": "Pendahuluan",
+        "builder_mode": "framing",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 2.67,
+        "canonical_inputs": [
+          "program_identity",
+          "program_positioning",
+          "source_registry"
+        ],
+        "field_detail": {
+          "program_identity": "strong",
+          "program_positioning": "strong",
+          "source_registry": "partial"
+        },
+        "notes": "Narasi latar belakang hukum PROPER dan SROI diinferensi dari program_positioning. Data program sudah cukup kuat."
+      },
+      {
+        "chapter_id": "bab_2",
+        "chapter_title": "Profil Perusahaan",
+        "builder_mode": "framing",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 3.0,
+        "canonical_inputs": [
+          "program_identity",
+          "program_positioning"
+        ],
+        "field_detail": {
+          "program_identity": "strong",
+          "program_positioning": "strong"
+        },
+        "notes": "Profil detail PT Pertamina Lubricants tidak ada di canonical — builder inferensi dari program_positioning dan pengetahuan umum."
+      },
+      {
+        "chapter_id": "bab_3",
+        "chapter_title": "Metodologi SROI dan Triple Loop Learning",
+        "builder_mode": "framing",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 2.67,
+        "canonical_inputs": [
+          "source_registry",
+          "ddat_params",
+          "ori_rates"
+        ],
+        "field_detail": {
+          "source_registry": "partial",
+          "ddat_params": "strong",
+          "ori_rates": "strong"
+        },
+        "notes": "Narasi metodologis perlu dikembangkan dari prinsip umum SROI — data aktual terbatas pada parameter kalkulasi."
+      },
+      {
+        "chapter_id": "bab_4",
+        "chapter_title": "Identifikasi Kondisi Awal",
+        "builder_mode": "context",
+        "coverage_status": "partial",
+        "risk": "reliable",
+        "score": 2.0,
+        "canonical_inputs": [
+          "context_baseline",
+          "problem_framing",
+          "beneficiaries"
+        ],
+        "field_detail": {
+          "context_baseline": "partial",
+          "problem_framing": "partial",
+          "beneficiaries": "partial"
+        },
+        "notes": "Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia secara derived. Builder tulis placeholder terstruktur untuk data wilayah."
+      },
+      {
+        "chapter_id": "bab_5",
+        "chapter_title": "Identifikasi Kondisi Ideal",
+        "builder_mode": "context",
+        "coverage_status": "partial",
+        "risk": "reliable",
+        "score": 2.33,
+        "canonical_inputs": [
+          "ideal_conditions",
+          "problem_framing",
+          "program_positioning"
+        ],
+        "field_detail": {
+          "ideal_conditions": "partial",
+          "problem_framing": "partial",
+          "program_positioning": "strong"
+        },
+        "notes": "Kondisi ideal tersedia sebagai derived. Kualitas cukup untuk bab partial."
+      },
+      {
+        "chapter_id": "bab_6",
+        "chapter_title": "Strategi untuk Mencapai Kondisi Ideal",
+        "builder_mode": "context",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 3.0,
+        "canonical_inputs": [
+          "strategy_design",
+          "program_identity",
+          "program_positioning"
+        ],
+        "field_detail": {
+          "strategy_design": "strong",
+          "program_identity": "strong",
+          "program_positioning": "strong"
+        },
+        "notes": "Strategy design cukup kuat — roadmap, value chain, dan kelembagaan tersedia."
+      },
+      {
+        "chapter_id": "bab_7",
+        "chapter_title": "Implementasi / PDIS dengan SROI",
+        "builder_mode": "sroi",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 2.44,
+        "canonical_inputs": [
+          "activities",
+          "outputs",
+          "stakeholders",
+          "investment",
+          "outcomes",
+          "monetization",
+          "ddat_params",
+          "ori_rates",
+          "sroi_metrics"
+        ],
+        "field_detail": {
+          "activities": "strong",
+          "outputs": "partial",
+          "stakeholders": "partial",
+          "investment": "partial",
+          "outcomes": "partial",
+          "monetization": "partial",
+          "ddat_params": "strong",
+          "ori_rates": "strong",
+          "sroi_metrics": "strong"
+        },
+        "notes": "Bab terkuat. Angka dari sroi_metrics.calculated — tidak boleh ditulis ulang oleh builder."
+      },
+      {
+        "chapter_id": "bab_8",
+        "chapter_title": "Aspek Pembelajaran dengan Triple Loop Learning",
+        "builder_mode": "learning",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 2.67,
+        "canonical_inputs": [
+          "learning_signals",
+          "activities",
+          "strategy_design"
+        ],
+        "field_detail": {
+          "learning_signals": "partial",
+          "activities": "strong",
+          "strategy_design": "strong"
+        },
+        "notes": "Learning signals partial/derived. Refleksi triple loop mendalam perlu data wawancara — builder beri label inferred."
+      },
+      {
+        "chapter_id": "bab_9",
+        "chapter_title": "Penutup",
+        "builder_mode": "learning",
+        "coverage_status": "strong",
+        "risk": "reliable",
+        "score": 2.33,
+        "canonical_inputs": [
+          "sroi_metrics",
+          "learning_signals",
+          "ideal_conditions"
+        ],
+        "field_detail": {
+          "sroi_metrics": "strong",
+          "learning_signals": "partial",
+          "ideal_conditions": "partial"
+        },
+        "notes": "Diturunkan dari SROI + learning signals. Kualitas tergantung kedalaman Bab 7 dan 8."
+      }
+    ]
+  },
+  "gap_matrix": [
+    {
+      "chapter_id": "bab_4",
+      "chapter_title": "Identifikasi Kondisi Awal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "required_missing": [],
+      "recommendation": "full",
+      "note": "Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia secara derived. Builder tulis placeholder terstruktur untuk data wilayah."
+    },
+    {
+      "chapter_id": "bab_5",
+      "chapter_title": "Identifikasi Kondisi Ideal",
+      "status": "partial",
+      "missing_fields": [],
+      "weak_fields": [],
+      "required_missing": [],
+      "recommendation": "full",
+      "note": "Kondisi ideal tersedia sebagai derived. Kualitas cukup untuk bab partial."
+    }
+  ],
+  "program_canonical_ref": "/home/claude/sprint0/canonical_esl_v1.json",
+  "financial_handoff_ref": "/home/claude/sprint1/handoff_b.json",
+  "generated_at": "2026-04-10T07:19:23.845989"
+}

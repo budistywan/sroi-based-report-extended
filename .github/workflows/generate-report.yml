@@ -1,0 +1,217 @@
+name: Generate SROI Report
+
+on:
+  # Trigger manual dari GitHub UI
+  workflow_dispatch:
+    inputs:
+      program:
+        description: 'Kode program (ESL / PSN / dll.)'
+        required: true
+        default: 'ESL'
+        type: string
+      mode:
+        description: 'Mode pipeline'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full           # core + style + batch refinement
+          - core-only      # hanya core pipeline
+          - refine-only    # hanya batch refinement
+
+  # Trigger otomatis saat ada push ke data/canonical/
+  push:
+    paths:
+      - 'data/canonical/**.json'
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # 3. Install Python dependencies
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # 4. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 5. Install Node.js dependencies
+      - name: Install Node.js dependencies
+        run: npm install
+
+      # 6. Determine program code
+      # - Jika trigger dari push: ekstrak dari nama file canonical yang berubah
+      # - Jika trigger dari workflow_dispatch: gunakan input manual
+      - name: Set program code
+        id: program
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # Baca program dari commit message UI
+            # Format commit message: "ui-v1 submit | program=ehs | requestId=..."
+            COMMIT_MSG=$(git log -1 --format="%s" ${{ github.sha }})
+            echo "Commit message: $COMMIT_MSG"
+
+            PROGRAM=$(echo "$COMMIT_MSG" \
+              | grep -oP '(?<=program=)[a-z]+' \
+              | tr '[:lower:]' '[:upper:]')
+
+            echo "Detected program: $PROGRAM"
+            PROGRAM=${PROGRAM:-ESL}
+          else
+            PROGRAM="${{ github.event.inputs.program || 'ESL' }}"
+          fi
+
+          echo "code=${PROGRAM}" >> $GITHUB_OUTPUT
+          echo "Running pipeline for program: ${PROGRAM}"
+
+      # 7. Run production pipeline
+      - name: Run core pipeline
+        if: ${{ github.event.inputs.mode != 'refine-only' }}
+        run: |
+          PROG=$(echo "${{ steps.program.outputs.code }}" | tr '[:upper:]' '[:lower:]')
+          # Gunakan lowercase untuk WORK_DIR agar konsisten dengan orchestrator
+          WORK_DIR="output/${PROG}/work"
+          mkdir -p "$WORK_DIR"
+          SRC="data/canonical/canonical_${PROG}_v1.json"
+          DST="$WORK_DIR/canonical_${PROG}.json"
+          if [ -f "$SRC" ]; then
+            cp "$SRC" "$DST"
+            echo "Canonical copied: $SRC → $DST"
+            echo "=== coverage_status in canonical ==="
+            python3 -c "import json; d=json.load(open('$DST')); print(d.get('coverage_status','MISSING'))"
+          else
+            echo "ERROR: canonical tidak ditemukan di $SRC"
+            exit 1
+          fi
+          python run.py \
+            --program ${{ steps.program.outputs.code }} \
+            --skip-extract
+        env:
+          PROGRAM: ${{ steps.program.outputs.code }}
+
+
+
+      # 7b. Debug on failure — auto detect step yang gagal
+      - name: Debug on failure
+        if: failure()
+        run: |
+          PROG=$(echo "${{ steps.program.outputs.code }}" | tr '[:upper:]' '[:lower:]')
+          W="output/${PROG}/work"
+          echo "=== Files in work dir ==="
+          ls -la ${W}/ 2>/dev/null || echo "work dir kosong"
+
+          if [ ! -f "${W}/handoff_b.json" ]; then
+            echo "=== FAILED AT: Financial Engine ==="
+            python sprint1/financial_engine.py \
+              --input ${W}/canonical_${PROG}.json \
+              --output ${W}/handoff_b.json 2>&1 || true
+
+          elif [ ! -f "${W}/chapter_outline_bab7.json" ]; then
+            echo "=== FAILED AT: Point Builder ==="
+            python sprint3/point_builder_sroi.py \
+              --canonical ${W}/canonical_${PROG}.json \
+              --handoff-b ${W}/handoff_b.json \
+              --handoff-c ${W}/handoff_c.json \
+              --output ${W} 2>&1 || true
+
+          elif [ ! -f "${W}/chapter_semantic_bab7.json" ]; then
+            echo "=== FAILED AT: Narrative Builder Bab 7 ==="
+            python sprint3/narrative_builder_sroi.py \
+              --outline ${W}/chapter_outline_bab7.json \
+              --handoff-b ${W}/handoff_b.json \
+              --canonical ${W}/canonical_${PROG}.json \
+              --output ${W} 2>&1 || true
+
+          elif [ ! -f "${W}/chapters_semantic_rest.json" ]; then
+            echo "=== FAILED AT: Narrative Builder Rest ==="
+            python sprint6/narrative_builder_rest.py \
+              --canonical ${W}/canonical_${PROG}.json \
+              --handoff-b ${W}/handoff_b.json \
+              --blueprint ${W}/report_blueprint.json \
+              --output ${W} 2>&1 || true
+
+          elif [ ! -f "${W}/qa_report.json" ]; then
+            echo "=== FAILED AT: QA Checker ==="
+            python sprint5/qa_checker.py \
+              --semantic ${W}/chapter_semantic_bab7.json \
+              --handoff-b ${W}/handoff_b.json \
+              --outline ${W}/chapter_outline_bab7.json \
+              --contract sprint0/render_contract_v1.json \
+              --output ${W} 2>&1 || true
+
+          else
+            echo "=== FAILED AT: Full Assembler ==="
+            node sprint8/full_assembler.js \
+              --semantic-dir ${W} \
+              --semantic-dir6 ${W} \
+              --canonical ${W}/canonical_${PROG}.json \
+              --output output/${PROG}/${PROG^^}_SROI_Report_Full.docx 2>&1 || true
+          fi
+
+      # 8. Run batch refinement
+      - name: Run batch refinement
+        if: ${{ github.event.inputs.mode != 'core-only' }}
+        run: |
+          python run.py \
+            --program ${{ steps.program.outputs.code }} \
+            --only-refine
+        env:
+          PROGRAM: ${{ steps.program.outputs.code }}
+
+      # 9. Collect output files
+      - name: Collect outputs
+        run: |
+          mkdir -p artifacts
+          PROG=$(echo "${{ steps.program.outputs.code }}" | tr '[:upper:]' '[:lower:]')
+          W="output/${PROG}/work"
+
+          # docx — laporan final
+          find . -name "*.docx" ! -path "./node_modules/*" \
+            -exec cp {} artifacts/ \;
+
+          # semantic JSON — untuk Pipeline B / enrichment
+          [ -f "${W}/chapter_semantic_bab7.json" ] && \
+            cp "${W}/chapter_semantic_bab7.json" artifacts/
+          [ -f "${W}/chapters_semantic_rest.json" ] && \
+            cp "${W}/chapters_semantic_rest.json" artifacts/
+
+          # metadata pipeline
+          find sprint14e -name "refinement_analytics_report.json" \
+            -exec cp {} artifacts/ \; 2>/dev/null || true
+          find sprint14e -name "batch_consistency_report.json" \
+            -exec cp {} artifacts/ \; 2>/dev/null || true
+
+          echo "=== Artifact contents ==="
+          ls -lh artifacts/
+
+      # 10. Upload docx sebagai GitHub artifact (bisa didownload)
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sroi-report-${{ steps.program.outputs.code }}-${{ github.run_number }}
+          path: artifacts/
+          retention-days: 30
+
+      # 11. (Opsional) Commit refined report ke repo
+      # Uncomment jika ingin report tersimpan di repo:
+      # - name: Commit refined report
+      #   uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: "Generate SROI report ${{ steps.program.outputs.code }} #${{ github.run_number }}"
+      #     file_pattern: "artifacts/*.docx"

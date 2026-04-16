@@ -1,0 +1,85 @@
+[
+  {
+    "chapter_id": "bab_4",
+    "chapter_type": "kondisi_awal",
+    "source_outline_ref": "bab_4",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277327",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB IV IDENTIFIKASI KONDISI AWAL"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini mengidentifikasi kondisi awal yang menjadi dasar intervensi program — mencakup karakteristik kelompok sasaran, hambatan yang dihadapi, dan potensi yang dapat dimobilisasi melalui program."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "callout_warning",
+        "text": "Catatan keterbatasan: pemetaan kondisi awal dalam laporan ini disusun terutama dari data program, identifikasi kelompok sasaran, dan problem framing yang diturunkan dari desain intervensi. Data baseline wilayah yang sepenuhnya komprehensif — seperti statistik BPS, peta administrasi, atau data ekonomi kecamatan — tidak tersedia dalam sumber utama kajian ini. Pembacaan kondisi awal pada bab ini perlu dipahami sebagai baseline programatik, bukan potret statistik wilayah yang lengkap.",
+        "source_refs": [
+          "context_baseline",
+          "problem_framing"
+        ]
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data profil wilayah rinci (statistik BPS, peta administrasi, data ekonomi kecamatan) tidak tersedia dalam sumber canonical kajian ini. Sub-bab 4.1 memerlukan pengisian dari data lapangan dan laporan pendampingan.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "4.1 Profil dan Kondisi Kelompok Sasaran"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kelompok sasaran program adalah Warga Binaan Pemasyarakatan (WBP) yang sedang menjalani masa pembinaan di Lembaga Pemasyarakatan, serta eks-WBP yang telah menyelesaikan masa hukuman dan memasuki fase reintegrasi. Kedua kelompok ini menghadapi kerentanan struktural yang saling memperkuat."
+      },
+      {
+        "type": "heading_2",
+        "text": "4.2 Permasalahan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Berdasarkan analisis program, terdapat empat akar masalah utama yang menjadi hambatan bagi WBP dan eks-WBP dalam mencapai kemandirian ekonomi:"
+      },
+      {
+        "type": "callout_warning",
+        "text": "Data di atas bersumber dari problem framing yang disusun berdasarkan inferensi dari desain program. Untuk laporan defensible, setiap poin perlu didukung data primer (wawancara, survei baseline) atau data sekunder terverifikasi (BPS, Kemenaker, laporan riset).",
+        "source_refs": [
+          "problem_framing"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "4.3 Potensi"
+      },
+      {
+        "type": "paragraph",
+        "text": "Di balik hambatan struktural, program mengidentifikasi potensi yang dapat dimobilisasi melalui intervensi yang tepat:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Keterampilan mekanik otomotif memiliki permintaan pasar yang stabil dan tidak memerlukan pendidikan formal tinggi"
+          },
+          {
+            "text": "Ekosistem bengkel informal di Indonesia sangat luas — membuka peluang penyerapan tenaga kerja dan wirausaha"
+          },
+          {
+            "text": "Model eks-WBP yang sudah berhasil (Milenial Motor) dapat menjadi role model dan jalur referral"
+          },
+          {
+            "text": "Program pelatihan vokasional di Lapas memiliki akses langsung ke populasi sasaran yang terdefinisi"
+          }
+        ]
+      }
+    ]
+  }
+]

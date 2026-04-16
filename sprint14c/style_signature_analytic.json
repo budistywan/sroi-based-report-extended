@@ -1,0 +1,76 @@
+{
+  "signature_id": "style_signature_analytic",
+  "register": "analytic_register",
+  "bab_coverage": [
+    "bab_4",
+    "bab_5",
+    "bab_6"
+  ],
+  "function": "Diagnosis, baseline, problematisasi, pemetaan kondisi",
+  "parent_global_signature": "style_signature_reviewed",
+  "parent_style_profile": "style_profile_reviewed",
+  "created_at": "2026-04-11T03:36:01.328105",
+  "dimensions": {
+    "opening_style": {
+      "pattern": "investigative_frame",
+      "description": "Paragraf membuka dengan posisi investigatif — menelaah, mengidentifikasi, atau mendialog dengan kondisi yang ada",
+      "examples": [
+        "Bab ini menyusun kondisi awal...",
+        "Jika ditelaah lebih jauh, hambatan terbesar..."
+      ],
+      "variation_note": "Boleh dimulai dengan 'Jika ditelaah', 'Dalam pengamatan', 'Kondisi yang ada menunjukkan'"
+    },
+    "hedging_degree": {
+      "level": "moderate_high",
+      "preferred_markers": [
+        "menunjukkan",
+        "mengindikasikan",
+        "dapat dipahami",
+        "lebih tepat dipahami sebagai",
+        "bukan kelemahan melainkan",
+        "tidak otomatis menjadi"
+      ],
+      "avoided_markers": [
+        "terbukti bahwa",
+        "sudah pasti",
+        "jelas bahwa"
+      ],
+      "firmness": "moderate_high"
+    },
+    "transition_style": {
+      "style": "diagnostic_logical",
+      "preferred_connectors": [
+        "Kondisi inilah yang",
+        "Di sinilah",
+        "Jika ditelaah lebih jauh",
+        "Bukan hanya",
+        "melainkan juga",
+        "Hal ini menunjukkan bahwa"
+      ]
+    },
+    "closing_style": {
+      "pattern": "problem_anchored",
+      "description": "Penutup mengikat ke akar masalah atau kondisi yang akan ditangani — bukan menutup dengan klaim besar"
+    },
+    "sentence_rhythm": {
+      "style": "mixed_medium_long"
+    }
+  },
+  "variation_rules": {
+    "opening_diversity": true,
+    "connector_rotation": true,
+    "avoid_early_conclusion": true
+  },
+  "special_emphasis": [
+    "baseline_honesty",
+    "problem_framing_depth",
+    "anti_overclaim",
+    "investigative_tone"
+  ],
+  "guard_rails": {
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "anti_mechanical": true,
+    "no_fake_completeness": true
+  }
+}

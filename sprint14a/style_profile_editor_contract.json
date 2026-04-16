@@ -1,0 +1,96 @@
+{
+  "contract_version": "1.0",
+  "created_at":       "2026-04-11",
+  "description":      "Kontrak yang mendefinisikan cara user mengedit style_profile_v1.json. Importer akan memvalidasi file hasil edit terhadap kontrak ini.",
+
+  "editable_fields": [
+    "tone",
+    "paragraph_formula",
+    "coherence_preferences",
+    "variation_preferences",
+    "hedging_profile",
+    "preferred_connectors",
+    "paragraph_function_types",
+    "notes"
+  ],
+
+  "non_editable_fields": [
+    "profile_id",
+    "profile_version",
+    "created_at",
+    "target_style",
+    "target_domain",
+    "source"
+  ],
+
+  "field_contracts": {
+    "tone": {
+      "type":             "object",
+      "allowed_keys":     ["formal","descriptive_argumentative","firm_but_guarded","anti_bombastic","anti_ai_generic","anti_copywriting","anti_mechanical","natural_academic_indonesian"],
+      "value_type":       "boolean",
+      "user_can_add_key": false,
+      "notes":            "Ubah nilai true/false sesuai preferensi. Jangan tambahkan key baru — gunakan field 'notes' untuk preferensi yang tidak terwakili."
+    },
+    "hedging_profile": {
+      "type":             "object",
+      "editable_subfields": ["level","preferred_markers","avoided_markers"],
+      "level_enum":       ["low","moderate","moderate_high","high"],
+      "preferred_markers_type": "array of strings",
+      "avoided_markers_type":   "array of strings",
+      "notes":            "Tambah atau hapus marker dari preferred_markers dan avoided_markers sesuai kebutuhan. Level harus salah satu dari enum yang tersedia."
+    },
+    "variation_preferences": {
+      "type":             "object",
+      "editable_subfields": ["opening_diversity","sentence_length_mix","functionally_distinct_paragraphs","preferred_opening_variations","sentence_rhythm_note"],
+      "preferred_opening_variations_type": "array of strings",
+      "notes":            "Tambah variasi pembuka paragraf yang Anda sukai ke array preferred_opening_variations."
+    },
+    "preferred_connectors": {
+      "type":             "object",
+      "editable_subfields": ["intra_paragraph","inter_paragraph","closing_patterns"],
+      "value_type":       "array of strings",
+      "notes":            "Tambah atau hapus connector/pola penutup sesuai preferensi. Format: array of strings."
+    },
+    "notes": {
+      "type":             "array of strings",
+      "notes":            "Tambahkan instruksi gaya tambahan yang tidak tertangkap oleh field lain. Format plain text, satu instruksi per item."
+    }
+  },
+
+  "how_to_edit": [
+    "1. Buka file style_profile_v1.json dengan text editor.",
+    "2. Edit hanya field yang ada di editable_fields.",
+    "3. Jangan mengubah profile_id, profile_version, created_at, target_style, target_domain, atau source.",
+    "4. Untuk menambah marker hedging: tambahkan string ke array preferred_markers atau avoided_markers.",
+    "5. Untuk menambah variasi pembuka: tambahkan string ke array preferred_opening_variations.",
+    "6. Untuk instruksi tambahan yang tidak terwakili: tambahkan ke array notes.",
+    "7. Simpan file dengan nama baru (misal: style_profile_edited.json).",
+    "8. Jalankan importer: python style_profile_importer.py --input style_profile_edited.json"
+  ],
+
+  "example_valid_edit": {
+    "description": "Contoh edit yang valid: menambahkan marker hedging dan variasi pembuka",
+    "change": {
+      "hedging_profile.preferred_markers": ["tambahkan: 'dapat dikatakan bahwa'"],
+      "variation_preferences.preferred_opening_variations": ["tambahkan: 'Secara empiris, …'"],
+      "notes": ["tambahkan: 'Hindari pengulangan kata dalam dua kalimat berturut-turut'"]
+    }
+  },
+
+  "example_invalid_edit": {
+    "description": "Contoh edit yang TIDAK valid: mengubah profile_id atau menambahkan key baru di tone",
+    "change": {
+      "profile_id": "my_custom_profile",
+      "tone.poetic": true
+    },
+    "rejection_reason": "profile_id non-editable; tone tidak menerima key baru"
+  },
+
+  "validation_behavior": {
+    "on_non_editable_field_changed": "REJECT — importer menolak file dan menjelaskan field mana yang tidak boleh diubah",
+    "on_invalid_enum":               "REJECT — misal level hedging di luar ['low','moderate','moderate_high','high']",
+    "on_wrong_type":                 "REJECT — misal nilai boolean diisi string",
+    "on_new_key_in_tone":            "REJECT — tone tidak menerima key baru",
+    "on_valid_edit":                 "ACCEPT — importer menghasilkan style_profile_reviewed.json dengan delta tercatat"
+  }
+}

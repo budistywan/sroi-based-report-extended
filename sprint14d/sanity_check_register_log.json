@@ -1,0 +1,19 @@
+{
+  "sanity_check": "register_style_map_read_verification",
+  "chapters_tested": [
+    {
+      "chapter_id": "bab_7",
+      "register_resolved": "evaluative_register",
+      "signature_used": "style_signature_evaluative.json",
+      "source": "register_style_map.json"
+    },
+    {
+      "chapter_id": "bab_9",
+      "register_resolved": "conclusive_register",
+      "signature_used": "style_signature_conclusive.json",
+      "source": "register_style_map.json"
+    }
+  ],
+  "conclusion": "register_style_map.json terbaca dengan benar — engine tidak hardcoded ke satu register",
+  "checked_at": "2026-04-11T22:19:28.054572"
+}

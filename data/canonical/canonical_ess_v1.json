@@ -1,0 +1,759 @@
+{
+  "schema_version": "1.0",
+  "case_id": "ess_2023_2025_v1",
+  "program_identity": {
+    "program_name": "Enduro Sahabat Santri",
+    "program_code": "ESS",
+    "company": "PT Pertamina Lubricants",
+    "program_tagline": "Penguatan kapasitas livelihood santri melalui pelatihan otomotif, penguatan bengkel komunitas, dan aktivasi layanan produktif",
+    "period_start": 2023,
+    "period_end": 2025,
+    "period_label": "2023–2025",
+    "target_group": "Santri peserta pelatihan, kelompok mitra pondok pesantren, dan unit bengkel/layanan komunitas dalam ekosistem produktif program",
+    "nodes": [
+      "5 kelompok mitra",
+      "pondok pesantren / lembaga mitra",
+      "santri peserta",
+      "pengelola bengkel / instruktur",
+      "pelanggan layanan"
+    ]
+  },
+  "program_positioning": {
+    "portfolio_role": "Program transisi livelihood berbasis komunitas pesantren dalam portfolio TJSL otomotif PT Pertamina Lubricants.",
+    "signature_value": "Menjembatani kompetensi keagamaan, pembinaan karakter, dan keterampilan otomotif terapan menuju layanan produktif, unit usaha komunitas, dan identitas kerja yang lebih bermartabat bagi santri.",
+    "comparative_note": "Berbeda dari ESP yang berfokus pada vocational-to-employment transition, ESS menekankan community-based livelihood pathway: pesantren sebagai basis nilai, bengkel komunitas sebagai ruang praktik, dan transaksi layanan sebagai jembatan menuju penghidupan produktif.",
+    "strategic_identity": "ESS paling kuat dibaca sebagai program yang mengubah lingkungan pendidikan dan pembinaan santri menjadi ekosistem transisi sosial-ekonomi yang sah, terhormat, dan produktif."
+  },
+  "source_registry": [
+    {
+      "source_id": "SRC_ESS_SCRIPT_01",
+      "source_type": "script_archive",
+      "title": "TJSL_Scripts (1).md — ess_batch1/2/3",
+      "description": "Sumber utama identitas program, investasi, gross values, problem framing, aktivitas, stakeholder, dan narasi kesimpulan program ESS/Enduro Sahabat Santri.",
+      "location": "/mnt/data/TJSL_Scripts (1).md"
+    },
+    {
+      "source_id": "SRC_SCHEMA_01",
+      "source_type": "schema_prompt",
+      "title": "PROMPT_CANONICAL_BARU (1).md",
+      "description": "Acuan schema canonical, field wajib, dan format yang harus dipenuhi pipeline.",
+      "location": "/mnt/data/PROMPT_CANONICAL_BARU (1).md"
+    },
+    {
+      "source_id": "SRC_VALIDATOR_01",
+      "source_type": "validator_spec",
+      "title": "canonical_validator.js",
+      "description": "Acuan validasi structural, schema contract, dan data quality sebelum submit ke pipeline.",
+      "location": "/mnt/data/canonical_validator.js"
+    }
+  ],
+  "context_baseline": {
+    "summary": "Santri dalam ekosistem pendidikan keagamaan yang intensif tidak selalu memiliki jalur yang kuat menuju penghidupan produktif. Pembinaan berbasis pesantren dapat menghasilkan disiplin, nilai sosial, dan identitas komunitas yang kuat, tetapi belum otomatis terkoneksi dengan keterampilan teknis operasional, transaksi layanan, dan akses pasar lokal.",
+    "baseline_points": [
+      "Keterampilan teknis santri belum selalu cukup operasional untuk langsung menjadi layanan servis yang riil dan dipercaya pelanggan.",
+      "Pelatihan belum otomatis berubah menjadi jalur kerja, usaha, atau penghasilan bagi santri dan kelompok mitra pesantren.",
+      "Santri sering dipersepsikan terutama unggul pada kompetensi keagamaan, bukan pada kapabilitas terapan bernilai ekonomi.",
+      "Pembentukan usaha bengkel atau unit layanan produktif masih membutuhkan penguatan alat, ritme operasional, pembiasaan kewirausahaan, dan interaksi pasar.",
+      "Akses pelanggan, transaksi jasa, pelumas, dan sparepart belum merata pada seluruh kelompok mitra."
+    ],
+    "barrier_dimensions": [
+      "Applied skill barrier",
+      "Livelihood transition barrier",
+      "Social legitimacy barrier",
+      "Entrepreneurial formation barrier",
+      "Market linkage barrier"
+    ],
+    "transition_risk": "Tanpa jembatan yang menghubungkan pembinaan santri dengan layanan riil, hasil program mudah berhenti pada level pelatihan dan tidak berkembang menjadi jalur penghidupan yang stabil.",
+    "operating_context": "Pada 2023–2025 program menjangkau lima kelompok mitra. Tiga kelompok menunjukkan transaksi langsung, sementara dua kelompok lain masih berada pada fase readiness dan penguatan kapasitas. Karena itu evaluasi program perlu membaca perbedaan antara kelompok yang telah monetized melalui layanan dan kelompok yang masih bertumbuh sebagai capacity-building nodes."
+  },
+  "problem_framing": {
+    "problem_statement": "Livelihood Barrier for Santri",
+    "narrative": "Masalah utama ESS bukan semata kurangnya pelatihan, tetapi belum kuatnya koneksi antara ekosistem pendidikan keagamaan santri dengan jalur penghidupan produktif. Skill teknis perlu diterjemahkan menjadi layanan riil, unit usaha komunitas, kepercayaan pasar, dan identitas produktif agar dapat menghasilkan nilai sosial-ekonomi yang nyata.",
+    "problem_nodes": [
+      {
+        "code": "PROB_ESS_01",
+        "label": "Applied Skill Gap",
+        "description": "Keterampilan teknis santri belum selalu operasional untuk layanan servis riil."
+      },
+      {
+        "code": "PROB_ESS_02",
+        "label": "Transition-to-Livelihood Barrier",
+        "description": "Hasil pelatihan belum otomatis berubah menjadi jalur kerja, usaha, atau penghasilan."
+      },
+      {
+        "code": "PROB_ESS_03",
+        "label": "Social Perception Gap",
+        "description": "Santri kerap dipersepsikan sempit hanya unggul pada kompetensi keagamaan."
+      },
+      {
+        "code": "PROB_ESS_04",
+        "label": "Entrepreneurship Formation Gap",
+        "description": "Skill teknis belum berkembang optimal menjadi jasa bernilai dan unit usaha produktif."
+      },
+      {
+        "code": "PROB_ESS_05",
+        "label": "Market Linkage Gap",
+        "description": "Akses pelanggan, transaksi bengkel, pelumas, dan sparepart belum merata di seluruh mitra."
+      }
+    ]
+  },
+  "ideal_conditions": {
+    "vision_statement": "Santri dan kelompok mitra pesantren memiliki jalur livelihood yang lebih kuat melalui keterampilan otomotif terapan, unit layanan produktif, transaksi yang tumbuh, dan identitas produktif yang diakui komunitas.",
+    "success_markers": [
+      "Pelatihan teknis terhubung dengan bengkel atau unit layanan yang benar-benar aktif.",
+      "Kelompok mitra tidak hanya menerima pembinaan, tetapi menghasilkan transaksi jasa, pelumas, atau layanan komunitas yang berulang.",
+      "Santri memperoleh transisi dari kompetensi keagamaan menuju keterampilan terapan dan penghidupan produktif yang sah dan bermartabat.",
+      "Pesantren/komunitas mitra menjadi basis penguatan usaha produktif yang lebih percaya diri dan lebih terkoneksi dengan pasar.",
+      "Bengkel komunitas berfungsi sebagai ruang pembelajaran kerja, layanan publik lokal, dan pembentukan identitas produktif santri."
+    ]
+  },
+  "strategy_design": {
+    "program_philosophy": "ESS dirancang sebagai jembatan dari ekosistem pendidikan santri menuju livelihood pathway melalui pelatihan otomotif, penguatan unit layanan, pendampingan operasional, dan pembentukan identitas produktif.",
+    "program_logic": [
+      "applied skill building",
+      "community workshop activation",
+      "market linkage formation",
+      "productive identity strengthening"
+    ],
+    "causal_chain": [
+      "Pelatihan teknis otomotif",
+      "Product knowledge pelumas",
+      "Penguatan bengkel / unit layanan pesantren",
+      "Pendampingan operasional dan kewirausahaan",
+      "Aktivasi transaksi jasa, pelumas, dan sparepart",
+      "Penguatan kesiapan transisi livelihood, kapasitas usaha, dan self-confidence santri",
+      "Meningkatnya legitimasi sosial pesantren sebagai basis layanan produktif komunitas"
+    ],
+    "institutional": {
+      "nodes": [
+        "PT Pertamina Lubricants",
+        "pondok pesantren / lembaga mitra",
+        "santri peserta",
+        "pengelola bengkel / instruktur",
+        "pelanggan layanan"
+      ],
+      "note": "Distribusi node program menempatkan pesantren sebagai basis komunitas, santri sebagai penerima manfaat utama, pengelola bengkel sebagai fasilitator operasional, dan pelanggan sebagai penguji nyata legitimasi layanan."
+    },
+    "intervention_tracks": [
+      "Pelatihan teknis otomotif sebagai applied skill foundation",
+      "Product knowledge pelumas untuk mendukung layanan bernilai",
+      "Penguatan bengkel/unit layanan sebagai simpul produksi komunitas",
+      "Pendampingan operasional dan wirausaha untuk menjaga ritme layanan",
+      "Pembentukan identity shift dari santri pembelajar menjadi pelaku layanan produktif"
+    ],
+    "activation_principles": [
+      "Pesantren dibaca bukan hanya sebagai institusi pendidikan, tetapi juga sebagai ruang sosial untuk transisi livelihood.",
+      "Unit bengkel komunitas berfungsi sebagai jembatan dari pelatihan menuju praktik layanan dan interaksi pasar.",
+      "Transaksi riil diperlakukan sebagai bukti paling kuat bahwa pembinaan telah bergerak menjadi livelihood pathway.",
+      "Kepercayaan diri dan pengakuan sosial santri dipandang sebagai bagian dari hasil program, bukan sekadar dampak samping."
+    ]
+  },
+  "activities": [
+    {
+      "year": 2023,
+      "name": "Pelatihan teknis otomotif untuk santri dan kelompok mitra",
+      "activity_scope": [
+        "Pelatihan teknis otomotif",
+        "Applied skill building"
+      ]
+    },
+    {
+      "year": 2023,
+      "name": "Product knowledge pelumas dan penguatan bengkel komunitas pesantren",
+      "activity_scope": [
+        "Product knowledge pelumas",
+        "Penguatan bengkel / unit layanan",
+        "Community workshop set-up"
+      ]
+    },
+    {
+      "year": 2023,
+      "name": "Pendampingan operasional awal untuk kelompok readiness",
+      "activity_scope": [
+        "Pendampingan operasional",
+        "Pembentukan layanan awal",
+        "Transition bridge"
+      ]
+    },
+    {
+      "year": 2024,
+      "name": "Aktivasi transaksi dan penguatan unit layanan yang telah monetized",
+      "activity_scope": [
+        "Aktivasi transaksi layanan",
+        "Penguatan kelompok monetized",
+        "Market linkage formation"
+      ]
+    },
+    {
+      "year": 2024,
+      "name": "Penguatan ritme layanan dan pembiasaan kewirausahaan komunitas",
+      "activity_scope": [
+        "Pembiasaan kewirausahaan",
+        "Operational discipline",
+        "Service continuity"
+      ]
+    },
+    {
+      "year": 2025,
+      "name": "Konsolidasi kapasitas, layanan paling kuat, dan productive identity santri",
+      "activity_scope": [
+        "Penguatan kapasitas",
+        "Layanan produktif berkelanjutan",
+        "Productive identity strengthening"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "OUT_ESS_01",
+      "year": 2023,
+      "description": "Lima kelompok mitra aktif menerima pembinaan program berbasis pesantren",
+      "quantity": 5,
+      "unit": "kelompok",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESS_02",
+      "year": 2023,
+      "description": "Tiga kelompok menunjukkan transaksi langsung, sementara dua kelompok masih berada pada fase readiness",
+      "quantity": 5,
+      "unit": "kelompok",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESS_03",
+      "year": 2024,
+      "description": "Kelompok monetized memperkuat ritme transaksi jasa, pelumas, dan layanan komunitas",
+      "quantity": 3,
+      "unit": "kelompok",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESS_04",
+      "year": 2024,
+      "description": "Kelompok readiness tetap mendapatkan penguatan kapasitas agar siap masuk ke layanan produktif",
+      "quantity": 2,
+      "unit": "kelompok",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESS_05",
+      "year": 2025,
+      "description": "Kelompok mitra mempertahankan layanan dengan nilai kotor tertinggi sepanjang program",
+      "quantity": 5,
+      "unit": "kelompok",
+      "data_status": "observed"
+    },
+    {
+      "output_id": "OUT_ESS_06",
+      "year": 2025,
+      "description": "Bengkel komunitas semakin berfungsi sebagai ruang transisi livelihood dan pembentukan identitas produktif santri",
+      "quantity": 5,
+      "unit": "kelompok",
+      "data_status": "proxy"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "PT Pertamina Lubricants",
+      "role": "Pemrakarsa dan penyelenggara program TJSL",
+      "involvement_type": "initiator"
+    },
+    {
+      "name": "Ponpes / lembaga mitra",
+      "role": "Basis komunitas dan ruang pembinaan program",
+      "involvement_type": "implementing_partner"
+    },
+    {
+      "name": "Santri / peserta pelatihan",
+      "role": "Penerima manfaat langsung program",
+      "involvement_type": "direct_beneficiary"
+    },
+    {
+      "name": "Pengelola bengkel / instruktur",
+      "role": "Pendamping teknis dan operasional layanan",
+      "involvement_type": "facilitator"
+    },
+    {
+      "name": "Pelanggan layanan",
+      "role": "Pengguna layanan bengkel, pelumas, dan jasa",
+      "involvement_type": "indirect_beneficiary"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "beneficiary_id": "BEN_ESS_01",
+      "name": "Kelompok mitra pesantren",
+      "type": "direct",
+      "count": 5,
+      "description": "Kelompok mitra aktif yang menerima pembinaan program dan menjadi basis unit layanan komunitas."
+    },
+    {
+      "beneficiary_id": "BEN_ESS_02",
+      "name": "Santri peserta",
+      "type": "direct",
+      "count": null,
+      "description": "Santri yang menerima pelatihan, terlibat dalam layanan, dan mengalami penguatan livelihood pathway serta productive identity."
+    },
+    {
+      "beneficiary_id": "BEN_ESS_03",
+      "name": "Kelompok monetized",
+      "type": "intermediate",
+      "count": 3,
+      "description": "Kelompok dengan transaksi langsung yang menjadi sumber observed economic value program."
+    },
+    {
+      "beneficiary_id": "BEN_ESS_04",
+      "name": "Kelompok readiness",
+      "type": "intermediate",
+      "count": 2,
+      "description": "Kelompok yang masih berada pada tahap penguatan kapasitas dan pembentukan layanan."
+    },
+    {
+      "beneficiary_id": "BEN_ESS_05",
+      "name": "Komunitas pesantren dan pelanggan lokal",
+      "type": "indirect",
+      "count": null,
+      "description": "Pihak yang memperoleh akses layanan bengkel komunitas sekaligus menguji legitimasi sosial-ekonomi santri sebagai pelaku layanan."
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_id": "OC_ESS_ECO_01",
+      "name": "Peningkatan jasa dan sparepart pada kelompok mitra",
+      "description": "Kelompok mitra menghasilkan nilai layanan jasa dan sparepart yang tumbuh sepanjang program.",
+      "measurement": "Nilai jasa dan sparepart per tahun pada kelompok monetized.",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESS_ECO_02",
+      "name": "Peningkatan penjualan pelumas pada unit layanan santri",
+      "description": "Unit layanan mitra menghasilkan penjualan pelumas yang meningkat secara bertahap.",
+      "measurement": "Nilai penjualan pelumas per tahun.",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESS_SOC_01",
+      "name": "Kesiapan transisi livelihood santri meningkat",
+      "description": "Santri menunjukkan kesiapan lebih baik untuk mengubah pembinaan menjadi jalur livelihood produktif.",
+      "measurement": "Proxy livelihood transition readiness.",
+      "data_status": "proxy",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01",
+        "evidence_registry"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESS_ECO_03",
+      "name": "Kapasitas usaha dan unit layanan komunitas terbentuk",
+      "description": "Program memperkuat enterprise capacity formation pada bengkel atau unit layanan mitra.",
+      "measurement": "Proxy enterprise capacity formation.",
+      "data_status": "proxy",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01",
+        "evidence_registry"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESS_WELL_01",
+      "name": "Kepercayaan diri dan productive identity santri meningkat",
+      "description": "Keterlibatan dalam layanan produktif memperkuat self-confidence dan identitas produktif santri.",
+      "measurement": "Proxy self-confidence and productive identity.",
+      "data_status": "proxy",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01",
+        "evidence_registry"
+      ]
+    },
+    {
+      "outcome_id": "OC_ESS_SOC_02",
+      "name": "Pengakuan sosial terhadap santri sebagai pelaku layanan produktif meningkat",
+      "description": "Kehadiran unit layanan dan transaksi riil memperkuat legitimasi sosial santri sebagai aktor ekonomi yang mampu memberikan layanan bernilai bagi komunitas.",
+      "measurement": "Proxy social legitimacy and community recognition.",
+      "data_status": "proxy",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01",
+        "evidence_registry"
+      ]
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_ESS_JSP_2023",
+      "aspect_id": "MON_ESS_JSP",
+      "aspect_code": "JSP",
+      "year": 2023,
+      "gross_idr": 18300000,
+      "proxy_basis": "nilai jasa dan sparepart per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_JSP_2024",
+      "aspect_id": "MON_ESS_JSP",
+      "aspect_code": "JSP",
+      "year": 2024,
+      "gross_idr": 25620000,
+      "proxy_basis": "nilai jasa dan sparepart per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_JSP_2025",
+      "aspect_id": "MON_ESS_JSP",
+      "aspect_code": "JSP",
+      "year": 2025,
+      "gross_idr": 35870000,
+      "proxy_basis": "nilai jasa dan sparepart per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_LUB_2023",
+      "aspect_id": "MON_ESS_LUB",
+      "aspect_code": "LUB",
+      "year": 2023,
+      "gross_idr": 25130000,
+      "proxy_basis": "nilai penjualan pelumas per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_LUB_2024",
+      "aspect_id": "MON_ESS_LUB",
+      "aspect_code": "LUB",
+      "year": 2024,
+      "gross_idr": 35180000,
+      "proxy_basis": "nilai penjualan pelumas per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_LUB_2025",
+      "aspect_id": "MON_ESS_LUB",
+      "aspect_code": "LUB",
+      "year": 2025,
+      "gross_idr": 49250000,
+      "proxy_basis": "nilai penjualan pelumas per tahun",
+      "data_status": "observed",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_ESS_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_ESS_TRANS_2023",
+      "aspect_id": "MON_ESS_TRANS",
+      "aspect_code": "TRANS",
+      "year": 2023,
+      "gross_idr": 14480000,
+      "proxy_basis": "proxy konservatif livelihood transition readiness",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_TRANS_2024",
+      "aspect_id": "MON_ESS_TRANS",
+      "aspect_code": "TRANS",
+      "year": 2024,
+      "gross_idr": 20270000,
+      "proxy_basis": "proxy konservatif livelihood transition readiness",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_TRANS_2025",
+      "aspect_id": "MON_ESS_TRANS",
+      "aspect_code": "TRANS",
+      "year": 2025,
+      "gross_idr": 28370000,
+      "proxy_basis": "proxy konservatif livelihood transition readiness",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_ENT_2023",
+      "aspect_id": "MON_ESS_ENT",
+      "aspect_code": "ENT",
+      "year": 2023,
+      "gross_idr": 28950000,
+      "proxy_basis": "proxy konservatif enterprise capacity formation",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_ECO_03",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_ENT_2024",
+      "aspect_id": "MON_ESS_ENT",
+      "aspect_code": "ENT",
+      "year": 2024,
+      "gross_idr": 40530000,
+      "proxy_basis": "proxy konservatif enterprise capacity formation",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_ECO_03",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_ENT_2025",
+      "aspect_id": "MON_ESS_ENT",
+      "aspect_code": "ENT",
+      "year": 2025,
+      "gross_idr": 56750000,
+      "proxy_basis": "proxy konservatif enterprise capacity formation",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_ECO_03",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_CONF_2023",
+      "aspect_id": "MON_ESS_CONF",
+      "aspect_code": "CONF",
+      "year": 2023,
+      "gross_idr": 3620000,
+      "proxy_basis": "wellbeing sangat kecil / self-confidence and productive identity",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_WELL_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_CONF_2024",
+      "aspect_id": "MON_ESS_CONF",
+      "aspect_code": "CONF",
+      "year": 2024,
+      "gross_idr": 5070000,
+      "proxy_basis": "wellbeing sangat kecil / self-confidence and productive identity",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_WELL_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_ESS_CONF_2025",
+      "aspect_id": "MON_ESS_CONF",
+      "aspect_code": "CONF",
+      "year": 2025,
+      "gross_idr": 7090000,
+      "proxy_basis": "wellbeing sangat kecil / self-confidence and productive identity",
+      "data_status": "proxy",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_ESS_WELL_01",
+      "display_status": "present_as_proxy"
+    }
+  ],
+  "ddat_params": {
+    "JSP": {
+      "deadweight": 0.15,
+      "displacement": 0.05,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.6137,
+      "notes": "Observed economic value dengan pengaruh program kuat namun tetap berbagi dengan konteks pasar lokal.",
+      "justification": "Jasa dan sparepart adalah observed value yang lahir dari unit layanan mitra; multiplier moderat dipakai agar tidak menganggap seluruh transaksi murni akibat program."
+    },
+    "LUB": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.25,
+      "drop_off": 0.05,
+      "net_multiplier": 0.5415,
+      "notes": "Observed value penjualan pelumas dengan kontribusi program dan faktor pasar.",
+      "justification": "Penjualan pelumas dipengaruhi oleh product knowledge dan aktivasi layanan, tetapi tetap berbagi dengan permintaan pasar dan perilaku pelanggan."
+    },
+    "TRANS": {
+      "deadweight": 0.2,
+      "displacement": 0,
+      "attribution": 0.25,
+      "drop_off": 0.1,
+      "net_multiplier": 0.54,
+      "notes": "Proxy konservatif untuk livelihood transition readiness.",
+      "justification": "Kesiapan transisi livelihood dibentuk oleh program, namun sebagian tetap dipengaruhi faktor individu, lingkungan pesantren, dan jejaring sosial santri."
+    },
+    "ENT": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.25,
+      "drop_off": 0.1,
+      "net_multiplier": 0.513,
+      "notes": "Proxy konservatif enterprise capacity formation.",
+      "justification": "Kapasitas usaha komunitas dipengaruhi dukungan program, tetapi masih memerlukan penyesuaian karena tidak semua kelompok berada pada tingkat kematangan yang sama."
+    },
+    "CONF": {
+      "deadweight": 0.15,
+      "displacement": 0,
+      "attribution": 0.2,
+      "drop_off": 0.1,
+      "net_multiplier": 0.612,
+      "notes": "Proxy kecil untuk self-confidence dan productive identity.",
+      "justification": "Nilai wellbeing dibuat sangat kecil dan konservatif untuk menghindari overclaim, sambil tetap menangkap penguatan identitas produktif santri."
+    }
+  },
+  "investment": [
+    {
+      "year": 2023,
+      "category": "Program ESS/Santri — Total",
+      "amount_idr": 108769373,
+      "description": "Total anggaran program ESS/Santri 2023",
+      "data_status": "observed"
+    },
+    {
+      "year": 2024,
+      "category": "Program ESS/Santri — Total",
+      "amount_idr": 152277123,
+      "description": "Total anggaran program ESS/Santri 2024",
+      "data_status": "observed"
+    },
+    {
+      "year": 2025,
+      "category": "Program ESS/Santri — Total",
+      "amount_idr": 141320000,
+      "description": "Total anggaran program ESS/Santri 2025",
+      "data_status": "observed"
+    }
+  ],
+  "ori_rates": {
+    "2023": {
+      "series": "ORI023T3",
+      "rate": 0.059,
+      "compound_factor": 1.1252
+    },
+    "2024": {
+      "series": "ORI025T3",
+      "rate": 0.0625,
+      "compound_factor": 1.0625
+    },
+    "2025": {
+      "series": "ORI027T3",
+      "rate": 0.065,
+      "compound_factor": 1
+    }
+  },
+  "sroi_metrics": {
+    "status": "pending",
+    "calculated": {
+      "sroi_blended": 0,
+      "per_year": [],
+      "total_investment": 0,
+      "total_gross": 0,
+      "total_net": 0,
+      "total_net_compounded": 0
+    },
+    "note": "Dihitung otomatis oleh pipeline"
+  },
+  "coverage_status": {
+    "bab_1": "strong",
+    "bab_2": "strong",
+    "bab_3": "strong",
+    "bab_4": "strong",
+    "bab_5": "strong",
+    "bab_6": "strong",
+    "bab_7": "strong",
+    "bab_8": "partial",
+    "bab_9": "partial"
+  },
+  "learning_signals": {
+    "loop_1": [
+      "Skill teknis santri perlu selalu diterjemahkan ke unit layanan riil agar pembinaan tidak berhenti pada training exposure."
+    ],
+    "loop_2": [
+      "Tidak semua kelompok mitra berada pada tingkat kematangan yang sama; evaluasi harus membedakan kelompok monetized dan kelompok readiness."
+    ],
+    "loop_3": [
+      "Nilai sosial ESS paling kuat ketika aktivitas pesantren diterjemahkan menjadi livelihood pathway, layanan produktif, dan productive identity bagi santri."
+    ],
+    "loop_4": [
+      "Transaksi layanan bukan hanya indikator omzet, tetapi juga bukti bahwa santri dan pesantren mulai memperoleh legitimasi sebagai penyedia layanan yang dipercaya komunitas."
+    ]
+  },
+  "evidence_registry": [
+    {
+      "evidence_id": "EV_ESS_01",
+      "topic": "Livelihood pathway santri",
+      "summary": "Deck menegaskan bahwa program menjembatani jalur dari kompetensi keagamaan menuju keterampilan terapan dan penghidupan produktif.",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "evidence_id": "EV_ESS_02",
+      "topic": "Perbedaan kematangan kelompok",
+      "summary": "Pada 2023 tiga kelompok menunjukkan transaksi langsung, sedangkan dua kelompok masih fase readiness/penguatan kapasitas.",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "evidence_id": "EV_ESS_03",
+      "topic": "Gross value preliminary",
+      "summary": "Nilai kotor tumbuh dari 90,48 juta pada 2023 menjadi 177,33 juta pada 2025; gross compounded ke 2025 sebesar 413,72 juta dengan SROI preliminary 1:1,03.",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "evidence_id": "EV_ESS_04",
+      "topic": "Bengkel komunitas sebagai ruang transisi sosial-ekonomi",
+      "summary": "Narasi ESS menunjukkan bahwa bengkel dan layanan komunitas berfungsi bukan hanya sebagai unit ekonomi, tetapi sebagai jembatan transisi santri menuju penghidupan produktif.",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    },
+    {
+      "evidence_id": "EV_ESS_05",
+      "topic": "Productive identity and confidence",
+      "summary": "Aspek monetisasi TRANS, ENT, dan CONF menunjukkan bahwa program tidak hanya mengejar transaksi, tetapi juga kesiapan livelihood, kapasitas usaha, dan penguatan kepercayaan diri santri.",
+      "source_refs": [
+        "SRC_ESS_SCRIPT_01"
+      ]
+    }
+  ],
+  "uncertainty_flags": [
+    {
+      "description": "Nomenklatur sumber tidak konsisten: prompt/validator menyebut ESS sebagai Enduro Sahabat Sekolah, tetapi source deck ess_batch1/2/3 secara jelas menyebut Enduro Sahabat Santri.",
+      "severity": "low",
+      "field": "general"
+    },
+    {
+      "description": "Angka yang tersedia di deck untuk ESS masih bersifat preliminary gross view dan belum DDAT final.",
+      "severity": "medium",
+      "field": "monetization"
+    },
+    {
+      "description": "Jumlah santri peserta tidak ditampilkan eksplisit dalam deck; canonical ini menempatkan santri sebagai target group kualitatif, bukan count final.",
+      "severity": "medium",
+      "field": "outputs"
+    },
+    {
+      "description": "Outcome social legitimacy dan productive identity diperkaya untuk kepentingan kualitas narasi, tetapi belum dimonetisasi sebagai aspek tersendiri agar tetap konsisten dengan deck.",
+      "severity": "low",
+      "field": "outcomes"
+    }
+  ],
+  "data_status": "preliminary",
+  "last_updated": "2026-04-14",
+  "_submit_ts": "2026-04-14T11:11:01.717Z"
+}

@@ -1,0 +1,224 @@
+{
+  "contract_version": "1.0",
+  "description": "Spesifikasi formal semua handoff antar agen. Setiap agen hanya boleh membaca input dari kontrak yang ditujukan kepadanya.",
+
+  "contracts": {
+
+    "A": {
+      "from": "Canonical Mapper",
+      "to":   "Financial Calculation Engine",
+      "description": "Mengirim canonical JSON beserta policy kalkulasi. Financial Engine tidak boleh mengubah field apapun kecuali sroi_metrics.calculated.",
+      "schema": {
+        "program_canonical_json": "object — full canonical JSON yang sudah lolos validator",
+        "calculation_mode": {
+          "type": "string",
+          "enum": ["evaluative", "predictive", "both"]
+        },
+        "financial_policy": {
+          "allow_compound":     "boolean",
+          "allow_sensitivity":  "boolean",
+          "allow_payback":      "boolean",
+          "terminal_year":      "integer",
+          "compound_basis":     "string — misal: ORI"
+        }
+      },
+      "constraints": [
+        "program_canonical_json harus sudah lolos canonical_json_schema_v1",
+        "sroi_metrics.status di canonical JSON harus 'not_calculated' atau 'in_progress' sebelum dikirim",
+        "Financial Engine mengembalikan hasil via Handoff B, tidak langsung ke agen lain"
+      ]
+    },
+
+    "B": {
+      "from": "Financial Calculation Engine",
+      "to":   "Report Architect",
+      "description": "Mengirim hasil kalkulasi deterministik. Semua angka di sini adalah angka final yang akan dipakai seluruh pipeline. Tidak ada agen downstream yang boleh mengubah angka ini.",
+      "schema": {
+        "sroi_metrics": {
+          "calculated":     "object — sesuai sroi_metrics.calculated di canonical schema",
+          "status":         "string — harus 'calculated' atau 'validated'"
+        },
+        "financial_tables": {
+          "type": "array",
+          "items": {
+            "table_id":     "string",
+            "title":        "string",
+            "headers":      "string[]",
+            "rows":         "array of arrays",
+            "column_widths":"number[] — total harus = 9638 DXA"
+          }
+        },
+        "calc_audit_log": {
+          "type": "array",
+          "description": "Setiap angka penting harus bisa ditelusuri ke sini",
+          "items": {
+            "field":        "string — nama field yang dihasilkan",
+            "value":        "number",
+            "formula":      "string — formula yang dipakai",
+            "inputs_used":  "string[] — field canonical JSON yang menjadi input",
+            "timestamp":    "string"
+          }
+        }
+      },
+      "constraints": [
+        "Tidak boleh ada angka di financial_tables yang tidak ada di calc_audit_log",
+        "sroi_metrics.status harus diupdate di canonical JSON setelah engine selesai",
+        "Financial Engine tidak mengirim narasi atau interpretasi — hanya data"
+      ]
+    },
+
+    "C": {
+      "from": "Report Architect",
+      "to":   "Point Builder",
+      "description": "Mengirim blueprint dan gap matrix. Point Builder menggunakan ini untuk menentukan core claim dan argument points per bab.",
+      "schema": {
+        "report_blueprint_json": {
+          "type": "object",
+          "description": "Peta bab ke field canonical JSON",
+          "properties": {
+            "report_mode":  "string — full | partial | skeleton",
+            "chapters": {
+              "type": "array",
+              "items": {
+                "chapter_id":    "string",
+                "chapter_title": "string",
+                "builder_mode":  "string — framing | context | sroi | learning",
+                "canonical_inputs": "string[] — nama field canonical JSON yang relevan",
+                "coverage_status":  "string — strong | partial | weak | missing",
+                "risk":             "string — reliable | thin | overclaim | skeleton_only"
+              }
+            }
+          }
+        },
+        "gap_matrix": {
+          "type": "array",
+          "items": {
+            "chapter_id":     "string",
+            "missing_fields": "string[]",
+            "weak_fields":    "string[]",
+            "recommendation": "string — full | placeholder | skip"
+          }
+        },
+        "program_canonical_json": "object — reference read-only"
+      },
+      "constraints": [
+        "Point Builder tidak boleh mengisi gap dengan inferensi bebas",
+        "Bab dengan coverage missing harus menghasilkan outline dengan known_gaps yang jelas",
+        "Point Builder tidak boleh mengakses Financial Engine secara langsung"
+      ]
+    },
+
+    "D": {
+      "from": "Point Builder",
+      "to":   "Narrative Builder",
+      "description": "Mengirim outline semantik per bab. Narrative Builder mengembangkan outline ini menjadi chapter_semantic_json. Narrative Builder tidak boleh menulis poin yang tidak ada di outline.",
+      "schema": {
+        "chapter_outline_json": {
+          "type": "array",
+          "items": {
+            "chapter_id":     "string",
+            "chapter_title":  "string",
+            "builder_mode":   "string — framing | context | sroi | learning",
+            "purpose":        "string — tujuan bab dalam satu kalimat",
+            "core_claim":     "string — argumen utama bab",
+            "argument_points": {
+              "type": "array",
+              "items": {
+                "label":         "string — misal: 4.1",
+                "point":         "string",
+                "evidence_refs": "string[] — harus ada di evidence_registry atau canonical field",
+                "status":        "string — supported | partial | inferred | pending",
+                "note":          "string — wajib diisi jika status bukan supported"
+              }
+            },
+            "known_gaps": "string[] — wajib diisi jika coverage weak atau missing",
+            "financial_refs": "string[] — table_id dari financial_tables yang relevan untuk bab ini"
+          }
+        }
+      },
+      "constraints": [
+        "Setiap argument_point berstatus supported wajib punya evidence_refs yang tidak kosong",
+        "known_gaps tidak boleh kosong jika gap_matrix menunjukkan weak atau missing",
+        "core_claim harus bisa ditelusuri ke minimal satu field canonical JSON",
+        "Tidak boleh ada argument_point berstatus pending/under_confirmation tanpa note eksplisit"
+      ]
+    },
+
+    "E": {
+      "from": "Narrative Builder",
+      "to":   "QA Checker",
+      "description": "Mengirim chapter semantic JSON. QA membandingkan ini dengan outline dari Handoff D untuk mendeteksi divergensi atau overclaim.",
+      "schema": {
+        "chapter_semantic_json": {
+          "type": "array",
+          "items": {
+            "chapter_id":   "string",
+            "chapter_type": "string — implementation_sroi | framing | context | learning",
+            "blocks": {
+              "type": "array",
+              "description": "Setiap block harus sesuai tipe yang ada di render contract",
+              "items": {
+                "type":            "string — dari supported_block_types di render contract",
+                "text":            "string — untuk block teks",
+                "data_status":     "string — opsional",
+                "display_status":  "string — opsional",
+                "source_refs":     "string[] — wajib jika display_status bukan present_as_final",
+                "headers":         "array — untuk tabel",
+                "rows":            "array — untuk tabel",
+                "column_widths":   "number[] — untuk tabel",
+                "items":           "array — untuk list dan metric card",
+                "data_points":     "array — untuk bar chart",
+                "max_value":       "number — untuk bar chart",
+                "text":            "string — untuk callout dan paragraph",
+                "gap_type":        "string — wajib untuk callout_gap"
+              }
+            }
+          }
+        },
+        "source_outline_ref": "string — chapter_id outline yang menjadi basis bab ini"
+      },
+      "constraints": [
+        "Setiap block dengan display_status proxy atau pending wajib punya source_refs",
+        "Tidak ada block type di luar render_contract.supported_block_types",
+        "Angka yang muncul di block tabel atau metric card harus ada di calc_audit_log",
+        "Narrative Builder tidak boleh menghasilkan angka baru yang tidak berasal dari sroi_metrics.calculated"
+      ]
+    },
+
+    "F": {
+      "from": "QA Checker",
+      "to":   "Renderer",
+      "description": "Handoff final ke Renderer. QA sudah memverifikasi semua block. Renderer tidak perlu melakukan pengecekan logika — hanya rendering.",
+      "schema": {
+        "renderer_ready":   "boolean — false berarti Renderer tidak boleh memproses bab ini",
+        "chapter_id":       "string",
+        "blocks":           "array — sama persis dengan chapter_semantic_json blocks, sudah bersih",
+        "reference_outline": {
+          "chapter_id":      "string",
+          "core_claim":      "string",
+          "argument_points": "array — read-only, untuk konteks rendering saja",
+          "known_gaps":      "string[]"
+        },
+        "qa_render_signals": {
+          "outline_alignment_status": "string — aligned | partial | diverged",
+          "render_gap_note":          "boolean — jika true, render callout_gap di awal bab",
+          "render_inference_note":    "boolean — jika true, tambah catatan inferensi di footer bab"
+        },
+        "style_hints": {
+          "proxy_badge":      "boolean",
+          "warning_callout":  "boolean",
+          "pending_note":     "boolean",
+          "gap_note":         "boolean",
+          "inference_note":   "boolean"
+        }
+      },
+      "constraints": [
+        "Renderer tidak boleh memproses bab dengan renderer_ready: false",
+        "Renderer tidak boleh mengubah isi block — hanya styling",
+        "reference_outline bersifat read-only dan non-authoritative",
+        "Jika ada block type tidak dikenal, Renderer render callout_warning placeholder dan lanjut",
+        "Renderer tidak membuat keputusan metodologis — semua keputusan sudah ada di qa_render_signals"
+      ]
+    }
+  }
+}

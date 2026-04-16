@@ -1,0 +1,146 @@
+[
+  {
+    "chapter_id": "bab_5",
+    "chapter_type": "kondisi_ideal",
+    "source_outline_ref": "bab_5",
+    "builder_mode": "context",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277329",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB V IDENTIFIKASI KONDISI IDEAL YANG DIHARAPKAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Ekosistem produktif berbasis bengkel otomotif yang memungkinkan WBP dan eks-WBP bekerja mandiri dan berintegrasi kembali ke masyarakat"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data kuantitatif kondisi ideal yang spesifik (target angka SROI, target peserta, target pendapatan pasca-program) belum tersedia dalam canonical JSON kajian ini. Sub-bab ini dapat diperkaya dari dokumen perencanaan program dan laporan target kinerja.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "5.1 Tujuan Utama"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program Enduro Sahabat Lapas bertujuan menciptakan ekosistem produktif yang memungkinkan WBP dan eks-WBP mencapai kemandirian ekonomi dan reintegrasi sosial yang bermartabat dan berkelanjutan."
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Keterampilan mekanik terkonversi menjadi layanan bengkel riil"
+          },
+          {
+            "text": "Eks-WBP memiliki usaha atau pekerjaan legal pasca-bebas"
+          },
+          {
+            "text": "Reintegrasi sosial-ekonomi terukur dan berkelanjutan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "5.2 Tujuan Spesifik: Key Areas of Improvement"
+      },
+      {
+        "type": "paragraph",
+        "text": "Empat area perbaikan kunci yang menjadi fokus intervensi program:"
+      },
+      {
+        "type": "paragraph",
+        "text": "• Hard skill mekanik otomotif",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kapasitas wirausaha bengkel",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kesiapan reintegrasi sosial-ekonomi",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "• Kepercayaan diri dan self-efficacy",
+        "display_status": "present_as_inferred",
+        "source_refs": [
+          "ideal_conditions"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "5.3 Kesesuaian Masalah / Intervensi / Tujuan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Setiap akar masalah yang diidentifikasi di Bab IV dijawab secara langsung oleh komponen program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Akar Masalah",
+          "Intervensi Program",
+          "Tujuan yang Dicapai"
+        ],
+        "rows": [
+          [
+            "Competency-to-Service Gap",
+            "Pelatihan mekanik + praktik bengkel riil",
+            "Hard skill mekanik terstandar"
+          ],
+          [
+            "Post-Release Transition Risk",
+            "Pendampingan unit usaha + node eks-WBP",
+            "Kesiapan reintegrasi terukur"
+          ],
+          [
+            "Entrepreneurship Gap",
+            "Pembinaan kewirausahaan bengkel",
+            "Kapasitas wirausaha mandiri"
+          ],
+          [
+            "Social Acceptance & Market Link",
+            "Jejaring bengkel + model Milenial Motor",
+            "Kepercayaan diri & akses pasar"
+          ]
+        ],
+        "column_widths": [
+          3200,
+          3600,
+          2838
+        ],
+        "source_refs": [
+          "problem_framing",
+          "ideal_conditions",
+          "strategy_design"
+        ]
+      },
+      {
+        "type": "callout_info",
+        "text": "Kondisi ideal program selaras dengan SDG 8 (Pekerjaan Layak dan Pertumbuhan Ekonomi), SDG 10 (Berkurangnya Ketimpangan), dan SDG 16 (Perdamaian, Keadilan, dan Kelembagaan yang Kuat) — tiga tujuan global yang langsung relevan dengan isu reintegrasi eks-WBP.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      }
+    ]
+  }
+]

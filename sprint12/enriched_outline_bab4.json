@@ -1,0 +1,47 @@
+[
+  {
+    "chapter_id": "bab_4",
+    "chapter_title": "Identifikasi Kondisi Awal",
+    "builder_mode": "context",
+    "coverage_status": "weak",
+    "purpose": "Memetakan kondisi awal yang menjadi dasar intervensi program",
+    "core_claim": "Kondisi awal program diidentifikasi secara programatik — baseline wilayah rinci tidak tersedia",
+    "argument_points": [],
+    "known_gaps": [
+      {
+        "gap_id": "gap_bab4_baseline",
+        "field": "context_baseline",
+        "gap_type": "data_unavailable",
+        "note": "Data baseline wilayah (BPS, peta administrasi) tidak tersedia dalam sumber utama"
+      }
+    ],
+    "generated_at": "2026-04-10T15:40:40.484230",
+    "_enrichment_hints": {
+      "generated_at": "2026-04-10T15:40:40.484254",
+      "total_hints": 2,
+      "hints": [
+        {
+          "hint_type": "framing_note",
+          "text": "Bab bab_4dan bab_5 memiliki gap data baseline. Gunakan framing 'baseline programatik' — nyatakan keterbatasan ini secara eksplisit, jangan overclaim kelengkapan data wilayah.",
+          "confidence": 0.94,
+          "category": "framing",
+          "source": "ontology_rule SR_01 + gap_matrix",
+          "rule_id": "ER_BASELINE_FRAMING"
+        },
+        {
+          "hint_type": "gap_rendering_note",
+          "text": "Gap di bab_4 ditandai 'must_render_as_gap' dalam review. Gunakan callout_gap eksplisit dengan gap_type yang sesuai — jangan biarkan bab ini terlihat seolah lengkap.",
+          "confidence": 0.99,
+          "category": "gap_acknowledgement",
+          "source": "gap_matrix review decision",
+          "rule_id": "ER_GAP_EXPLICIT"
+        }
+      ],
+      "usage_note": "Hints ini dari enrichment engine — builder boleh memakai atau mengabaikan. Tidak mengubah argument_points.",
+      "by_category": {
+        "framing": 1,
+        "gap_acknowledgement": 1
+      }
+    }
+  }
+]

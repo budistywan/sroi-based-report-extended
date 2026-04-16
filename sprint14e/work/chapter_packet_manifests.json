@@ -1,0 +1,36 @@
+{
+  "run_id": "batch_refine_esl_v1",
+  "generated_at": "2026-04-12T06:48:37.583320",
+  "chapters": {
+    "bab_7": {
+      "packet_count": 2,
+      "packet_ids": [
+        "sp14d_53029477",
+        "sp14d_893ef753"
+      ],
+      "eval_file": "work/style_evaluation_report_bab_7.json"
+    },
+    "bab_9": {
+      "packet_count": 3,
+      "packet_ids": [
+        "sp14d_b8da9019",
+        "sp14d_2862f788",
+        "sp14d_03f4d82d"
+      ],
+      "eval_file": "work/style_evaluation_report_bab_9.json"
+    },
+    "bab_8": {
+      "packet_count": 6,
+      "packet_ids": [
+        "sp14d_7d19210b",
+        "sp14d_24db6072",
+        "sp14d_f8c12883",
+        "sp14d_d6186316",
+        "sp14d_68c211b4",
+        "sp14d_9acf5b31"
+      ],
+      "eval_file": "work/style_evaluation_report_bab_8.json"
+    }
+  },
+  "total_packets": 11
+}

@@ -1,0 +1,305 @@
+{
+  "source_id": "src_etb_01",
+  "source_type": "ppt_script",
+  "name": "TJSL_Scripts.md — etb sections",
+  "program_code": "ETB",
+  "parsed_at": "2026-04-10T10:03:12.027846",
+  "parser_version": "1.0.0",
+  "parsed_sections": {
+    "program_identity": {
+      "program_code": "ETB",
+      "program_name": "Enduro Tapal Batas",
+      "program_tagline": "",
+      "company": "PT Pertamina Lubricants",
+      "unit": "TJSL CSV",
+      "period_start": 2023,
+      "period_end": 2025
+    },
+    "investment": [
+      {
+        "year": 2023,
+        "node": "total",
+        "amount_idr": 41616000,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2024,
+        "node": "total",
+        "amount_idr": 58262400,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2025,
+        "node": "total",
+        "amount_idr": 40000000,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "monetization": [
+      {
+        "monetization_id": "MON_JSP_2023",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2023,
+        "gross_idr": 59660000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2024",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2024,
+        "gross_idr": 83520000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2025",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2025,
+        "gross_idr": 116930000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2023",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2023,
+        "gross_idr": 135530000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2024",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2024,
+        "gross_idr": 189750000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2025",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2025,
+        "gross_idr": 265649999,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2023",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2023,
+        "gross_idr": 15000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2024",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2024,
+        "gross_idr": 15000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2025",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2025,
+        "gross_idr": 15000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ACC_2023",
+        "aspect_code": "ACC",
+        "aspect_name": "ACC",
+        "year": 2023,
+        "gross_idr": 3000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ACC_2024",
+        "aspect_code": "ACC",
+        "aspect_name": "ACC",
+        "year": 2024,
+        "gross_idr": 4200000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ACC_2025",
+        "aspect_code": "ACC",
+        "aspect_name": "ACC",
+        "year": 2025,
+        "gross_idr": 5850000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LAB_2023",
+        "aspect_code": "LAB",
+        "aspect_name": "LAB",
+        "year": 2023,
+        "gross_idr": 12000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LAB_2024",
+        "aspect_code": "LAB",
+        "aspect_name": "LAB",
+        "year": 2024,
+        "gross_idr": 12000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LAB_2025",
+        "aspect_code": "LAB",
+        "aspect_name": "LAB",
+        "year": 2025,
+        "gross_idr": 12000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "ddat_params": {
+      "LAB": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "LUB": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "JSP": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "ACC": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "ENT": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      }
+    },
+    "ori_rates": {
+      "2023": {
+        "rate": 0.059000000000000004,
+        "series": "ORI023T3",
+        "compound_factor": 1.1252,
+        "terminal_year": false
+      },
+      "2024": {
+        "rate": 0.0625,
+        "series": "ORI025T3",
+        "compound_factor": 1.0625,
+        "terminal_year": false
+      },
+      "2025": {
+        "rate": 0.065,
+        "series": "ORI027T3",
+        "compound_factor": 1.0,
+        "terminal_year": true
+      }
+    },
+    "sroi_metrics": {
+      "status": "extracted",
+      "calculated": {
+        "sroi_blended": 4.02
+      }
+    },
+    "learning_signals": {
+      "loop_1": [
+        "Total Nilai Bersih 3 Tahun: Rp 535,93 Juta dari total investasi Rp 139,88 Juta",
+        "3 bengkel tercatat  ·  2 aktif bertransaksi  ·  1 penerima anggaran utama",
+        "Evaluatif · Compound ORI-adjusted · DDAT net multiplier per aspek · Terminal year 2025"
+      ],
+      "loop_2": [],
+      "loop_3": [],
+      "lfa_reflections": [],
+      "data_status": "derived"
+    }
+  },
+  "uncertainty_flags": [],
+  "coverage": {
+    "investment": "strong",
+    "monetization": "strong",
+    "ddat": "strong",
+    "ori": "strong",
+    "sroi_metrics": "strong"
+  }
+}

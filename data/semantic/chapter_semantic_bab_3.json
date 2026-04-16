@@ -1,0 +1,215 @@
+[
+  {
+    "chapter_id": "bab_3",
+    "chapter_type": "metodologi",
+    "source_outline_ref": "bab_3",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277326",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB III METODOLOGI SROI DAN TRIPLE LOOP LEARNING"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menjelaskan kerangka metodologi yang digunakan dalam kajian SROI program, mencakup prinsip-prinsip SROI, metode pengumpulan data, pendekatan LFA, parameter fiksasi dampak, dan kerangka pembelajaran triple loop."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "3.1 Perhitungan Dampak Investasi Sosial / Social Return on Investment"
+      },
+      {
+        "type": "paragraph",
+        "text": "SROI adalah kerangka pengukuran yang mengkuantifikasi nilai sosial, ekonomi, dan lingkungan dari suatu investasi. Berbeda dengan ROI finansial konvensional, SROI memasukkan nilai-nilai yang tidak selalu tercermin dalam transaksi pasar, seperti peningkatan kepercayaan diri, kesiapan reintegrasi, atau penguatan kapasitas kelembagaan."
+      },
+      {
+        "type": "paragraph",
+        "text": "Formula dasar SROI dalam kajian ini: SROI = Total Net Benefit (compounded) ÷ Total Investasi. Nilai bersih dihitung setelah menerapkan DDAT adjustment (Deadweight, Displacement, Attribution, Drop-off) per aspek monetisasi, kemudian di-compound ke terminal year menggunakan ORI reference rate."
+      },
+      {
+        "type": "heading_2",
+        "text": "3.2 Metode Pengumpulan Data, Analisis Data, dan Rumus SROI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pengumpulan data dalam kajian ini menggunakan pendekatan triangulasi yang mengombinasikan data primer dan sekunder:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Data primer: catatan transaksi aktual dari tiga node aktif (LUB dan SVC)"
+          },
+          {
+            "text": "Data sekunder: referensi kebijakan untuk proxy REINT (Kartu Prakerja) dan CONF (tarif psikologi publik)"
+          },
+          {
+            "text": "Data program: laporan kegiatan, dokumentasi investasi, dan catatan pendampingan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.3 Parameter Fiksasi Dampak (DDAT)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Empat parameter fiksasi diterapkan untuk memastikan nilai sosial yang diklaim benar-benar mencerminkan kontribusi program:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Parameter",
+          "Definisi",
+          "Fungsi"
+        ],
+        "rows": [
+          [
+            "Deadweight (DW)",
+            "Manfaat yang terjadi tanpa intervensi program",
+            "Menghindari klaim berlebihan"
+          ],
+          [
+            "Displacement (DS)",
+            "Manfaat yang menggeser pihak lain",
+            "Mencegah double-counting"
+          ],
+          [
+            "Attribution (AT)",
+            "Kontribusi pihak lain terhadap outcome",
+            "Proporsionalitas klaim"
+          ],
+          [
+            "Drop-off (DO)",
+            "Penurunan manfaat dari waktu ke waktu",
+            "Realisme jangka menengah"
+          ]
+        ],
+        "column_widths": [
+          2400,
+          4000,
+          3238
+        ],
+        "source_refs": [
+          "ddat_params"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.4 ORI Reference Rate sebagai Discount Rate"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nilai bersih setiap tahun di-compound ke terminal year 2025 menggunakan suku bunga ORI (Obligasi Ritel Indonesia) sebagai proxy biaya modal sosial yang konservatif dan terverifikasi:"
+      },
+      {
+        "type": "table_borderless",
+        "headers": [
+          "Tahun",
+          "Seri ORI",
+          "Rate",
+          "Compound Factor"
+        ],
+        "rows": [
+          [
+            "2023",
+            "ORI023T3",
+            "5.90%",
+            "1.1252"
+          ],
+          [
+            "2024",
+            "ORI025T3",
+            "6.25%",
+            "1.0625"
+          ],
+          [
+            "2025",
+            "ORI027T3",
+            "6.50%",
+            "1.0"
+          ]
+        ],
+        "column_widths": [
+          1500,
+          3000,
+          2000,
+          3138
+        ],
+        "source_refs": [
+          "ori_rates"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.5 Prinsip SROI"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Involve stakeholders — pemangku kepentingan dilibatkan dalam identifikasi outcome"
+          },
+          {
+            "text": "Understand what changes — fokus pada perubahan nyata yang dirasakan"
+          },
+          {
+            "text": "Value the things that matter — monetisasi nilai yang tidak selalu terwakili pasar"
+          },
+          {
+            "text": "Only include what is material — excludes minor outcomes"
+          },
+          {
+            "text": "Do not over-claim — DDAT adjustment diterapkan secara konsisten"
+          },
+          {
+            "text": "Be transparent — status data (observed/proxy/pending) ditampilkan eksplisit"
+          },
+          {
+            "text": "Verify the result — audit trail tersedia melalui calc_audit_log"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "3.6 Logical Framework Approach (LFA)"
+      },
+      {
+        "type": "paragraph",
+        "text": "LFA digunakan untuk memetakan rantai kausalitas program: dari input dan aktivitas menuju output, outcome, dan dampak jangka panjang. Dalam kajian ini, LFA berfungsi sebagai kerangka verifikasi — memastikan bahwa klaim outcome dapat ditelusuri kembali ke aktivitas program yang konkret."
+      },
+      {
+        "type": "callout_gap",
+        "text": "Tabel LFA utuh lintas program belum tersedia dalam canonical JSON — memerlukan data dari laporan kegiatan detail per aktivitas per node. Untuk laporan final, sub-bab ini perlu dilengkapi.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "3.7 Triple Loop Learning"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kajian ini mengadopsi kerangka triple loop learning untuk mengevaluasi bukan hanya apa yang terjadi (loop 1), tetapi juga mengapa program merespons seperti yang dilakukan (loop 2), dan nilai serta asumsi apa yang berubah dalam proses tersebut (loop 3)."
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Loop 1 (Single): pembelajaran dari hasil langsung — apa yang berhasil dan tidak"
+          },
+          {
+            "text": "Loop 2 (Double): refleksi atas strategi — mengapa cara tertentu dipilih"
+          },
+          {
+            "text": "Loop 3 (Triple): transformasi nilai dan asumsi mendasar program"
+          }
+        ]
+      }
+    ]
+  }
+]

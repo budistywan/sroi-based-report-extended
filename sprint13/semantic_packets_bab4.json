@@ -1,0 +1,110 @@
+[
+  {
+    "packet_id": "pkt_202604101620_c55f95",
+    "packet_type": "framing_note",
+    "target_id": "bab_4",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "data_status",
+        "gap_type",
+        "financial_fields",
+        "argument_points"
+      ]
+    },
+    "decision_prompt": "Apakah framing tentang keterbatasan baseline ini sudah tepat untuk konteks laporan? Apakah perlu dipertegas, diperlunak, atau diubah agar lebih sesuai dengan gaya penulisan yang diharapkan?",
+    "context": {
+      "current_text": "Bab bab_4dan bab_5 memiliki gap data baseline. Gunakan framing 'baseline programatik' — nyatakan keterbatasan ini secara eksplisit, jangan overclaim kelengkapan data wilayah.",
+      "source": "ontology_rule SR_01 + gap_matrix",
+      "confidence": 0.94,
+      "relevant_history": "Sprint 9.3: reviewer memutuskan bahwa keterbatasan baseline harus dinyatakan eksplisit dengan framing 'baseline programatik'",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_eab0a8",
+    "packet_type": "framing_note",
+    "target_id": "bab_4",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "data_status",
+        "gap_type",
+        "financial_fields",
+        "argument_points"
+      ]
+    },
+    "decision_prompt": "Apakah framing tentang keterbatasan baseline ini sudah tepat untuk konteks laporan? Apakah perlu dipertegas, diperlunak, atau diubah agar lebih sesuai dengan gaya penulisan yang diharapkan?",
+    "context": {
+      "current_text": "Gap di bab_4 ditandai 'must_render_as_gap' dalam review. Gunakan callout_gap eksplisit dengan gap_type yang sesuai — jangan biarkan bab ini terlihat seolah lengkap.",
+      "source": "gap_matrix review decision",
+      "confidence": 0.99,
+      "relevant_history": "Sprint 9.3: reviewer memutuskan bahwa keterbatasan baseline harus dinyatakan eksplisit dengan framing 'baseline programatik'",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "pkt_202604101620_954300",
+    "packet_type": "gap_acknowledgement",
+    "target_id": "bab_4.gap_note",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording",
+        "tone"
+      ],
+      "forbidden_changes": [
+        "gap_type",
+        "numeric_values",
+        "data_status",
+        "chapter_structure"
+      ]
+    },
+    "decision_prompt": "Apakah catatan gap ini perlu muncul eksplisit di laporan? Apakah formulasi yang ada sudah cukup jujur dan tidak terkesan defensif? Revisi jika perlu disesuaikan dengan tone laporan.",
+    "context": {
+      "current_text": "Bab bab_4 harus menampilkan gap secara eksplisit (keputusan review: must_render_as_gap). Data baseline wilayah (statistik BPS, peta) tidak ada. Problem framing tersedia . Gunakan callout_gap dengan gap_type: data_unavailable.",
+      "source": "review decision + gap_matrix",
+      "confidence": 0.99,
+      "relevant_history": "Gap bab_4 ditandai must_render_as_gap dalam Sprint 11 review",
+      "applicability_context": "ESL_Pertamina_2025",
+      "program_code": "ESL"
+    },
+    "decision_options": [
+      "accept",
+      "reject",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  }
+]

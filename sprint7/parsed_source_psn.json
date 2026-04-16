@@ -1,0 +1,308 @@
+{
+  "source_id": "src_psn_01",
+  "source_type": "ppt_script",
+  "name": "TJSL_Scripts.md — psn sections",
+  "program_code": "PSN",
+  "parsed_at": "2026-04-10T10:03:12.031096",
+  "parser_version": "1.0.0",
+  "parsed_sections": {
+    "program_identity": {
+      "program_code": "PSN",
+      "program_name": "Pertamina Sahabat Nelayan",
+      "program_tagline": "*Nilai MON-DOWN, MON-MAINT, dan MON-ENT berbasis proxy moderat; nilai 2023–2025 berstatus under confirmation.",
+      "company": "PT Pertamina Lubricants",
+      "unit": "TJSL CSV",
+      "period_start": 2023,
+      "period_end": 2025
+    },
+    "investment": [
+      {
+        "year": 2023,
+        "node": "total",
+        "amount_idr": 686666666,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ],
+        "note": "Estimasi merata — data per tahun tidak tersedia di script"
+      },
+      {
+        "year": 2024,
+        "node": "total",
+        "amount_idr": 686666666,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ],
+        "note": "Estimasi merata — data per tahun tidak tersedia di script"
+      },
+      {
+        "year": 2025,
+        "node": "total",
+        "amount_idr": 686666666,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ],
+        "note": "Estimasi merata — data per tahun tidak tersedia di script"
+      }
+    ],
+    "monetization": [
+      {
+        "monetization_id": "MON_JSP_2023",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2023,
+        "gross_idr": 27550000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2024",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2024,
+        "gross_idr": 38570000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_JSP_2025",
+        "aspect_code": "JSP",
+        "aspect_name": "JSP",
+        "year": 2025,
+        "gross_idr": 54000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2023",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2023,
+        "gross_idr": 28070000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2024",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2024,
+        "gross_idr": 39300000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2025",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2025,
+        "gross_idr": 55010000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_DOWN_2023",
+        "aspect_code": "DOWN",
+        "aspect_name": "DOWN",
+        "year": 2023,
+        "gross_idr": 874370000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_DOWN_2024",
+        "aspect_code": "DOWN",
+        "aspect_name": "DOWN",
+        "year": 2024,
+        "gross_idr": 1090000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_DOWN_2025",
+        "aspect_code": "DOWN",
+        "aspect_name": "DOWN",
+        "year": 2025,
+        "gross_idr": 1310000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_MAINT_2023",
+        "aspect_code": "MAINT",
+        "aspect_name": "MAINT",
+        "year": 2023,
+        "gross_idr": 140250000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_MAINT_2024",
+        "aspect_code": "MAINT",
+        "aspect_name": "MAINT",
+        "year": 2024,
+        "gross_idr": 163620000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_MAINT_2025",
+        "aspect_code": "MAINT",
+        "aspect_name": "MAINT",
+        "year": 2025,
+        "gross_idr": 187000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2023",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2023,
+        "gross_idr": 162000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2024",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2024,
+        "gross_idr": 216000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_ENT_2025",
+        "aspect_code": "ENT",
+        "aspect_name": "ENT",
+        "year": 2025,
+        "gross_idr": 270000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "ddat_params": {
+      "LUB": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "JSP": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "DOWN": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "ENT": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "MAINT": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      }
+    },
+    "ori_rates": {
+      "2023": {
+        "rate": 0.059000000000000004,
+        "series": "ORI023T3",
+        "compound_factor": 1.1252,
+        "terminal_year": false
+      },
+      "2024": {
+        "rate": 0.0625,
+        "series": "ORI025T3",
+        "compound_factor": 1.0625,
+        "terminal_year": false
+      },
+      "2025": {
+        "rate": 0.0665,
+        "series": "ORI027T3",
+        "compound_factor": 1.0,
+        "terminal_year": true
+      }
+    },
+    "sroi_metrics": {
+      "status": "extracted",
+      "calculated": {
+        "sroi_blended": 1.44
+      }
+    },
+    "learning_signals": {
+      "loop_1": [
+        "*Nilai MON-DOWN, MON-MAINT, dan MON-ENT berbasis proxy moderat; nilai 2023–2025 berstatus under confirmation.",
+        "Total Nilai Bersih 3 Tahun: Rp 2,81 miliar dari total investasi Rp 2,06 miliar",
+        "rata-rata biaya perawatan mesin\\nper bulan (studi nelayan perahu motor)"
+      ],
+      "loop_2": [],
+      "loop_3": [],
+      "lfa_reflections": [],
+      "data_status": "derived"
+    }
+  },
+  "uncertainty_flags": [],
+  "coverage": {
+    "investment": "proxy",
+    "monetization": "strong",
+    "ddat": "strong",
+    "ori": "strong",
+    "sroi_metrics": "strong"
+  }
+}

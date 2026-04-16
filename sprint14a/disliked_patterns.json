@@ -1,0 +1,100 @@
+{
+  "patterns_version": "1.0",
+  "parent_profile":   "style_profile_v1",
+  "created_at":       "2026-04-11",
+  "description":      "Pola tulisan yang tidak sesuai dengan preferensi user. Negative guidance — lebih mudah dideteksi sistem daripada positive examples saja.",
+
+  "patterns": [
+    {
+      "pattern_id":   "DP_AI_GENERIC",
+      "label":        "AI-generic paragraph rhythm",
+      "description":  "Paragraf terdengar generik, terlalu simetris, semua paragraf berbunyi sama persis — ciri khas template AI.",
+      "severity":     "high",
+      "examples": [
+        "Program ini sangat penting karena memberikan dampak yang besar bagi masyarakat.",
+        "Hal ini menunjukkan bahwa program memiliki dampak yang sangat besar dan signifikan.",
+        "Dengan adanya program ini, berbagai manfaat dapat dirasakan oleh seluruh pihak yang terlibat."
+      ],
+      "why_problematic": "Tidak punya identitas retorika. Bisa ditulis untuk program apapun tanpa konteks spesifik."
+    },
+    {
+      "pattern_id":   "DP_BOMBASTIC",
+      "label":        "Overclaim dan inflasi retorika",
+      "description":  "Klaim evaluatif yang berlebihan tanpa basis metodologis yang cukup.",
+      "severity":     "high",
+      "examples": [
+        "Program ini terbukti secara mutlak berhasil mengubah kehidupan peserta.",
+        "Tidak dapat disangkal bahwa program ini adalah yang terbaik di kelasnya.",
+        "Keberhasilan program ini sudah pasti akan memberikan dampak luar biasa."
+      ],
+      "why_problematic": "Melampaui apa yang bisa diklaim dari data. Merusak kredibilitas laporan evaluatif."
+    },
+    {
+      "pattern_id":   "DP_MECHANICAL_EXPANSION",
+      "label":        "Ekspansi mekanis tanpa alur argumentatif",
+      "description":  "Poin-poin di-expand menjadi kalimat satu per satu tanpa alur argumentatif yang mengikat.",
+      "severity":     "high",
+      "examples": [
+        "Program ini memiliki tiga komponen utama. Komponen pertama adalah pelatihan teknis. Komponen kedua adalah pendampingan usaha. Komponen ketiga adalah evaluasi dampak.",
+        "Terdapat beberapa temuan penting. Pertama, investasi meningkat. Kedua, peserta bertambah. Ketiga, SROI positif."
+      ],
+      "why_problematic": "Terasa seperti catatan poin yang diparafrase, bukan paragraf yang berpikir."
+    },
+    {
+      "pattern_id":   "DP_FLAT_PARAGRAPH",
+      "label":        "Paragraf deskriptif tanpa interpretasi",
+      "description":  "Paragraf hanya mendeskripsikan fakta tanpa menafsirkan atau mengargumentasikan maknanya.",
+      "severity":     "medium",
+      "examples": [
+        "Program ESL dilaksanakan di empat node. Node pertama adalah Lapas Palembang. Node kedua adalah Lapas Sleman. Investasi total adalah Rp 502 juta.",
+        "Pada tahun 2023, program ini menghasilkan pendapatan dari penjualan pelumas. Pada tahun 2024, pendapatan meningkat. Pada tahun 2025, meningkat lagi."
+      ],
+      "why_problematic": "Tidak memberi nilai tambah interpretasi. Pembaca bisa membaca tabel langsung."
+    },
+    {
+      "pattern_id":   "DP_COPYWRITING_TONE",
+      "label":        "Tone terlalu copywriting atau promosi",
+      "description":  "Paragraf terdengar seperti materi promosi, bukan evaluasi akademik.",
+      "severity":     "medium",
+      "examples": [
+        "Program luar biasa ini telah mengubah kehidupan ratusan warga binaan menjadi lebih baik.",
+        "Dengan semangat yang tak pernah padam, tim program terus berkomitmen memberikan yang terbaik."
+      ],
+      "why_problematic": "Tidak sesuai register laporan evaluatif akademik. Merusak kredibilitas metodologis."
+    },
+    {
+      "pattern_id":   "DP_REPETITIVE_OPENING",
+      "label":        "Pembuka paragraf repetitif",
+      "description":  "Tiga paragraf atau lebih berturut-turut menggunakan pola pembuka yang identik.",
+      "severity":     "medium",
+      "trigger_if":   "same_opening_word_or_phrase_3_consecutive",
+      "examples": [
+        "Program ini …  (paragraf 1)\nProgram ini …  (paragraf 2)\nProgram ini …  (paragraf 3)",
+        "Hal ini menunjukkan …  (paragraf 1)\nHal ini menunjukkan …  (paragraf 2)\nHal ini menunjukkan …  (paragraf 3)"
+      ],
+      "why_problematic": "Terasa monoton dan tidak bervariasi."
+    },
+    {
+      "pattern_id":   "DP_NO_CLOSING_LOCK",
+      "label":        "Paragraf berhenti tanpa pengunci",
+      "description":  "Paragraf berakhir setelah elaborasi tanpa kalimat yang mengunci atau menegaskan makna.",
+      "severity":     "low",
+      "examples": [
+        "… sehingga program ini memberikan nilai tambah bagi peserta. Node Lapas Palembang belum aktif bertransaksi.",
+        "… hasil ini menunjukkan pertumbuhan yang konsisten dari tahun ke tahun."
+      ],
+      "why_problematic": "Paragraf terasa menggantung. Pembaca tidak mendapat 'landing' yang kuat."
+    },
+    {
+      "pattern_id":   "DP_JARGON_WITHOUT_BRIDGE",
+      "label":        "Jargon akademik tanpa jembatan",
+      "description":  "Istilah teknis digunakan tanpa pengantar atau kontekstualisasi yang memadai.",
+      "severity":     "low",
+      "examples": [
+        "DDAT adjustment menghasilkan net_multiplier yang diaplikasikan ke gross value setiap aspek monetisasi.",
+        "Blended SROI dihitung dari compound ORI-adjusted net benefit dibagi total sunk cost investasi."
+      ],
+      "why_problematic": "Pembaca non-teknis kehilangan alur. Jargon perlu dibawa dengan kalimat yang tetap readable."
+    }
+  ]
+}

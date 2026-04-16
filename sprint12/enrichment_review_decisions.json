@@ -1,0 +1,48 @@
+{
+  "review_id": "34132ad5",
+  "reviewer": "user",
+  "timestamp": "2026-04-10T15:40:40.222854",
+  "auto_accept_all": false,
+  "changes": [
+    {
+      "suggestion_id": "sugg_er_proxy_caution_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_baseline_framing_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_investment_pending_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_terminology_blended_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_reintegration_proxy_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_gap_explicit_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_conf_proxy_153939",
+      "action": "accept",
+      "note": "Accepted by reviewer"
+    },
+    {
+      "suggestion_id": "sugg_er_terminology_consistency_153939",
+      "action": "defer",
+      "note": "Deferred"
+    }
+  ]
+}

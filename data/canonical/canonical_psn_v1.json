@@ -1,0 +1,845 @@
+{
+  "schema_version": "1.0",
+  "case_id": "psn_2023_2025_v1",
+  "created_at": "2026-04-13",
+  "last_updated": "2026-04-13",
+  "program_identity": {
+    "program_name": "Pertamina Sahabat Nelayan",
+    "program_code": "PSN",
+    "tagline": "Penguatan Keandalan Aset Kapal dan Kapasitas Bengkel Nelayan melalui Pelatihan Mesin, Literasi Pelumasan, dan Kewirausahaan Perbengkelan",
+    "period_start": 2023,
+    "period_end": 2025,
+    "nodes": [
+      "SR I",
+      "SR II",
+      "SR IV",
+      "SR V",
+      "SR VI",
+      "SR VII",
+      "PUJ",
+      "PUC",
+      "PUG"
+    ],
+    "target_groups": [
+      "Kelompok Nelayan",
+      "Nelayan Anggota",
+      "Mekanik / Pengelola Bengkel"
+    ],
+    "total_groups": 9,
+    "estimated_beneficiaries": 270,
+    "company": "PT Pertamina Lubricants",
+    "program_tagline": "Penguatan Keandalan Aset Kapal dan Kapasitas Bengkel Nelayan melalui Pelatihan Mesin, Literasi Pelumasan, dan Kewirausahaan Perbengkelan",
+    "period_label": "2023–2025",
+    "target_group": "Kelompok Nelayan"
+  },
+  "source_registry": [
+    {
+      "source_id": "SRC_PSN_01",
+      "title": "Data Investasi Program PSN per SR/PU 2023–2025",
+      "type": "internal_financial",
+      "year_coverage": [
+        2023,
+        2024,
+        2025
+      ],
+      "data_status": "under_confirmation",
+      "note": "Data anggaran per Sales Region dan Production Unit dari sistem pelaporan TJSL"
+    },
+    {
+      "source_id": "SRC_PSN_02",
+      "title": "Studi Biaya Perawatan Mesin Nelayan Perahu Motor",
+      "type": "external_reference",
+      "year_coverage": [
+        2023
+      ],
+      "data_status": "confirmed",
+      "note": "Rata-rata biaya perawatan mesin per bulan Rp 196.754 — digunakan sebagai proxy downtime"
+    },
+    {
+      "source_id": "SRC_PSN_03",
+      "title": "Laporan Aktivitas Kelompok Nelayan Mitra 2023–2025",
+      "type": "program_monitoring",
+      "year_coverage": [
+        2023,
+        2024,
+        2025
+      ],
+      "data_status": "under_confirmation",
+      "note": "Data output kelompok aktif, transaksi LUB dan jasa sparepart per tahun"
+    },
+    {
+      "source_id": "evidence_registry",
+      "title": "Evidence Registry Proxy PSN",
+      "type": "internal_analysis",
+      "year_coverage": [
+        2023,
+        2024,
+        2025
+      ],
+      "data_status": "under_confirmation",
+      "note": "Basis estimasi proxy DOWN, MAINT, dan ENT"
+    }
+  ],
+  "investment": [
+    {
+      "year": 2023,
+      "category": "Program PSN — SR I",
+      "amount_idr": 65430000,
+      "description": "Anggaran PSN SR I 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — SR II",
+      "amount_idr": 21430000,
+      "description": "Anggaran PSN SR II 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — SR IV",
+      "amount_idr": 57680000,
+      "description": "Anggaran PSN SR IV 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — SR V",
+      "amount_idr": 41790000,
+      "description": "Anggaran PSN SR V 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — SR VI",
+      "amount_idr": 10400000,
+      "description": "Anggaran PSN SR VI 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — SR VII",
+      "amount_idr": 72200000,
+      "description": "Anggaran PSN SR VII 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — PUJ",
+      "amount_idr": 71670000,
+      "description": "Anggaran PSN PUJ 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — PUC",
+      "amount_idr": 54450000,
+      "description": "Anggaran PSN PUC 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2023,
+      "category": "Program PSN — PUG",
+      "amount_idr": 72670000,
+      "description": "Anggaran PSN PUG 2023",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR I",
+      "amount_idr": 91600000,
+      "description": "Anggaran PSN SR I 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR II",
+      "amount_idr": 30000000,
+      "description": "Anggaran PSN SR II 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR IV",
+      "amount_idr": 80750000,
+      "description": "Anggaran PSN SR IV 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR V",
+      "amount_idr": 58510000,
+      "description": "Anggaran PSN SR V 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR VI",
+      "amount_idr": 14560000,
+      "description": "Anggaran PSN SR VI 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — SR VII",
+      "amount_idr": 101080000,
+      "description": "Anggaran PSN SR VII 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — PUJ",
+      "amount_idr": 100340000,
+      "description": "Anggaran PSN PUJ 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — PUC",
+      "amount_idr": 76230000,
+      "description": "Anggaran PSN PUC 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2024,
+      "category": "Program PSN — PUG",
+      "amount_idr": 101740000,
+      "description": "Anggaran PSN PUG 2024",
+      "data_status": "under_confirmation"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR I",
+      "amount_idr": 100000000,
+      "description": "Anggaran PSN SR I 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR II",
+      "amount_idr": 230000000,
+      "description": "Anggaran PSN SR II 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR IV",
+      "amount_idr": 30000000,
+      "description": "Anggaran PSN SR IV 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR V",
+      "amount_idr": 84000000,
+      "description": "Anggaran PSN SR V 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR VI",
+      "amount_idr": 10000000,
+      "description": "Anggaran PSN SR VI 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — SR VII",
+      "amount_idr": 245000000,
+      "description": "Anggaran PSN SR VII 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — PUJ",
+      "amount_idr": 150000000,
+      "description": "Anggaran PSN PUJ 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — PUC",
+      "amount_idr": 10000000,
+      "description": "Anggaran PSN PUC 2025",
+      "data_status": "planned"
+    },
+    {
+      "year": 2025,
+      "category": "Program PSN — PUG",
+      "amount_idr": 75000000,
+      "description": "Anggaran PSN PUG 2025",
+      "data_status": "planned"
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome_id": "OC_PSN_ECO_01",
+      "name": "Pendapatan dari jasa bengkel dan penjualan sparepart",
+      "description": "Kelompok nelayan mitra memperoleh pendapatan dari layanan jasa perbaikan mesin dan penjualan sparepart kepada komunitas maritim setempat",
+      "measurement": "Total nilai transaksi jasa dan sparepart per kelompok per tahun",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_PSN_03"
+      ]
+    },
+    {
+      "outcome_id": "OC_PSN_ECO_02",
+      "name": "Pendapatan dari penjualan pelumas",
+      "description": "Nelayan mitra menjual produk pelumas Pertamina kepada sesama nelayan dan komunitas bengkel lokal setelah mendapat product knowledge training",
+      "measurement": "Total nilai penjualan pelumas per kelompok per tahun",
+      "data_status": "observed",
+      "source_refs": [
+        "SRC_PSN_03"
+      ]
+    },
+    {
+      "outcome_id": "OC_PSN_SOC_01",
+      "name": "Pengurangan downtime kapal akibat gangguan mesin",
+      "description": "Kapasitas perawatan yang meningkat mengurangi frekuensi dan durasi gangguan mesin, sehingga trip melaut tidak berkurang akibat downtime",
+      "measurement": "Estimasi nilai hari melaut yang diselamatkan × pendapatan harian rata-rata nelayan",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry",
+        "SRC_PSN_02"
+      ]
+    },
+    {
+      "outcome_id": "OC_PSN_SOC_02",
+      "name": "Efisiensi biaya perawatan mesin kapal",
+      "description": "Nelayan yang terlatih merawat mesin sendiri menghemat biaya yang sebelumnya harus dikeluarkan untuk mekanik eksternal",
+      "measurement": "Selisih biaya perawatan mekanik eksternal vs biaya perawatan mandiri × jumlah nelayan",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry",
+        "SRC_PSN_02"
+      ]
+    },
+    {
+      "outcome_id": "OC_PSN_SOC_03",
+      "name": "Kapasitas usaha bengkel nelayan",
+      "description": "Kelompok nelayan yang mengembangkan layanan bengkel sebagai unit usaha sampingan, meningkatkan kapasitas wirausaha komunitas maritim",
+      "measurement": "Estimasi nilai usaha bengkel yang terbentuk × rata-rata omzet bengkel skala kecil",
+      "data_status": "proxy",
+      "source_refs": [
+        "evidence_registry"
+      ]
+    }
+  ],
+  "monetization": [
+    {
+      "monetization_id": "MON_PSN_JSP_2023",
+      "aspect_id": "MON_PSN_JSP",
+      "aspect_code": "JSP",
+      "year": 2023,
+      "gross_idr": 27550000,
+      "proxy_basis": "Nilai transaksi jasa bengkel dan sparepart kelompok nelayan mitra 2023",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_JSP_2024",
+      "aspect_id": "MON_PSN_JSP",
+      "aspect_code": "JSP",
+      "year": 2024,
+      "gross_idr": 38570000,
+      "proxy_basis": "Nilai transaksi jasa bengkel dan sparepart kelompok nelayan mitra 2024",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_JSP_2025",
+      "aspect_id": "MON_PSN_JSP",
+      "aspect_code": "JSP",
+      "year": 2025,
+      "gross_idr": 54000000,
+      "proxy_basis": "Nilai transaksi jasa bengkel dan sparepart kelompok nelayan mitra 2025",
+      "data_status": "planned",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_01",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_LUB_2023",
+      "aspect_id": "MON_PSN_LUB",
+      "aspect_code": "LUB",
+      "year": 2023,
+      "gross_idr": 28070000,
+      "proxy_basis": "Nilai penjualan pelumas oleh kelompok nelayan mitra 2023",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_LUB_2024",
+      "aspect_id": "MON_PSN_LUB",
+      "aspect_code": "LUB",
+      "year": 2024,
+      "gross_idr": 39300000,
+      "proxy_basis": "Nilai penjualan pelumas oleh kelompok nelayan mitra 2024",
+      "data_status": "under_confirmation",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_LUB_2025",
+      "aspect_id": "MON_PSN_LUB",
+      "aspect_code": "LUB",
+      "year": 2025,
+      "gross_idr": 55010000,
+      "proxy_basis": "Nilai penjualan pelumas oleh kelompok nelayan mitra 2025",
+      "data_status": "planned",
+      "measurement_type": "observed",
+      "related_outcome_id": "OC_PSN_ECO_02",
+      "display_status": "present_as_final"
+    },
+    {
+      "monetization_id": "MON_PSN_DOWN_2023",
+      "aspect_id": "MON_PSN_DOWN",
+      "aspect_code": "DOWN",
+      "year": 2023,
+      "gross_idr": 874370000,
+      "proxy_basis": "Estimasi nilai hari melaut yang diselamatkan: 198 nelayan × rata-rata downtime yang dikurangi × pendapatan harian Rp 196.754",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_DOWN_2024",
+      "aspect_id": "MON_PSN_DOWN",
+      "aspect_code": "DOWN",
+      "year": 2024,
+      "gross_idr": 1090000000,
+      "proxy_basis": "Estimasi nilai hari melaut yang diselamatkan 2024 — asumsi pertumbuhan moderat 25%",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_DOWN_2025",
+      "aspect_id": "MON_PSN_DOWN",
+      "aspect_code": "DOWN",
+      "year": 2025,
+      "gross_idr": 1310000000,
+      "proxy_basis": "Estimasi nilai hari melaut yang diselamatkan 2025 — asumsi pertumbuhan moderat 20%",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_01",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_MAINT_2023",
+      "aspect_id": "MON_PSN_MAINT",
+      "aspect_code": "MAINT",
+      "year": 2023,
+      "gross_idr": 140250000,
+      "proxy_basis": "Penghematan biaya perawatan mesin: 198 nelayan × selisih biaya perawatan eksternal vs mandiri",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_02",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_MAINT_2024",
+      "aspect_id": "MON_PSN_MAINT",
+      "aspect_code": "MAINT",
+      "year": 2024,
+      "gross_idr": 163620000,
+      "proxy_basis": "Penghematan biaya perawatan mesin 2024 — pertumbuhan moderat seiring peningkatan kapasitas",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_02",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_MAINT_2025",
+      "aspect_id": "MON_PSN_MAINT",
+      "aspect_code": "MAINT",
+      "year": 2025,
+      "gross_idr": 187000000,
+      "proxy_basis": "Penghematan biaya perawatan mesin 2025 — terminal year, pertumbuhan melambat",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_02",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_ENT_2023",
+      "aspect_id": "MON_PSN_ENT",
+      "aspect_code": "ENT",
+      "year": 2023,
+      "gross_idr": 162000000,
+      "proxy_basis": "Estimasi nilai kapasitas usaha bengkel yang terbentuk: 9 kelompok × rata-rata nilai usaha bengkel skala kecil",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_03",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_ENT_2024",
+      "aspect_id": "MON_PSN_ENT",
+      "aspect_code": "ENT",
+      "year": 2024,
+      "gross_idr": 216000000,
+      "proxy_basis": "Estimasi nilai kapasitas usaha bengkel 2024 — pertumbuhan seiring maturasi kelompok",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_03",
+      "display_status": "present_as_proxy"
+    },
+    {
+      "monetization_id": "MON_PSN_ENT_2025",
+      "aspect_id": "MON_PSN_ENT",
+      "aspect_code": "ENT",
+      "year": 2025,
+      "gross_idr": 270000000,
+      "proxy_basis": "Estimasi nilai kapasitas usaha bengkel 2025 — terminal year dengan asumsi konservatif",
+      "data_status": "under_confirmation",
+      "measurement_type": "proxy",
+      "related_outcome_id": "OC_PSN_SOC_03",
+      "display_status": "present_as_proxy"
+    }
+  ],
+  "ddat_params": {
+    "JSP": {
+      "deadweight": 0.15,
+      "displacement": 0.05,
+      "attribution": 0.15,
+      "drop_off": 0.04,
+      "net_multiplier": 0.61,
+      "notes": "DW moderat karena layanan jasa bengkel belum ada sebelum program; displacement kecil karena spesifik komunitas nelayan; attribution mempertimbangkan kontribusi PT PL vs kapasitas lokal; drop-off rendah karena keahlian bersifat akumulatif",
+      "justification": "Net multiplier 0.61 mencerminkan bahwa jasa bengkel nelayan adalah outcome yang relatif terverifikasi — ada transaksi riil sebagai bukti, dengan adjustment konservatif untuk faktor distribusi manfaat kepada pihak lain"
+    },
+    "LUB": {
+      "deadweight": 0.2,
+      "displacement": 0.05,
+      "attribution": 0.15,
+      "drop_off": 0.06,
+      "net_multiplier": 0.54,
+      "notes": "DW lebih tinggi dari JSP karena pelumas sudah tersedia di pasar sebelum program; displacement kecil karena segmen nelayan spesifik; attribution mengakui peran distribusi reguler Pertamina; drop-off moderat karena loyalitas produk bisa berubah",
+      "justification": "Net multiplier 0.54 sesuai dengan karakter penjualan pelumas: ada deadweight yang lebih nyata karena produk dapat diperoleh tanpa program, tetapi program memberikan akses dan pengetahuan yang meningkatkan adoption di komunitas nelayan"
+    },
+    "DOWN": {
+      "deadweight": 0.15,
+      "displacement": 0.0,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.6,
+      "notes": "DW moderat — kapasitas perawatan sebelum program sangat terbatas; displacement nol karena manfaat langsung ke nelayan yang sama; attribution 20% mengakui peran pengetahuan lokal yang sudah ada; drop-off rendah karena keterampilan bersifat retention tinggi",
+      "justification": "Net multiplier 0.60 untuk DOWN mencerminkan proxy dengan basis studi yang kuat (biaya perawatan Rp196.754/bulan) namun masih memerlukan konfirmasi lapangan atas frekuensi aktual pengurangan downtime per nelayan"
+    },
+    "MAINT": {
+      "deadweight": 0.1,
+      "displacement": 0.0,
+      "attribution": 0.2,
+      "drop_off": 0.05,
+      "net_multiplier": 0.65,
+      "notes": "DW rendah karena penghematan biaya perawatan mandiri sangat bergantung pada kapasitas yang dibangun program; displacement nol (manfaat internal; tidak bergeser ke pihak lain); attribution mengakui pengetahuan lokal turun-temurun; drop-off rendah",
+      "justification": "Net multiplier 0.65 adalah yang tertinggi di PSN, mencerminkan bahwa efisiensi biaya perawatan merupakan dampak yang paling langsung dapat dikaitkan dengan program dan paling sedikit bisa terjadi tanpa intervensi"
+    },
+    "ENT": {
+      "deadweight": 0.15,
+      "displacement": 0.05,
+      "attribution": 0.15,
+      "drop_off": 0.05,
+      "net_multiplier": 0.6,
+      "notes": "DW moderat — kapasitas wirausaha bengkel memang ada potensinya sebelum program, tetapi tidak terwujud; displacement kecil karena bengkel nelayan menarget pelanggan komunitas yang spesifik; attribution mengakui motivasi kewirausahaan intrinsik",
+      "justification": "Net multiplier 0.60 untuk ENT menggunakan estimasi proxy yang konservatif — nilai usaha bengkel skala kecil sebagai acuan, dengan acknowledgement bahwa tidak semua kelompok mencapai tahap usaha penuh dalam periode program"
+    }
+  },
+  "ori_rates": {
+    "2023": {
+      "series": "ORI023T3",
+      "rate": 0.059,
+      "compound_factor": 1.1252
+    },
+    "2024": {
+      "series": "ORI025T3",
+      "rate": 0.0625,
+      "compound_factor": 1.0625
+    },
+    "2025": {
+      "series": "ORI027T3",
+      "rate": 0.065,
+      "compound_factor": 1.0
+    }
+  },
+  "sroi_metrics": {
+    "status": "pending",
+    "calculated": {
+      "sroi_blended": 0,
+      "per_year": [],
+      "total_investment": 0,
+      "total_gross": 0,
+      "total_net": 0,
+      "total_net_compounded": 0
+    },
+    "note": "Dihitung otomatis oleh pipeline"
+  },
+  "coverage_status": {
+    "bab_1": "strong",
+    "bab_2": "strong",
+    "bab_3": "strong",
+    "bab_4": "strong",
+    "bab_5": "strong",
+    "bab_6": "strong",
+    "bab_7": "strong",
+    "bab_8": "partial",
+    "bab_9": "partial"
+  },
+  "activities": {
+    "2023": [
+      "Pelatihan teknis mesin kapal untuk kelompok nelayan mitra di 9 SR/PU",
+      "Sosialisasi product knowledge pelumas Pertamina kepada anggota kelompok",
+      "Penguatan layanan jasa bengkel dan jaringan sparepart lokal",
+      "Pelatihan kewirausahaan perbengkelan dasar"
+    ],
+    "2024": [
+      "Pelatihan lanjutan teknis mesin kapal — pendalaman diagnosis dan perbaikan",
+      "Aktivasi penjualan pelumas oleh kelompok nelayan mitra",
+      "Penguatan ekosistem layanan bengkel lokal",
+      "Pendampingan kewirausahaan bengkel"
+    ],
+    "2025": [
+      "Konsolidasi kapasitas perawatan mesin di 9 kelompok",
+      "Pengembangan bengkel kelompok sebagai simpul layanan komunitas maritim",
+      "Evaluasi dan penguatan program kewirausahaan bengkel"
+    ]
+  },
+  "stakeholders": [
+    {
+      "stakeholder_id": "STK_PSN_01",
+      "name": "PT Pertamina Lubricants",
+      "role": "Pemrakarsa dan penyelenggara program TJSL",
+      "involvement_type": "funder_implementor",
+      "inclusion_basis": "Penerima manfaat langsung program pelatihan"
+    },
+    {
+      "stakeholder_id": "STK_PSN_02",
+      "name": "Kelompok Nelayan Mitra",
+      "role": "Penerima manfaat kelembagaan dan pengelola layanan bengkel",
+      "involvement_type": "primary_beneficiary",
+      "inclusion_basis": "Penerima manfaat langsung program pelatihan"
+    },
+    {
+      "stakeholder_id": "STK_PSN_03",
+      "name": "Nelayan Anggota",
+      "role": "Penerima manfaat langsung; operator kapal yang memanfaatkan pelatihan",
+      "involvement_type": "primary_beneficiary",
+      "inclusion_basis": "Penerima manfaat langsung program pelatihan"
+    },
+    {
+      "stakeholder_id": "STK_PSN_04",
+      "name": "Mekanik / Pengelola Bengkel",
+      "role": "Pelaksana perawatan, jasa, dan penjualan sparepart di kelompok",
+      "involvement_type": "secondary_beneficiary",
+      "inclusion_basis": "Penerima manfaat langsung program pelatihan"
+    },
+    {
+      "stakeholder_id": "STK_PSN_05",
+      "name": "Pelanggan / Komunitas Maritim",
+      "role": "Pengguna layanan bengkel dan pelumas yang disediakan kelompok nelayan",
+      "involvement_type": "tertiary_beneficiary",
+      "inclusion_basis": "Penerima manfaat langsung program pelatihan"
+    }
+  ],
+  "context_baseline": {
+    "main_problem": "Aset kapal nelayan tidak otomatis menjadi penghidupan andal tanpa kapasitas perawatan, literasi pelumasan, dan kemampuan bengkel yang memadai",
+    "key_indicators": [
+      "Rata-rata biaya perawatan mesin kapal Rp 196.754/bulan (studi nelayan perahu motor)",
+      "Keterampilan diagnosis dan perawatan dasar mesin kapal masih terbatas di kelompok nelayan",
+      "Penggunaan pelumas belum sepenuhnya berbasis pengetahuan teknis",
+      "Keterampilan teknis belum berkembang menjadi jasa bengkel bernilai ekonomi"
+    ],
+    "geographic_scope": "9 Sales Region dan Production Unit: SR I, SR II, SR IV, SR V, SR VI, SR VII, PUJ, PUC, PUG"
+  },
+  "ideal_conditions": {
+    "vision_statement": "Kelompok nelayan mitra memiliki kapasitas perawatan mesin yang memadai, memanfaatkan pelumas secara berbasis pengetahuan, dan mengembangkan usaha bengkel yang menopang keberlanjutan penghidupan komunitas maritim",
+    "target_outcomes": [
+      "Downtime kapal berkurang secara signifikan melalui perawatan preventif yang terampil",
+      "Biaya perawatan mesin menurun karena kemampuan mekanik mandiri meningkat",
+      "Kelompok nelayan aktif menjual pelumas dan jasa bengkel kepada komunitas",
+      "Usaha bengkel nelayan berkembang sebagai unit ekonomi komunitas yang mandiri"
+    ]
+  },
+  "strategy_design": {
+    "program_philosophy": "Integrated Marine Engine Support — menggabungkan pelatihan teknis, literasi produk, dan pengembangan kewirausahaan dalam satu ekosistem yang memperkuat keandalan aset kapal sekaligus menciptakan nilai ekonomi komunitas",
+    "institutional": {
+      "nodes": [
+        "SR I",
+        "SR II",
+        "SR IV",
+        "SR V",
+        "SR VI",
+        "SR VII",
+        "PUJ",
+        "PUC",
+        "PUG"
+      ],
+      "note": "Program dijalankan melalui 6 Sales Region dan 3 Production Unit, masing-masing membawahi satu kelompok nelayan mitra dengan komposisi investasi yang berbeda sesuai potensi wilayah"
+    },
+    "key_interventions": [
+      "Pelatihan teknis mesin kapal berbasis praktik",
+      "Sosialisasi product knowledge pelumas Pertamina",
+      "Penguatan jaringan jasa bengkel dan sparepart",
+      "Pelatihan kewirausahaan perbengkelan"
+    ]
+  },
+  "learning_signals": {
+    "loop_1": {
+      "signal": "Gross LUB + JSP per tahun menunjukkan pertumbuhan konsisten: Rp 55,6 jt (2023) → Rp 77,9 jt (2024) → Rp 109,0 jt (2025)",
+      "implication": "Kapasitas penjualan dan jasa kelompok nelayan meningkat — program berhasil mengkonversi pelatihan ke transaksi riil"
+    },
+    "loop_2": {
+      "signal": "9 kelompok aktif konsisten di seluruh tahun tanpa penambahan — stable coverage",
+      "implication": "Program mempertahankan jangkauan penuh namun belum mengalami ekspansi; potensi perluasan ke kelompok nelayan baru masih terbuka"
+    },
+    "loop_3": {
+      "signal": "Aspek DOWN dan MAINT masih berstatus proxy — belum ada pengukuran langsung pengurangan downtime dan penghematan biaya perawatan",
+      "implication": "Dibutuhkan instrumen monitoring sederhana (survei 2× per tahun per kelompok) untuk mengkonversi proxy ke data terverifikasi"
+    }
+  },
+  "problem_framing": {
+    "narrative": "Program PSN menjawab hambatan struktural yang menghalangi aset kapal nelayan berfungsi optimal sebagai alat penghidupan. Lima masalah utama diidentifikasi: (1) Maintenance Competency Gap — keterampilan perawatan mesin terbatas; (2) Downtime Exposure — gangguan mesin langsung mengurangi trip melaut; (3) Lubrication Literacy Gap — penggunaan pelumas belum berbasis pengetahuan teknis; (4) Workshop Entrepreneurship Gap — keterampilan teknis belum berkembang menjadi jasa bengkel; (5) Service Ecosystem Linkage — jaringan layanan, sparepart, dan akses pelanggan masih lemah.",
+    "core_barrier": "Aset kapal belum otomatis menjadi penghidupan andal tanpa perawatan, pelumasan, dan kapasitas bengkel"
+  },
+  "evidence_registry": [
+    {
+      "evidence_id": "EV_PSN_01",
+      "type": "financial_data",
+      "description": "Data transaksi JSP (jasa bengkel + sparepart) per kelompok per tahun",
+      "status": "under_confirmation",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "evidence_id": "EV_PSN_02",
+      "type": "financial_data",
+      "description": "Data penjualan pelumas LUB per kelompok per tahun",
+      "status": "under_confirmation",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    {
+      "evidence_id": "EV_PSN_03",
+      "type": "proxy_study",
+      "description": "Studi rata-rata biaya perawatan mesin nelayan perahu motor — basis proxy DOWN dan MAINT",
+      "status": "confirmed",
+      "reference_value": "Rp 196.754/bulan/kapal"
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "OUT_PSN_01",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR I yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_02",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR II yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_03",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR IV yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_04",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR V yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_05",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR VI yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_06",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra SR VII yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_07",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra PUJ yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_08",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra PUC yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    },
+    {
+      "output_id": "OUT_PSN_09",
+      "year": 2023,
+      "description": "Kelompok nelayan mitra PUG yang mendapat pelatihan teknis mesin kapal",
+      "quantity": 1,
+      "unit": "kelompok",
+      "data_status": "under_confirmation"
+    }
+  ],
+  "program_positioning": {
+    "tjsl_pillar": "Sosial dan Kemasyarakatan",
+    "proper_category": "Beyond Compliance — Inovasi Sosial",
+    "sdg_alignment": [
+      "SDG 8",
+      "SDG 14",
+      "SDG 1"
+    ],
+    "policy_basis": [
+      "UU No. 40 Tahun 2007 tentang Perseroan Terbatas",
+      "PP No. 47 Tahun 2012 tentang TJSL",
+      "Peraturan Menteri LHK No. 1 Tahun 2021 tentang PROPER"
+    ]
+  },
+  "beneficiaries": [
+    {
+      "group": "Nelayan anggota kelompok mitra",
+      "count_estimate": 270,
+      "description": "Nelayan yang mendapat pelatihan teknis mesin kapal dan literasi pelumasan"
+    }
+  ],
+  "validation_notes": {
+    "beneficiary_alignment": {
+      "status": "harmonized",
+      "note": "program_identity.estimated_beneficiaries diselaraskan menjadi 270 agar konsisten dengan beneficiaries[0].count_estimate"
+    }
+  }
+}

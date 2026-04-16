@@ -1,0 +1,1001 @@
+{
+  "renderer_ready": true,
+  "chapter_id": "bab_7",
+  "blocks": [
+    {
+      "type": "heading_1",
+      "text": "BAB VII IMPLEMENTASI / PDIS DENGAN SROI"
+    },
+    {
+      "type": "paragraph_lead",
+      "text": "Bab ini menyajikan seluruh rangkaian implementasi Program Enduro Sahabat Lapas secara terukur — dari kegiatan, stakeholder, dan investasi hingga outcome, fiksasi dampak, monetisasi nilai sosial, dan hasil evaluasi SROI. Semua angka pada bab ini bersumber dari Financial Calculation Engine dan dapat ditelusuri melalui calc_audit_log."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.1 Proses dan Kegiatan yang Dilakukan"
+    },
+    {
+      "type": "paragraph",
+      "text": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan."
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2023: Pelatihan Teknis Mekanik · Product Knowledge Pelumas · Praktik Kerja Perbengkelan.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2024: Pembinaan Kewirausahaan · Pendampingan Unit Usaha.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2025: Penguatan Milenial Motor.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.2 Node Program"
+    },
+    {
+      "type": "paragraph",
+      "text": "Program beroperasi di 4 node/lokasi yang mencerminkan dua tipologi intervensi: bengkel di dalam Lapas (pembinaan WBP aktif) dan unit usaha eks-WBP (reintegrasi pasca-pembebasan). Keempat node tersebut adalah: Lapas Palembang, Bengkel Lapas IIB Sleman, Milenial Motor (Eks-WBP), Pemasyarakatan Corner."
+    },
+    {
+      "type": "callout_info",
+      "text": "Tiga dari empat node aktif menghasilkan transaksi terukur selama 2023–2025. Node Lapas Kota Palembang masih dalam fase pembentukan kapasitas dan belum menghasilkan transaksi langsung — temuan ini disajikan secara transparan sebagai bagian dari evaluasi jujur program.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.3 Identifikasi Stakeholder yang Terlibat"
+    },
+    {
+      "type": "paragraph",
+      "text": "Program melibatkan 5 pemangku kepentingan utama dengan peran berbeda dalam ekosistem program. Tabel berikut menyajikan peta stakeholder beserta dasar keterlibatannya."
+    },
+    {
+      "type": "table_borderless",
+      "headers": [
+        "Stakeholder",
+        "Peran",
+        "Dasar Keterlibatan"
+      ],
+      "rows": [
+        [
+          "PT Pertamina Lubricants",
+          "Investor",
+          "Pemrakarsa dan penyelenggara program TJSL"
+        ],
+        [
+          "WBP aktif di Lapas",
+          "Beneficiary",
+          "Penerima pelatihan langsung"
+        ],
+        [
+          "Eks-WBP (Milenial Motor)",
+          "Beneficiary",
+          "Penerima manfaat reintegrasi — usaha mandiri"
+        ],
+        [
+          "Lembaga Pemasyarakatan",
+          "Partner",
+          "Penyelenggara ruang pelatihan"
+        ],
+        [
+          "Pelanggan Bengkel",
+          "Beneficiary",
+          "Pengguna jasa servis dan pelumas"
+        ]
+      ],
+      "column_widths": [
+        3200,
+        1600,
+        4838
+      ],
+      "display_status": "present_as_final",
+      "source_refs": [
+        "stakeholders"
+      ]
+    },
+    {
+      "type": "heading_2",
+      "text": "7.4 Input / Investasi"
+    },
+    {
+      "type": "callout_warning",
+      "text": "Catatan status data: investasi tahun 2023 dan 2024 berstatus under_confirmation — angka telah tersedia namun belum diverifikasi dari laporan keuangan resmi. Investasi tahun 2025 berstatus final.",
+      "display_status": "present_as_pending",
+      "source_refs": [
+        "investment"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Total investasi program selama 2023–2025 mencapai Rp 502,460,181, dengan distribusi yang meningkat setiap tahun seiring penguatan aktivitas. Rincian per node dan per tahun disajikan pada tabel berikut."
+    },
+    {
+      "type": "table",
+      "table_id": "table_investment_per_node",
+      "title": "Investasi Program per Node per Tahun",
+      "headers": [
+        "Node Program",
+        "Tahun",
+        "Investasi (Rp)",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Lapas Kota Palembang",
+          "2023",
+          "Rp 49,983,929",
+          "under_confirmation"
+        ],
+        [
+          "Bengkel Lapas IIB Sleman",
+          "2023",
+          "Rp 20,800,000",
+          "under_confirmation"
+        ],
+        [
+          "Milenial Motor (Eks-WBP)",
+          "2023",
+          "Rp 36,640,000",
+          "under_confirmation"
+        ],
+        [
+          "Pemasyarakatan Corner",
+          "2023",
+          "Rp 20,684,480",
+          "under_confirmation"
+        ],
+        [
+          "Lapas Kota Palembang",
+          "2024",
+          "Rp 69,977,500",
+          "under_confirmation"
+        ],
+        [
+          "Bengkel Lapas IIB Sleman",
+          "2024",
+          "Rp 29,120,000",
+          "under_confirmation"
+        ],
+        [
+          "Milenial Motor (Eks-WBP)",
+          "2024",
+          "Rp 51,296,000",
+          "under_confirmation"
+        ],
+        [
+          "Pemasyarakatan Corner",
+          "2024",
+          "Rp 28,958,272",
+          "under_confirmation"
+        ],
+        [
+          "Lapas Kota Palembang",
+          "2025",
+          "Rp 30,000,000",
+          "final"
+        ],
+        [
+          "Bengkel Lapas IIB Sleman",
+          "2025",
+          "Rp 75,000,000",
+          "final"
+        ],
+        [
+          "Milenial Motor (Eks-WBP)",
+          "2025",
+          "Rp 30,000,000",
+          "final"
+        ],
+        [
+          "Pemasyarakatan Corner",
+          "2025",
+          "Rp 60,000,000",
+          "final"
+        ],
+        [
+          "TOTAL",
+          "—",
+          "Rp 502,460,181",
+          "final"
+        ]
+      ],
+      "column_widths": [
+        3200,
+        1200,
+        3000,
+        2238
+      ],
+      "note": "2023–2024 under_confirmation — ditampilkan dengan badge pending",
+      "display_status": "present_as_pending",
+      "source_refs": [
+        "investment"
+      ]
+    },
+    {
+      "type": "metric_card_3col",
+      "items": [
+        {
+          "label": "Investasi 2023",
+          "value": "Rp 128,108,409",
+          "sublabel": "under confirmation"
+        },
+        {
+          "label": "Investasi 2024",
+          "value": "Rp 179,351,772",
+          "sublabel": "under confirmation"
+        },
+        {
+          "label": "Investasi 2025",
+          "value": "Rp 195,000,000",
+          "sublabel": "final"
+        }
+      ]
+    },
+    {
+      "type": "heading_2",
+      "text": "7.5 Proses dan Output yang Dihasilkan"
+    },
+    {
+      "type": "paragraph",
+      "text": "Program menghasilkan 6 output terukur sepanjang periode evaluasi, mencakup node yang aktif beroperasi dan estimasi peserta yang terlibat dalam pelatihan dan pendampingan."
+    },
+    {
+      "type": "table_borderless",
+      "headers": [
+        "Output",
+        "Tahun",
+        "Jumlah",
+        "Satuan",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Node aktif bertransaksi",
+          "2023",
+          "3",
+          "node",
+          "observed"
+        ],
+        [
+          "Node aktif bertransaksi",
+          "2024",
+          "3",
+          "node",
+          "observed"
+        ],
+        [
+          "Node aktif bertransaksi",
+          "2025",
+          "3",
+          "node",
+          "observed"
+        ],
+        [
+          "Peserta program (estimasi)",
+          "2023",
+          "70",
+          "peserta",
+          "proxy"
+        ],
+        [
+          "Peserta program (estimasi)",
+          "2024",
+          "70",
+          "peserta",
+          "proxy"
+        ],
+        [
+          "Peserta program (estimasi)",
+          "2025",
+          "80",
+          "peserta",
+          "proxy"
+        ]
+      ],
+      "column_widths": [
+        3000,
+        1000,
+        1200,
+        1200,
+        3238
+      ],
+      "display_status": "present_as_final",
+      "source_refs": [
+        "outputs"
+      ]
+    },
+    {
+      "type": "heading_2",
+      "text": "7.6 Outcome Program"
+    },
+    {
+      "type": "paragraph",
+      "text": "Program menghasilkan 4 outcome yang dimonetisasi melalui dua jalur: data transaksi aktual (observed) untuk aspek yang sudah menghasilkan nilai ekonomi langsung, dan proxy tervalidasi untuk aspek yang mengukur nilai sosial yang lebih sulit diverifikasi secara langsung."
+    },
+    {
+      "type": "paragraph",
+      "text": "✓ Observed — Penjualan Pelumas (LUB): Transaksi penjualan produk pelumas Enduro dari node aktif (Indikator: Volume penjualan pelumas (Rp))",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "✓ Observed — Jasa & Sparepart (SVC): Transaksi jasa servis dan penjualan sparepart dari node aktif (Indikator: Volume transaksi jasa (Rp))",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "src_01"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "~ Proxy — Kesiapan Reintegrasi Sosial-Ekonomi (REINT): Peningkatan kesiapan peserta untuk bekerja legal dan berwirausaha pasca-bebas (Indikator: Nilai substitusi paket peningkatan kesiapan kerja/usaha)",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_04"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "~ Proxy — Kepercayaan Diri & Self-Efficacy (CONF): Peningkatan kepercayaan diri, efikasi diri, dan orientasi masa depan peserta (Indikator: Replacement cost layanan psikologi publik)",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "src_05"
+      ]
+    },
+    {
+      "type": "heading_2",
+      "text": "7.7 Fiksasi Dampak (DDAT Adjustment)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fiksasi dampak diterapkan untuk memastikan bahwa nilai sosial yang diklaim benar-benar mencerminkan kontribusi program secara nyata, dengan menghindari perhitungan manfaat ganda. Empat parameter yang digunakan: Deadweight (DW), Displacement (DS), Attribution (AT), dan Drop-off (DO)."
+    },
+    {
+      "type": "table",
+      "table_id": "table_ddat_per_aspek",
+      "title": "DDAT Adjustment per Aspek",
+      "headers": [
+        "Aspek",
+        "DW",
+        "DS",
+        "AT",
+        "DO",
+        "Net ×",
+        "Haircut"
+      ],
+      "rows": [
+        [
+          "LUB",
+          "20%",
+          "15%",
+          "10%",
+          "10%",
+          "×0.54",
+          "46%"
+        ],
+        [
+          "SVC",
+          "15%",
+          "8%",
+          "10%",
+          "8%",
+          "×0.61",
+          "39%"
+        ],
+        [
+          "REINT",
+          "20%",
+          "0%",
+          "15%",
+          "10%",
+          "×0.55",
+          "45%"
+        ],
+        [
+          "CONF",
+          "20%",
+          "0%",
+          "20%",
+          "10%",
+          "×0.5",
+          "50%"
+        ]
+      ],
+      "column_widths": [
+        1200,
+        1100,
+        1100,
+        1100,
+        1100,
+        1100,
+        2938
+      ],
+      "note": "DW=Deadweight DS=Displacement AT=Attribution DO=Drop-off",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "paragraph_small",
+      "text": "Rata-rata fiksasi dampak keseluruhan: −45.1%. Haircut tertinggi pada CONF (50%) mengakui bahwa perubahan self-efficacy sulit diatribusikan sepenuhnya ke program."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.8 Monetisasi Dampak"
+    },
+    {
+      "type": "paragraph_lead",
+      "text": "Monetisasi nilai sosial dilakukan melalui empat aspek yang mencerminkan dua lapisan manfaat program: nilai ekonomi langsung dari transaksi riil dan nilai sosial yang diestimasi melalui proxy yang tervalidasi secara akademik dan kebijakan."
+    },
+    {
+      "type": "callout_info",
+      "text": "Aspek LUB dan SVC dimonetisasi berdasarkan data transaksi aktual (observed) dari tiga node aktif. Aspek REINT dan CONF dimonetisasi menggunakan proxy konservatif yang defensible: REINT mengacu komponen pelatihan Kartu Prakerja (Rp3.500.000/peserta) dan CONF mengacu tarif psikologi publik (6 sesi × Rp50.000 = Rp300.000/peserta).",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "table",
+      "table_id": "table_monetization_per_aspek",
+      "title": "Monetisasi Nilai Sosial per Aspek per Tahun",
+      "headers": [
+        "Aspek",
+        "Tahun",
+        "Gross (Rp)",
+        "Adj DDAT",
+        "Net (Rp)",
+        "Status"
+      ],
+      "rows": [
+        [
+          "CONF",
+          "2023",
+          "Rp 21,000,000",
+          "×0.5",
+          "Rp 10,500,000",
+          "proxy"
+        ],
+        [
+          "CONF",
+          "2024",
+          "Rp 21,000,000",
+          "×0.5",
+          "Rp 10,500,000",
+          "proxy"
+        ],
+        [
+          "CONF",
+          "2025",
+          "Rp 24,000,000",
+          "×0.5",
+          "Rp 12,000,000",
+          "proxy"
+        ],
+        [
+          "LUB",
+          "2023",
+          "Rp 20,675,510",
+          "×0.54",
+          "Rp 11,164,775",
+          "final"
+        ],
+        [
+          "LUB",
+          "2024",
+          "Rp 28,945,714",
+          "×0.54",
+          "Rp 15,630,686",
+          "final"
+        ],
+        [
+          "LUB",
+          "2025",
+          "Rp 40,524,000",
+          "×0.54",
+          "Rp 21,882,960",
+          "final"
+        ],
+        [
+          "REINT",
+          "2023",
+          "Rp 245,000,000",
+          "×0.55",
+          "Rp 134,750,000",
+          "proxy"
+        ],
+        [
+          "REINT",
+          "2024",
+          "Rp 245,000,000",
+          "×0.55",
+          "Rp 134,750,000",
+          "proxy"
+        ],
+        [
+          "REINT",
+          "2025",
+          "Rp 280,000,000",
+          "×0.55",
+          "Rp 154,000,000",
+          "proxy"
+        ],
+        [
+          "SVC",
+          "2023",
+          "Rp 12,854,556",
+          "×0.61",
+          "Rp 7,841,279",
+          "final"
+        ],
+        [
+          "SVC",
+          "2024",
+          "Rp 17,996,378",
+          "×0.61",
+          "Rp 10,977,791",
+          "final"
+        ],
+        [
+          "SVC",
+          "2025",
+          "Rp 25,194,930",
+          "×0.61",
+          "Rp 15,368,907",
+          "final"
+        ],
+        [
+          "TOTAL",
+          "—",
+          "Rp 982,191,088",
+          "—",
+          "Rp 539,366,398",
+          "—"
+        ]
+      ],
+      "column_widths": [
+        900,
+        800,
+        2100,
+        900,
+        2100,
+        2838
+      ],
+      "note": "LUB & SVC = observed. REINT & CONF = proxy S10.",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "monetization",
+        "ddat_params"
+      ]
+    },
+    {
+      "type": "callout_warning",
+      "text": "Aspek REINT dan CONF adalah proxy monetisasi — estimasi nilai sosial berdasarkan referensi kebijakan dan data sekunder, bukan pengukuran langsung. Jumlah peserta 70/70/80 orang per tahun adalah estimasi konservatif Skenario S10 yang belum diverifikasi dari data lapangan. Nilai ini perlu dikonfirmasi melalui survei peserta pada periode evaluasi berikutnya.",
+      "display_status": "present_as_proxy",
+      "source_refs": [
+        "EV_03",
+        "EV_04",
+        "EV_05"
+      ]
+    },
+    {
+      "type": "bar_chart_text",
+      "data_points": [
+        {
+          "label": "REINT ",
+          "value": 423.5
+        },
+        {
+          "label": "LUB   ",
+          "value": 48.7
+        },
+        {
+          "label": "SVC   ",
+          "value": 34.2
+        },
+        {
+          "label": "CONF  ",
+          "value": 33.0
+        }
+      ],
+      "max_value": 466.0,
+      "title": "Distribusi nilai bersih per aspek (Rp juta, kumulatif 3 tahun)"
+    },
+    {
+      "type": "divider_thick"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.9 Nilai SROI dan Penjelasan"
+    },
+    {
+      "type": "paragraph_lead",
+      "text": "Berdasarkan kalkulasi evaluatif dengan compound ORI-adjusted dan DDAT net multiplier per aspek, program ESL menghasilkan SROI blended 1 : 1.14 — artinya setiap Rp 1 yang diinvestasikan menghasilkan Rp 1.14 nilai sosial-ekonomi terukur."
+    },
+    {
+      "type": "metric_card_3col",
+      "items": [
+        {
+          "label": "Total Investasi",
+          "value": "Rp 502,460,181",
+          "sublabel": "2023–2025"
+        },
+        {
+          "label": "Net Benefit (compounded)",
+          "value": "Rp 570,672,411",
+          "sublabel": "terminal year 2025"
+        },
+        {
+          "label": "SROI Blended",
+          "value": "1 : 1.14",
+          "sublabel": "positive return"
+        }
+      ],
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "table",
+      "table_id": "table_sroi_per_tahun",
+      "title": "Kalkulasi SROI per Tahun Program",
+      "headers": [
+        "Tahun",
+        "Investasi",
+        "Gross",
+        "Net",
+        "Compound",
+        "Net Compounded",
+        "SROI"
+      ],
+      "rows": [
+        [
+          "2023",
+          "Rp 128,108,409",
+          "Rp 299,530,066",
+          "Rp 164,256,055",
+          "×1.1252 (ORI023T3)",
+          "Rp 184,820,913",
+          "1 : 1.44"
+        ],
+        [
+          "2024",
+          "Rp 179,351,772",
+          "Rp 312,942,092",
+          "Rp 171,858,476",
+          "×1.0625 (ORI025T3)",
+          "Rp 182,599,631",
+          "1 : 1.02"
+        ],
+        [
+          "2025",
+          "Rp 195,000,000",
+          "Rp 369,718,930",
+          "Rp 203,251,867",
+          "×1.0000 (ORI027T3)",
+          "Rp 203,251,867",
+          "1 : 1.04"
+        ],
+        [
+          "TOTAL",
+          "Rp 502,460,181",
+          "Rp 982,191,088",
+          "Rp 539,366,398",
+          "—",
+          "Rp 570,672,411",
+          "1 : 1.14"
+        ]
+      ],
+      "column_widths": [
+        800,
+        1500,
+        1400,
+        1400,
+        1700,
+        1638,
+        1200
+      ],
+      "note": "Net compounded = nilai bersih yang di-compound ke terminal year 2025",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "sroi_metrics.calculated"
+      ]
+    },
+    {
+      "type": "table",
+      "table_id": "table_sroi_blended",
+      "title": "Ringkasan SROI Evaluatif 2023–2025",
+      "headers": [
+        "Metrik",
+        "Nilai"
+      ],
+      "rows": [
+        [
+          "Total Investasi",
+          "Rp 502,460,181"
+        ],
+        [
+          "Total Gross Kumulatif",
+          "Rp 982,191,088"
+        ],
+        [
+          "Total Net Kumulatif",
+          "Rp 539,366,398"
+        ],
+        [
+          "Total Net Compounded",
+          "Rp 570,672,411"
+        ],
+        [
+          "Avg Fiksasi",
+          "−45.1%"
+        ],
+        [
+          "SROI Blended",
+          "1 : 1.14"
+        ]
+      ],
+      "column_widths": [
+        4819,
+        4819
+      ],
+      "note": "Evaluatif · Compound ORI-adjusted · DDAT net multiplier per aspek · Terminal year 2025",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "sroi_metrics.calculated"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2023 (ORI023T3, 5.90%): investasi Rp 128,108,409, gross Rp 299,530,066, nilai bersih setelah DDAT Rp 164,256,055, di-compound ×1.1252 menjadi Rp 184,820,913, SROI 1 : 1.44.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2024 (ORI025T3, 6.25%): investasi Rp 179,351,772, gross Rp 312,942,092, nilai bersih setelah DDAT Rp 171,858,476, di-compound ×1.0625 menjadi Rp 182,599,631, SROI 1 : 1.02.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tahun 2025 (ORI027T3, 6.50%): investasi Rp 195,000,000, gross Rp 369,718,930, nilai bersih setelah DDAT Rp 203,251,867, di-compound ×1.0000 menjadi Rp 203,251,867, SROI 1 : 1.04.",
+      "display_status": "present_as_final"
+    },
+    {
+      "type": "heading_2",
+      "text": "7.10 Interpretasi dan Temuan Program"
+    },
+    {
+      "type": "paragraph",
+      "text": "Evaluasi SROI menunjukkan bahwa program menghasilkan nilai sosial yang melampaui investasi, namun penting untuk membaca angka ini dengan memahami struktur monetisasinya. Aspek REINT mendominasi nilai bersih kumulatif — hal ini logis mengingat outcome reintegrasi adalah tujuan utama program, namun juga menunjukkan bahwa kualitas proxy REINT adalah faktor penentu kredibilitas keseluruhan SROI."
+    },
+    {
+      "type": "callout_success",
+      "text": "Milenial Motor (node eks-WBP) adalah bukti terkuat keberhasilan program: seorang eks-WBP yang telah menyelesaikan pelatihan di Lapas kini menjalankan usaha bengkel mandiri yang aktif dan produktif. Node ini membuktikan bahwa jalur Lapas → pelatihan → usaha mandiri adalah jalur yang viable dan dapat direplikasi ke node lapas lain.",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "EV_06"
+      ]
+    },
+    {
+      "type": "callout_neutral",
+      "text": "Node Lapas Kota Palembang belum menghasilkan transaksi terukur selama 2023–2025. Ini adalah temuan jujur yang mencerminkan bahwa fase pembentukan kapasitas membutuhkan waktu lebih panjang dari yang direncanakan. Jika node ini dapat diaktivasi pada periode 2026 ke depan, SROI program berpotensi meningkat signifikan tanpa investasi tambahan yang proporsional.",
+      "display_status": "present_as_final",
+      "source_refs": [
+        "strategy_design.institutional",
+        "uncertainty_flags"
+      ]
+    },
+    {
+      "type": "paragraph_small",
+      "text": "Catatan metodologis: seluruh angka pada bab ini dihasilkan oleh Financial Calculation Engine (deterministik, non-LLM) dan dapat ditelusuri melalui calc_audit_log. Evaluasi ini bersifat evaluatif — mengukur nilai yang dihasilkan selama 2023–2025 berdasarkan data yang tersedia, bukan proyeksi."
+    }
+  ],
+  "reference_outline": {
+    "chapter_id": "bab_7",
+    "core_claim": "Program ESL menghasilkan SROI blended 1 : 1.14 — positive return yang dicapai melalui kombinasi transaksi bengkel riil (observed) dan nilai reintegrasi sosial-ekonomi yang terproksikan secara konservatif dan defensible.",
+    "argument_points": [
+      {
+        "label": "7.1",
+        "point": "Program beroperasi di 4 node dengan karakteristik dan tingkat aktivitas berbeda — 3 node aktif menghasilkan transaksi terukur dan 1 node dalam fase pembentukan kapasitas.",
+        "elaboration": "Node: Lapas Palembang, Bengkel Lapas IIB Sleman, Milenial Motor (Eks-WBP), Pemasyarakatan Corner. Catatan: 4 node, 3 aktif bertransaksi, 1 dalam fase pembentukan. Narasi harus menjelaskan peran berbeda tiap node dan mengapa Lapas Palembang belum menghasilkan transaksi — ini temuan jujur, bukan kelemahan yang disembunyikan.",
+        "evidence_refs": [
+          "strategy_design.institutional",
+          "outputs"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.2",
+        "point": "Program melibatkan 5 pemangku kepentingan utama dengan peran yang berbeda dalam ekosistem program.",
+        "elaboration": "Stakeholder: PT Pertamina Lubricants, WBP aktif di Lapas, Eks-WBP (Milenial Motor), Lembaga Pemasyarakatan, Pelanggan Bengkel.",
+        "evidence_refs": [
+          "stakeholders"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.3",
+        "point": "Total investasi program 2023–2025 mencapai Rp 502,460,181, meningkat setiap tahun seiring penguatan aktivitas program.",
+        "elaboration": "Per tahun: 2023 Rp 128,108,409, 2024 Rp 179,351,772, 2025 Rp 195,000,000. Investasi 2023–2024 berstatus under_confirmation — ditampilkan dengan badge pending, perlu diverifikasi dari laporan keuangan resmi.",
+        "evidence_refs": [
+          "investment"
+        ],
+        "financial_ref": "table_investment_per_node",
+        "status": "supported",
+        "note": "Investasi 2023–2024 under_confirmation — display_status present_as_pending"
+      },
+      {
+        "label": "7.4",
+        "point": "Program menghasilkan output berupa 6 aktivitas terstruktur yang mencakup pelatihan teknis, product knowledge, praktik bengkel, pembinaan kewirausahaan, dan pendampingan unit usaha.",
+        "evidence_refs": [
+          "activities",
+          "outputs"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.5",
+        "point": "Program menghasilkan empat aspek nilai terukur: dua aspek observed (LUB dan SVC dari transaksi aktual) dan dua aspek proxy yang tervalidasi secara akademik dan kebijakan (REINT dan CONF).",
+        "evidence_refs": [
+          "outcomes",
+          "monetization"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.5.1",
+        "point": "LUB — Penjualan Pelumas (observed): gross kumulatif Rp 90,145,224, adj ×0.54, net kumulatif Rp 48,678,421.",
+        "elaboration": "Data transaksi aktual dari tiga node aktif. Justifikasi DDAT: Pelumas bersaing di pasar terbuka — displacement lebih tinggi",
+        "evidence_refs": [
+          "monetization[aspect=LUB]",
+          "ddat_params.LUB",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": ""
+      },
+      {
+        "label": "7.5.2",
+        "point": "SVC — Jasa & Sparepart (observed): gross kumulatif Rp 56,045,864, adj ×0.61, net kumulatif Rp 34,187,977.",
+        "elaboration": "Data transaksi aktual dari tiga node aktif. Justifikasi DDAT: Layanan bengkel di Lapas tidak bersaing langsung dengan pasar — displacement lebih rendah",
+        "evidence_refs": [
+          "monetization[aspect=SVC]",
+          "ddat_params.SVC",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": ""
+      },
+      {
+        "label": "7.5.3",
+        "point": "REINT — Kesiapan Reintegrasi (proxy): gross kumulatif Rp 770,000,000, adj ×0.55, net kumulatif Rp 423,500,000.",
+        "elaboration": "Proxy: Nilai komponen pelatihan Kartu Prakerja. Basis kalkulasi: 70 peserta × Rp3.500.000 per tahun. Justifikasi DDAT: DW+AT+DO — tidak ada DS karena bukan market substitution. Haircut moderat 45% mengacu probabilitas konversi kesiapan reintegrasi menjadi outcome nyata",
+        "evidence_refs": [
+          "monetization[aspect=REINT]",
+          "ddat_params.REINT",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": "Proxy — display_status present_as_proxy. Wajib disertai badge dan source_refs."
+      },
+      {
+        "label": "7.5.4",
+        "point": "CONF — Kepercayaan Diri / Self-Efficacy (proxy): gross kumulatif Rp 66,000,000, adj ×0.5, net kumulatif Rp 33,000,000.",
+        "elaboration": "Proxy: 6 sesi × Rp50.000 tarif psikologi publik (RS Jiwa Grhasia). Basis kalkulasi: 70 peserta × Rp300.000 per tahun. Justifikasi DDAT: Haircut lebih tinggi: perubahan self-efficacy sulit diatribusikan penuh ke program. Faktor pribadi dan lingkungan turut berperan signifikan",
+        "evidence_refs": [
+          "monetization[aspect=CONF]",
+          "ddat_params.CONF",
+          "evidence_registry"
+        ],
+        "financial_ref": "table_monetization_per_aspek",
+        "status": "supported",
+        "note": "Proxy — display_status present_as_proxy. Wajib disertai badge dan source_refs."
+      },
+      {
+        "label": "7.6",
+        "point": "Fiksasi dampak (DDAT adjustment) diterapkan per aspek dengan haircut rata-rata 45.1%, mencerminkan konservatisme metodologis yang konsisten.",
+        "elaboration": "DDAT = Deadweight + Displacement + Attribution + Drop-off. LUB ×0,54 (46% haircut) · SVC ×0,61 (39% haircut) · REINT ×0,55 (45% haircut) · CONF ×0,50 (50% haircut). CONF mendapat haircut tertinggi karena perubahan self-efficacy sulit diatribusikan penuh ke program.",
+        "evidence_refs": [
+          "ddat_params"
+        ],
+        "financial_ref": "table_ddat_per_aspek",
+        "status": "supported"
+      },
+      {
+        "label": "7.7",
+        "point": "Nilai bersih setiap tahun di-compound ke terminal year 2025 menggunakan ORI reference rate, untuk mencerminkan nilai waktu uang secara konservatif.",
+        "elaboration": "2023: ×1,1252 (ORI023T3, 5,90%) → Rp 184,820,913. 2024: ×1,0625 (ORI025T3, 6,25%) → Rp 182,599,631. 2025: ×1,0000 (terminal year) → Rp 203,251,867.",
+        "evidence_refs": [
+          "ori_rates"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.1",
+        "point": "Tahun 2023: investasi Rp 128,108,409, net compounded Rp 184,820,913, SROI 1 : 1.44.",
+        "elaboration": "Gross: Rp 299,530,066. Net setelah DDAT: Rp 164,256,055. Compound factor: ×1.1252.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2023]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.2",
+        "point": "Tahun 2024: investasi Rp 179,351,772, net compounded Rp 182,599,631, SROI 1 : 1.02.",
+        "elaboration": "Gross: Rp 312,942,092. Net setelah DDAT: Rp 171,858,476. Compound factor: ×1.0625.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2024]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.8.3",
+        "point": "Tahun 2025: investasi Rp 195,000,000, net compounded Rp 203,251,867, SROI 1 : 1.04.",
+        "elaboration": "Gross: Rp 369,718,930. Net setelah DDAT: Rp 203,251,867. Compound factor: ×1.0000.",
+        "evidence_refs": [
+          "sroi_metrics.calculated.per_year[2025]"
+        ],
+        "financial_ref": "table_sroi_per_tahun",
+        "status": "supported"
+      },
+      {
+        "label": "7.9",
+        "point": "SROI blended 2023–2025: 1 : 1.14 — dari investasi Rp 502,460,181 menghasilkan net benefit compounded Rp 570,672,411.",
+        "elaboration": "Setiap Rp 1 yang diinvestasikan menghasilkan Rp 1,14 nilai sosial-ekonomi terukur. Program dinyatakan positive return. Catatan: REINT dan CONF adalah proxy — jika hanya LUB+SVC (observed), SROI akan jauh lebih rendah. Transparansi ini penting untuk kredibilitas laporan.",
+        "evidence_refs": [
+          "sroi_metrics.calculated"
+        ],
+        "financial_ref": "table_sroi_blended",
+        "status": "supported"
+      },
+      {
+        "label": "7.10",
+        "point": "Node Lapas Palembang belum menghasilkan transaksi terukur selama 2023–2025 — ini adalah temuan jujur yang justru memperkuat kredibilitas laporan dan memberi dasar rekomendasi konkret.",
+        "elaboration": "Jika Lapas Palembang dapat diaktivasi pada periode berikutnya, SROI berpotensi meningkat signifikan tanpa investasi tambahan yang proporsional. Narasi harus menempatkan ini sebagai learning finding, bukan kegagalan.",
+        "evidence_refs": [
+          "strategy_design.institutional",
+          "uncertainty_flags"
+        ],
+        "status": "supported"
+      },
+      {
+        "label": "7.11",
+        "point": "Node Milenial Motor (eks-WBP) adalah bukti terkuat bahwa program dapat menghasilkan reintegrasi produktif nyata pasca-pembebasan.",
+        "elaboration": "Node ini membuktikan bahwa jalur Lapas → pelatihan → usaha mandiri adalah jalur yang viable, bukan sekadar aspirasi program. Posisikan sebagai model replikasi untuk node lapas lain.",
+        "evidence_refs": [
+          "EV_06",
+          "strategy_design.institutional"
+        ],
+        "status": "supported"
+      }
+    ],
+    "known_gaps": []
+  },
+  "qa_render_signals": {
+    "outline_alignment_status": "aligned",
+    "render_gap_note": false,
+    "render_inference_note": false
+  },
+  "style_hints": {
+    "proxy_badge": true,
+    "warning_callout": true,
+    "pending_note": true,
+    "gap_note": false,
+    "inference_note": false
+  },
+  "qa_report_ref": "qa_report.json",
+  "generated_at": "2026-04-10T09:24:31.850122"
+}

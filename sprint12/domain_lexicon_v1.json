@@ -1,0 +1,152 @@
+{
+  "lexicon_version": "1.0",
+  "domain":          "TJSL SROI",
+  "created_at":      "2026-04-10",
+  "description":     "Kamus istilah domain SROI untuk membantu konsistensi terminologi dalam pipeline.",
+  "terms": [
+    {
+      "term":       "Blended SROI",
+      "category":   "metric",
+      "definition": "Rasio nilai sosial-ekonomi total setelah monetisasi outcome, compound ORI-adjusted, dan penyesuaian DDAT per aspek diperhitungkan. Mencakup aspek observed DAN proxy.",
+      "aliases":    ["SROI blended","blended social return","evaluatif SROI","SROI evaluatif"],
+      "usage_note": "Gunakan konsisten untuk rasio final total. Jangan campur dengan Observed direct return.",
+      "contrasted_with": ["Observed direct return"]
+    },
+    {
+      "term":       "Observed direct return",
+      "category":   "metric",
+      "definition": "Rasio pengembalian langsung berbasis transaksi riil yang tercatat selama implementasi. Hanya mencakup aspek dengan data transaksi aktual, bukan proxy.",
+      "aliases":    ["observed return","direct return","transaksi langsung"],
+      "usage_note": "Gunakan sebagai metrik pembanding — lebih konservatif dari Blended SROI.",
+      "contrasted_with": ["Blended SROI"]
+    },
+    {
+      "term":       "Deadweight",
+      "category":   "ddat",
+      "definition": "Bagian dari manfaat yang akan terjadi tanpa intervensi program — dikurangi dari gross value untuk menghindari overclaim.",
+      "aliases":    ["DW"],
+      "usage_note": "Salah satu dari empat parameter DDAT. Harus diestimasi per aspek.",
+      "related_terms": ["Displacement","Attribution","Drop-off","DDAT"]
+    },
+    {
+      "term":       "Displacement",
+      "category":   "ddat",
+      "definition": "Manfaat program yang menggeser manfaat pihak lain — dikurangi untuk mencegah double-counting.",
+      "aliases":    ["DS"],
+      "related_terms": ["Deadweight","Attribution","Drop-off","DDAT"]
+    },
+    {
+      "term":       "Attribution",
+      "category":   "ddat",
+      "definition": "Porsi outcome yang disebabkan oleh faktor lain selain program — dikurangi untuk memastikan klaim proporsional.",
+      "aliases":    ["AT"],
+      "related_terms": ["Deadweight","Displacement","Drop-off","DDAT"]
+    },
+    {
+      "term":       "Drop-off",
+      "category":   "ddat",
+      "definition": "Penurunan manfaat dari waktu ke waktu setelah intervensi berakhir.",
+      "aliases":    ["DO"],
+      "related_terms": ["Deadweight","Displacement","Attribution","DDAT"]
+    },
+    {
+      "term":       "DDAT",
+      "category":   "methodology",
+      "definition": "Empat parameter fiksasi dampak: Deadweight, Displacement, Attribution, Drop-off. Diterapkan per aspek monetisasi untuk menghasilkan net_multiplier.",
+      "aliases":    ["fiksasi dampak","DDAT adjustment","impact adjustment"],
+      "usage_note": "Net value = Gross × net_multiplier di mana net_multiplier = (1-DW)(1-DS)(1-AT)(1-DO)."
+    },
+    {
+      "term":       "Proxy",
+      "category":   "data_status",
+      "definition": "Nilai estimatif yang digunakan ketika data langsung tidak tersedia — berdasarkan referensi kebijakan, tarif pasar, atau data sekunder.",
+      "aliases":    ["financial proxy","proxy value","nilai proxy"],
+      "usage_note": "Selalu berlabel display_status: present_as_proxy di dokumen.",
+      "contrasted_with": ["observed"]
+    },
+    {
+      "term":       "Under confirmation",
+      "category":   "data_status",
+      "definition": "Data sudah tersedia tapi belum diverifikasi dari sumber primer resmi.",
+      "aliases":    ["under_confirmation","belum dikonfirmasi"],
+      "usage_note": "Harus tampil sebagai pending di laporan final, bukan final."
+    },
+    {
+      "term":       "Baseline programatik",
+      "category":   "methodology",
+      "definition": "Deskripsi kondisi awal yang disusun dari data program dan desain intervensi — bukan dari survei statistik wilayah yang lengkap.",
+      "aliases":    ["programmatic baseline","baseline berbasis program"],
+      "usage_note": "Gunakan ketika data BPS atau survei lapangan tidak tersedia. Nyatakan keterbatasan ini secara eksplisit."
+    },
+    {
+      "term":       "LFA",
+      "category":   "methodology",
+      "definition": "Logical Framework Approach — kerangka yang memetakan Input → Aktivitas → Output → Outcome → Dampak secara logis.",
+      "aliases":    ["logframe","logical framework","kerangka logis"],
+      "usage_note": "Dipakai untuk meverifikasi rantai kausalitas program."
+    },
+    {
+      "term":       "Theory of Change",
+      "category":   "methodology",
+      "definition": "Narasi kausal yang menjelaskan bagaimana dan mengapa intervensi menghasilkan perubahan yang diinginkan.",
+      "aliases":    ["ToC","jalur perubahan","rantai kausal"],
+      "usage_note": "Berbeda dari LFA — lebih naratif, menjelaskan asumsi dan kondisi yang diperlukan."
+    },
+    {
+      "term":       "Triple Loop Learning",
+      "category":   "methodology",
+      "definition": "Kerangka evaluasi yang mencakup tiga level: Loop 1 (apa yang terjadi), Loop 2 (mengapa respons itu dipilih), Loop 3 (apa yang berubah secara fundamental).",
+      "aliases":    ["triple loop","tiga lapis pembelajaran"],
+      "usage_note": "Digunakan di Bab VIII untuk analisis pembelajaran program."
+    },
+    {
+      "term":       "ORI",
+      "category":   "financial",
+      "definition": "Obligasi Ritel Indonesia — digunakan sebagai reference rate untuk compound adjustment nilai sosial ke terminal year.",
+      "aliases":    ["ORI rate","suku bunga ORI"],
+      "usage_note": "Dipakai sebagai proxy biaya modal sosial yang konservatif."
+    },
+    {
+      "term":       "Reintegrasi sosial-ekonomi",
+      "category":   "outcome_domain",
+      "definition": "Proses eks-WBP atau kelompok marginal lain kembali ke kehidupan produktif melalui pekerjaan atau usaha mandiri.",
+      "aliases":    ["reintegrasi","social reintegration","REINT"],
+      "usage_note": "Outcome ini biasanya dimonetisasi menggunakan proxy replacement cost (misal: nilai pelatihan Kartu Prakerja)."
+    },
+    {
+      "term":       "Self-efficacy",
+      "category":   "outcome_domain",
+      "definition": "Kepercayaan diri dan keyakinan seseorang atas kemampuannya — diukur sebagai outcome sosial program.",
+      "aliases":    ["kepercayaan diri","CONF","confidence"],
+      "usage_note": "Biasanya dimonetisasi menggunakan proxy tarif layanan psikologi publik."
+    },
+    {
+      "term":       "Gap coverage",
+      "category":   "quality",
+      "definition": "Area dalam laporan yang datanya tidak lengkap atau tidak tersedia — harus diakui eksplisit dengan callout_gap.",
+      "aliases":    ["data gap","coverage gap","weak coverage"],
+      "usage_note": "Lebih baik jujur tentang gap daripada mengarang konten seolah lengkap."
+    },
+    {
+      "term":       "PROPER",
+      "category":   "regulatory",
+      "definition": "Program Penilaian Peringkat Kinerja Perusahaan — kewajiban regulasi KLHK yang mensyaratkan pelaporan SROI untuk program beyond compliance.",
+      "aliases":    ["PROPER KLHK","penilaian kinerja lingkungan"],
+      "usage_note": "Kategori Beyond Compliance membutuhkan SROI terukur."
+    },
+    {
+      "term":       "TJSL",
+      "category":   "regulatory",
+      "definition": "Tanggung Jawab Sosial dan Lingkungan — kewajiban perusahaan berdasarkan UU No. 40 Tahun 2007.",
+      "aliases":    ["CSR","tanggung jawab sosial","corporate social responsibility"],
+      "usage_note": "Dikenal juga sebagai CSR dalam konteks internasional."
+    },
+    {
+      "term":       "Beyond Compliance",
+      "category":   "program_category",
+      "definition": "Kategori PROPER tertinggi — program yang melampaui standar kewajiban minimum dan menghasilkan inovasi sosial terukur.",
+      "aliases":    ["beyond compliance inovasi sosial","kategori hijau PROPER"],
+      "usage_note": "Program dalam kategori ini wajib menyertakan laporan SROI."
+    }
+  ]
+}

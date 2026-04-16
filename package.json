@@ -1,0 +1,16 @@
+{
+  "name": "sroi-report-system",
+  "version": "1.0.0",
+  "description": "SROI Report Generation System — Renderer & Assembler",
+  "private": true,
+  "scripts": {
+    "render": "node sprint4/renderer.js",
+    "assemble": "node sprint8/full_assembler.js"
+  },
+  "dependencies": {
+    "docx": "^8.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

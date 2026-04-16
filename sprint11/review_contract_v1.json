@@ -1,0 +1,87 @@
+{
+  "contract_version": "1.0",
+  "contract_name":    "SROI Report Review Contract",
+  "created_at":       "2026-04-10",
+  "description":      "Format baku untuk semua keputusan review manusia dalam pipeline SROI",
+
+  "review_target_types": ["canonical", "outline", "gap_matrix"],
+
+  "decision_enum": ["approve", "approve_with_notes", "revise", "defer"],
+
+  "change_types": {
+    "replace_value": {
+      "description":       "Ganti nilai sebuah field dengan nilai baru",
+      "required_fields":   ["field_path", "old_value", "new_value"],
+      "optional_fields":   ["reason"]
+    },
+    "append_note": {
+      "description":       "Tambahkan catatan ke field atau item tanpa mengubah nilai",
+      "required_fields":   ["field_path", "note"],
+      "optional_fields":   []
+    },
+    "set_status": {
+      "description":       "Ubah data_status atau display_status sebuah field",
+      "required_fields":   ["field_path", "new_status"],
+      "valid_statuses":    ["observed","proxy","pending","under_confirmation","final","inferred","partial"],
+      "optional_fields":   ["reason"]
+    },
+    "mark_as_gap": {
+      "description":       "Tandai field atau item sebagai gap yang harus diakui eksplisit",
+      "required_fields":   ["field_path"],
+      "optional_fields":   ["gap_type", "note"],
+      "valid_gap_types":   ["data_unavailable","evidence_insufficient","pending_field_validation","out_of_scope"]
+    },
+    "request_regeneration": {
+      "description":       "Minta sistem regenerasi item tertentu",
+      "required_fields":   ["target_id"],
+      "optional_fields":   ["instruction", "reason"]
+    },
+    "approve_without_change": {
+      "description":       "Konfirmasi item sudah benar tanpa perubahan",
+      "required_fields":   ["field_path"],
+      "optional_fields":   ["note"]
+    },
+    "downgrade_confidence": {
+      "description":       "Turunkan keyakinan atas sebuah field/klaim",
+      "required_fields":   ["field_path", "new_status"],
+      "optional_fields":   ["reason"]
+    }
+  },
+
+  "review_record_schema": {
+    "review_id":          "string — unique identifier review ini",
+    "review_target_type": "string — canonical|outline|gap_matrix",
+    "review_target_id":   "string — chapter_id atau field identifier",
+    "program_code":       "string — ESL/PSN/dll",
+    "decision":           "string — approve|approve_with_notes|revise|defer",
+    "changes":            "array — list of change objects",
+    "notes":              "string — catatan bebas reviewer",
+    "reviewer":           "string — 'user' atau identifier lain",
+    "timestamp":          "string — ISO 8601",
+    "pipeline_gate":      "string — 'review_point_a' atau 'review_point_b'"
+  },
+
+  "review_states": {
+    "draft":                "Objek baru, belum dikirim untuk review",
+    "pending_review":       "Menunggu keputusan reviewer",
+    "approved":             "Disetujui, siap lanjut ke layer berikutnya",
+    "approved_with_notes":  "Disetujui dengan catatan, siap lanjut",
+    "revision_requested":   "Perubahan diminta, harus diproses sebelum lanjut",
+    "deferred":             "Ditunda, tidak blocking pipeline jika auto_continue=true"
+  },
+
+  "blocking_states": ["pending_review", "revision_requested"],
+
+  "pipeline_gates": {
+    "review_point_a": {
+      "position":        "Setelah Canonical Mapping + Report Architect",
+      "objects_reviewed": ["canonical", "gap_matrix"],
+      "next_step":       "Point Builder"
+    },
+    "review_point_b": {
+      "position":        "Setelah Point Builder",
+      "objects_reviewed": ["outline"],
+      "next_step":       "Narrative Builder"
+    }
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "canonical_program_json_v1",
+  "title": "Canonical Program JSON — SROI Report System",
+  "description": "Single source of truth. Semua agen membaca dari sini. Tidak ada agen yang membaca raw source setelah layer ini.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "program_identity",
+    "source_registry",
+    "investment",
+    "outcomes",
+    "monetization",
+    "ddat_params",
+    "ori_rates",
+    "sroi_metrics",
+    "coverage_status"
+  ],
+
+  "properties": {
+
+    "schema_version": { "type": "string", "const": "1.0" },
+    "case_id":        { "type": "string" },
+    "created_at":     { "type": "string" },
+    "last_updated":   { "type": "string" },
+
+    "program_identity": {
+      "type": "object",
+      "required": ["program_code", "program_name", "company", "period_start", "period_end"],
+      "properties": {
+        "program_code":    { "type": "string" },
+        "program_name":    { "type": "string" },
+        "program_tagline": { "type": "string" },
+        "company":         { "type": "string" },
+        "unit":            { "type": "string" },
+        "period_start":    { "type": "integer" },
+        "period_end":      { "type": "integer" },
+        "palette":         { "type": "string" }
+      }
+    },
+
+    "program_positioning": {
+      "type": "object",
+      "properties": {
+        "tjsl_pillar":      { "type": "string" },
+        "sdg_alignment":    { "type": "array", "items": { "type": "string" } },
+        "proper_category":  { "type": "string" },
+        "policy_basis":     { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "source_registry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_type", "name"],
+        "properties": {
+          "source_id":   { "type": "string" },
+          "source_type": {
+            "type": "string",
+            "enum": ["ppt_script", "docx", "json", "csv", "free_text", "interview", "secondary"]
+          },
+          "name":        { "type": "string" },
+          "parsed_at":   { "type": "string" },
+          "reliability": {
+            "type": "string",
+            "enum": ["primary", "secondary", "proxy", "estimated"]
+          }
+        }
+      }
+    },
+
+    "context_baseline": {
+      "type": "object",
+      "properties": {
+        "region":           { "type": "string" },
+        "target_area":      { "type": "string" },
+        "population_data":  { "type": "object" },
+        "socioeconomic":    { "type": "object" },
+        "infrastructure":   { "type": "object" },
+        "data_status":      { "$ref": "#/definitions/data_status" }
+      }
+    },
+
+    "problem_framing": {
+      "type": "object",
+      "properties": {
+        "problem_tree":     { "type": "array", "items": { "$ref": "#/definitions/problem_node" } },
+        "barrier_types":    { "type": "array", "items": { "type": "string" } },
+        "data_status":      { "$ref": "#/definitions/data_status" }
+      }
+    },
+
+    "ideal_conditions": {
+      "type": "object",
+      "properties": {
+        "vision_statement": { "type": "string" },
+        "target_outcomes":  { "type": "array", "items": { "type": "string" } },
+        "key_improvements": { "type": "array", "items": { "type": "string" } },
+        "data_status":      { "$ref": "#/definitions/data_status" }
+      }
+    },
+
+    "strategy_design": {
+      "type": "object",
+      "properties": {
+        "program_philosophy": { "type": "string" },
+        "roadmap":            { "type": "array", "items": { "$ref": "#/definitions/roadmap_stage" } },
+        "value_chain":        { "type": "array", "items": { "type": "string" } },
+        "institutional":      { "type": "object" },
+        "data_status":        { "$ref": "#/definitions/data_status" }
+      }
+    },
+
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["activity_id", "name", "year"],
+        "properties": {
+          "activity_id":   { "type": "string" },
+          "name":          { "type": "string" },
+          "year":          { "type": "integer" },
+          "description":   { "type": "string" },
+          "toc_summary":   { "type": "string" },
+          "data_status":   { "$ref": "#/definitions/data_status" }
+        }
+      }
+    },
+
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["output_id", "name", "year", "quantity"],
+        "properties": {
+          "output_id":     { "type": "string" },
+          "name":          { "type": "string" },
+          "year":          { "type": "integer" },
+          "quantity":      { "type": "number" },
+          "unit":          { "type": "string" },
+          "activity_refs": { "type": "array", "items": { "type": "string" } },
+          "data_status":   { "$ref": "#/definitions/data_status" }
+        }
+      }
+    },
+
+    "stakeholders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stakeholder_id", "name", "role"],
+        "properties": {
+          "stakeholder_id": { "type": "string" },
+          "name":           { "type": "string" },
+          "role":           {
+            "type": "string",
+            "enum": ["investor", "implementer", "beneficiary", "partner", "regulator"]
+          },
+          "inclusion_basis":{ "type": "string" }
+        }
+      }
+    },
+
+    "beneficiaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["group_id", "name", "count_basis"],
+        "properties": {
+          "group_id":    { "type": "string" },
+          "name":        { "type": "string" },
+          "count":       { "type": "number" },
+          "count_basis": { "type": "string" },
+          "data_status": { "$ref": "#/definitions/data_status" }
+        }
+      }
+    },
+
+    "investment": {
+      "type": "array",
+      "description": "Satu entri per tahun per node/unit",
+      "items": {
+        "type": "object",
+        "required": ["year", "amount_idr", "data_status"],
+        "properties": {
+          "year":         { "type": "integer" },
+          "node":         { "type": "string" },
+          "amount_idr":   { "type": "number" },
+          "source_refs":  { "type": "array", "items": { "type": "string" } },
+          "data_status":  { "$ref": "#/definitions/data_status" },
+          "display_status":{ "$ref": "#/definitions/display_status" }
+        }
+      }
+    },
+
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["outcome_id", "name", "stakeholder_ref", "data_status"],
+        "properties": {
+          "outcome_id":      { "type": "string" },
+          "name":            { "type": "string" },
+          "description":     { "type": "string" },
+          "stakeholder_ref": { "type": "string" },
+          "indicator":       { "type": "string" },
+          "data_status":     { "$ref": "#/definitions/data_status" },
+          "display_status":  { "$ref": "#/definitions/display_status" },
+          "source_refs":     { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "monetization": {
+      "type": "array",
+      "description": "Satu entri per aspek per tahun",
+      "items": {
+        "type": "object",
+        "required": [
+          "monetization_id", "aspect_code", "aspect_name",
+          "year", "gross_idr", "data_status", "display_status"
+        ],
+        "properties": {
+          "monetization_id": { "type": "string" },
+          "aspect_code":     { "type": "string" },
+          "aspect_name":     { "type": "string" },
+          "outcome_ref":     { "type": "string" },
+          "year":            { "type": "integer" },
+          "gross_idr":       { "type": "number" },
+          "proxy_basis":     { "type": "string" },
+          "proxy_value":     { "type": "number" },
+          "proxy_unit":      { "type": "string" },
+          "quantity_basis":  { "type": "string" },
+          "data_status":     { "$ref": "#/definitions/data_status" },
+          "display_status":  { "$ref": "#/definitions/display_status" },
+          "source_refs":     { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "ddat_params": {
+      "type": "object",
+      "description": "DDAT adjustment per aspek. Key = aspect_code.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["deadweight", "displacement", "attribution", "dropoff"],
+        "properties": {
+          "deadweight":    { "type": "number", "minimum": 0, "maximum": 1 },
+          "displacement":  { "type": "number", "minimum": 0, "maximum": 1 },
+          "attribution":   { "type": "number", "minimum": 0, "maximum": 1 },
+          "dropoff":       { "type": "number", "minimum": 0, "maximum": 1 },
+          "net_multiplier":{ "type": "number" },
+          "justification": { "type": "string" },
+          "data_status":   { "$ref": "#/definitions/data_status" }
+        }
+      }
+    },
+
+    "ori_rates": {
+      "type": "object",
+      "description": "ORI reference rates per tahun. Key = tahun (string).",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["rate", "compound_factor", "series"],
+        "properties": {
+          "rate":            { "type": "number" },
+          "compound_factor": { "type": "number" },
+          "series":          { "type": "string" },
+          "terminal_year":   { "type": "boolean" }
+        }
+      }
+    },
+
+    "sroi_metrics": {
+      "type": "object",
+      "properties": {
+        "calculated": {
+          "type": "object",
+          "description": "Diisi oleh Financial Calculation Engine. LLM dilarang menulis ke field ini.",
+          "properties": {
+            "total_investment_idr":    { "type": "number" },
+            "total_gross_idr":         { "type": "number" },
+            "total_net_idr":           { "type": "number" },
+            "total_net_compounded_idr":{ "type": "number" },
+            "sroi_blended":            { "type": "number" },
+            "avg_fiksasi_pct":         { "type": "number" },
+            "per_year": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["year", "investment", "gross", "net", "compounded", "sroi_ratio"],
+                "properties": {
+                  "year":        { "type": "integer" },
+                  "investment":  { "type": "number" },
+                  "gross":       { "type": "number" },
+                  "net":         { "type": "number" },
+                  "compounded":  { "type": "number" },
+                  "sroi_ratio":  { "type": "number" },
+                  "cf_applied":  { "type": "number" }
+                }
+              }
+            },
+            "financial_tables":  { "type": "array" },
+            "calc_audit_log":    { "type": "array" },
+            "sensitivity":       { "type": "object" },
+            "calculated_at":     { "type": "string" },
+            "engine_version":    { "type": "string" }
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not_calculated", "in_progress", "calculated", "validated"]
+        }
+      }
+    },
+
+    "learning_signals": {
+      "type": "object",
+      "properties": {
+        "loop_1": { "type": "array", "items": { "type": "string" } },
+        "loop_2": { "type": "array", "items": { "type": "string" } },
+        "loop_3": { "type": "array", "items": { "type": "string" } },
+        "lfa_reflections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "activity_ref":    { "type": "string" },
+              "lfa_gap":         { "type": "string" },
+              "lesson_learned":  { "type": "string" }
+            }
+          }
+        },
+        "data_status": { "$ref": "#/definitions/data_status" }
+      }
+    },
+
+    "evidence_registry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "claim", "source_ref"],
+        "properties": {
+          "evidence_id":  { "type": "string" },
+          "claim":        { "type": "string" },
+          "source_ref":   { "type": "string" },
+          "quote":        { "type": "string" },
+          "reliability":  { "type": "string" }
+        }
+      }
+    },
+
+    "uncertainty_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["flag_id", "field_path", "reason"],
+        "properties": {
+          "flag_id":    { "type": "string" },
+          "field_path": { "type": "string" },
+          "reason":     { "type": "string" },
+          "severity":   {
+            "type": "string",
+            "enum": ["low", "medium", "high", "blocking"]
+          }
+        }
+      }
+    },
+
+    "coverage_status": {
+      "type": "object",
+      "description": "Diisi oleh Report Architect.",
+      "properties": {
+        "bab_1": { "$ref": "#/definitions/coverage_entry" },
+        "bab_2": { "$ref": "#/definitions/coverage_entry" },
+        "bab_3": { "$ref": "#/definitions/coverage_entry" },
+        "bab_4": { "$ref": "#/definitions/coverage_entry" },
+        "bab_5": { "$ref": "#/definitions/coverage_entry" },
+        "bab_6": { "$ref": "#/definitions/coverage_entry" },
+        "bab_7": { "$ref": "#/definitions/coverage_entry" },
+        "bab_8": { "$ref": "#/definitions/coverage_entry" },
+        "bab_9": { "$ref": "#/definitions/coverage_entry" }
+      }
+    }
+  },
+
+  "definitions": {
+    "data_status": {
+      "type": "string",
+      "enum": ["observed", "derived", "proxy", "pending", "under_confirmation", "final"]
+    },
+    "display_status": {
+      "type": "string",
+      "enum": ["present_as_final", "present_as_proxy", "present_as_pending", "present_as_inferred"]
+    },
+    "coverage_entry": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["strong", "partial", "weak", "missing"]
+        },
+        "inputs":       { "type": "array", "items": { "type": "string" } },
+        "risk":         {
+          "type": "string",
+          "enum": ["reliable", "thin", "overclaim", "skeleton_only"]
+        },
+        "notes":        { "type": "string" }
+      }
+    },
+    "problem_node": {
+      "type": "object",
+      "properties": {
+        "problem_id":   { "type": "string" },
+        "label":        { "type": "string" },
+        "description":  { "type": "string" },
+        "barrier_type": { "type": "string" },
+        "root_causes":  { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "roadmap_stage": {
+      "type": "object",
+      "properties": {
+        "stage_id":    { "type": "string" },
+        "label":       { "type": "string" },
+        "period":      { "type": "string" },
+        "focus":       { "type": "string" },
+        "loop_type":   {
+          "type": "string",
+          "enum": ["single", "double", "triple"]
+        }
+      }
+    }
+  }
+}

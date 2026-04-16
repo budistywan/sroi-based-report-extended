@@ -1,0 +1,72 @@
+{
+  "signature_id": "style_signature_conclusive",
+  "register": "conclusive_register",
+  "bab_coverage": [
+    "bab_9"
+  ],
+  "function": "Pengunci, implikatif, forward-looking, ringkas namun kuat",
+  "parent_global_signature": "style_signature_reviewed",
+  "parent_style_profile": "style_profile_reviewed",
+  "created_at": "2026-04-11T03:36:01.328129",
+  "dimensions": {
+    "opening_style": {
+      "pattern": "evaluative_summary_frame",
+      "description": "Paragraf membuka dengan ringkasan evaluatif yang langsung dan tegas — posisi jelas sejak kalimat pertama",
+      "examples": [
+        "Evaluasi SROI menunjukkan bahwa Program...",
+        "Ke depan, penguatan program perlu diarahkan..."
+      ],
+      "variation_note": "Boleh dimulai dengan pernyataan temuan, pernyataan rekomendasi, atau pernyataan implikasi"
+    },
+    "hedging_degree": {
+      "level": "moderate",
+      "preferred_markers": [
+        "menunjukkan bahwa",
+        "membuktikan bahwa model",
+        "perlu diarahkan pada",
+        "dengan demikian nilai sosial"
+      ],
+      "avoided_markers": [
+        "sangat luar biasa",
+        "tidak dapat disangkal",
+        "sempurna",
+        "mutlak berhasil"
+      ],
+      "firmness": "high"
+    },
+    "transition_style": {
+      "style": "concise_forward",
+      "preferred_connectors": [
+        "Dengan demikian",
+        "Ke depan",
+        "Hal ini menunjukkan bahwa",
+        "Dalam jangka berikutnya",
+        "Tiga prioritas yang saling melengkapi"
+      ]
+    },
+    "closing_style": {
+      "pattern": "forward_locked",
+      "description": "Penutup mengunci ke arah ke depan — bukan retrospektif, melainkan implikatif dan actionable"
+    },
+    "sentence_rhythm": {
+      "style": "mixed_short_medium"
+    }
+  },
+  "variation_rules": {
+    "structured_enumeration_allowed": true,
+    "connector_rotation": true,
+    "concise_sentences_preferred": true
+  },
+  "special_emphasis": [
+    "strong_closing",
+    "implication_forward",
+    "concise_firmness",
+    "three_point_structure_ok",
+    "no_hyperbole"
+  ],
+  "guard_rails": {
+    "anti_bombastic": true,
+    "anti_ai_generic": true,
+    "anti_mechanical": true
+  }
+}

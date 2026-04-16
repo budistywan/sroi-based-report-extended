@@ -1,0 +1,396 @@
+{
+  "source_id": "src_esl_01",
+  "source_type": "ppt_script",
+  "name": "TJSL_Scripts.md — esl sections",
+  "program_code": "ESL",
+  "parsed_at": "2026-04-10T10:03:12.021057",
+  "parser_version": "1.0.0",
+  "parsed_sections": {
+    "program_identity": {
+      "program_code": "ESL",
+      "program_name": "",
+      "program_tagline": "*MON-REINT & MON-CONF masih menunggu data proxy — SROI final belum dihitung.",
+      "company": "PT Pertamina Lubricants",
+      "unit": "TJSL CSV",
+      "period_start": 2023,
+      "period_end": 2025
+    },
+    "investment": [
+      {
+        "year": 2023,
+        "node": "total",
+        "amount_idr": 128108409,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2024,
+        "node": "total",
+        "amount_idr": 179351772,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2025,
+        "node": "total",
+        "amount_idr": 195000000,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2023,
+        "node": "total",
+        "amount_idr": 128108409,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2024,
+        "node": "total",
+        "amount_idr": 179351772,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "year": 2025,
+        "node": "total",
+        "amount_idr": 195000000,
+        "data_status": "under_confirmation",
+        "display_status": "present_as_pending",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "monetization": [
+      {
+        "monetization_id": "MON_LUB_2023",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2023,
+        "gross_idr": 20680000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2024",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2024,
+        "gross_idr": 28950000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2025",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2025,
+        "gross_idr": 40520000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2023",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2023,
+        "gross_idr": 12850000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2024",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2024,
+        "gross_idr": 18000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2025",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2025,
+        "gross_idr": 25190000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2023",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2023,
+        "gross_idr": 20680000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2024",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2024,
+        "gross_idr": 28950000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_LUB_2025",
+        "aspect_code": "LUB",
+        "aspect_name": "LUB",
+        "year": 2025,
+        "gross_idr": 40520000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2023",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2023,
+        "gross_idr": 12850000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2024",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2024,
+        "gross_idr": 18000000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_SVC_2025",
+        "aspect_code": "SVC",
+        "aspect_name": "SVC",
+        "year": 2025,
+        "gross_idr": 25190000,
+        "data_status": "observed",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_REINT_2023",
+        "aspect_code": "REINT",
+        "aspect_name": "REINT",
+        "year": 2023,
+        "gross_idr": 245000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_REINT_2024",
+        "aspect_code": "REINT",
+        "aspect_name": "REINT",
+        "year": 2024,
+        "gross_idr": 245000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_REINT_2025",
+        "aspect_code": "REINT",
+        "aspect_name": "REINT",
+        "year": 2025,
+        "gross_idr": 280000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CONF_2023",
+        "aspect_code": "CONF",
+        "aspect_name": "CONF",
+        "year": 2023,
+        "gross_idr": 21000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CONF_2024",
+        "aspect_code": "CONF",
+        "aspect_name": "CONF",
+        "year": 2024,
+        "gross_idr": 21000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      },
+      {
+        "monetization_id": "MON_CONF_2025",
+        "aspect_code": "CONF",
+        "aspect_name": "CONF",
+        "year": 2025,
+        "gross_idr": 24000000,
+        "data_status": "proxy",
+        "display_status": "present_as_proxy",
+        "source_refs": [
+          "src_01"
+        ]
+      }
+    ],
+    "ddat_params": {
+      "CONF": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "REINT": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "LUB": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      },
+      "SVC": {
+        "net_multiplier": 0.5,
+        "data_status": "pending",
+        "justification": "tidak tersedia di script — default 0.5"
+      }
+    },
+    "ori_rates": {
+      "2023": {
+        "rate": 0.059000000000000004,
+        "series": "ORI023T3",
+        "compound_factor": 1.1252,
+        "terminal_year": false
+      },
+      "2024": {
+        "rate": 0.0625,
+        "series": "ORI025T3",
+        "compound_factor": 1.0625,
+        "terminal_year": false
+      },
+      "2025": {
+        "rate": 0.065,
+        "series": "ORI027T3",
+        "compound_factor": 1.0,
+        "terminal_year": true
+      }
+    },
+    "sroi_metrics": {
+      "status": "extracted",
+      "calculated": {
+        "sroi_blended": 1.14,
+        "per_year": [
+          {
+            "year": 2023,
+            "investment": 128108409,
+            "gross": 299530066,
+            "net": 164256055,
+            "compounded": 184820913,
+            "sroi_ratio": 1.44
+          },
+          {
+            "year": 2024,
+            "investment": 179351772,
+            "gross": 312942092,
+            "net": 171858476,
+            "compounded": 182599631,
+            "sroi_ratio": 1.02
+          },
+          {
+            "year": 2025,
+            "investment": 195000000,
+            "gross": 369718930,
+            "net": 203251867,
+            "compounded": 203251867,
+            "sroi_ratio": 1.04
+          }
+        ],
+        "total_investment_idr": 502460181,
+        "total_gross_idr": 982191088,
+        "total_net_idr": 539366398,
+        "total_net_compounded_idr": 570672411
+      }
+    },
+    "learning_signals": {
+      "loop_1": [
+        "*MON-REINT & MON-CONF masih menunggu data proxy — SROI final belum dihitung.",
+        "Observed blended direct return: 1 : 0,29  |  Total investasi Rp 502,46 Jt  |  Transaksi Rp 146,19 Jt",
+        "observed direct return dari\\ntotal investasi kumulatif"
+      ],
+      "loop_2": [],
+      "loop_3": [],
+      "lfa_reflections": [],
+      "data_status": "derived"
+    }
+  },
+  "uncertainty_flags": [],
+  "coverage": {
+    "investment": "strong",
+    "monetization": "strong",
+    "ddat": "strong",
+    "ori": "strong",
+    "sroi_metrics": "strong"
+  }
+}

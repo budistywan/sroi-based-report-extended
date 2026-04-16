@@ -1,0 +1,125 @@
+[
+  {
+    "chapter_id": "bab_8",
+    "chapter_type": "learning",
+    "source_outline_ref": "bab_8",
+    "builder_mode": "learning",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277331",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB VIII ASPEK PEMBELAJARAN DENGAN TRIPLE LOOP LEARNING"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan refleksi pembelajaran program melalui kerangka triple loop learning — menganalisis tidak hanya apa yang terjadi, tetapi juga mengapa program merespons seperti yang dilakukan, dan perubahan mendasar apa yang muncul dari proses implementasi."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "8.1 Identifikasi Masalah dan Keterkaitan LFA"
+      },
+      {
+        "type": "paragraph",
+        "text": "Selama implementasi 2023–2025, program menghadapi beberapa tantangan yang menjadi sumber pembelajaran:"
+      },
+      {
+        "type": "heading_2",
+        "text": "8.2 L1, L2, L3 — Analisis Triple Loop"
+      },
+      {
+        "type": "callout_info",
+        "text": "Dalam laporan ini digunakan dua ukuran yang berbeda dan saling melengkapi. Observed direct return (1 : 0,29) menunjukkan rasio pengembalian langsung berbasis transaksi riil yang tercatat dari tiga node aktif selama implementasi. Blended SROI (1 : 1,03) menunjukkan rasio nilai sosial-ekonomi total setelah monetisasi outcome, compound ORI, dan penyesuaian DDAT per aspek diperhitungkan. Kedua ukuran ini tidak saling menggantikan — keduanya membaca program dari sudut yang berbeda dan sama-sama sahih.",
+        "source_refs": [
+          "sroi_metrics.calculated",
+          "monetization",
+          "ddat_params"
+        ]
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 1 — Single Loop Learning (Apa yang terjadi?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level pertama berfokus pada hasil langsung dari implementasi aktivitas:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 2 — Double Loop Learning (Mengapa respons itu dipilih?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level kedua merefleksikan penyesuaian strategi yang dilakukan berdasarkan temuan implementasi:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "heading_3",
+        "text": "Loop 3 — Triple Loop Learning (Apa yang berubah secara fundamental?)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pembelajaran level ketiga menandai transformasi nilai dan asumsi mendasar yang muncul dari proses implementasi:"
+      },
+      {
+        "type": "bullet_list",
+        "items": []
+      },
+      {
+        "type": "callout_warning",
+        "text": "Analisis triple loop di atas bersumber dari learning signals yang disusun berdasarkan data program yang tersedia. Untuk laporan final, refleksi ini perlu diperkaya dengan wawancara mendalam bersama pengelola program, peserta, dan mitra lapangan.",
+        "source_refs": [
+          "learning_signals"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "8.3 Identifikasi Keunikan Program"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program memiliki beberapa karakteristik unik yang membedakannya dari program pemberdayaan vokasional konvensional:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "Intervensi di dalam Lapas — menjangkau kelompok yang paling sulit diakses program pemberdayaan umum"
+          },
+          {
+            "text": "Dual-track model: bengkel di dalam Lapas (WBP aktif) + bengkel mandiri eks-WBP (pasca-bebas)"
+          },
+          {
+            "text": "Produk program sekaligus menjadi saluran distribusi produk perusahaan — alignment bisnis dan sosial"
+          },
+          {
+            "text": "Milenial Motor sebagai proof-of-concept yang hidup — bukan aspirasi, tetapi realita yang dapat direplikasi"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "8.4 Kontribusi Efisiensi, Efektivitas, dan Keberlanjutan Sosial"
+      },
+      {
+        "type": "paragraph",
+        "text": "Dari sisi efisiensi, program menghasilkan SROI blended 1 : 1.03 — setiap Rp 1 investasi menghasilkan Rp 1 nilai sosial. Dari sisi efektivitas, tiga dari empat node aktif bertransaksi secara konsisten. Keberlanjutan dijamin oleh model bisnis bengkel yang menghasilkan pendapatan riil — bukan bergantung pada subsidi program selamanya.",
+        "display_status": "present_as_final",
+        "source_refs": [
+          "sroi_metrics.calculated",
+          "strategy_design"
+        ]
+      }
+    ]
+  }
+]

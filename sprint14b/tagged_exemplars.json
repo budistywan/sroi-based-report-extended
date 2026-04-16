@@ -1,0 +1,160 @@
+{
+  "tagged_version": "1.0",
+  "parent_exemplars": "raw_exemplars.json",
+  "tagged_at": "2026-04-11T03:21:36.026332",
+  "exemplars": [
+    {
+      "exemplar_id": "ex_001",
+      "source_context": "bab_4_pembuka",
+      "register_hint": "analytic",
+      "quality_signal": "approved",
+      "text_preview": "Bab ini menyusun kondisi awal program berdasarkan data yang tersedia — terutama ...",
+      "tags": {
+        "opening_pattern": {
+          "pattern": "context_first",
+          "evidence": "Bab ini menyusun kondisi awal program berdasarkan data yang "
+        },
+        "transition_connectors": [],
+        "hedging": {
+          "level": "moderate",
+          "found_markers": [],
+          "bombastic_found": []
+        },
+        "closing_pattern": {
+          "pattern": "short_affirmation",
+          "evidence": "Ini bukan kelemahan metodologis, melainkan transparansi tentang sumber data yang"
+        },
+        "sentence_rhythm": {
+          "style": "mixed_varied",
+          "avg_words_per_sentence": 20.3,
+          "sentence_count": 3
+        },
+        "rhetorical_movement": "context → elaboration → open"
+      }
+    },
+    {
+      "exemplar_id": "ex_002",
+      "source_context": "bab_9_kesimpulan",
+      "register_hint": "conclusive",
+      "quality_signal": "approved",
+      "text_preview": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai ...",
+      "tags": {
+        "opening_pattern": {
+          "pattern": "evaluative_frame",
+          "evidence": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas"
+        },
+        "transition_connectors": [],
+        "hedging": {
+          "level": "high",
+          "found_markers": [
+            "menunjukkan bahwa",
+            "menunjukkan"
+          ],
+          "bombastic_found": []
+        },
+        "closing_pattern": {
+          "pattern": "open_elaboration",
+          "evidence": "Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekon"
+        },
+        "sentence_rhythm": {
+          "style": "mixed_medium_long",
+          "avg_words_per_sentence": 34.0,
+          "sentence_count": 2
+        },
+        "rhetorical_movement": "free_form"
+      }
+    },
+    {
+      "exemplar_id": "ex_003",
+      "source_context": "bab_7_sroi_pembuka",
+      "register_hint": "evaluative",
+      "quality_signal": "approved",
+      "text_preview": "Kajian SROI ini menjadi instrumen evaluasi strategis untuk menilai nilai sosial ...",
+      "tags": {
+        "opening_pattern": {
+          "pattern": "evaluative_frame",
+          "evidence": "Kajian SROI ini menjadi instrumen evaluasi strategis untuk m"
+        },
+        "transition_connectors": [
+          "Dengan demikian",
+          "Lebih lanjut"
+        ],
+        "hedging": {
+          "level": "high",
+          "found_markers": [
+            "masih membutuhkan verifikasi"
+          ],
+          "bombastic_found": []
+        },
+        "closing_pattern": {
+          "pattern": "locked_implication",
+          "evidence": "Dengan demikian, kajian ini menempatkan diri sebagai evaluasi yang jujur tentang"
+        },
+        "sentence_rhythm": {
+          "style": "mixed_medium_long",
+          "avg_words_per_sentence": 26.3,
+          "sentence_count": 3
+        },
+        "rhetorical_movement": "claim → elaboration → implication"
+      }
+    },
+    {
+      "exemplar_id": "ex_004",
+      "source_context": "bab_7_proxy_caution",
+      "register_hint": "evaluative",
+      "quality_signal": "approved",
+      "text_preview": "Dua dari empat aspek monetisasi — Kesiapan Reintegrasi Sosial-Ekonomi (REINT) da...",
+      "tags": {
+        "opening_pattern": {
+          "pattern": "evaluative_frame",
+          "evidence": "Dua dari empat aspek monetisasi — Kesiapan Reintegrasi Sosia"
+        },
+        "transition_connectors": [],
+        "hedging": {
+          "level": "moderate",
+          "found_markers": [],
+          "bombastic_found": []
+        },
+        "closing_pattern": {
+          "pattern": "open_elaboration",
+          "evidence": "Nilai proxy yang digunakan bersifat konservatif dan akan semakin kuat seiring te"
+        },
+        "sentence_rhythm": {
+          "style": "mixed_medium_long",
+          "avg_words_per_sentence": 23.0,
+          "sentence_count": 3
+        },
+        "rhetorical_movement": "free_form"
+      }
+    },
+    {
+      "exemplar_id": "ex_005",
+      "source_context": "bab_8_reflektif",
+      "register_hint": "reflective",
+      "quality_signal": "approved",
+      "text_preview": "Perbedaan antara observed direct return dan blended SROI bukan sekadar selisih a...",
+      "tags": {
+        "opening_pattern": {
+          "pattern": "evaluative_frame",
+          "evidence": "Perbedaan antara observed direct return dan blended SROI buk"
+        },
+        "transition_connectors": [],
+        "hedging": {
+          "level": "moderate",
+          "found_markers": [],
+          "bombastic_found": []
+        },
+        "closing_pattern": {
+          "pattern": "locked_implication",
+          "evidence": "Di sinilah pembelajaran terpenting program ini terletak — bukan pada angka final"
+        },
+        "sentence_rhythm": {
+          "style": "mixed_medium_long",
+          "avg_words_per_sentence": 24.0,
+          "sentence_count": 3
+        },
+        "rhetorical_movement": "claim → elaboration → implication"
+      }
+    }
+  ]
+}

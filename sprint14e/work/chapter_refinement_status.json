@@ -1,0 +1,37 @@
+{
+  "run_id": "batch_refine_esl_v1",
+  "mode": "priority_first",
+  "generated_at": "2026-04-12T06:48:37.582823",
+  "chapters": [
+    {
+      "chapter_id": "bab_7",
+      "status": "evaluated",
+      "register_used": "evaluative_register",
+      "register_confidence": 1.0,
+      "packets_generated": 2,
+      "review_status": "pending",
+      "evaluated_at": "2026-04-12T06:48:37.102204",
+      "semantic_file": "chapter_semantic_bab7.json"
+    },
+    {
+      "chapter_id": "bab_9",
+      "status": "evaluated",
+      "register_used": "conclusive_register",
+      "register_confidence": 1.0,
+      "packets_generated": 3,
+      "review_status": "pending",
+      "evaluated_at": "2026-04-12T06:48:37.322601",
+      "semantic_file": "chapter_semantic_bab_9.json"
+    },
+    {
+      "chapter_id": "bab_8",
+      "status": "evaluated",
+      "register_used": "reflective_register",
+      "register_confidence": 1.0,
+      "packets_generated": 6,
+      "review_status": "pending",
+      "evaluated_at": "2026-04-12T06:48:37.582790",
+      "semantic_file": "chapter_semantic_bab_8.json"
+    }
+  ]
+}

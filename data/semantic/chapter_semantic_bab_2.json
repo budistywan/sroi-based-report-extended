@@ -1,0 +1,82 @@
+[
+  {
+    "chapter_id": "bab_2",
+    "chapter_type": "profil",
+    "source_outline_ref": "bab_2",
+    "builder_mode": "framing",
+    "builder_version": "1.0.0",
+    "generated_at": "2026-04-10T12:59:56.277324",
+    "blocks": [
+      {
+        "type": "heading_1",
+        "text": "BAB II PROFIL PERUSAHAAN"
+      },
+      {
+        "type": "paragraph_lead",
+        "text": "Bab ini menyajikan profil PT Pertamina Lubricants sebagai pemrakarsa program, mencakup lingkup usaha, arah kebijakan TJSL, dan posisi program Enduro Sahabat Lapas dalam portofolio pemberdayaan perusahaan."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading_2",
+        "text": "2.1 Lingkup Usaha"
+      },
+      {
+        "type": "paragraph",
+        "text": "PT Pertamina Lubricants merupakan anak perusahaan PT Pertamina (Persero) yang bergerak di bidang produksi dan distribusi pelumas untuk kendaraan bermotor dan industri. Produk unggulan perusahaan mencakup merek Enduro yang ditujukan untuk segmen kendaraan bermotor, menjadikan perusahaan ini memiliki kedekatan langsung dengan ekosistem perbengkelan otomotif di seluruh Indonesia."
+      },
+      {
+        "type": "callout_gap",
+        "text": "Data lengkap profil perusahaan (kapasitas produksi, jumlah karyawan, sebaran distribusi) tidak tersedia dalam canonical JSON kajian ini. Untuk laporan final, bagian ini perlu dilengkapi dari dokumen profil korporat resmi.",
+        "gap_type": "data_unavailable",
+        "display_status": "present_as_inferred"
+      },
+      {
+        "type": "heading_2",
+        "text": "2.2 Arah Kebijakan, Visi Misi, dan Tujuan Perusahaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Komitmen PT Pertamina Lubricants terhadap pembangunan sosial diwujudkan melalui pilar TJSL 'Pemberdayaan Masyarakat' yang selaras dengan agenda SDGs global. Program Enduro Sahabat Lapas secara langsung berkontribusi pada:"
+      },
+      {
+        "type": "bullet_list",
+        "items": [
+          {
+            "text": "SDG 8 — Pekerjaan Layak"
+          },
+          {
+            "text": "SDG 10 — Berkurangnya Ketimpangan"
+          },
+          {
+            "text": "SDG 16 — Perdamaian & Keadilan"
+          }
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "2.3 Prinsip dan Strategi Pengelolaan Pemberdayaan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pengelolaan program TJSL PT Pertamina Lubricants menganut pendekatan Beyond Compliance — Inovasi Sosial — sebuah paradigma yang menempatkan program sosial bukan sebagai kewajiban semata, melainkan sebagai investasi strategis yang menghasilkan nilai bersama bagi perusahaan dan masyarakat."
+      },
+      {
+        "type": "callout_info",
+        "text": "Pendekatan beyond compliance mengharuskan perusahaan untuk mengukur dampak program secara kuantitatif melalui SROI, membuktikan bahwa setiap rupiah yang diinvestasikan menghasilkan nilai sosial yang terukur dan dapat dipertanggungjawabkan kepada pemangku kepentingan.",
+        "source_refs": [
+          "program_positioning"
+        ]
+      },
+      {
+        "type": "heading_2",
+        "text": "2.4 Jenis dan Lingkup Program Pemberdayaan Masyarakat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Program Enduro Sahabat Lapas merupakan salah satu program unggulan TJSL PT Pertamina Lubricants yang difokuskan pada pemberdayaan Warga Binaan Pemasyarakatan (WBP) dan eks-WBP melalui pelatihan vokasional berbasis bengkel otomotif. Program ini dirancang sebagai intervensi yang menyentuh tiga dimensi sekaligus: peningkatan keterampilan teknis, pembentukan kapasitas wirausaha, dan fasilitasi reintegrasi sosial-ekonomi."
+      }
+    ]
+  }
+]

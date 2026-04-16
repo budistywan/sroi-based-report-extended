@@ -1,0 +1,57 @@
+[
+  {
+    "patch_id": "pilot_b4_001",
+    "source_packet_id": "pkt_202604101620_c55f95",
+    "decision": "revise",
+    "review_basis": "tone",
+    "original_text": "Bab bab_4dan bab_5 memiliki gap data baseline. Gunakan framing 'baseline programatik' — nyatakan keterbatasan ini secara eksplisit, jangan overclaim kelengkapan data wilayah.",
+    "final_text": "Bab ini menyusun kondisi awal program berdasarkan data yang tersedia — terutama data program, identifikasi kelompok sasaran, dan analisis hambatan yang diturunkan dari desain intervensi. Karena data statistik wilayah yang komprehensif tidak tersedia sebagai sumber utama kajian ini, pembacaan kondisi awal pada bab ini lebih tepat dipahami sebagai baseline programatik. Ini bukan kelemahan metodologis, melainkan transparansi tentang sumber data yang digunakan.",
+    "reviewer_note": "Ditambahkan kalimat 'Ini bukan kelemahan metodologis' untuk menghindari nada defensif",
+    "rejection_reason": null,
+    "timestamp": "2026-04-10T16:24:32.929455",
+    "review_context": "Sprint13_ESL_Pilot",
+    "applicability_context": "ESL_Pertamina_2025",
+    "scope_verified": true
+  },
+  {
+    "patch_id": "pilot_b7_001",
+    "source_packet_id": "pkt_202604101620_531fd3",
+    "decision": "accept",
+    "review_basis": "terminology",
+    "original_text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+    "final_text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+    "reviewer_note": "Terminology note sudah tepat — konsisten dengan keputusan Sprint 9.3",
+    "rejection_reason": null,
+    "timestamp": "2026-04-10T16:24:32.929455",
+    "review_context": "Sprint13_ESL_Pilot",
+    "applicability_context": "ESL_Pertamina_2025",
+    "scope_verified": true
+  },
+  {
+    "patch_id": "pilot_cls_001",
+    "source_packet_id": "pkt_202604101620_c87427",
+    "decision": "revise",
+    "review_basis": "tone",
+    "original_text": "Program Enduro Sahabat Lapas terbukti menghasilkan nilai sosial-ekonomi yang melampaui investasi, dengan Blended SROI 1 : 1.14 selama periode 2023–2025. Tiga temuan utama: aspek REINT mendominasi nilai — menunjukkan bahwa nilai reintegrasi adalah dampak paling signifikan; Node Lapas Palembang belum menghasilkan transaksi aktif; dan Milenial Motor membuktikan bahwa model reintegrasi produktif bukan sekadar aspirasi melainkan template yang dapat direplikasi.",
+    "final_text": "Evaluasi SROI menunjukkan bahwa Program Enduro Sahabat Lapas menghasilkan nilai sosial-ekonomi yang melampaui investasi selama periode evaluasi 2023–2025. Tiga temuan utama yang perlu dicatat: (1) aspek Kesiapan Reintegrasi Sosial-Ekonomi mendominasi nilai bersih kumulatif; (2) Node Lapas Kota Palembang belum menghasilkan transaksi terukur dan merepresentasikan potensi kenaikan nilai yang belum terealisasi; dan (3) keberhasilan Milenial Motor membuktikan bahwa model reintegrasi produktif dapat direplikasi ke node lain pada periode berikutnya.",
+    "reviewer_note": "Format penomoran (1)(2)(3) lebih formal untuk laporan PROPER. 'Terbukti' diganti 'menunjukkan'.",
+    "rejection_reason": null,
+    "timestamp": "2026-04-10T16:24:32.929455",
+    "review_context": "Sprint13_ESL_Pilot",
+    "applicability_context": "ESL_Pertamina_2025",
+    "scope_verified": true
+  },
+  {
+    "patch_id": "pilot_rejected_001",
+    "source_packet_id": "pkt_202604101620_531fd3",
+    "decision": "reject",
+    "review_basis": "factual_correction",
+    "original_text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+    "final_text": "",
+    "reviewer_note": "Suggestion ini tidak relevan untuk laporan yang sudah mature di terminologi",
+    "rejection_reason": "Terminologi sudah konsisten di laporan final — suggestion duplikatif",
+    "timestamp": "2026-04-10T16:24:32.929455",
+    "review_context": "Sprint13_ESL_Pilot",
+    "applicability_context": "ESL_Pertamina_2025"
+  }
+]

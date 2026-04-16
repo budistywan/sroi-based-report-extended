@@ -1,0 +1,137 @@
+{
+  "view_type": "enrichment_review",
+  "generated_at": "2026-04-10T15:40:40.222098",
+  "total_suggestions": 8,
+  "by_category": {
+    "caution": [
+      {
+        "suggestion_id": "sugg_er_proxy_caution_153939",
+        "suggestion_type": "caution_note",
+        "text": "Ada 6 aspek monetisasi menggunakan proxy (REINT, CONF) — pastikan proxy reference terdokumentasi dan...",
+        "confidence": 0.95,
+        "target": "bab_7",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ],
+    "framing": [
+      {
+        "suggestion_id": "sugg_er_baseline_framing_153939",
+        "suggestion_type": "framing_note",
+        "text": "Bab bab_4dan bab_5 memiliki gap data baseline. Gunakan framing 'baseline programatik' — nyatakan ket...",
+        "confidence": 0.94,
+        "target": "bab_4",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ],
+    "status": [
+      {
+        "suggestion_id": "sugg_er_investment_pending_153939",
+        "suggestion_type": "status_note",
+        "text": "Investasi tahun 2023, 2024 berstatus under_confirmation. Tampilkan sebagai pending di laporan — jang...",
+        "confidence": 0.97,
+        "target": "bab_7",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ],
+    "terminology": [
+      {
+        "suggestion_id": "sugg_er_terminology_blended_153939",
+        "suggestion_type": "terminology_note",
+        "text": "Gunakan istilah 'Blended SROI' secara konsisten untuk rasio evaluatif total (1 : 1.14). Bedakan seca...",
+        "confidence": 0.98,
+        "target": "bab_7",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      },
+      {
+        "suggestion_id": "sugg_er_terminology_consistency_153939",
+        "suggestion_type": "terminology_note",
+        "text": "Ditemukan 5 potensi inkonsistensi istilah: 'SROI blended' → sebaiknya 'Blended SROI' | 'SROI evaluat...",
+        "confidence": 0.75,
+        "target": "general",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ],
+    "proxy_recommendation": [
+      {
+        "suggestion_id": "sugg_er_reintegration_proxy_153939",
+        "suggestion_type": "proxy_recommendation",
+        "text": "Outcome reintegrasi sosial-ekonomi membutuhkan proxy yang defensible. Proxy yang direkomendasikan: n...",
+        "confidence": 0.88,
+        "target": "bab_7",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      },
+      {
+        "suggestion_id": "sugg_er_conf_proxy_153939",
+        "suggestion_type": "proxy_validation",
+        "text": "Outcome kepercayaan diri (CONF) menggunakan proxy replacement cost layanan psikologi. Proxy yang dir...",
+        "confidence": 0.87,
+        "target": "bab_7",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ],
+    "gap_acknowledgement": [
+      {
+        "suggestion_id": "sugg_er_gap_explicit_153939",
+        "suggestion_type": "gap_rendering_note",
+        "text": "Gap di bab_4 ditandai 'must_render_as_gap' dalam review. Gunakan callout_gap eksplisit dengan gap_ty...",
+        "confidence": 0.99,
+        "target": "bab_4",
+        "current_status": "pending",
+        "available_actions": [
+          "accept",
+          "reject",
+          "revise",
+          "defer"
+        ]
+      }
+    ]
+  },
+  "review_guidance": [
+    "accept → suggestion diterima dan akan dimasukkan ke builder hints",
+    "reject → suggestion diabaikan, tidak masuk ke pipeline",
+    "revise → teks suggestion diubah reviewer sebelum diterima",
+    "defer → tidak diputuskan sekarang, bisa di-review nanti"
+  ]
+}

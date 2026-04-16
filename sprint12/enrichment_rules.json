@@ -1,0 +1,107 @@
+{
+  "rules_version": "1.0",
+  "created_at":    "2026-04-10",
+  "description":   "Aturan enrichment yang dikombinasikan dari ontology rules + lexicon + pattern detection",
+
+  "rules": [
+    {
+      "rule_id":       "ER_PROXY_CAUTION",
+      "trigger_field": "monetization",
+      "trigger_condition": "any(m.data_status in ['proxy','pending'] for m in monetization)",
+      "suggestion_type": "caution_note",
+      "suggestion_text": "Ada {n_proxy} aspek monetisasi menggunakan proxy — pastikan proxy reference terdokumentasi dan berlabel present_as_proxy di laporan.",
+      "confidence":    0.95,
+      "target":        "bab_7",
+      "category":      "caution",
+      "source":        "ontology_rule SR_02"
+    },
+    {
+      "rule_id":       "ER_BASELINE_FRAMING",
+      "trigger_field": "gap_matrix",
+      "trigger_condition": "any(g.chapter_id in ['bab_4','bab_5'] and g.status in ['partial','missing'] for g in gap_items)",
+      "suggestion_type": "framing_note",
+      "suggestion_text": "Bab IV/V memiliki gap data baseline. Gunakan framing 'baseline programatik' — nyatakan keterbatasan ini secara eksplisit, jangan overclaim kelengkapan data wilayah.",
+      "confidence":    0.94,
+      "target":        "bab_4",
+      "category":      "framing",
+      "source":        "ontology_rule SR_01 + gap_matrix"
+    },
+    {
+      "rule_id":       "ER_INVESTMENT_PENDING",
+      "trigger_field": "investment",
+      "trigger_condition": "any(i.data_status in ['under_confirmation','pending'] for i in investment)",
+      "suggestion_type": "status_note",
+      "suggestion_text": "Investasi {years} berstatus under_confirmation. Tampilkan sebagai pending di laporan — jangan gunakan sebagai final dalam klaim evaluatif.",
+      "confidence":    0.97,
+      "target":        "bab_7",
+      "category":      "status",
+      "source":        "ontology_rule SR_03"
+    },
+    {
+      "rule_id":       "ER_TERMINOLOGY_BLENDED",
+      "trigger_field": "sroi_metrics",
+      "trigger_condition": "sroi_metrics.calculated.sroi_blended is not None",
+      "suggestion_type": "terminology_note",
+      "suggestion_text": "Gunakan istilah 'Blended SROI' secara konsisten untuk rasio evaluatif total ({value:.2f}). Bedakan secara eksplisit dari 'Observed direct return' jika keduanya disebut.",
+      "confidence":    0.98,
+      "target":        "bab_7",
+      "category":      "terminology",
+      "source":        "domain_lexicon + ontology_rule SR_08"
+    },
+    {
+      "rule_id":       "ER_REINTEGRATION_PROXY",
+      "trigger_field": "outcomes",
+      "trigger_condition": "any('reintegrasi' in o.name.lower() or o.get('aspect_code') == 'REINT' for o in outcomes)",
+      "suggestion_type": "proxy_recommendation",
+      "suggestion_text": "Outcome reintegrasi sosial-ekonomi membutuhkan proxy yang defensible. Proxy yang direkomendasikan: nilai pelatihan Kartu Prakerja (Rp 3.500.000/peserta) atau replacement cost program pemerintah sejenis.",
+      "confidence":    0.88,
+      "target":        "bab_7",
+      "category":      "proxy_recommendation",
+      "source":        "ontology entity + domain_lexicon"
+    },
+    {
+      "rule_id":       "ER_LFA_TRACE",
+      "trigger_field": "activities",
+      "trigger_condition": "len(activities) > 0 and not any signal for lfa in canonical",
+      "suggestion_type": "methodology_note",
+      "suggestion_text": "Program memiliki {n_activities} aktivitas tercatat. Pastikan ada LFA atau Theory of Change yang memetakan jalur aktivitas → output → outcome — ini memperkuat defensibility klaim SROI.",
+      "confidence":    0.82,
+      "target":        "bab_3",
+      "category":      "methodology",
+      "source":        "ontology_rule SR_06"
+    },
+    {
+      "rule_id":       "ER_GAP_EXPLICIT",
+      "trigger_field": "gap_matrix",
+      "trigger_condition": "any(g._review_decision == 'must_render_as_gap' for g in gap_items)",
+      "suggestion_type": "gap_rendering_note",
+      "suggestion_text": "Gap di {chapters} ditandai 'must_render_as_gap' dalam review. Gunakan callout_gap eksplisit dengan gap_type yang sesuai — jangan biarkan bab ini terlihat seolah lengkap.",
+      "confidence":    0.99,
+      "target":        "bab_4",
+      "category":      "gap_acknowledgement",
+      "source":        "gap_matrix review decision"
+    },
+    {
+      "rule_id":       "ER_SROI_BELOW_PAR",
+      "trigger_field": "sroi_metrics",
+      "trigger_condition": "sroi_metrics.calculated.get('sroi_blended', 1.5) < 1.0",
+      "suggestion_type": "interpretation_note",
+      "suggestion_text": "Blended SROI < 1.0 — nilai sosial lebih kecil dari investasi pada periode ini. Ini bukan kegagalan otomatis: horizon evaluasi mungkin belum penuh atau ada outcome jangka panjang yang belum dapat dimonetisasi.",
+      "confidence":    0.85,
+      "target":        "bab_9",
+      "category":      "interpretation",
+      "source":        "ontology_rule SR_05"
+    },
+    {
+      "rule_id":       "ER_CONF_PROXY",
+      "trigger_field": "outcomes",
+      "trigger_condition": "any(o.get('aspect_code') == 'CONF' for o in outcomes)",
+      "suggestion_type": "proxy_validation",
+      "suggestion_text": "Outcome kepercayaan diri (CONF) menggunakan proxy replacement cost layanan psikologi. Proxy yang direkomendasikan: tarif psikologi publik (misal 6 sesi × Rp 50.000 = Rp 300.000/peserta). Pastikan sumber proxy terdokumentasi.",
+      "confidence":    0.87,
+      "target":        "bab_7",
+      "category":      "proxy_recommendation",
+      "source":        "domain_lexicon + ontology entity"
+    }
+  ]
+}

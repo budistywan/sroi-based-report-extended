@@ -1,0 +1,144 @@
+[
+  {
+    "packet_id": "sp14d_53029477",
+    "packet_type": "style_review",
+    "target_id": "bab_7.block_1",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording",
+        "tone",
+        "opening",
+        "closing",
+        "transition"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "sroi_values",
+        "financial_fields",
+        "argument_structure",
+        "data_status",
+        "proxy_labels",
+        "evidence_refs",
+        "claim_scope"
+      ]
+    },
+    "decision_prompt": "Paragraf ini dievaluasi menggunakan evaluative_register. Gap terdeteksi: beberapa aspek gaya perlu peninjauan. Apakah teks perlu disesuaikan, atau pola ini disengaja dalam konteks ini?",
+    "context": {
+      "current_text": "Bab ini menyajikan seluruh rangkaian implementasi Program Enduro Sahabat Lapas secara terukur — dari kegiatan, stakeholder, dan investasi hingga outcome, fiksasi dampak, monetisasi nilai sosial, dan hasil evaluasi SROI. Semua angka pada bab ini bersumber dari Financial Calculation Engine dan dapat ditelusuri melalui calc_audit_log.",
+      "candidate_revision": null,
+      "candidate_confidence": 0.3,
+      "stylistic_diagnosis": "Gap terdeteksi: ['disliked_pattern', 'closing_pattern']. Confidence revision rendah (0.30) — reviewer disarankan merevisi manual.",
+      "gaps_detected": [
+        {
+          "dimension": "disliked_pattern",
+          "pattern_id": "DP_FLAT_PARAGRAPH",
+          "severity": "low",
+          "note": "Disliked pattern terdeteksi: DP_FLAT_PARAGRAPH"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "register": "evaluative_register",
+      "source": "paragraph_style_evaluator",
+      "confidence": 0.8,
+      "relevant_history": "Sprint 14A–C: style profile + signature reviewed",
+      "applicability_context": "ESL_Pertamina_2025"
+    },
+    "refinement_type": [
+      "closing_lock",
+      "pattern_removal",
+      "transition_smooth"
+    ],
+    "priority": "medium",
+    "decision_options": [
+      "accept_candidate",
+      "keep_original",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  },
+  {
+    "packet_id": "sp14d_893ef753",
+    "packet_type": "style_review",
+    "target_id": "bab_7.block_4",
+    "scope": {
+      "allowed_changes": [
+        "text_only",
+        "wording",
+        "tone",
+        "opening",
+        "closing",
+        "transition"
+      ],
+      "forbidden_changes": [
+        "numeric_values",
+        "sroi_values",
+        "financial_fields",
+        "argument_structure",
+        "data_status",
+        "proxy_labels",
+        "evidence_refs",
+        "claim_scope"
+      ]
+    },
+    "decision_prompt": "Paragraf ini dievaluasi menggunakan evaluative_register. Gap terdeteksi: Pembuka 'claim_first' — register evaluative_register mengharapkan 'evaluative_frame'. Apakah teks perlu disesuaikan, atau pola ini disengaja dalam konteks ini?",
+    "context": {
+      "current_text": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan.",
+      "candidate_revision": "Program ESL dirancang sebagai intervensi vokasional produktif berbasis bengkel otomotif yang berjalan dalam tiga tahun program (2023–2025). Sepanjang periode tersebut, program melaksanakan 6 aktivitas terstruktur yang secara kumulatif membentuk jalur transisi dari pembinaan di Lapas menuju kemandirian ekonomi pasca-pembebasan.\n\n[Stylistic hints: Pertimbangkan membuka dengan framing evaluatif sebelum klaim inti. | Pertimbangkan menambahkan kalimat penutup yang mengunci makna paragraf.]",
+      "candidate_confidence": 0.6,
+      "stylistic_diagnosis": "",
+      "gaps_detected": [
+        {
+          "dimension": "opening_pattern",
+          "expected": "evaluative_frame",
+          "detected": "claim_first",
+          "severity": "medium",
+          "note": "Pembuka 'claim_first' — register evaluative_register mengharapkan 'evaluative_frame'"
+        },
+        {
+          "dimension": "disliked_pattern",
+          "pattern_id": "DP_FLAT_PARAGRAPH",
+          "severity": "low",
+          "note": "Disliked pattern terdeteksi: DP_FLAT_PARAGRAPH"
+        },
+        {
+          "dimension": "closing_pattern",
+          "expected": "evaluative_locked",
+          "detected": "open_elaboration",
+          "severity": "low",
+          "note": "Penutup paragraf mungkin perlu pengunci yang lebih kuat"
+        }
+      ],
+      "register": "evaluative_register",
+      "source": "paragraph_style_evaluator",
+      "confidence": 0.7,
+      "relevant_history": "Sprint 14A–C: style profile + signature reviewed",
+      "applicability_context": "ESL_Pertamina_2025"
+    },
+    "refinement_type": [
+      "closing_lock",
+      "opening_refine",
+      "pattern_removal",
+      "transition_smooth"
+    ],
+    "priority": "medium",
+    "decision_options": [
+      "accept_candidate",
+      "keep_original",
+      "revise_with_text"
+    ],
+    "decision": null,
+    "revised_text": null,
+    "reviewer_note": null,
+    "reviewed_at": null
+  }
+]
