@@ -384,24 +384,57 @@ async function loadZip(e){
   try{zip=await JSZip.loadAsync(file)}
   catch(err){setSubmitStatus('err','✗ File zip tidak valid');return}
 
-  // Find editable and original JSONs
+  // ── Parse zip: support Format A (AI single-file) + Format B (_editable per bab) ──
   const editableFiles={},originalFiles={};
   const promises=[];
+  const allJsonFiles={};
+
   zip.forEach((relPath,zipEntry)=>{
     if(zipEntry.dir)return;
     const name=relPath.split('/').pop();
+    if(!name.endsWith('.json'))return;
     if(name.endsWith('_editable.json')){
       const bab=name.replace('_editable.json','');
       promises.push(zipEntry.async('string').then(txt=>{editableFiles[bab]=txt}));
     }else if(name.endsWith('_original.json')){
       const bab=name.replace('_original.json','');
       promises.push(zipEntry.async('string').then(txt=>{originalFiles[bab]=txt}));
+    }else{
+      // Kandidat Format A — file JSON biasa
+      promises.push(zipEntry.async('string').then(txt=>{allJsonFiles[name]=txt}));
     }
   });
   await Promise.all(promises);
 
+  // ── Deteksi Format A: file JSON berisi array of chapters ──
+  if(Object.keys(editableFiles).length===0){
+    for(const [fname,txt] of Object.entries(allJsonFiles)){
+      try{
+        const parsed=JSON.parse(txt);
+        // Cek: array of chapter objects
+        if(Array.isArray(parsed)&&parsed.length>0
+           &&parsed[0].chapter_id&&parsed[0].blocks){
+          for(const ch of parsed){
+            const cid=ch.chapter_id; // e.g. "bab_4"
+            editableFiles[cid]=JSON.stringify([ch]);
+          }
+          console.log('Format A detected:',fname,'→',Object.keys(editableFiles).length,'bab');
+          break;
+        }
+        // Cek: single chapter object
+        if(parsed&&parsed.chapter_id&&parsed.blocks){
+          editableFiles[parsed.chapter_id]=JSON.stringify([parsed]);
+          break;
+        }
+      }catch(e){}
+    }
+  }
+
   const babsFound=Object.keys(editableFiles).sort();
-  if(babsFound.length===0){setSubmitStatus('err','✗ Tidak ada file *_editable.json di dalam zip');return}
+  if(babsFound.length===0){
+    setSubmitStatus('err','✗ Tidak ada chapter JSON yang dikenali di dalam zip');
+    return;
+  }
 
   // Detect program
   const prog=detectProgram(file.name,editableFiles);
@@ -543,7 +576,7 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
     const status=hasFile?(br?.status==='err'?'err':br?.status==='warn'?'warn':'ok'):'orig';
     const tagLabel={ok:'✓ valid',warn:'⚠ warning',err:'✗ error',orig:'— original'}[status];
     const rowCls={ok:'row-ok',warn:'row-warn',err:'row-err',orig:''}[status];
-    const fileName=hasFile?`${bab}_editable.json`:'(dari pipeline)';
+    const isFormatA=hasFile&&!zipData.originalFiles[bab];const fileName=hasFile?(isFormatA?`${bab} (enriched)`:`${bab}_editable.json`):'(dari pipeline)';
     return`<tr class="${rowCls}"><td>${bab}</td><td>${fileName}</td><td><span class="mtag ${status}">${tagLabel}</span></td></tr>`;
   }).join('');
 
