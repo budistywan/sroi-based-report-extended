@@ -459,13 +459,26 @@ async function loadZip(e){
 }
 
 function detectProgram(filename,editableFiles){
+  // 1. Coba dari isi JSON — paling reliable
+  for(const txt of Object.values(editableFiles)){
+    try{
+      const raw=JSON.parse(txt);
+      // Format A: array of chapters
+      const chapters=Array.isArray(raw)?raw:[raw];
+      for(const ch of chapters){
+        // Dari program_code di root chapter
+        const code=(ch?.program_code||'').toUpperCase();
+        if(code&&PROG[code])return code;
+        // Dari program_identity di dalam chapter (kalau ada)
+        const code2=(ch?.program_identity?.program_code||'').toUpperCase();
+        if(code2&&PROG[code2])return code2;
+      }
+    }catch(e){}
+  }
+  // 2. Fallback: dari nama file
   const fu=filename.toUpperCase();
   const fromName=['EHS','ESL','ESD','ESP','ESS','ETB','PSN'].find(p=>fu.includes(p));
   if(fromName)return fromName;
-  // Try from JSON content
-  for(const txt of Object.values(editableFiles)){
-    try{const d=JSON.parse(txt);const code=d?.program_identity?.program_code?.toUpperCase();if(code&&PROG[code])return code}catch(e){}
-  }
   return null;
 }
 
@@ -558,7 +571,12 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
   const card=document.getElementById('prog-card');
   card.className='prog-card'+(valResult.valid?' valid':valResult.hasErr?' invalid':'');
 
-  sel('prog-name',PROG[prog]||prog||'Program Tidak Terdeteksi');
+  sel('prog-name',PROG[prog]||prog||(prog===null?'⚠ Program tidak terdeteksi — cek isi JSON':'?'));
+  if(!prog){
+    // Tampilkan warning agar user tahu
+    const sb=document.getElementById('val-summary-box');
+    sb.innerHTML='<div class="val-summary warn">⚠ Kode program tidak terdeteksi dari file. Pastikan JSON mengandung field \"program_code\" (misal: \"EHS\"). Workflow akan fallback ke ESL.</div>';
+  }
   sel('prog-code',fileName);
 
   // Val summary
