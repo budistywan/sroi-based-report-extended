@@ -668,7 +668,9 @@ async function submitRun(){
     const cd=await r.json();run.commitSha=cd.commit?.sha||null;run.commitUrl=cd.commit?.html_url||null;
     stepSt['commit']='done';setStage('running','File terkirim. Memicu workflow…','');renderTimeline();renderMeta();setSubmitStatus('ok','✓ File dikirim — memicu workflow...');
 
-    // Trigger workflow_dispatch secara eksplisit (lebih reliable dari push trigger)
+    // Trigger workflow_dispatch — guard agar tidak double trigger
+    if(run._triggered){console.log('Already triggered, skip');}
+    run._triggered=true;
     const workflow=v('workflow');
     const triggerBody={
       ref:branch,
@@ -703,7 +705,7 @@ async function pollForRun(){
   const detect=async()=>{
     if(pollCount++>18){setStage('failed','Run tidak terdeteksi','Periksa GitHub Actions');stepSt['detect']='failed';renderTimeline();stopElapsed();return}
     try{
-      const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs?branch=${branch}&event=push&per_page=10`);
+      const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs?branch=${branch}&per_page=10`);
       if(!r.ok){pollingTimer=setTimeout(detect,10000);return}
       const data=await r.json();const runs=data.workflow_runs||[];
       const match=run.commitSha?runs.find(r=>r.head_sha===run.commitSha):null;
