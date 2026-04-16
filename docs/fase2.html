@@ -3,312 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Render Laporan SROI — Fase 2</title>
+<title>Enrichment Laporan SROI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <style>
-:root {
-  --bg:#f5f7fa;--surface:#ffffff;--surface2:#f0f2f5;--surface3:#e8eaf0;
-  --border:#e4e7ec;--border2:#d0d5dd;--text:#101828;--text2:#475467;--text3:#98a2b3;
-  --blue:#1570ef;--blue-light:#eff4ff;--blue-mid:#d1e0ff;
-  --green:#039855;--green-light:#ecfdf3;--green-mid:#a9efc5;
-  --yellow-text:#92400e;--yellow-bg:#fffbeb;--yellow-border:#fcd34d;
-  --red:#d92d20;--red-light:#fef3f2;--red-mid:#fda29b;
-  --sans:'Plus Jakarta Sans',sans-serif;--mono:'JetBrains Mono',monospace;
-  --radius:8px;--radius-sm:5px;
-  --shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04);
-}
+/* ── RESET & BASE ── */
 *{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f7fa;--surface:#fff;--surface2:#f0f2f5;--surface3:#e8eaf0;
+  --border:#e4e7ec;--border2:#d0d5dd;
+  --text:#101828;--text2:#475467;--text3:#98a2b3;
+  --blue:#1570ef;--blue-l:#eff4ff;--blue-m:#d1e0ff;
+  --green:#039855;--green-l:#ecfdf3;--green-m:#a9efc5;
+  --yellow:#92400e;--yellow-l:#fffbeb;--yellow-b:#fcd34d;
+  --red:#d92d20;--red-l:#fef3f2;--red-m:#fda29b;
+  --sans:'Plus Jakarta Sans',sans-serif;--mono:'JetBrains Mono',monospace;
+  --r:8px;--r-sm:5px;
+  --shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04);
+  --shadow-md:0 4px 6px -1px rgba(16,24,40,.07),0 2px 4px -2px rgba(16,24,40,.05);
+}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden;font-size:13px;line-height:1.5}
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px;height:50px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:var(--shadow)}
-.h-left{display:flex;align-items:center;gap:10px}
-.h-logo{width:26px;height:26px;border-radius:6px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
-.h-title{font-size:14px;font-weight:600}
-.h-sub{font-size:11px;color:var(--text3);margin-left:2px}
-.h-right{display:flex;gap:8px;align-items:center}
-.badge{font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border);background:var(--surface2);color:var(--text2)}
-.badge.green{background:var(--green-light);border-color:var(--green-mid);color:var(--green)}
-.badge.blue{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
-.badge.red{background:var(--red-light);border-color:var(--red-mid);color:var(--red)}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+*{scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
+
+/* ── HEADER ── */
+.hd{background:var(--surface);border-bottom:1px solid var(--border);padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:var(--shadow);z-index:20}
+.hd-left{display:flex;align-items:center;gap:10px}
+.hd-logo{width:28px;height:28px;border-radius:7px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:-.5px;box-shadow:0 1px 4px rgba(21,112,239,.35)}
+.hd-title{font-size:14px;font-weight:700;color:var(--text)}
+.hd-sub{font-size:11px;color:var(--text3)}
+.hd-right{display:flex;gap:8px;align-items:center}
+
+/* ── BADGES ── */
+.badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border);background:var(--surface2);color:var(--text2)}
+.badge.green{background:var(--green-l);border-color:var(--green-m);color:var(--green)}
+.badge.blue{background:var(--blue-l);border-color:var(--blue-m);color:var(--blue)}
+.badge.red{background:var(--red-l);border-color:var(--red-m);color:var(--red)}
+.badge.yellow{background:var(--yellow-l);border-color:var(--yellow-b);color:var(--yellow)}
 .bdot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
 .bdot.pulse{animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.main{display:grid;grid-template-columns:280px 1fr 300px;flex:1;overflow:hidden}
+
+/* ── LAYOUT ── */
+.main{display:grid;grid-template-columns:272px 1fr 292px;flex:1;overflow:hidden}
 .panel{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .panel:last-child{border-right:none}
-.panel-hd{padding:13px 16px 9px;border-bottom:1px solid var(--border);flex-shrink:0}
-.panel-title{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em}
-.panel-sub{font-size:11px;color:var(--text3);margin-top:1px}
-.panel-body{flex:1;overflow-y:auto;padding:14px 16px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
-/* Upload card */
-.prog-card{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px}
-.prog-card.dashed{border-style:dashed;cursor:pointer;transition:background .15s}
-.prog-card.dashed:hover{background:#e4eeff}
-.prog-card.valid{background:var(--green-light);border-color:var(--green-mid)}
-.prog-card.invalid{background:var(--red-light);border-color:var(--red-mid)}
-.prog-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.prog-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
-.prog-code{font-size:11px;color:var(--text2);margin-top:2px;font-family:var(--mono)}
-/* Validation summary */
-.val-summary{margin-top:10px;padding:8px 10px;border-radius:var(--radius-sm);font-size:11px;font-weight:500}
-.val-summary.ok{background:var(--green-light);border:1px solid var(--green-mid);color:var(--green)}
-.val-summary.err{background:var(--red-light);border:1px solid var(--red-mid);color:var(--red)}
-.val-summary.warn{background:var(--yellow-bg);border:1px solid var(--yellow-border);color:var(--yellow-text)}
-/* Manifest table */
-.manifest-table{width:100%;margin-top:10px;border-collapse:collapse}
-.manifest-table th{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;text-align:left;padding:4px 6px;border-bottom:1px solid var(--border)}
-.manifest-table td{font-size:11px;font-family:var(--mono);padding:4px 6px;border-bottom:1px solid var(--border);color:var(--text2)}
-.manifest-table tr:last-child td{border-bottom:none}
-.manifest-table tr.row-ok td{color:var(--text2)}
-.manifest-table tr.row-warn td{color:var(--yellow-text)}
-.manifest-table tr.row-err td{color:var(--red)}
-.mtag{display:inline-block;font-size:9px;font-weight:600;padding:1px 5px;border-radius:8px;white-space:nowrap}
-.mtag.ok{background:var(--green-light);color:var(--green);border:1px solid var(--green-mid)}
-.mtag.warn{background:var(--yellow-bg);color:var(--yellow-text);border:1px solid var(--yellow-border)}
-.mtag.err{background:var(--red-light);color:var(--red);border:1px solid var(--red-mid)}
-.mtag.orig{background:var(--surface2);color:var(--text3);border:1px solid var(--border)}
-/* Val issues list */
-.val-issues{margin-top:8px;display:flex;flex-direction:column;gap:3px}
-.vi{display:flex;align-items:flex-start;gap:5px;font-size:11px;line-height:1.5}
-.vi .ic{flex-shrink:0;font-size:11px}
-.vi.ok{color:var(--green)}
-.vi.warn{color:var(--yellow-text)}
-.vi.err{color:var(--red)}
-.vi.dim{color:var(--text3)}
-/* Conn area */
-.conn-area{padding:10px 0;border-top:1px solid var(--border)}
-/* Adv settings */
-.adv-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--text2);padding:9px 0;border-top:1px solid var(--border);transition:color .12s}
-.adv-btn:hover{color:var(--blue)}
-.adv-arrow{font-size:10px;transition:transform .2s}
-.adv-arrow.open{transform:rotate(180deg)}
-.adv-body{display:none;padding-top:14px}
-.adv-body.open{display:block}
-.adv-sec{margin-bottom:14px}
-.adv-sec-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
-.field{margin-bottom:10px}
-.field label{display:block;font-size:11px;font-weight:500;color:var(--text2);margin-bottom:3px}
-.field input,.field select{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-sm);color:var(--text);padding:6px 9px;font-size:12px;font-family:var(--mono);outline:none;transition:border-color .15s,box-shadow .15s}
-.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,112,239,.1)}
-.tech-detail{background:var(--surface2);border-radius:var(--radius-sm);padding:8px 10px;margin-top:6px}
-.td-row{display:flex;flex-direction:column;margin-bottom:6px}
-.td-row:last-child{margin-bottom:0}
-.td-key{font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.td-val{font-size:11px;color:var(--text2);font-family:var(--mono);margin-top:1px;word-break:break-all}
-.token-wrap{position:relative}
-.token-wrap input{padding-right:44px}
-.token-show{position:absolute;right:7px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--text3);cursor:pointer;background:none;border:none;font-family:var(--mono);padding:2px}
-.token-show:hover{color:var(--blue)}
-.status-msg{font-size:11px;margin-top:6px}
-.status-msg.ok{color:var(--green)}
-.status-msg.err{color:var(--red)}
-.status-msg.info{color:var(--blue)}
-.notice-err{background:var(--red-light);border:1px solid var(--red-mid);border-radius:var(--radius-sm);padding:8px 10px;font-size:11px;color:var(--red);margin-top:6px;line-height:1.5}
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);border-radius:var(--radius-sm);padding:6px 12px;font-size:12px;font-weight:500;font-family:var(--sans);cursor:pointer;transition:all .12s;white-space:nowrap;box-shadow:var(--shadow)}
-.btn:hover{background:var(--surface2);color:var(--text)}
-.btn:active{transform:scale(.98)}
-.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.panel-hd{padding:12px 16px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
+.panel-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+.panel-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.panel-body{flex:1;overflow-y:auto;padding:14px 16px}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);border-radius:var(--r-sm);padding:6px 12px;font-size:12px;font-weight:500;font-family:var(--sans);cursor:pointer;transition:all .12s;white-space:nowrap;box-shadow:var(--shadow)}
+.btn:hover:not(:disabled){background:var(--surface2);color:var(--text)}
+.btn:active:not(:disabled){transform:scale(.98)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
 .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
 .btn.primary:hover:not(:disabled){background:#1260d4}
 .btn.success{background:var(--green);border-color:var(--green);color:#fff;font-weight:600}
 .btn.success:hover:not(:disabled){background:#027a48}
-.btn.danger{color:var(--red);border-color:var(--red-mid)}
-.btn.danger:hover{background:var(--red-light)}
+.btn.danger{color:var(--red);border-color:var(--red-m)}
+.btn.danger:hover:not(:disabled){background:var(--red-l)}
 .btn.ghost{border-color:transparent;background:transparent;box-shadow:none;color:var(--text2)}
-.btn.ghost:hover{background:var(--surface2);color:var(--text)}
+.btn.ghost:hover:not(:disabled){background:var(--surface2)}
 .btn.sm{padding:4px 9px;font-size:11px}
 .btn.full{width:100%}
-/* Right panel */
-.stage-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:14px;text-align:center;transition:background .2s,border-color .2s}
-.stage-card.running{background:var(--blue-light);border-color:var(--blue-mid)}
-.stage-card.success{background:var(--green-light);border-color:var(--green-mid)}
-.stage-card.failed{background:var(--red-light);border-color:var(--red-mid)}
-.stage-lbl{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
-.stage-sub{font-size:11px;color:var(--text2)}
-.status-collapse-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;padding:13px 16px 9px;border-bottom:1px solid var(--border);transition:color .12s}
-.status-collapse-btn:hover{color:var(--blue)}
-.status-collapse-body{flex:1;overflow-y:auto;padding:14px 16px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
-.status-collapse-body.hidden{display:none}
-.tl{margin-bottom:14px}
-.tl-item{display:flex;align-items:center;gap:9px;padding:4px 0;font-size:12px;color:var(--text3)}
-.tl-item.done{color:var(--text2)}
-.tl-item.done .tl-dot{background:var(--green)}
-.tl-item.active{color:var(--text);font-weight:500}
-.tl-item.active .tl-dot{background:var(--blue);animation:pulse 1.5s infinite}
-.tl-item.failed{color:var(--red)}
-.tl-item.failed .tl-dot{background:var(--red)}
-.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);flex-shrink:0;transition:background .2s}
-.tl-icon{width:14px;text-align:center;font-size:10px;flex-shrink:0}
-.sec-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
-.meta-t{margin-bottom:14px}
-.meta-r{display:flex;justify-content:space-between;font-size:11px;padding:4px 0;border-bottom:1px solid var(--border)}
-.meta-r:last-child{border-bottom:none}
-.meta-k{color:var(--text3);font-weight:500}
-.meta-v{color:var(--text2);font-family:var(--mono);text-align:right;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.meta-v.hi{color:var(--blue)}
-.act-grp{display:flex;flex-direction:column;gap:7px}
-.divider{height:1px;background:var(--border);margin:12px 0}
-.err-box{background:var(--red-light);border:1px solid var(--red-mid);border-radius:var(--radius);padding:10px 12px;margin-top:10px;display:none}
-.err-box-title{font-size:11px;font-weight:600;color:var(--red);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
-.err-box-body{font-family:var(--mono);font-size:11px;color:var(--red);line-height:1.6;white-space:pre-wrap;word-break:break-all}
-.err-box-copy{margin-top:8px;font-size:11px;padding:4px 10px;border-radius:var(--radius-sm);border:1px solid var(--red-mid);background:transparent;color:var(--red);cursor:pointer}
-.err-box-copy:hover{background:var(--red-mid)}
+.btn.icon-btn{padding:5px 8px;gap:4px}
+
+/* ── FIELDS ── */
+.field{margin-bottom:10px}
+.field label{display:block;font-size:11px;font-weight:600;color:var(--text2);margin-bottom:4px}
+.field input,.field select{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r-sm);color:var(--text);padding:7px 10px;font-size:12px;font-family:var(--mono);outline:none;transition:border-color .15s,box-shadow .15s}
+.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,112,239,.1)}
+.token-wrap{position:relative}
+.token-wrap input{padding-right:46px}
+.token-show{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--text3);cursor:pointer;background:none;border:none;font-family:var(--mono);padding:2px 4px}
+.token-show:hover{color:var(--blue)}
+
+/* ── UPLOAD AREA ── */
+.upload-card{border:2px dashed var(--border2);border-radius:var(--r);padding:20px 16px;text-align:center;cursor:pointer;transition:all .15s;background:var(--bg)}
+.upload-card:hover{border-color:var(--blue);background:var(--blue-l)}
+.upload-card-icon{font-size:28px;margin-bottom:8px;opacity:.5}
+.upload-card-title{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:4px}
+.upload-card-sub{font-size:11px;color:var(--text3)}
+
+/* ── PROGRAM CARD ── */
+.prog-card{border-radius:var(--r);padding:12px 14px;margin-bottom:12px;border:1px solid var(--border);background:var(--surface)}
+.prog-card.valid{background:var(--green-l);border-color:var(--green-m)}
+.prog-card.invalid{background:var(--red-l);border-color:var(--red-m)}
+.prog-card.warn{background:var(--yellow-l);border-color:var(--yellow-b)}
+.prog-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:4px}
+.prog-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+.prog-code{font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.val-sum{margin-top:8px;padding:6px 10px;border-radius:var(--r-sm);font-size:11px;font-weight:600}
+.val-sum.ok{background:var(--green-l);border:1px solid var(--green-m);color:var(--green)}
+.val-sum.err{background:var(--red-l);border:1px solid var(--red-m);color:var(--red)}
+.val-sum.warn{background:var(--yellow-l);border:1px solid var(--yellow-b);color:var(--yellow)}
+
+/* ── BAB CARDS ── */
+.sec-label{font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+.bab-list{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
+.bab-card{border:1px solid var(--border);border-radius:7px;padding:8px 10px;background:var(--surface);display:flex;align-items:center;gap:8px;cursor:pointer;transition:all .12s;border-left:3px solid var(--border2)}
+.bab-card:hover{border-color:var(--blue-m);background:var(--blue-l)}
+.bab-card.active{border-color:var(--blue)!important;background:var(--blue-l);box-shadow:0 0 0 2px rgba(21,112,239,.1)}
+.bab-card.s-ok{border-left-color:var(--green)}
+.bab-card.s-warn{border-left-color:var(--yellow-b)}
+.bab-card.s-err{border-left-color:var(--red)}
+.bab-card.s-orig{opacity:.6;cursor:default}
+.bab-card.s-orig:hover{background:var(--surface);border-color:var(--border)}
+.bab-card.reviewed .bab-info::after{content:'✓';font-size:9px;color:var(--green);font-weight:700;margin-left:4px}
+.bab-num{font-size:9px;font-weight:700;color:var(--text3);font-family:var(--mono);text-transform:uppercase;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 5px;white-space:nowrap;flex-shrink:0}
+.bab-info{flex:1;min-width:0}
+.bab-title-text{font-size:11px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bab-title-text.detected{color:var(--blue)}
+.bab-meta-row{font-size:10px;color:var(--text3);margin-top:1px;display:flex;gap:6px}
+.bab-status-icon{font-size:10px;font-weight:700;flex-shrink:0}
+
+/* ── VAL ISSUES ── */
+.val-issues{display:flex;flex-direction:column;gap:3px;margin-top:6px}
+.vi{display:flex;align-items:flex-start;gap:5px;font-size:11px;line-height:1.5;padding:4px 8px;border-radius:var(--r-sm)}
+.vi.err{color:var(--red);background:var(--red-l)}
+.vi.warn{color:var(--yellow);background:var(--yellow-l)}
+
+/* ── CONN AREA ── */
+.conn-row{display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--border);margin-top:4px}
+.status-msg{font-size:11px;margin-top:6px}
+.status-msg.ok{color:var(--green)}
+.status-msg.err{color:var(--red)}
+.status-msg.info{color:var(--blue)}
+.notice-err{background:var(--red-l);border:1px solid var(--red-m);border-radius:var(--r-sm);padding:7px 10px;font-size:11px;color:var(--red);margin-top:6px;line-height:1.6}
+
+/* ── ACCORDION ── */
+.acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:600;color:var(--text2);padding:9px 0;border-top:1px solid var(--border);transition:color .12s}
+.acc-btn:hover{color:var(--blue)}
+.acc-arrow{font-size:10px;transition:transform .2s;color:var(--text3)}
+.acc-arrow.open{transform:rotate(180deg)}
+.acc-body{display:none;padding-top:12px}
+.acc-body.open{display:block}
+.acc-sec-label{font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.tech-box{background:var(--surface2);border-radius:var(--r-sm);padding:8px 10px}
+.tech-row{display:flex;justify-content:space-between;font-size:10px;padding:3px 0;border-bottom:1px solid var(--border)}
+.tech-row:last-child{border-bottom:none}
+.tech-key{color:var(--text3);font-weight:600;font-family:var(--mono)}
+.tech-val{color:var(--text2);font-family:var(--mono);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tech-val.hi{color:var(--blue)}
+
+/* ── SUBMIT BAR ── */
 .submit-bar{border-top:1px solid var(--border);padding:10px 14px;display:flex;align-items:center;gap:10px;background:var(--surface);flex-shrink:0}
-.submit-status{flex:1;font-size:11px;color:var(--text3);font-family:var(--mono)}
+.submit-status{flex:1;font-size:11px;color:var(--text3);font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .submit-status.ok{color:var(--green)}
 .submit-status.err{color:var(--red)}
-.submit-status.warn{color:var(--yellow-text)}
-/* Bab cards */
-.bab-card{border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;background:var(--surface);display:flex;align-items:flex-start;gap:10px;transition:all .15s;cursor:pointer;user-select:none}
-.bab-card:hover{border-color:var(--blue-mid);background:var(--blue-light)}
-.bab-card.active{border-color:var(--blue)!important;background:var(--blue-light);box-shadow:0 0 0 2px rgba(21,112,239,.12)}
-.bab-card.ok{border-left:3px solid var(--green)}
-.bab-card.warn{border-left:3px solid #fcd34d}
-.bab-card.err{border-left:3px solid var(--red)}
-.bab-card.orig{border-left:3px solid var(--border2);opacity:.65;cursor:default}
-.bab-card.orig:hover{background:var(--surface);border-color:var(--border)}
-.bab-num{font-size:9px;font-weight:700;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:3px 6px;white-space:nowrap;flex-shrink:0;margin-top:1px}
-.bab-info{flex:1;min-width:0}
-.bab-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bab-title.detected{color:var(--blue)}
-.bab-meta{font-size:10px;color:var(--text3);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
-.bab-meta span{display:inline-flex;align-items:center;gap:3px}
-/* Workspace viewer */
-.ws-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);flex-shrink:0;gap:8px;min-height:42px}
-.ws-bab-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;font-family:var(--mono)}
+
+/* ── WORKSPACE ── */
+.ws-hd{display:flex;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);gap:10px;min-height:44px;flex-shrink:0}
+.ws-bab-num{font-size:9px;font-weight:700;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;flex-shrink:0}
 .ws-bab-title{font-size:13px;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ws-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0}
-.ws-toggle-btn{padding:3px 10px;font-size:11px;font-weight:500;border:none;background:var(--surface);color:var(--text3);cursor:pointer;font-family:var(--sans);transition:all .12s}
+.ws-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--r-sm);overflow:hidden;flex-shrink:0}
+.ws-toggle-btn{padding:4px 11px;font-size:11px;font-weight:500;border:none;background:var(--surface);color:var(--text3);cursor:pointer;font-family:var(--sans);transition:all .12s}
 .ws-toggle-btn.active{background:var(--blue);color:#fff}
-.ws-body{flex:1;overflow-y:auto;padding:14px 16px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
-/* Block preview rendering */
+.ws-body{flex:1;overflow-y:auto;padding:20px 20px}
+.ws-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;color:var(--text3);text-align:center}
+.ws-empty-icon{font-size:40px;opacity:.25;line-height:1}
+.ws-empty-msg{font-size:12px;line-height:1.7;max-width:240px}
+
+/* ── BLOCK PREVIEW ── */
 .blk{margin-bottom:10px}
-.blk-h1{font-size:15px;font-weight:700;color:var(--text);line-height:1.4;padding-bottom:6px;border-bottom:2px solid var(--border)}
-.blk-h2{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-top:4px}
-.blk-h3{font-size:12px;font-weight:600;color:var(--text2);line-height:1.4}
-.blk-p{font-size:12px;color:var(--text2);line-height:1.7}
+.blk-h1{font-size:17px;font-weight:700;color:var(--text);line-height:1.35;padding-bottom:8px;border-bottom:2px solid var(--border);margin-bottom:12px}
+.blk-h2{font-size:14px;font-weight:700;color:var(--text);line-height:1.4;margin-top:6px}
+.blk-h3{font-size:12px;font-weight:600;color:var(--text2);line-height:1.4;text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
+.blk-p{font-size:12px;color:var(--text2);line-height:1.75}
 .blk-p.lead{font-size:13px;font-weight:500;color:var(--text)}
 .blk-p.small{font-size:11px;color:var(--text3)}
-.blk-callout{border-radius:var(--radius-sm);padding:8px 10px;font-size:11px;line-height:1.6;border-left:3px solid}
-.blk-callout.info{background:var(--blue-light);border-color:var(--blue);color:var(--blue)}
-.blk-callout.warning{background:var(--yellow-bg);border-color:#f59e0b;color:var(--yellow-text)}
-.blk-callout.success{background:var(--green-light);border-color:var(--green);color:var(--green)}
-.blk-callout.neutral,.blk-callout.gap{background:var(--surface2);border-color:var(--border2);color:var(--text2)}
 .blk-divider{height:1px;background:var(--border);margin:4px 0}
 .blk-divider.thick{height:2px;background:var(--border2)}
-.blk-list{font-size:12px;color:var(--text2);line-height:1.7;padding-left:16px}
+.blk-callout{border-radius:var(--r-sm);padding:9px 12px;font-size:11px;line-height:1.65;border-left:3px solid}
+.blk-callout.info{background:var(--blue-l);border-color:var(--blue);color:#1e40af}
+.blk-callout.warning{background:var(--yellow-l);border-color:#f59e0b;color:var(--yellow)}
+.blk-callout.success{background:var(--green-l);border-color:var(--green);color:#065f46}
+.blk-callout.neutral,.blk-callout.gap{background:var(--surface2);border-color:var(--border2);color:var(--text2)}
+.blk-list{font-size:12px;color:var(--text2);line-height:1.75;padding-left:18px}
 .blk-list li{margin-bottom:2px}
+.blk-table-wrap{overflow-x:auto;margin-bottom:4px}
 .blk-table{width:100%;border-collapse:collapse;font-size:11px}
-.blk-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;padding:5px 8px;text-align:left;border:1px solid var(--border)}
-.blk-table td{padding:5px 8px;border:1px solid var(--border);color:var(--text2)}
+.blk-table th{background:var(--surface2);font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;padding:6px 8px;text-align:left;border:1px solid var(--border)}
+.blk-table td{padding:6px 8px;border:1px solid var(--border);color:var(--text2)}
 .blk-table.borderless th,.blk-table.borderless td{border-color:transparent;border-bottom:1px solid var(--border)}
-.blk-metric-row{display:flex;gap:6px;margin-bottom:4px}
-.blk-metric{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:7px 8px;text-align:center}
-.blk-metric-val{font-size:14px;font-weight:700;color:var(--blue);font-family:var(--mono)}
-.blk-metric-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
-.blk-type-tag{display:inline-block;font-size:9px;font-weight:600;padding:1px 5px;border-radius:4px;background:var(--surface2);color:var(--text3);border:1px solid var(--border);font-family:var(--mono)}
-/* JSON view */
+.blk-table tr:nth-child(even) td{background:var(--bg)}
+.blk-metric-row{display:flex;gap:8px}
+.blk-metric{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 8px;text-align:center}
+.blk-metric-val{font-size:16px;font-weight:700;color:var(--blue);font-family:var(--mono)}
+.blk-metric-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+.blk-type-tag{display:inline-block;font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px;background:var(--surface2);color:var(--text3);border:1px solid var(--border);font-family:var(--mono)}
 .json-view{font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--text2);white-space:pre-wrap;word-break:break-all}
 .json-key{color:#0550ae}
 .json-str{color:#0a7a3e}
 .json-num{color:#c4622d}
 .json-bool{color:#8250df}
-/* Workspace empty */
-.ws-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;color:var(--text3);text-align:center}
-.ws-empty-icon{font-size:32px;opacity:.3}
-.ws-empty-msg{font-size:12px;line-height:1.7}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);height:52px;z-index:100;box-shadow:0 -2px 8px rgba(16,24,40,.06)}
+.preview-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow)}
+
+/* ── ANALYSIS PANEL ── */
+.ap-hd{padding:12px 16px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
+.ap-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
+.ap-sub{font-size:11px;color:var(--text3);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ap-body{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+
+/* Diagnosis */
+.diag-scores{display:flex;gap:5px;margin-bottom:10px}
+.diag-score-chip{flex:1;text-align:center;padding:5px 4px;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--surface2);font-size:10px;font-weight:600}
+.diag-score-chip.ok{background:var(--green-l);border-color:var(--green-m);color:var(--green)}
+.diag-score-chip.warn{background:var(--yellow-l);border-color:var(--yellow-b);color:var(--yellow)}
+.diag-score-chip.err{background:var(--red-l);border-color:var(--red-m);color:var(--red)}
+.diag-score-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:inherit;opacity:.8;display:block;margin-bottom:1px}
+.diag-section{margin-bottom:10px}
+.diag-section-label{font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.diag-item{display:flex;align-items:flex-start;gap:7px;font-size:11px;line-height:1.55;padding:4px 0;border-bottom:1px solid var(--border)}
+.diag-item:last-child{border-bottom:none}
+.diag-icon{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px}
+.diag-icon.ok{background:var(--green-l);color:var(--green)}
+.diag-icon.warn{background:var(--yellow-l);color:var(--yellow)}
+.diag-icon.err{background:var(--red-l);color:var(--red)}
+.diag-text{color:var(--text2);flex:1}
+.ai-result-block{background:var(--blue-l);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:8px 10px;margin-bottom:6px}
+.ai-result-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:4px}
+.ai-result-text{font-size:11px;color:var(--text2);line-height:1.65}
+.ai-loading{display:flex;align-items:center;gap:8px;padding:10px;background:var(--surface2);border-radius:var(--r-sm);font-size:11px;color:var(--text3)}
+.ai-spin{width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Human Review */
+.hr-acc{border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.hr-acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:600;color:var(--text2);padding:9px 12px;transition:background .12s;gap:8px}
+.hr-acc-btn:hover{background:var(--surface3)}
+.hr-acc-body{padding:12px;border-top:1px solid var(--border);display:none;background:var(--surface)}
+.hr-acc-body.open{display:block}
+.rating-row{display:flex;gap:4px;margin-bottom:12px}
+.rating-btn{flex:1;padding:5px 2px;text-align:center;font-size:10px;font-weight:500;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--surface);color:var(--text3);cursor:pointer;transition:all .12s;line-height:1.3}
+.rating-btn:hover{border-color:var(--blue);color:var(--blue)}
+.rating-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.review-ta{width:100%;border:1px solid var(--border2);border-radius:var(--r-sm);padding:8px 10px;font-size:11px;font-family:var(--sans);color:var(--text);resize:vertical;min-height:80px;outline:none;transition:border-color .15s}
+.review-ta:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,112,239,.1)}
+.saved-badge{font-size:10px;font-weight:600;color:var(--green);padding:2px 7px;background:var(--green-l);border:1px solid var(--green-m);border-radius:10px;display:none}
+.saved-badge.show{display:inline-flex;align-items:center;gap:3px}
+
+/* Run Status accordion */
+.run-acc{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:auto}
+.run-acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:600;color:var(--text2);padding:9px 12px;transition:background .12s;gap:6px}
+.run-acc-btn:hover{background:var(--surface3)}
+.run-acc-body{padding:12px;border-top:1px solid var(--border);display:none;background:var(--surface)}
+.run-acc-body.open{display:block}
+.stage-card{border-radius:var(--r-sm);padding:10px 12px;margin-bottom:12px;text-align:center;border:1px solid var(--border)}
+.stage-card.idle{background:var(--surface2)}
+.stage-card.running{background:var(--blue-l);border-color:var(--blue-m)}
+.stage-card.success{background:var(--green-l);border-color:var(--green-m)}
+.stage-card.failed{background:var(--red-l);border-color:var(--red-m)}
+.stage-lbl{font-size:13px;font-weight:700;margin-bottom:3px}
+.stage-sub{font-size:11px;color:var(--text2)}
+
+/* Timeline */
+.tl-wrap{margin-bottom:12px}
+.tl-item{display:flex;align-items:flex-start;gap:8px;padding:2px 0}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:2px}
+.tl-dot{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.tl-dot.pending{background:var(--surface2);border:1px solid var(--border2);color:var(--text3)}
+.tl-dot.active{background:var(--blue);color:#fff;animation:pulse 1.5s infinite}
+.tl-dot.done{background:var(--green);color:#fff}
+.tl-dot.failed{background:var(--red);color:#fff}
+.tl-line{width:2px;height:10px;background:var(--border);margin-top:2px}
+.tl-label{font-size:11px;padding-top:2px}
+.tl-label.pending{color:var(--text3)}
+.tl-label.active{color:var(--text);font-weight:600}
+.tl-label.done{color:var(--text2)}
+.tl-label.failed{color:var(--red)}
+
+/* Error box */
+.err-box{background:var(--red-l);border:1px solid var(--red-m);border-radius:var(--r-sm);padding:10px;margin-bottom:10px;display:none}
+.err-box-title{font-size:9px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.err-box-body{font-family:var(--mono);font-size:10px;color:var(--red);line-height:1.6;white-space:pre-wrap;word-break:break-all;max-height:80px;overflow-y:auto}
+
+/* Action buttons inside run status */
+.run-actions{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+
+/* Meta table */
+.meta-t{display:flex;flex-direction:column;gap:0}
+.meta-r{display:flex;justify-content:space-between;font-size:10px;padding:4px 0;border-bottom:1px solid var(--border)}
+.meta-r:last-child{border-bottom:none}
+.meta-k{color:var(--text3);font-weight:500;font-family:var(--mono)}
+.meta-v{color:var(--text2);font-family:var(--mono);max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.meta-v.hi{color:var(--blue)}
+
+/* ── MOBILE ── */
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);height:54px;z-index:100;box-shadow:0 -2px 8px rgba(16,24,40,.06)}
 .mob-nav-tabs{display:flex;height:100%}
 .mob-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;font-size:10px;font-weight:500;color:var(--text3);border:none;background:none;font-family:var(--sans);transition:color .15s}
 .mob-tab.active{color:var(--blue)}
-.mob-tab .tab-icon{font-size:16px;line-height:1}
+.mob-tab .tab-icon{font-size:17px;line-height:1}
 @media(max-width:768px){
   body{overflow:auto;height:auto;min-height:100vh}
-  header{padding:0 14px;position:sticky;top:0;z-index:50}
-  .h-sub{display:none}
+  .hd{padding:0 14px;position:sticky;top:0;z-index:50}
+  .hd-sub{display:none}
   .main{display:block;padding-bottom:60px}
   .panel{display:none;border-right:none;border-bottom:1px solid var(--border);min-height:calc(100vh - 110px)}
   .panel.mob-active{display:flex}
   .mob-nav{display:block}
-  .mob-nav-tabs .mob-tab{font-size:9px}
 }
 </style>
 </head>
 <body>
-<header>
-  <div class="h-left">
-    <div class="h-logo">S</div>
-    <span class="h-title">Render Laporan SROI — Fase 2</span>
-    <span class="h-sub">by Manara Advisory</span>
+
+<!-- ══ HEADER ══ -->
+<header class="hd">
+  <div class="hd-left">
+    <div class="hd-logo">E</div>
+    <div>
+      <div class="hd-title">Enrichment Laporan SROI</div>
+    </div>
+    <span class="hd-sub">by Manara Advisory</span>
   </div>
-  <div class="h-right">
-    <span class="badge" id="hdr-conn"><span class="bdot" id="hdr-dot"></span><span id="hdr-lbl">Tidak terhubung ke server pipeline</span></span>
-    <span class="badge blue" id="hdr-session" style="display:none"><span class="bdot"></span>Sesi Aktif</span>
-    <a href="https://budistywan.github.io/base-sroi-report-generation/" style="font-size:11px;color:var(--text3);text-decoration:none;padding:4px 8px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);">← Fase 1</a>
+  <div class="hd-right">
+    <span class="badge" id="hdr-conn"><span class="bdot" id="hdr-dot"></span><span id="hdr-lbl">Tidak terhubung</span></span>
+    <span class="badge blue" id="hdr-session" style="display:none"><span class="bdot pulse"></span>Sesi Aktif</span>
+    <a href="https://budistywan.github.io/base-sroi-report-generation/" style="font-size:11px;color:var(--text3);text-decoration:none;padding:4px 9px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface2);">← Fase 1</a>
   </div>
 </header>
 
 <div class="main">
 
-<!-- ══ PANEL KIRI ══ -->
+<!-- ══════════════════════════════════
+     PANEL KIRI — FILE
+══════════════════════════════════ -->
 <div class="panel" id="panel-0">
   <div class="panel-hd">
     <div class="panel-title">File</div>
-    <div class="panel-sub">Unggah enriched semantics ZIP untuk dirender</div>
+    <div class="panel-sub" id="file-panel-sub">Unggah enriched semantics ZIP</div>
   </div>
   <div class="panel-body">
 
-    <!-- Upload card -->
-    <div class="prog-card dashed" id="upload-card" onclick="document.getElementById('file-input').click()">
-      <div class="prog-lbl" style="color:var(--text3)">Unggah Enriched Semantics (.ZIP)</div>
-      <div class="prog-name" style="font-size:13px;font-weight:500;color:var(--text3);margin-top:4px;">Belum ada file dimuat</div>
-      <div style="margin-top:10px;"><button class="btn sm" style="pointer-events:none;">↑ Buka File ZIP</button></div>
+    <!-- Upload area -->
+    <div class="upload-card" id="upload-card" onclick="document.getElementById('file-input').click()">
+      <div class="upload-card-icon">📦</div>
+      <div class="upload-card-title">Unggah Enriched Semantics</div>
+      <div class="upload-card-sub">Klik atau seret file .zip ke sini</div>
       <input type="file" id="file-input" accept=".zip" onchange="loadZip(event)" style="display:none">
     </div>
 
-    <!-- Loaded card -->
+    <!-- Loaded state -->
     <div id="loaded-card" style="display:none">
       <div class="prog-card" id="prog-card">
-        <div class="prog-lbl" id="prog-lbl-top">Program Aktif</div>
+        <div class="prog-lbl">Program Aktif</div>
         <div class="prog-name" id="prog-name">—</div>
         <div class="prog-code" id="prog-code">—</div>
         <div id="val-summary-box"></div>
-        <div style="margin-top:10px;display:flex;gap:6px;">
+        <div style="margin-top:9px;display:flex;gap:6px;align-items:center;">
           <button class="btn sm" onclick="document.getElementById('file-input-2').click()">↑ Ganti File</button>
           <input type="file" id="file-input-2" accept=".zip" onchange="loadZip(event)" style="display:none">
         </div>
       </div>
-    </div>
 
-    <!-- Bab list (muncul setelah file dimuat) -->
-    <div id="bab-list-wrap" style="display:none;margin-bottom:4px;">
-      <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-top:4px;">Daftar Bab</div>
-      <div id="bab-cards" style="display:flex;flex-direction:column;gap:5px;"></div>
-    </div>
+      <!-- Daftar Bab -->
+      <div id="bab-list-wrap" style="display:none;margin-bottom:4px">
+        <div class="sec-label">Daftar Bab</div>
+        <div class="bab-list" id="bab-cards"></div>
+      </div>
 
-    <!-- Val issues (inline, di bawah bab list) -->
-    <div id="val-issues-wrap" style="display:none;margin-bottom:12px;margin-top:8px;">
-      <div class="sec-label">Isu Validasi</div>
-      <div class="val-issues" id="val-issues"></div>
+      <!-- Isu Validasi -->
+      <div id="val-issues-wrap" style="display:none;margin-bottom:10px">
+        <div class="sec-label">Isu Validasi</div>
+        <div class="val-issues" id="val-issues"></div>
+      </div>
     </div>
 
     <!-- Koneksi -->
-    <div class="conn-area">
-      <span class="badge" id="lft-conn"><span class="bdot" id="lft-dot"></span><span id="lft-lbl">Tidak terhubung ke server pipeline</span></span>
+    <div class="conn-row">
+      <span class="badge" id="lft-conn"><span class="bdot" id="lft-dot"></span><span id="lft-lbl">Tidak terhubung</span></span>
     </div>
 
     <!-- Pengaturan Lanjutan -->
-    <button class="adv-btn" onclick="toggleAdv()">
+    <button class="acc-btn" onclick="toggleAdv()">
       <span>⚙ Pengaturan Lanjutan</span>
-      <span class="adv-arrow" id="adv-arrow">▾</span>
+      <span class="acc-arrow" id="adv-arrow">▾</span>
     </button>
-    <div class="adv-body" id="adv-body">
-      <div style="margin-top:14px">
-        <div class="adv-sec-label">Akses GitHub</div>
+    <div class="acc-body" id="adv-body">
+      <div style="margin-bottom:14px">
+        <div class="acc-sec-label">Akses GitHub</div>
         <div class="field">
           <label>Personal Access Token</label>
           <div class="token-wrap">
@@ -320,326 +400,322 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
         <div class="status-msg" id="conn-msg"></div>
         <div id="conn-err"></div>
       </div>
-      <div class="adv-sec" style="margin-top:14px">
-        <div class="adv-sec-label">Target Repository</div>
+      <div style="margin-bottom:14px">
+        <div class="acc-sec-label">Target Repository</div>
         <div class="field"><label>Owner</label><input type="text" id="owner" value="budistywan" oninput="syncTechDetail()"></div>
         <div class="field"><label>Repository</label><input type="text" id="repo" value="sroi-based-report-extended" oninput="syncTechDetail()"></div>
         <div class="field"><label>Branch</label><input type="text" id="branch" value="main"></div>
         <div class="field"><label>Workflow File</label><input type="text" id="workflow" value="render-from-semantics.yml" oninput="syncTechDetail()"></div>
       </div>
-      <div class="adv-sec">
-        <div class="adv-sec-label">Detail Teknis</div>
-        <div class="tech-detail">
-          <div class="td-row"><span class="td-key">Repo aktif</span><span class="td-val" id="td-repo">budistywan/sroi-based-report-extended</span></div>
-          <div class="td-row"><span class="td-key">Workflow</span><span class="td-val" id="td-wf">render-from-semantics.yml</span></div>
-          <div class="td-row"><span class="td-key">Program</span><span class="td-val" id="td-prog">—</span></div>
-          <div class="td-row"><span class="td-key">Bab dimuat</span><span class="td-val" id="td-babs">—</span></div>
+      <div style="margin-bottom:14px">
+        <div class="acc-sec-label">Detail Teknis</div>
+        <div class="tech-box">
+          <div class="tech-row"><span class="tech-key">Repo</span><span class="tech-val" id="td-repo">budistywan/sroi-based-report-extended</span></div>
+          <div class="tech-row"><span class="tech-key">Workflow</span><span class="tech-val" id="td-wf">render-from-semantics.yml</span></div>
+          <div class="tech-row"><span class="tech-key">Program</span><span class="tech-val" id="td-prog">—</span></div>
+          <div class="tech-row"><span class="tech-key">Bab dimuat</span><span class="tech-val" id="td-babs">—</span></div>
         </div>
       </div>
-      <div class="adv-sec">
-        <div class="adv-sec-label">Pengaturan Sesi</div>
-        <div style="display:flex;gap:6px">
-          <button class="btn full" onclick="saveSession()">Simpan Pengaturan</button>
-          <button class="btn danger" onclick="clearSession()">Hapus Sesi</button>
-        </div>
+      <div class="acc-sec-label">Sesi</div>
+      <div style="display:flex;gap:6px">
+        <button class="btn full" onclick="saveSession()">Simpan</button>
+        <button class="btn danger" onclick="clearSession()">Hapus Sesi</button>
       </div>
     </div>
 
   </div><!-- /panel-body -->
   <div class="submit-bar">
     <span class="submit-status" id="submit-status">· Belum ada file dimuat</span>
-    <button class="btn primary" id="btn-submit" onclick="submitRun()" disabled>▶ Submit &amp; Jalankan Workflow</button>
+    <button class="btn primary" id="btn-submit" onclick="submitRun()" disabled>▶ Submit & Jalankan</button>
   </div>
 </div><!-- /panel kiri -->
 
-<!-- ══ PANEL TENGAH — WORKSPACE VIEWER ══ -->
-<div class="panel" id="panel-mid" style="display:flex;flex-direction:column;overflow:hidden;">
-  <!-- Header: muncul saat bab dipilih -->
-  <div id="ws-hd" class="ws-hd" style="display:none">
-    <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:1px">
-      <span class="ws-bab-label" id="ws-bab-label">—</span>
+
+<!-- ══════════════════════════════════
+     PANEL TENGAH — WORKSPACE
+══════════════════════════════════ -->
+<div class="panel" id="panel-mid" style="background:var(--bg)">
+
+  <!-- Header statis -->
+  <div id="ws-static-hd" class="panel-hd" style="background:var(--surface)">
+    <div class="panel-title">Workspace</div>
+    <div class="panel-sub">Klik bab di panel File untuk melihat isi</div>
+  </div>
+
+  <!-- Header dinamis (saat bab dipilih) -->
+  <div id="ws-hd" class="ws-hd" style="display:none;background:var(--surface)">
+    <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:0">
+      <span class="ws-bab-num" id="ws-bab-label">—</span>
       <span class="ws-bab-title" id="ws-bab-title">—</span>
     </div>
-    <div class="ws-toggle" id="ws-toggle">
+    <div class="ws-toggle">
       <button class="ws-toggle-btn active" id="btn-preview" onclick="setViewMode('preview')">Preview</button>
       <button class="ws-toggle-btn" id="btn-json" onclick="setViewMode('json')">JSON</button>
     </div>
   </div>
-  <!-- Panel header statis (saat belum ada bab dipilih) -->
-  <div id="ws-static-hd" class="panel-hd">
-    <div class="panel-title">Workspace</div>
-    <div class="panel-sub">Klik bab di panel File untuk melihat isi</div>
-  </div>
+
   <!-- Body -->
   <div class="ws-body" id="ws-body">
     <div class="ws-empty" id="ws-empty">
       <div class="ws-empty-icon">📄</div>
-      <div class="ws-empty-msg">Belum ada file dimuat.<br>Unggah ZIP dari panel File,<br>lalu klik salah satu bab.</div>
+      <div class="ws-empty-msg" id="ws-empty-msg">Belum ada file dimuat.<br>Unggah ZIP dari panel File,<br>lalu klik salah satu bab.</div>
     </div>
     <div id="ws-content" style="display:none"></div>
   </div>
+
 </div><!-- /panel tengah -->
 
-<!-- ══ PANEL KANAN ══ -->
-<div class="panel" id="panel-1" style="display:flex;flex-direction:column;overflow:hidden;">
-  <button class="status-collapse-btn" onclick="toggleStatusPanel()">
-    <span>Status Run Fase 2 (Render)</span>
-    <span class="adv-arrow" id="status-arrow">▾</span>
-  </button>
-  <div class="status-collapse-body" id="status-body">
-    <div class="stage-card" id="stage-card">
-      <div class="stage-lbl" id="stage-lbl">Siap</div>
-      <div class="stage-sub" id="stage-sub">Lengkapi konfigurasi dan submit untuk memulai</div>
-    </div>
-    <div class="err-box" id="err-box">
-      <div class="err-box-title">Detail Error</div>
-      <div class="err-box-body" id="err-body">—</div>
-      <button class="err-box-copy" onclick="copyError()">📋 Copy Error</button>
-    </div>
-    <div class="sec-label" style="margin-bottom:10px">Progres</div>
-    <div class="tl" id="timeline"></div>
-    <div class="divider"></div>
-    <div class="act-grp">
-      <button class="btn" onclick="refreshStatus()" id="btn-refresh" disabled>↻ Perbarui Status</button>
-      <button class="btn success" onclick="downloadArtifact()" id="btn-download" disabled>↓ Unduh Artifact (.zip)</button>
-      <button class="btn" onclick="openGitHub()" id="btn-github" disabled>⎘ Lihat di GitHub</button>
-      <button class="btn ghost" onclick="resetRunState()">⟳ Reset Run</button>
-    </div>
-    <div class="divider"></div>
-    <button class="adv-btn" onclick="toggleMeta()">
-      <span>Detail Teknis Run</span>
-      <span class="adv-arrow" id="meta-arrow">▾</span>
-    </button>
-    <div class="adv-body" id="meta-body">
-      <div class="meta-t" style="margin-top:10px" id="meta-table"></div>
-    </div>
+
+<!-- ══════════════════════════════════
+     PANEL KANAN — ANALISIS
+══════════════════════════════════ -->
+<div class="panel" id="panel-1">
+  <div class="ap-hd">
+    <div class="ap-title">Analisis</div>
+    <div class="ap-sub" id="ap-sub">Pilih bab untuk melihat analisis</div>
   </div>
-</div>
+
+  <div class="ap-body" id="ap-body">
+
+    <!-- Empty state -->
+    <div id="ap-empty" style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:10px;color:var(--text3);text-align:center;padding:24px 0">
+      <div style="font-size:32px;opacity:.25">🔍</div>
+      <div style="font-size:12px;line-height:1.7">Belum ada bab dipilih.<br>Klik salah satu bab di panel File.</div>
+    </div>
+
+    <!-- Diagnosis (muncul saat bab dipilih) -->
+    <div id="ap-content" style="display:none">
+
+      <!-- Skor ringkasan -->
+      <div class="diag-scores" id="diag-scores">
+        <div class="diag-score-chip" id="score-struktur"><span class="diag-score-label">Struktur</span>—</div>
+        <div class="diag-score-chip" id="score-flow"><span class="diag-score-label">Flow</span>—</div>
+        <div class="diag-score-chip" id="score-logika"><span class="diag-score-label">Logika</span>—</div>
+      </div>
+
+      <!-- Checklist rule-based -->
+      <div id="diag-checklist"></div>
+
+      <!-- AI Analysis -->
+      <div id="ai-section" style="margin-top:4px">
+        <button class="btn full sm" id="btn-ai" onclick="runAiAnalysis()" style="margin-bottom:8px;border-style:dashed">✦ Analisis dengan AI</button>
+        <div id="ai-loading" class="ai-loading" style="display:none">
+          <div class="ai-spin"></div>
+          <span>Menganalisis bab dengan AI…</span>
+        </div>
+        <div id="ai-results" style="display:none"></div>
+      </div>
+
+      <!-- Human Review accordion -->
+      <div class="hr-acc" id="hr-acc">
+        <button class="hr-acc-btn" onclick="toggleHR()">
+          <span style="display:flex;align-items:center;gap:7px">
+            <span>◎ Human Review</span>
+            <span class="saved-badge" id="hr-saved-badge">✓ Tersimpan</span>
+          </span>
+          <span class="acc-arrow" id="hr-arrow">▾</span>
+        </button>
+        <div class="hr-acc-body" id="hr-body">
+          <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:6px">Kualitas konten bab ini</div>
+          <div class="rating-row" id="rating-row">
+            <button class="rating-btn" onclick="setRating(1)"><div>★</div><div>Sangat kurang</div></button>
+            <button class="rating-btn" onclick="setRating(2)"><div>★★</div><div>Kurang</div></button>
+            <button class="rating-btn" onclick="setRating(3)"><div>★★★</div><div>Cukup</div></button>
+            <button class="rating-btn" onclick="setRating(4)"><div>★★★★</div><div>Baik</div></button>
+            <button class="rating-btn" onclick="setRating(5)"><div>★★★★★</div><div>Sangat baik</div></button>
+          </div>
+          <div class="field" style="margin-bottom:8px">
+            <label>Catatan</label>
+            <textarea class="review-ta" id="review-notes" placeholder="Tuliskan temuan, masukan, atau hal yang perlu diperbaiki…"></textarea>
+          </div>
+          <button class="btn primary full sm" onclick="saveReview()">Simpan Review</button>
+        </div>
+      </div>
+
+    </div><!-- /ap-content -->
+
+    <!-- Run Status accordion (pinned bottom, auto-expand saat aktif) -->
+    <div class="run-acc" id="run-acc" style="margin-top:12px">
+      <button class="run-acc-btn" onclick="toggleRunAcc()">
+        <span style="display:flex;align-items:center;gap:8px;flex:1">
+          <span>▶ Run Status</span>
+          <span class="badge" id="run-status-badge" style="display:none;font-size:10px;padding:1px 7px"></span>
+        </span>
+        <span class="acc-arrow" id="run-arrow">▾</span>
+      </button>
+      <div class="run-acc-body" id="run-acc-body">
+
+        <div class="stage-card idle" id="stage-card">
+          <div class="stage-lbl" id="stage-lbl">Siap</div>
+          <div class="stage-sub" id="stage-sub">Lengkapi konfigurasi dan submit untuk memulai</div>
+        </div>
+
+        <div class="err-box" id="err-box">
+          <div class="err-box-title">Detail Error</div>
+          <div class="err-box-body" id="err-body">—</div>
+          <button class="btn sm danger" style="margin-top:6px" onclick="copyError()">📋 Copy Error</button>
+        </div>
+
+        <div class="sec-label" style="margin-bottom:8px">Progres</div>
+        <div class="tl-wrap" id="timeline"></div>
+
+        <div class="run-actions">
+          <button class="btn full sm" onclick="refreshStatus()" id="btn-refresh" disabled>↻ Perbarui Status</button>
+          <button class="btn success full sm" onclick="downloadArtifact()" id="btn-download" disabled>↓ Unduh Artifact (.zip)</button>
+          <button class="btn full sm" onclick="openGitHub()" id="btn-github" disabled>⎘ Lihat di GitHub</button>
+          <button class="btn ghost full sm" onclick="resetRunState()">⟳ Reset Run</button>
+        </div>
+
+        <button class="acc-btn" onclick="toggleMeta()" style="font-size:11px">
+          <span>Detail Teknis Run</span>
+          <span class="acc-arrow" id="meta-arrow">▾</span>
+        </button>
+        <div class="acc-body" id="meta-body">
+          <div class="meta-t" id="meta-table" style="margin-top:8px"></div>
+        </div>
+
+      </div>
+    </div><!-- /run-acc -->
+
+  </div><!-- /ap-body -->
+</div><!-- /panel kanan -->
 
 </div><!-- /main -->
 
+<!-- Mobile nav -->
 <nav class="mob-nav">
   <div class="mob-nav-tabs">
     <button class="mob-tab active" onclick="showPanel(0)" id="tab-0"><span class="tab-icon">📄</span><span>File</span></button>
     <button class="mob-tab" onclick="showPanel(1)" id="tab-1"><span class="tab-icon">☰</span><span>Workspace</span></button>
-    <button class="mob-tab" onclick="showPanel(2)" id="tab-2"><span class="tab-icon">◉</span><span>Status</span></button>
+    <button class="mob-tab" onclick="showPanel(2)" id="tab-2"><span class="tab-icon">🔍</span><span>Analisis</span></button>
   </div>
 </nav>
 
 <script>
-// ── CONSTANTS ─────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// CONSTANTS
+// ═══════════════════════════════════════════════════════════════
 const PROG={EHS:'Enduro Home Service',ESL:'Enduro Sahabat Lapas',ESD:'Enduro Sahabat Difabel',ESP:'Enduro Student Program',ESS:'Enduro Sahabat Santri',ETB:'Enduro Tapal Batas',PSN:'Pertamina Sahabat Nelayan'};
 const ALL_BABS=['bab_1','bab_2','bab_3','bab_4','bab_5','bab_6','bab_7','bab_8','bab_9'];
 const BAB_TITLES={bab_1:'Pendahuluan',bab_2:'Metodologi',bab_3:'Profil Program',bab_4:'Pemetaan Dampak',bab_5:'Analisis Dampak',bab_6:'Perhitungan SROI',bab_7:'Analisis Sensitivitas',bab_8:'Pembelajaran',bab_9:'Kesimpulan & Rekomendasi'};
 const VALID_BLOCK_TYPES=new Set(['heading_1','heading_2','heading_3','paragraph','paragraph_lead','paragraph_small','table','table_borderless','callout_info','callout_warning','callout_success','callout_neutral','callout_gap','metric_card_3col','bar_chart_text','bullet_list','numbered_list','divider','divider_thick']);
 const NUM_PAT=/Rp\s*[\d.,]+|1\s*:\s*[\d.,]+|\d{6,}|\d+[.,]\d{2,}/g;
 const FIN_TYPES=new Set(['table','table_borderless','metric_card_3col','bar_chart_text']);
+const STEPS=[{id:'zip',label:'ZIP siap'},{id:'validate',label:'Validasi lolos'},{id:'commit',label:'File dikirim'},{id:'detect',label:'Run terdeteksi'},{id:'running',label:'Workflow berjalan'},{id:'done',label:'Workflow selesai'},{id:'artifact',label:'Artifact tersedia'},{id:'dl',label:'Diunduh'}];
 
-// ── STATE ─────────────────────────────────────────
-let connected=false,fileValid=false,pollingTimer=null,pollCount=0,statusCollapsed=false,_fullErrorLog='';
+// ═══════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════
+let connected=false,fileValid=false,pollingTimer=null,pollCount=0,_fullErrorLog='';
 const MAX_POLLS=150;
 let zipData={fileName:null,program:null,babsLoaded:[],editableFiles:{},originalFiles:{},fileB64:null};
-let run={commitSha:null,commitUrl:null,runId:null,runUrl:null,runNumber:null,artifactId:null,artifactName:null,submittedAt:null,elapsed:0,elapsedTimer:null};
-
-const STEPS=[{id:'zip',label:'ZIP siap'},{id:'validate',label:'Validasi lolos'},{id:'commit',label:'File dikirim'},{id:'detect',label:'Run terdeteksi'},{id:'running',label:'Workflow berjalan'},{id:'done',label:'Workflow selesai'},{id:'artifact',label:'Artifact tersedia'},{id:'dl',label:'Diunduh'}];
+let run={commitSha:null,runId:null,runUrl:null,runNumber:null,artifactId:null,artifactName:null,elapsed:0,elapsedTimer:null,_triggered:false};
 let stepSt={};STEPS.forEach(s=>stepSt[s.id]='pending');
 
-// ── HELPERS ───────────────────────────────────────
+// Analysis state
+let _currentBab=null;
+let _viewMode='preview';
+let _valResultCache=null;
+let _reviewState={};   // {bab_id: {rating, notes}}
+let _runAccOpen=false;
+let _hrOpen=false;
+let _currentRating=0;
+let _aiRunning=false;
+
+// ═══════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════
 function v(id){return document.getElementById(id)?.value?.trim()||''}
 function sel(id,txt){const e=document.getElementById(id);if(e)e.textContent=txt}
 function getPAT(){return v('pat')||sessionStorage.getItem('fase2_pat')||''}
 function shortSha(s){return s?s.substring(0,7):'—'}
 function fmtElapsed(s){return`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function githubFetch(path,opts={}){const pat=getPAT();if(!pat)return Promise.reject(new Error('Token belum diisi'));return fetch('https://api.github.com'+path,{...opts,headers:{'Authorization':'Bearer '+pat,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(opts.headers||{})}})}
 function extractNums(text){if(typeof text!=='string')return new Set();return new Set((text.match(NUM_PAT)||[]))}
 
-// ── INIT ──────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
 window.onload=()=>{loadSession();renderTimeline();renderMeta();syncTechDetail();updateSubmitBtn();if(window.innerWidth<=768)showPanel(0)};
 
-// ── ZIP LOAD & VALIDATE ───────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// ZIP LOAD & VALIDATE
+// ═══════════════════════════════════════════════════════════════
 async function loadZip(e){
   const file=e.target.files[0];if(!file)return;e.target.value='';
   if(!file.name.endsWith('.zip')){setSubmitStatus('err','✗ Hanya file .zip yang diterima');return}
-
-  setSubmitStatus('info','⟳ Membaca zip…');
-
-  // Read as base64
+  setSubmitStatus('','⟳ Membaca zip…');
   const b64=await new Promise(res=>{const r=new FileReader();r.onload=ev=>res(ev.target.result.split(',')[1]);r.readAsDataURL(file)});
-
-  // Extract with JSZip
   let zip;
   try{zip=await JSZip.loadAsync(file)}
   catch(err){setSubmitStatus('err','✗ File zip tidak valid');return}
-
-  // ── Parse zip: support Format A (AI single-file) + Format B (_editable per bab) ──
-  const editableFiles={},originalFiles={};
+  const editableFiles={},originalFiles={},allJsonFiles={};
   const promises=[];
-  const allJsonFiles={};
-
   zip.forEach((relPath,zipEntry)=>{
     if(zipEntry.dir)return;
     const name=relPath.split('/').pop();
     if(!name.endsWith('.json'))return;
-    if(name.endsWith('_editable.json')){
-      const bab=name.replace('_editable.json','');
-      promises.push(zipEntry.async('string').then(txt=>{editableFiles[bab]=txt}));
-    }else if(name.endsWith('_original.json')){
-      const bab=name.replace('_original.json','');
-      promises.push(zipEntry.async('string').then(txt=>{originalFiles[bab]=txt}));
-    }else{
-      // Kandidat Format A — file JSON biasa
-      promises.push(zipEntry.async('string').then(txt=>{allJsonFiles[name]=txt}));
-    }
+    if(name.endsWith('_editable.json')){const bab=name.replace('_editable.json','');promises.push(zipEntry.async('string').then(txt=>{editableFiles[bab]=txt}))}
+    else if(name.endsWith('_original.json')){const bab=name.replace('_original.json','');promises.push(zipEntry.async('string').then(txt=>{originalFiles[bab]=txt}))}
+    else promises.push(zipEntry.async('string').then(txt=>{allJsonFiles[name]=txt}));
   });
   await Promise.all(promises);
-
-  // ── Deteksi Format A: file JSON berisi array of chapters ──
   if(Object.keys(editableFiles).length===0){
-    for(const [fname,txt] of Object.entries(allJsonFiles)){
+    for(const[fname,txt]of Object.entries(allJsonFiles)){
       try{
         const parsed=JSON.parse(txt);
-        // Cek: array of chapter objects
-        if(Array.isArray(parsed)&&parsed.length>0
-           &&parsed[0].chapter_id&&parsed[0].blocks){
-          for(const ch of parsed){
-            const cid=ch.chapter_id; // e.g. "bab_4"
-            editableFiles[cid]=JSON.stringify([ch]);
-          }
-          console.log('Format A detected:',fname,'→',Object.keys(editableFiles).length,'bab');
+        if(Array.isArray(parsed)&&parsed.length>0&&parsed[0].chapter_id&&parsed[0].blocks){
+          for(const ch of parsed){editableFiles[ch.chapter_id]=JSON.stringify([ch])}
           break;
         }
-        // Cek: single chapter object
-        if(parsed&&parsed.chapter_id&&parsed.blocks){
-          editableFiles[parsed.chapter_id]=JSON.stringify([parsed]);
-          break;
-        }
+        if(parsed&&parsed.chapter_id&&parsed.blocks){editableFiles[parsed.chapter_id]=JSON.stringify([parsed]);break}
       }catch(e){}
     }
   }
-
   const babsFound=Object.keys(editableFiles).sort();
-  if(babsFound.length===0){
-    setSubmitStatus('err','✗ Tidak ada chapter JSON yang dikenali di dalam zip');
-    return;
-  }
-
-  // Detect program
+  if(babsFound.length===0){setSubmitStatus('err','✗ Tidak ada chapter JSON yang dikenali di dalam zip');return}
   const prog=detectProgram(file.name,editableFiles);
-
   zipData={fileName:file.name,program:prog,babsLoaded:babsFound,editableFiles,originalFiles,fileB64:b64};
-
-  // Run client-side validation
   const valResult=validateZip(editableFiles,originalFiles,babsFound);
   fileValid=valResult.valid;
-
-  // Update UI
   renderLoadedCard(file.name,prog,babsFound,valResult);
-  syncTechDetail();
-  updateSubmitBtn();
-
-  if(fileValid){
-    stepSt['zip']='done';stepSt['validate']='done';
-  }else{
-    stepSt['zip']='done';stepSt['validate']='failed';
-  }
+  syncTechDetail();updateSubmitBtn();
+  stepSt['zip']='done';stepSt['validate']=fileValid?'done':'failed';
   renderTimeline();
 }
 
 function detectProgram(filename,editableFiles){
-  // 1. Coba dari isi JSON — paling reliable
   for(const txt of Object.values(editableFiles)){
-    try{
-      const raw=JSON.parse(txt);
-      // Format A: array of chapters
-      const chapters=Array.isArray(raw)?raw:[raw];
-      for(const ch of chapters){
-        // Dari program_code di root chapter
-        const code=(ch?.program_code||'').toUpperCase();
-        if(code&&PROG[code])return code;
-        // Dari program_identity di dalam chapter (kalau ada)
-        const code2=(ch?.program_identity?.program_code||'').toUpperCase();
-        if(code2&&PROG[code2])return code2;
-      }
-    }catch(e){}
+    try{const raw=JSON.parse(txt);const chapters=Array.isArray(raw)?raw:[raw];for(const ch of chapters){const code=(ch?.program_code||'').toUpperCase();if(code&&PROG[code])return code;const code2=(ch?.program_identity?.program_code||'').toUpperCase();if(code2&&PROG[code2])return code2}}catch(e){}
   }
-  // 2. Fallback: dari nama file
   const fu=filename.toUpperCase();
-  const fromName=['EHS','ESL','ESD','ESP','ESS','ETB','PSN'].find(p=>fu.includes(p));
-  if(fromName)return fromName;
-  return null;
+  return['EHS','ESL','ESD','ESP','ESS','ETB','PSN'].find(p=>fu.includes(p))||null;
 }
 
-// ── CLIENT-SIDE VALIDATOR ─────────────────────────
 function validateZip(editableFiles,originalFiles,babsFound){
-  const issues=[];
-  const babResults={};
-
+  const issues=[],babResults={};
   for(const bab of babsFound){
-    const editTxt=editableFiles[bab];
-    const origTxt=originalFiles[bab]||null;
-    const babIssues=[];
+    const editTxt=editableFiles[bab],origTxt=originalFiles[bab]||null,babIssues=[];
     let edited,original;
-
-    // 1. JSON parseable
-    try{
-      const _raw=JSON.parse(editTxt);
-      // Unwrap array wrapper (Format A stores chapters as [ch])
-      edited=Array.isArray(_raw)?_raw[0]:_raw;
-    }
+    try{const _raw=JSON.parse(editTxt);edited=Array.isArray(_raw)?_raw[0]:_raw}
     catch(e){babIssues.push({sev:'err',msg:`${bab}: JSON tidak valid — ${e.message}`});babResults[bab]={status:'err',issues:babIssues};issues.push(...babIssues);continue}
-
-    // 2. chapter_id ada
     if(!edited.chapter_id)babIssues.push({sev:'err',msg:`${bab}: chapter_id tidak ditemukan`});
     else if(edited.chapter_id!==bab)babIssues.push({sev:'warn',msg:`${bab}: chapter_id (${edited.chapter_id}) tidak sesuai nama file`});
-
-    // 3. blocks ada dan tidak kosong
     const blocks=edited.blocks||[];
     if(!Array.isArray(blocks)||blocks.length===0)babIssues.push({sev:'err',msg:`${bab}: blocks kosong atau tidak ada`});
-
-    // 4. block_type valid
-    blocks.forEach((b,i)=>{
-      if(!b.type)babIssues.push({sev:'err',msg:`${bab}: block[${i}] tidak punya 'type'`});
-      else if(!VALID_BLOCK_TYPES.has(b.type))babIssues.push({sev:'err',msg:`${bab}: block[${i}] punya type tidak dikenal: '${b.type}'`});
-    });
-
-    // 5. Substance lock (hanya kalau ada _original)
+    blocks.forEach((b,i)=>{if(!b.type)babIssues.push({sev:'err',msg:`${bab}: block[${i}] tidak punya 'type'`});else if(!VALID_BLOCK_TYPES.has(b.type))babIssues.push({sev:'err',msg:`${bab}: block[${i}] type tidak dikenal: '${b.type}'`})});
     if(origTxt){
-      try{
-        const _rawOrig=JSON.parse(origTxt);
-        original=Array.isArray(_rawOrig)?_rawOrig[0]:_rawOrig;
-        const origBlocks=original.blocks||[];
-        // Check chapter_id tidak berubah
-        if(original.chapter_id&&edited.chapter_id&&original.chapter_id!==edited.chapter_id)
-          babIssues.push({sev:'err',msg:`${bab}: chapter_id berubah dari '${original.chapter_id}' → '${edited.chapter_id}'`});
-
-        // Check finansial blocks
-        origBlocks.forEach((ob,i)=>{
-          if(!FIN_TYPES.has(ob.type))return;
-          const tableId=ob.table_id||'';
-          // Find match di edited
-          const match=blocks.find(eb=>eb.type===ob.type&&(tableId?eb.table_id===tableId:true));
-          if(!match){babIssues.push({sev:'warn',msg:`${bab}: block finansial '${ob.type}' (${tableId||i}) tidak ditemukan di editable`});return}
-          // Compare numbers
-          const origNums=extractNumsFromBlock(ob);
-          const editNums=extractNumsFromBlock(match);
-          const added=[...editNums].filter(n=>!origNums.has(n));
-          const removed=[...origNums].filter(n=>!editNums.has(n));
-          if(added.length||removed.length)
-            babIssues.push({sev:'err',msg:`${bab}: Substance lock — block '${ob.type}' (${tableId||i}) angka berubah. Ditambah: ${added.slice(0,2).join(', ')||'—'}. Dihapus: ${removed.slice(0,2).join(', ')||'—'}`});
-        });
-      }catch(e){babIssues.push({sev:'warn',msg:`${bab}: original JSON tidak bisa diparse — substance lock dilewati`})}
-    }else{
-      if(Object.keys(originalFiles).length>0){babIssues.push({sev:'warn',msg:`${bab}: file _original.json tidak ada di zip — substance lock dilewati`});}
+      try{const _rawOrig=JSON.parse(origTxt);original=Array.isArray(_rawOrig)?_rawOrig[0]:_rawOrig;const origBlocks=original.blocks||[];
+        if(original.chapter_id&&edited.chapter_id&&original.chapter_id!==edited.chapter_id)babIssues.push({sev:'err',msg:`${bab}: chapter_id berubah`});
+        origBlocks.forEach((ob,i)=>{if(!FIN_TYPES.has(ob.type))return;const tableId=ob.table_id||'';const match=blocks.find(eb=>eb.type===ob.type&&(tableId?eb.table_id===tableId:true));if(!match){babIssues.push({sev:'warn',msg:`${bab}: block finansial '${ob.type}' tidak ditemukan`});return}const origNums=extractNumsFromBlock(ob),editNums=extractNumsFromBlock(match),added=[...editNums].filter(n=>!origNums.has(n)),removed=[...origNums].filter(n=>!editNums.has(n));if(added.length||removed.length)babIssues.push({sev:'err',msg:`${bab}: Substance lock — angka berubah di block '${ob.type}'`})});
+      }catch(e){babIssues.push({sev:'warn',msg:`${bab}: substance lock dilewati — original tidak bisa diparse`})}
     }
-
-    const hasErr=babIssues.some(i=>i.sev==='err');
-    const hasWarn=babIssues.some(i=>i.sev==='warn');
+    const hasErr=babIssues.some(i=>i.sev==='err'),hasWarn=babIssues.some(i=>i.sev==='warn');
     babResults[bab]={status:hasErr?'err':hasWarn?'warn':'ok',issues:babIssues};
     issues.push(...babIssues);
   }
-
-  const hasErr=issues.some(i=>i.sev==='err');
-  const hasWarn=issues.some(i=>i.sev==='warn');
+  const hasErr=issues.some(i=>i.sev==='err'),hasWarn=issues.some(i=>i.sev==='warn');
   return{valid:!hasErr,babResults,issues,hasErr,hasWarn};
 }
 
@@ -650,144 +726,110 @@ function extractNumsFromBlock(block){
   return nums;
 }
 
-// ── RENDER LOADED UI ──────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// RENDER LOADED STATE
+// ═══════════════════════════════════════════════════════════════
 function renderLoadedCard(fileName,prog,babsFound,valResult){
   document.getElementById('upload-card').style.display='none';
   document.getElementById('loaded-card').style.display='';
-
-  // Show bab list in left panel
   document.getElementById('bab-list-wrap').style.display='';
-
-  // Reset workspace viewer
+  _reviewState={};
   resetWorkspace();
-
-  // Show middle panel content — remove old mid refs (no longer used)
-  const midEmpty=document.getElementById('mid-empty');
-  const midContent=document.getElementById('mid-content');
-  if(midEmpty)midEmpty.style.display='none';
-  if(midContent)midContent.style.display='';
+  resetAnalysis();
 
   const card=document.getElementById('prog-card');
-  card.className='prog-card'+(valResult.valid?' valid':valResult.hasErr?' invalid':'');
-
-  sel('prog-name',PROG[prog]||prog||(prog===null?'⚠ Program tidak terdeteksi — cek isi JSON':'?'));
-  if(!prog){
-    // Tampilkan warning agar user tahu
-    const sb=document.getElementById('val-summary-box');
-    sb.innerHTML='<div class="val-summary warn">⚠ Kode program tidak terdeteksi dari file. Pastikan JSON mengandung field \"program_code\" (misal: \"EHS\"). Workflow akan fallback ke ESL.</div>';
-  }
+  card.className='prog-card'+(valResult.valid?' valid':valResult.hasErr?' invalid':' warn');
+  sel('prog-name',PROG[prog]||prog||'⚠ Program tidak terdeteksi');
   sel('prog-code',fileName);
 
-  // Val summary
   const sb=document.getElementById('val-summary-box');
   if(valResult.valid&&!valResult.hasWarn){
-    sb.innerHTML=`<div class="val-summary ok">✓ Semua validasi lolos — siap dirender</div>`;
+    sb.innerHTML=`<div class="val-sum ok">✓ Semua validasi lolos — siap dirender</div>`;
   }else if(valResult.hasErr){
     const ec=valResult.issues.filter(i=>i.sev==='err').length;
-    sb.innerHTML=`<div class="val-summary err">✗ ${ec} error ditemukan — perbaiki sebelum submit</div>`;
+    sb.innerHTML=`<div class="val-sum err">✗ ${ec} error — perbaiki sebelum submit</div>`;
   }else{
     const wc=valResult.issues.filter(i=>i.sev==='warn').length;
-    sb.innerHTML=`<div class="val-summary warn">⚠ ${wc} peringatan — substance lock sebagian dilewati</div>`;
+    sb.innerHTML=`<div class="val-sum warn">⚠ ${wc} peringatan — substance lock sebagian dilewati</div>`;
   }
 
-  // Bab cards
-  renderBabCards(babsFound, valResult);
+  renderBabCards(babsFound,valResult);
 
-  // Issues
   const issuesWrap=document.getElementById('val-issues-wrap');
   const issuesList=document.getElementById('val-issues');
   const shown=valResult.issues.filter(i=>i.sev==='err'||i.sev==='warn');
   if(shown.length>0){
     issuesWrap.style.display='';
-    issuesList.innerHTML=shown.map(i=>`<div class="vi ${i.sev==='err'?'err':'warn'}"><span class="ic">${i.sev==='err'?'✗':'!'}</span><span>${i.msg}</span></div>`).join('');
-  }else{
-    issuesWrap.style.display='none';
-  }
+    issuesList.innerHTML=shown.map(i=>`<div class="vi ${i.sev==='err'?'err':'warn'}"><span>${i.sev==='err'?'✗':'!'}</span><span>${esc(i.msg)}</span></div>`).join('');
+  }else issuesWrap.style.display='none';
 
-  // Submit status
-  if(valResult.valid){
-    setSubmitStatus('ok',`✓ ${babsFound.length} bab dimuat — validasi lolos`);
-  }else{
-    const ec=valResult.issues.filter(i=>i.sev==='err').length;
-    setSubmitStatus('err',`✗ ${ec} error — perbaiki file lalu upload ulang`);
-  }
+  if(valResult.valid)setSubmitStatus('ok',`✓ ${babsFound.length} bab dimuat — validasi lolos`);
+  else{const ec=valResult.issues.filter(i=>i.sev==='err').length;setSubmitStatus('err',`✗ ${ec} error — perbaiki file lalu upload ulang`)}
+
+  // Update empty state message
+  document.getElementById('ws-empty-msg').innerHTML='File dimuat. Klik salah satu bab di kiri.';
 }
 
-// ── RENDER BAB CARDS (clickable) ─────────────────
-let _currentBab=null;
-let _viewMode='preview'; // 'preview' | 'json'
-let _valResultCache=null;
-
-function renderBabCards(babsFound, valResult){
+// ═══════════════════════════════════════════════════════════════
+// BAB CARDS
+// ═══════════════════════════════════════════════════════════════
+function renderBabCards(babsFound,valResult){
   _valResultCache=valResult;
   const container=document.getElementById('bab-cards');
-
-  // Extract metadata per bab
   const babMeta={};
   for(const bab of babsFound){
-    const txt=zipData.editableFiles[bab];
-    if(!txt)continue;
-    try{
-      const raw=JSON.parse(txt);
-      const ch=Array.isArray(raw)?raw[0]:raw;
-      const blocks=ch.blocks||[];
+    const txt=zipData.editableFiles[bab];if(!txt)continue;
+    try{const raw=JSON.parse(txt);const ch=Array.isArray(raw)?raw[0]:raw;const blocks=ch.blocks||[];
       let title=ch.title||ch.chapter_title||null;
       if(!title){const h1=blocks.find(b=>b.type==='heading_1');if(h1)title=h1.text||h1.content||null}
-      babMeta[bab]={title:title||null,blockCount:blocks.length,hasOriginal:!!zipData.originalFiles[bab],programCode:ch.program_code||null};
-    }catch(e){babMeta[bab]={title:null,blockCount:0,hasOriginal:false,programCode:null}}
+      babMeta[bab]={title:title||null,blockCount:blocks.length,hasOriginal:!!zipData.originalFiles[bab]};
+    }catch(e){babMeta[bab]={title:null,blockCount:0,hasOriginal:false}}
   }
-
   container.innerHTML=ALL_BABS.map(bab=>{
     const hasFile=babsFound.includes(bab);
     const br=valResult.babResults[bab];
     const status=hasFile?(br?.status==='err'?'err':br?.status==='warn'?'warn':'ok'):'orig';
     const meta=babMeta[bab]||{};
-    const detectedTitle=meta.title||null;
-    const displayTitle=detectedTitle||BAB_TITLES[bab]||bab;
-    const titleIsDetected=!!detectedTitle;
+    const displayTitle=(meta.title)||BAB_TITLES[bab]||bab;
+    const titleDetected=!!meta.title;
     const babNum=bab.replace('_',' ').toUpperCase();
-    const statusIcon={ok:'✓',warn:'⚠',err:'✗',orig:'·'}[status];
-    const statusColor={ok:'var(--green)',warn:'#d97706',err:'var(--red)',orig:'var(--text3)'}[status];
-    const metaParts=[];
-    if(hasFile){
-      if(meta.blockCount>0)metaParts.push(`<span>${meta.blockCount} blok</span>`);
-      if(meta.hasOriginal)metaParts.push(`<span>🔒 locked</span>`);
-    }else{
-      metaParts.push(`<span>pipeline</span>`);
-    }
-    const clickAttr=hasFile?`onclick="selectBab('${bab}')" id="babcard-${bab}"`:`id="babcard-${bab}"`;
-    return`<div class="bab-card ${status}" ${clickAttr}>
-      <div class="bab-num">${babNum}</div>
+    const statusColors={ok:'color:var(--green)',warn:'color:#d97706',err:'color:var(--red)',orig:'color:var(--text3)'};
+    const statusIcons={ok:'✓',warn:'⚠',err:'✗',orig:'·'};
+    const metaParts=hasFile?[`${meta.blockCount} blok`,...(meta.hasOriginal?['🔒']:[])]:[`pipeline`];
+    const clickAttr=hasFile?`onclick="selectBab('${bab}')"`:' ';
+    const reviewDot=_reviewState[bab]?'reviewed':'';
+    return`<div class="bab-card s-${status} ${reviewDot}" id="babcard-${bab}" ${clickAttr}>
+      <span class="bab-num">${babNum}</span>
       <div class="bab-info">
-        <div class="bab-title${titleIsDetected?' detected':''}" title="${displayTitle}">${displayTitle}</div>
-        <div class="bab-meta">${metaParts.join('')}</div>
+        <div class="bab-title-text${titleDetected?' detected':''}">${esc(displayTitle)}</div>
+        <div class="bab-meta-row">${metaParts.map(p=>`<span>${p}</span>`).join('')}</div>
       </div>
-      <span style="font-size:11px;font-weight:700;color:${statusColor};flex-shrink:0;margin-top:2px">${statusIcon}</span>
+      <span class="bab-status-icon" style="${statusColors[status]}">${statusIcons[status]}</span>
     </div>`;
   }).join('');
 }
 
-// ── WORKSPACE VIEWER ─────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// WORKSPACE VIEWER
+// ═══════════════════════════════════════════════════════════════
 function selectBab(bab){
   if(!zipData.editableFiles[bab])return;
-  // Update active card
   document.querySelectorAll('.bab-card').forEach(c=>c.classList.remove('active'));
-  const card=document.getElementById('babcard-'+bab);
-  if(card)card.classList.add('active');
+  const card=document.getElementById('babcard-'+bab);if(card)card.classList.add('active');
   _currentBab=bab;
-  // Switch header
+  // Switch workspace header
   document.getElementById('ws-static-hd').style.display='none';
   document.getElementById('ws-hd').style.display='';
-  const babNum=bab.replace('_',' ').toUpperCase();
-  sel('ws-bab-label',babNum);
-  // Parse chapter
+  sel('ws-bab-label',bab.replace('_',' ').toUpperCase());
   let ch;
   try{const raw=JSON.parse(zipData.editableFiles[bab]);ch=Array.isArray(raw)?raw[0]:raw}
-  catch(e){renderWorkspaceError('JSON tidak valid: '+e.message);return}
+  catch(e){showWorkspaceError('JSON tidak valid: '+e.message);return}
   const title=ch.title||ch.chapter_title||BAB_TITLES[bab]||bab;
   sel('ws-bab-title',title);
   renderWorkspace(bab,ch);
-  // On mobile: switch to workspace panel
+  // Update analysis panel
+  renderAnalysis(bab,ch);
+  // Mobile: go to workspace
   if(window.innerWidth<=768)showPanel(1);
 }
 
@@ -805,36 +847,28 @@ function resetWorkspace(){
   _currentBab=null;
   document.getElementById('ws-hd').style.display='none';
   document.getElementById('ws-static-hd').style.display='';
-  document.getElementById('ws-static-hd').querySelector('.panel-sub').textContent='Klik bab di panel File untuk melihat isi';
   document.getElementById('ws-empty').style.display='flex';
-  document.getElementById('ws-empty').querySelector('.ws-empty-msg').innerHTML='File dimuat. Klik salah satu bab di kiri.';
   document.getElementById('ws-content').style.display='none';
   document.getElementById('ws-content').innerHTML='';
 }
 
 function renderWorkspace(bab,ch){
-  const wsEmpty=document.getElementById('ws-empty');
-  const wsContent=document.getElementById('ws-content');
-  wsEmpty.style.display='none';
-  wsContent.style.display='';
-  if(_viewMode==='json'){
-    wsContent.innerHTML=renderJsonView(ch);
-  }else{
-    wsContent.innerHTML=renderPreview(ch);
-  }
-}
-
-function renderWorkspaceError(msg){
-  const wsContent=document.getElementById('ws-content');
   document.getElementById('ws-empty').style.display='none';
+  const wsContent=document.getElementById('ws-content');
   wsContent.style.display='';
-  wsContent.innerHTML=`<div class="blk"><div style="color:var(--red);font-size:12px;font-family:var(--mono)">✗ ${msg}</div></div>`;
+  wsContent.innerHTML=_viewMode==='json'?renderJsonView(ch):`<div class="preview-wrap">${renderPreview(ch)}</div>`;
 }
 
-// ── PREVIEW RENDERER ─────────────────────────────
+function showWorkspaceError(msg){
+  document.getElementById('ws-empty').style.display='none';
+  const c=document.getElementById('ws-content');c.style.display='';
+  c.innerHTML=`<div style="color:var(--red);font-size:12px;font-family:var(--mono);padding:16px">✗ ${esc(msg)}</div>`;
+}
+
+// Block renderer
 function renderPreview(ch){
   const blocks=ch.blocks||[];
-  if(blocks.length===0)return`<div style="color:var(--text3);font-size:12px;font-style:italic">Tidak ada blok ditemukan.</div>`;
+  if(!blocks.length)return`<div style="color:var(--text3);font-size:12px;font-style:italic;padding:20px 0;text-align:center">Tidak ada blok untuk ditampilkan.</div>`;
   return blocks.map(renderBlock).join('');
 }
 
@@ -849,50 +883,240 @@ function renderBlock(b){
   if(t==='paragraph_small')return`<div class="blk blk-p small">${esc(text)}</div>`;
   if(t==='divider')return`<div class="blk blk-divider"></div>`;
   if(t==='divider_thick')return`<div class="blk blk-divider thick"></div>`;
-  if(t.startsWith('callout_')){const variant=t.replace('callout_','');return`<div class="blk blk-callout ${variant}">${esc(text||b.message||b.body||'')}</div>`;}
+  if(t.startsWith('callout_')){const v=t.replace('callout_','');return`<div class="blk blk-callout ${v}">${esc(text||b.message||b.body||'')}</div>`}
   if(t==='bullet_list'||t==='numbered_list'){
-    const items=b.items||[];
-    const tag=t==='numbered_list'?'ol':'ul';
+    const items=b.items||[];const tag=t==='numbered_list'?'ol':'ul';
     return`<div class="blk"><${tag} class="blk-list">${items.map(i=>`<li>${esc(typeof i==='string'?i:i.text||JSON.stringify(i))}</li>`).join('')}</${tag}></div>`;
   }
   if(t==='table'||t==='table_borderless'){
-    const rows=b.rows||[];
-    const headers=b.headers||[];
-    const cls=t==='table_borderless'?'borderless':'';
-    const thead=headers.length?`<thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>`:'';
-    const tbody=rows.map(r=>`<tr>${(Array.isArray(r)?r:Object.values(r)).map(c=>`<td>${esc(String(c))}</td>`).join('')}</tr>`).join('');
-    return`<div class="blk" style="overflow-x:auto"><table class="blk-table ${cls}">${thead}<tbody>${tbody}</tbody></table></div>`;
+    const rows=b.rows||[],headers=b.headers||[],cls=t==='table_borderless'?'borderless':'';
+    const thead=headers.length?`<thead><tr>${headers.map(h=>`<th>${esc(String(h))}</th>`).join('')}</tr></thead>`:'';
+    const tbody=rows.map(r=>`<tr>${(Array.isArray(r)?r:Object.values(r)).map(c=>`<td>${esc(String(c??''))}</td>`).join('')}</tr>`).join('');
+    return`<div class="blk blk-table-wrap"><table class="blk-table ${cls}">${thead}<tbody>${tbody}</tbody></table></div>`;
   }
   if(t==='metric_card_3col'){
-    const items=b.items||b.metrics||[];
+    const items=b.items||b.metrics||b.columns||[];
     return`<div class="blk"><div class="blk-metric-row">${items.map(m=>`<div class="blk-metric"><div class="blk-metric-val">${esc(String(m.value||m.val||'—'))}</div><div class="blk-metric-lbl">${esc(m.label||m.name||'')}</div></div>`).join('')}</div></div>`;
   }
   if(t==='bar_chart_text'){
-    const points=b.data_points||b.items||[];
-    return`<div class="blk">${points.map(p=>{const pct=Math.min(100,Math.max(0,parseFloat(p.pct||p.value||0)));return`<div style="margin-bottom:5px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px"><span style="color:var(--text2)">${esc(p.label||'')}</span><span style="font-family:var(--mono);color:var(--text3)">${esc(String(p.value||p.pct||''))}</span></div><div style="height:5px;background:var(--border);border-radius:3px"><div style="height:100%;width:${pct}%;background:var(--blue);border-radius:3px"></div></div></div>`}).join('')}</div>`;
+    const points=b.data_points||b.items||b.data||[];
+    return`<div class="blk">${points.map(p=>{const pct=Math.min(100,Math.max(0,parseFloat(p.pct||p.value||0)));return`<div style="margin-bottom:7px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:var(--text2)">${esc(p.label||'')}</span><span style="font-family:var(--mono);color:var(--text3)">${esc(String(p.value||p.pct||''))}</span></div><div style="height:5px;background:var(--border);border-radius:3px"><div style="height:100%;width:${pct}%;background:var(--blue);border-radius:3px"></div></div></div>`}).join('')}</div>`;
   }
-  // Fallback: tampilkan type tag
-  return`<div class="blk" style="padding:6px 8px;background:var(--surface2);border-radius:var(--radius-sm);display:flex;gap:8px;align-items:center"><span class="blk-type-tag">${esc(t)}</span><span style="font-size:11px;color:var(--text3);font-style:italic">blok tidak dirender</span></div>`;
+  return`<div class="blk" style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--surface2);border-radius:var(--r-sm)"><span class="blk-type-tag">${esc(t)}</span><span style="font-size:11px;color:var(--text3);font-style:italic">blok tidak dirender</span></div>`;
 }
 
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-
-// ── JSON VIEWER ───────────────────────────────────
 function renderJsonView(ch){
   const raw=JSON.stringify(ch,null,2);
-  // Syntax highlight
-  const highlighted=raw.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,match=>{
-    if(/^"/.test(match)){
-      if(/:$/.test(match))return`<span class="json-key">${match}</span>`;
-      return`<span class="json-str">${match}</span>`;
-    }
-    if(/true|false|null/.test(match))return`<span class="json-bool">${match}</span>`;
-    return`<span class="json-num">${match}</span>`;
+  const highlighted=raw.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,m=>{
+    if(/^"/.test(m)){if(/:$/.test(m))return`<span class="json-key">${m}</span>`;return`<span class="json-str">${m}</span>`}
+    if(/true|false|null/.test(m))return`<span class="json-bool">${m}</span>`;
+    return`<span class="json-num">${m}</span>`;
   });
   return`<pre class="json-view">${highlighted}</pre>`;
 }
 
+// ═══════════════════════════════════════════════════════════════
+// ANALYSIS PANEL
+// ═══════════════════════════════════════════════════════════════
+function resetAnalysis(){
+  document.getElementById('ap-empty').style.display='flex';
+  document.getElementById('ap-content').style.display='none';
+  sel('ap-sub','Pilih bab untuk melihat analisis');
+  document.getElementById('ai-results').style.display='none';
+  document.getElementById('ai-results').innerHTML='';
+  document.getElementById('ai-loading').style.display='none';
+  _currentRating=0;
+  _hrOpen=false;
+  document.getElementById('hr-body').classList.remove('open');
+  document.getElementById('hr-arrow').classList.remove('open');
+}
 
+function renderAnalysis(bab,ch){
+  document.getElementById('ap-empty').style.display='none';
+  document.getElementById('ap-content').style.display='';
+  sel('ap-sub',`${bab.replace('_',' ').toUpperCase()} — ${ch.title||ch.chapter_title||BAB_TITLES[bab]||bab}`);
+
+  // Reset AI results
+  document.getElementById('ai-results').style.display='none';
+  document.getElementById('ai-results').innerHTML='';
+  document.getElementById('ai-loading').style.display='none';
+  document.getElementById('btn-ai').disabled=false;
+  document.getElementById('btn-ai').textContent='✦ Analisis dengan AI';
+
+  // Run rule-based diagnosis
+  const blocks=ch.blocks||[];
+  const diag=runDiagnosis(bab,blocks);
+  renderDiagnosisUI(diag);
+
+  // Restore review form if exists
+  const saved=_reviewState[bab];
+  _currentRating=saved?.rating||0;
+  document.getElementById('review-notes').value=saved?.notes||'';
+  document.querySelectorAll('.rating-btn').forEach((btn,i)=>btn.classList.toggle('active',i+1===_currentRating));
+  const savedBadge=document.getElementById('hr-saved-badge');
+  savedBadge.classList.toggle('show',!!saved);
+}
+
+// ── RULE-BASED DIAGNOSIS ──────────────────────────
+function runDiagnosis(bab,blocks){
+  const checks={struktur:[],flow:[],logika:[]};
+
+  // STRUKTUR
+  checks.struktur.push({ok:blocks.length>0,msg:blocks.length>0?`${blocks.length} blok ditemukan`:'Tidak ada blok — chapter kosong',crit:true});
+  const hasH1=blocks.some(b=>b.type==='heading_1');
+  checks.struktur.push({ok:hasH1,msg:hasH1?'heading_1 hadir di chapter':'Tidak ada heading_1 — judul bab tidak ditemukan'});
+  const hasParagraph=blocks.some(b=>b.type==='paragraph'||b.type==='paragraph_lead');
+  checks.struktur.push({ok:hasParagraph,msg:hasParagraph?'Blok narasi (paragraph) hadir':'Tidak ada blok paragraph — konten narasi kosong'});
+  const unknownTypes=blocks.filter(b=>b.type&&!VALID_BLOCK_TYPES.has(b.type));
+  checks.struktur.push({ok:unknownTypes.length===0,msg:unknownTypes.length===0?'Semua tipe blok valid':`${unknownTypes.length} blok dengan tipe tidak dikenal: ${[...new Set(unknownTypes.map(b=>b.type))].slice(0,2).join(', ')}`,warn:unknownTypes.length>0});
+
+  // FLOW
+  const headings=blocks.filter(b=>['heading_1','heading_2','heading_3'].includes(b.type));
+  const headingLevels=headings.map(h=>parseInt(h.type.replace('heading_','')));
+  let flowOk=true;
+  for(let i=1;i<headingLevels.length;i++){if(headingLevels[i]>headingLevels[i-1]+1){flowOk=false;break}}
+  checks.flow.push({ok:flowOk,msg:flowOk?'Hierarki heading berurutan dengan benar':'Heading loncat level — urutan h1→h2→h3 tidak konsisten'});
+  const tablesNoHeader=blocks.filter(b=>(b.type==='table'||b.type==='table_borderless')&&(!b.headers||!b.headers.length));
+  checks.flow.push({ok:tablesNoHeader.length===0,msg:tablesNoHeader.length===0?'Semua tabel memiliki header':`${tablesNoHeader.length} tabel tanpa field 'headers'`,warn:tablesNoHeader.length>0});
+  const metricsBad=blocks.filter(b=>b.type==='metric_card_3col'&&(!(b.items||b.metrics||b.columns)||((b.items||b.metrics||b.columns)||[]).length<2));
+  checks.flow.push({ok:metricsBad.length===0,msg:metricsBad.length===0?'Metric cards memiliki minimal 2 item':`${metricsBad.length} metric_card dengan item kurang dari 2`,warn:metricsBad.length>0});
+
+  // LOGIKA
+  const babThresholds={bab_1:3,bab_2:3,bab_3:4,bab_4:5,bab_5:5,bab_6:6,bab_7:3,bab_8:3,bab_9:3};
+  const minBlocks=babThresholds[bab]||3;
+  checks.logika.push({ok:blocks.length>=minBlocks,msg:blocks.length>=minBlocks?`Jumlah blok mencukupi (${blocks.length} ≥ ${minBlocks})`:`Blok terlalu sedikit: ${blocks.length} (min. ${minBlocks} untuk ${bab})`});
+  const gapBlocks=blocks.filter(b=>b.type==='callout_gap');
+  checks.logika.push({ok:gapBlocks.length===0,msg:gapBlocks.length===0?'Tidak ada gap yang belum diisi':`${gapBlocks.length} blok callout_gap ditemukan — ada konten yang belum dilengkapi`,warn:gapBlocks.length>0});
+  const paraWithNums=blocks.filter(b=>b.type==='paragraph'&&(b.text||b.content||'').match(NUM_PAT));
+  checks.logika.push({ok:paraWithNums.length===0,msg:paraWithNums.length===0?'Angka numerik tidak ditemukan di luar tabel':''+paraWithNums.length+' paragraph mengandung angka — pertimbangkan gunakan tabel atau metric_card',warn:paraWithNums.length>0});
+
+  return checks;
+}
+
+function renderDiagnosisUI(diag){
+  const scoreEl=(id,items)=>{
+    const total=items.length;
+    const ok=items.filter(i=>i.ok).length;
+    const hasCritFail=items.some(i=>!i.ok&&i.crit);
+    const hasErr=items.some(i=>!i.ok&&!i.warn);
+    const cls=hasCritFail||hasErr?'err':ok<total?'warn':'ok';
+    const el=document.getElementById(id);
+    el.className='diag-score-chip '+cls;
+    el.innerHTML=`<span class="diag-score-label">${el.querySelector('.diag-score-label')?.textContent||''}</span>${ok}/${total}`;
+  };
+  scoreEl('score-struktur',diag.struktur);
+  scoreEl('score-flow',diag.flow);
+  scoreEl('score-logika',diag.logika);
+
+  const container=document.getElementById('diag-checklist');
+  const sections=[['STRUKTUR',diag.struktur],['FLOW',diag.flow],['LOGIKA',diag.logika]];
+  container.innerHTML=sections.map(([label,items])=>`
+    <div class="diag-section">
+      <div class="diag-section-label">${label}</div>
+      ${items.map(item=>{
+        const state=item.ok?'ok':item.warn?'warn':'err';
+        const ico=item.ok?'✓':item.warn?'!':'✗';
+        return`<div class="diag-item">
+          <div class="diag-icon ${state}">${ico}</div>
+          <span class="diag-text">${esc(item.msg)}</span>
+        </div>`;
+      }).join('')}
+    </div>
+  `).join('');
+}
+
+// ── AI ANALYSIS ───────────────────────────────────
+async function runAiAnalysis(){
+  if(!_currentBab||_aiRunning)return;
+  _aiRunning=true;
+  const btn=document.getElementById('btn-ai');
+  btn.disabled=true;btn.textContent='Menganalisis…';
+  document.getElementById('ai-loading').style.display='flex';
+  document.getElementById('ai-results').style.display='none';
+
+  let ch;
+  try{const raw=JSON.parse(zipData.editableFiles[_currentBab]);ch=Array.isArray(raw)?raw[0]:raw}
+  catch(e){_aiRunning=false;btn.disabled=false;btn.textContent='✦ Analisis dengan AI';document.getElementById('ai-loading').style.display='none';return}
+
+  const prompt=`Kamu adalah analis laporan SROI. Analisis chapter JSON berikut dan berikan temuan singkat dalam 3 blok:
+1. TEMUAN STRUKTUR: Kelengkapan dan kesesuaian struktur blok (2-3 kalimat)
+2. TEMUAN FLOW: Kelancaran alur narasi dan argumen antar blok (2-3 kalimat)
+3. TEMUAN LOGIKA: Konsistensi data, penalaran, dan kelengkapan informasi (2-3 kalimat)
+
+Jawab HANYA dengan format JSON:
+{"struktur":"...","flow":"...","logika":"..."}
+
+Chapter JSON:
+${JSON.stringify({chapter_id:ch.chapter_id,blocks:(ch.blocks||[]).slice(0,30)},null,1)}`;
+
+  try{
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+    });
+    const data=await resp.json();
+    const text=(data.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('');
+    const clean=text.replace(/```json|```/g,'').trim();
+    const parsed=JSON.parse(clean);
+    document.getElementById('ai-results').style.display='';
+    document.getElementById('ai-results').innerHTML=['struktur','flow','logika'].map(k=>`
+      <div class="ai-result-block">
+        <div class="ai-result-label">Temuan ${k.charAt(0).toUpperCase()+k.slice(1)}</div>
+        <div class="ai-result-text">${esc(parsed[k]||'—')}</div>
+      </div>
+    `).join('');
+    btn.textContent='✦ Analisis ulang';
+  }catch(e){
+    document.getElementById('ai-results').style.display='';
+    document.getElementById('ai-results').innerHTML=`<div style="font-size:11px;color:var(--text3);padding:8px;background:var(--surface2);border-radius:var(--r-sm)">⚠ AI tidak tersedia. Pastikan API key dikonfigurasi di pengaturan browser atau gunakan versi yang mendukung API call.</div>`;
+    btn.textContent='✦ Coba lagi';
+  }
+
+  document.getElementById('ai-loading').style.display='none';
+  btn.disabled=false;
+  _aiRunning=false;
+}
+
+// ── HUMAN REVIEW ─────────────────────────────────
+function toggleHR(){
+  _hrOpen=!_hrOpen;
+  document.getElementById('hr-body').classList.toggle('open',_hrOpen);
+  document.getElementById('hr-arrow').classList.toggle('open',_hrOpen);
+}
+
+function setRating(val){
+  _currentRating=val;
+  document.querySelectorAll('.rating-btn').forEach((btn,i)=>btn.classList.toggle('active',i+1===val));
+}
+
+function saveReview(){
+  if(!_currentBab)return;
+  const notes=document.getElementById('review-notes').value;
+  _reviewState[_currentBab]={rating:_currentRating,notes,savedAt:new Date().toISOString()};
+  document.getElementById('hr-saved-badge').classList.add('show');
+  // Update bab card
+  const card=document.getElementById('babcard-'+_currentBab);
+  if(card)card.classList.add('reviewed');
+  // Flash feedback
+  const btn=document.querySelector('.hr-acc-body .btn.primary');
+  if(btn){btn.textContent='✓ Tersimpan';setTimeout(()=>btn.textContent='Simpan Review',1500)}
+}
+
+// ── RUN STATUS ACCORDION ─────────────────────────
+function toggleRunAcc(){
+  _runAccOpen=!_runAccOpen;
+  document.getElementById('run-acc-body').classList.toggle('open',_runAccOpen);
+  document.getElementById('run-arrow').classList.toggle('open',_runAccOpen);
+}
+
+function autoExpandRunAcc(){
+  if(!_runAccOpen){_runAccOpen=true;document.getElementById('run-acc-body').classList.add('open');document.getElementById('run-arrow').classList.add('open')}
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CONNECTION
+// ═══════════════════════════════════════════════════════════════
 async function testConnection(){
   const btn=document.getElementById('btn-connect');btn.disabled=true;btn.textContent='Menghubungkan…';
   document.getElementById('conn-err').innerHTML='';showConnMsg('Memverifikasi…','info');
@@ -902,29 +1126,39 @@ async function testConnection(){
     const r2=await githubFetch(`/repos/${v('owner')}/${v('repo')}`);if(!r2.ok)throw new Error('Repo tidak ditemukan');
     const r3=await githubFetch(`/repos/${v('owner')}/${v('repo')}/branches/${v('branch')}`);if(!r3.ok)throw new Error('Branch tidak ditemukan');
     connected=true;updateConnBadge(true);showConnMsg(`Terhubung sebagai @${user.login}`,'ok');saveSession();updateSubmitBtn();
-  }catch(e){connected=false;updateConnBadge(false);showConnMsg('Koneksi gagal','err');document.getElementById('conn-err').innerHTML=`<div class="notice-err">${e.message}</div>`;updateSubmitBtn()}
+  }catch(e){connected=false;updateConnBadge(false);showConnMsg('Koneksi gagal','err');document.getElementById('conn-err').innerHTML=`<div class="notice-err">${esc(e.message)}</div>`;updateSubmitBtn()}
   btn.disabled=false;btn.textContent='Test Connection';
 }
-function updateConnBadge(ok){const cls=ok?' green':'',dot=ok?' pulse':'',lbl=ok?'Terhubung ke server pipeline':'Tidak terhubung ke server pipeline';['hdr-conn','lft-conn'].forEach(id=>{const b=document.getElementById(id);if(b)b.className='badge'+cls});['hdr-dot','lft-dot'].forEach(id=>{const d=document.getElementById(id);if(d)d.className='bdot'+dot});['hdr-lbl','lft-lbl'].forEach(id=>sel(id,lbl))}
+function updateConnBadge(ok){
+  const cls=ok?' green':'',dot=ok?' pulse':'',lbl=ok?'Terhubung':'Tidak terhubung';
+  ['hdr-conn','lft-conn'].forEach(id=>{const b=document.getElementById(id);if(b)b.className='badge'+cls});
+  ['hdr-dot','lft-dot'].forEach(id=>{const d=document.getElementById(id);if(d)d.className='bdot'+dot});
+  ['hdr-lbl','lft-lbl'].forEach(id=>sel(id,lbl));
+}
 function showConnMsg(msg,type){const el=document.getElementById('conn-msg');el.className='status-msg '+(type||'');el.textContent=msg}
 function togglePAT(){const i=document.getElementById('pat'),b=i.parentElement.querySelector('.token-show');i.type=i.type==='password'?'text':'password';b.textContent=i.type==='password'?'show':'hide'}
 
-// ── SESSION ───────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// SESSION
+// ═══════════════════════════════════════════════════════════════
 function saveSession(){const cfg={owner:v('owner'),repo:v('repo'),branch:v('branch'),workflow:v('workflow')};sessionStorage.setItem('fase2_cfg',JSON.stringify(cfg));const pat=v('pat');if(pat)sessionStorage.setItem('fase2_pat',pat);document.getElementById('hdr-session').style.display='';showConnMsg('Pengaturan tersimpan','ok')}
-function loadSession(){const raw=sessionStorage.getItem('fase2_cfg');if(raw){try{const c=JSON.parse(raw);if(c.owner)document.getElementById('owner').value=c.owner;if(c.repo)document.getElementById('repo').value=c.repo;if(c.branch)document.getElementById('branch').value=c.branch;if(c.workflow)document.getElementById('workflow').value=c.workflow;document.getElementById('hdr-session').style.display=''}catch(e){}}const pat=sessionStorage.getItem('fase2_pat');if(pat){document.getElementById('pat').value=pat;connected=true;updateConnBadge(true);updateSubmitBtn()}syncTechDetail()}
-function clearSession(){['fase2_cfg','fase2_pat'].forEach(k=>sessionStorage.removeItem(k));document.getElementById('hdr-session').style.display='none';document.getElementById('pat').value='';connected=false;updateConnBadge(false);showConnMsg('Sesi dihapus','err');updateSubmitBtn()}
-function syncTechDetail(){sel('td-repo',`${v('owner')||'budistywan'}/${v('repo')||'sroi-based-report-extended'}`);sel('td-wf',v('workflow')||'render-from-semantics.yml');sel('td-prog',zipData.program||'—');sel('td-babs',zipData.babsLoaded.length?zipData.babsLoaded.join(', '):'—')}
-function updateSubmitBtn(){const ready=connected&&fileValid;document.getElementById('btn-submit').disabled=!ready}
-function setSubmitStatus(type,msg){const el=document.getElementById('submit-status');el.textContent=msg;el.className='submit-status'+(type?` ${type}`:'')}
+function loadSession(){const raw=sessionStorage.getItem('fase2_cfg');if(raw){try{const c=JSON.parse(raw);['owner','repo','branch','workflow'].forEach(k=>{if(c[k])document.getElementById(k).value=c[k]});document.getElementById('hdr-session').style.display=''}catch(e){}}const pat=sessionStorage.getItem('fase2_pat');if(pat){document.getElementById('pat').value=pat;connected=true;updateConnBadge(true);updateSubmitBtn()}syncTechDetail()}
+function clearSession(){if(pollingTimer)clearTimeout(pollingTimer);sessionStorage.removeItem('fase2_cfg');sessionStorage.removeItem('fase2_pat');connected=false;updateConnBadge(false);document.getElementById('hdr-session').style.display='none';updateSubmitBtn();showConnMsg('Sesi dihapus','info')}
+function syncTechDetail(){sel('td-repo',`${v('owner')}/${v('repo')}`);sel('td-wf',v('workflow'));sel('td-prog',zipData.program||'—');sel('td-babs',zipData.babsLoaded.length?`${zipData.babsLoaded.length} bab`:'—')}
+function updateSubmitBtn(){const btn=document.getElementById('btn-submit');btn.disabled=!(connected&&fileValid)}
 
-// ── SUBMIT ────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+// SUBMIT & WORKFLOW
+// ═══════════════════════════════════════════════════════════════
 async function submitRun(){
   if(!connected||!fileValid)return;
-  document.getElementById('err-box').style.display='none';
-  if(window.innerWidth<=768)showPanel(1);
-  run={commitSha:null,commitUrl:null,runId:null,runUrl:null,runNumber:null,artifactId:null,artifactName:null,submittedAt:new Date().toISOString(),elapsed:0,elapsedTimer:null};
-  STEPS.forEach(s=>stepSt[s.id]='pending');stepSt['zip']='done';stepSt['validate']='done';
-  setStage('running','Mengirim file ke repository…','');renderTimeline();renderMeta();startElapsed();setSubmitStatus('info','⟳ Mengirim…');
+  if(pollingTimer)clearTimeout(pollingTimer);
+  run={commitSha:null,runId:null,runUrl:null,runNumber:null,artifactId:null,artifactName:null,elapsed:0,elapsedTimer:null,_triggered:false};
+  STEPS.forEach(s=>stepSt[s.id]='pending');
+  stepSt['zip']='done';stepSt['validate']='done';
+  setStage('running','Mengirim file…','');renderTimeline();renderMeta();startElapsed();
+  autoExpandRunAcc();
+
   const owner=v('owner'),repo=v('repo'),branch=v('branch'),filePath=`data/enriched_semantics/${zipData.fileName}`;
   try{
     let sha=null;
@@ -934,45 +1168,27 @@ async function submitRun(){
     if(sha)body.sha=sha;
     const r=await githubFetch(`/repos/${owner}/${repo}/contents/${filePath}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
     if(!r.ok){const err=await r.json();throw new Error(`Commit gagal (${r.status}): ${err.message}`)}
-    const cd=await r.json();run.commitSha=cd.commit?.sha||null;run.commitUrl=cd.commit?.html_url||null;
+    const cd=await r.json();run.commitSha=cd.commit?.sha||null;
     stepSt['commit']='done';setStage('running','File terkirim. Memicu workflow…','');renderTimeline();renderMeta();setSubmitStatus('ok','✓ File dikirim — memicu workflow...');
-
-    // Trigger workflow_dispatch — guard agar tidak double trigger
-    if(run._triggered){console.log('Already triggered, skip');}
-    run._triggered=true;
-    const workflow=v('workflow');
-    const triggerBody={
-      ref:branch,
-      inputs:{
-        program:(zipData.program||'ESL').toUpperCase(),
-        semantics:filePath,
-        mode:'render-only',
-      }
-    };
-    console.log('Triggering workflow_dispatch:',workflow,triggerBody);
-    const triggerRes=await githubFetch(
-      `/repos/${owner}/${repo}/actions/workflows/${workflow}/dispatches`,
-      {method:'POST',headers:{'Content-Type':'application/json'},
-       body:JSON.stringify(triggerBody)}
-    );
-    console.log('Trigger response status:',triggerRes.status);
-    if(!triggerRes.ok&&triggerRes.status!==204){
-      const errBody=await triggerRes.json().catch(()=>({}));
-      console.error('Trigger error body:',errBody);
-      throw new Error(`Trigger workflow gagal (${triggerRes.status}): ${errBody.message||'periksa scope PAT (butuh workflow scope)'}`);
+    if(run._triggered){}
+    else{
+      run._triggered=true;
+      const workflow=v('workflow');
+      const triggerBody={ref:branch,inputs:{program:(zipData.program||'ESL').toUpperCase(),semantics:filePath,mode:'render-only'}};
+      const triggerRes=await githubFetch(`/repos/${owner}/${repo}/actions/workflows/${workflow}/dispatches`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(triggerBody)});
+      if(!triggerRes.ok&&triggerRes.status!==204){const errBody=await triggerRes.json().catch(()=>({}));throw new Error(`Trigger workflow gagal (${triggerRes.status}): ${errBody.message||'periksa scope PAT'}`)}
     }
-
     setStage('running','Workflow dipicu. Mendeteksi run…','');renderTimeline();renderMeta();
     setSubmitStatus('ok','✓ Workflow dipicu — menunggu run...');
     await pollForRun();
-  }catch(e){setStage('failed','Gagal',e.message);stepSt['commit']='failed';renderTimeline();stopElapsed();setSubmitStatus('err',`✗ ${e.message}`);showErr(e.message)}
+  }catch(e){setStage('failed','Gagal',e.message);stepSt['commit']='failed';renderTimeline();stopElapsed();setSubmitStatus('err',`✗ ${e.message}`);showErr(e.message);updateRunStatusBadge('failed')}
 }
 
-// ── POLLING (sama dengan Fase 1) ──────────────────
+// ── POLLING ───────────────────────────────────────
 async function pollForRun(){
-  const owner=v('owner'),repo=v('repo'),branch=v('branch');pollCount=0;stepSt['detect']='active';renderTimeline();
+  const owner=v('owner'),repo=v('repo'),branch=v('branch');pollCount=0;stepSt['detect']='active';renderTimeline();updateRunStatusBadge('running');
   const detect=async()=>{
-    if(pollCount++>18){setStage('failed','Run tidak terdeteksi','Periksa GitHub Actions');stepSt['detect']='failed';renderTimeline();stopElapsed();return}
+    if(pollCount++>18){setStage('failed','Run tidak terdeteksi','Periksa GitHub Actions');stepSt['detect']='failed';renderTimeline();stopElapsed();updateRunStatusBadge('failed');return}
     try{
       const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs?branch=${branch}&per_page=10`);
       if(!r.ok){pollingTimer=setTimeout(detect,10000);return}
@@ -981,45 +1197,102 @@ async function pollForRun(){
       if(match){
         run.runId=match.id;run.runUrl=match.html_url;run.runNumber=match.run_number;
         stepSt['detect']='done';document.getElementById('btn-github').disabled=false;document.getElementById('btn-refresh').disabled=false;
-        if(match.status==='completed'){stepSt['running']='done';if(match.conclusion==='success'){stepSt['done']='done';stepSt['artifact']='active';setStage('running','Workflow selesai — mengambil artifact…','');renderTimeline();renderMeta();await fetchArtifact()}else{stepSt['done']='failed';setStage('failed','Proses gagal',`conclusion: ${match.conclusion}`);renderTimeline();renderMeta();stopElapsed();fetchErrorLog(match.id)}}
-        else{stepSt['running']='active';setStage('running','Workflow sedang berjalan',`Run #${match.run_number}`);renderTimeline();renderMeta();await pollRunStatus()}
+        if(match.status==='completed'){
+          stepSt['running']='done';
+          if(match.conclusion==='success'){stepSt['done']='done';stepSt['artifact']='active';setStage('running','Workflow selesai — mengambil artifact…','');renderTimeline();renderMeta();await fetchArtifact()}
+          else{stepSt['done']='failed';setStage('failed','Proses gagal',`conclusion: ${match.conclusion}`);renderTimeline();renderMeta();stopElapsed();updateRunStatusBadge('failed');fetchErrorLog(match.id)}
+        }else{stepSt['running']='active';setStage('running','Workflow sedang berjalan',`Run #${match.run_number}`);renderTimeline();renderMeta();await pollRunStatus()}
       }else{setStage('running','Menunggu run terdeteksi…',`Percobaan ${pollCount}/18`);pollingTimer=setTimeout(detect,10000)}
     }catch(e){pollingTimer=setTimeout(detect,10000)}
   };pollingTimer=setTimeout(detect,20000);
 }
+
 async function pollRunStatus(){
   const owner=v('owner'),repo=v('repo');
-  const poll=async()=>{if(pollCount++>MAX_POLLS){setStage('failed','Timeout','');stopElapsed();return}try{const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs/${run.runId}`);if(!r.ok){pollingTimer=setTimeout(poll,10000);return}const d=await r.json();if(d.status==='completed'){stepSt['running']='done';if(d.conclusion==='success'){stepSt['done']='done';stepSt['artifact']='active';setStage('running','Workflow selesai — mengambil artifact…','');renderTimeline();renderMeta();await fetchArtifact()}else{stepSt['done']='failed';setStage('failed','Proses gagal','Buka GitHub Actions untuk detail');renderTimeline();renderMeta();stopElapsed();fetchErrorLog(run.runId)}}else pollingTimer=setTimeout(poll,10000)}catch(e){pollingTimer=setTimeout(poll,10000)}};
+  const poll=async()=>{if(pollCount++>MAX_POLLS){setStage('failed','Timeout','');stopElapsed();return}try{const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs/${run.runId}`);if(!r.ok){pollingTimer=setTimeout(poll,10000);return}const d=await r.json();if(d.status==='completed'){stepSt['running']='done';if(d.conclusion==='success'){stepSt['done']='done';stepSt['artifact']='active';setStage('running','Workflow selesai — mengambil artifact…','');renderTimeline();renderMeta();await fetchArtifact()}else{stepSt['done']='failed';setStage('failed','Proses gagal','Buka GitHub Actions untuk detail');renderTimeline();renderMeta();stopElapsed();updateRunStatusBadge('failed');fetchErrorLog(run.runId)}}else pollingTimer=setTimeout(poll,10000)}catch(e){pollingTimer=setTimeout(poll,10000)}};
   pollingTimer=setTimeout(poll,10000);
 }
+
 async function fetchArtifact(){
   const owner=v('owner'),repo=v('repo');let retries=0;
-  const tryF=async()=>{try{const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs/${run.runId}/artifacts`);if(!r.ok)throw new Error(r.status);const data=await r.json();const arts=data.artifacts||[];const art=arts.find(a=>zipData.program&&a.name.toUpperCase().includes(zipData.program))||arts[0];if(art){run.artifactId=art.id;run.artifactName=art.name;stepSt['artifact']='done';setStage('success','Artifact siap','Hasil render tersedia untuk diunduh');document.getElementById('btn-download').disabled=false;renderTimeline();renderMeta();stopElapsed();setSubmitStatus('ok','✓ Laporan final siap diunduh')}else if(retries++<6)pollingTimer=setTimeout(tryF,15000);else{stepSt['artifact']='failed';setStage('failed','Artifact tidak ditemukan','');renderTimeline();stopElapsed()}}catch(e){if(retries++<6)pollingTimer=setTimeout(tryF,15000)}};await tryF();
+  const tryF=async()=>{try{const r=await githubFetch(`/repos/${owner}/${repo}/actions/runs/${run.runId}/artifacts`);if(!r.ok)throw new Error(r.status);const data=await r.json();const arts=data.artifacts||[];const art=arts.find(a=>zipData.program&&a.name.toUpperCase().includes(zipData.program))||arts[0];if(art){run.artifactId=art.id;run.artifactName=art.name;stepSt['artifact']='done';setStage('success','Artifact siap','Hasil render tersedia untuk diunduh');document.getElementById('btn-download').disabled=false;renderTimeline();renderMeta();stopElapsed();setSubmitStatus('ok','✓ Laporan final siap diunduh');updateRunStatusBadge('success')}else if(retries++<6)pollingTimer=setTimeout(tryF,15000);else{stepSt['artifact']='failed';setStage('failed','Artifact tidak ditemukan','');renderTimeline();stopElapsed();updateRunStatusBadge('failed')}}catch(e){if(retries++<6)pollingTimer=setTimeout(tryF,15000)}};await tryF();
 }
+
 async function fetchErrorLog(runId){try{const owner=v('owner'),repo=v('repo');const jr=await githubFetch(`/repos/${owner}/${repo}/actions/runs/${runId}/jobs`);if(!jr.ok)return;const jd=await jr.json();const fj=jd.jobs?.find(j=>j.conclusion==='failure');if(!fj)return;const lr=await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/jobs/${fj.id}/logs`,{headers:{'Authorization':'Bearer '+getPAT(),'Accept':'application/vnd.github+json'},redirect:'follow'});if(!lr.ok)return;const t=await lr.text();_fullErrorLog=t;const lines=t.split('\n');const el=[];let cap=false;for(const l of lines){const c=l.replace(/^\d{4}-\d{2}-\d{2}T[\d:Z.]+\s+/,'').trim();if(c.match(/STEP FAILED|Error:|Traceback|TypeError|KeyError|FAIL:/))cap=true;if(cap&&c){el.push(c);if(el.length>=6)break}}if(el.length>0)showErr(el.join('\n'))}catch(e){}}
 async function downloadArtifact(){if(!run.artifactId)return;const owner=v('owner'),repo=v('repo');const btn=document.getElementById('btn-download');btn.disabled=true;btn.textContent='↓ Mengunduh…';try{const r=await githubFetch(`/repos/${owner}/${repo}/actions/artifacts/${run.artifactId}/zip`);if(!r.ok)throw new Error(r.status);const blob=await r.blob();const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`${run.artifactName||'sroi-laporan-fase2'}.zip`;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(url),5000);stepSt['dl']='done';setStage('success','Unduhan selesai',`${run.artifactName}.zip tersimpan`);renderTimeline()}catch(e){if(run.runUrl)window.open(run.runUrl,'_blank')}btn.disabled=false;btn.textContent='↓ Unduh Artifact (.zip)'}
 async function refreshStatus(){if(!run.runId)return;try{const r=await githubFetch(`/repos/${v('owner')}/${v('repo')}/actions/runs/${run.runId}`);const d=await r.json();sel('stage-sub',`Status: ${d.status}${d.conclusion?' / '+d.conclusion:''}`)}catch(e){}}
 function openGitHub(){window.open(run.runUrl||`https://github.com/${v('owner')}/${v('repo')}/actions`,'_blank')}
-function resetRunState(){if(pollingTimer)clearTimeout(pollingTimer);stopElapsed();run.commitSha=run.runId=run.artifactId=run.runUrl=run.runNumber=null;pollCount=0;STEPS.forEach(s=>stepSt[s.id]='pending');if(fileValid){stepSt['zip']='done';stepSt['validate']='done'}setStage('','Siap','Run sebelumnya direset.');renderTimeline();renderMeta();['btn-download','btn-refresh','btn-github'].forEach(id=>document.getElementById(id).disabled=true);document.getElementById('err-box').style.display='none'}
-function copyError(){const txt=_fullErrorLog||document.getElementById('err-body').textContent;navigator.clipboard.writeText(txt).then(()=>{const btn=document.querySelector('.err-box-copy');btn.textContent='✓ Copied!';setTimeout(()=>btn.textContent='📋 Copy Error',1500)})}
+function resetRunState(){if(pollingTimer)clearTimeout(pollingTimer);stopElapsed();run.commitSha=run.runId=run.artifactId=run.runUrl=run.runNumber=null;run._triggered=false;pollCount=0;STEPS.forEach(s=>stepSt[s.id]='pending');if(fileValid){stepSt['zip']='done';stepSt['validate']='done'}setStage('','Siap','Run sebelumnya direset.');renderTimeline();renderMeta();['btn-download','btn-refresh','btn-github'].forEach(id=>document.getElementById(id).disabled=true);document.getElementById('err-box').style.display='none';updateRunStatusBadge('idle')}
+function copyError(){const txt=_fullErrorLog||document.getElementById('err-body').textContent;navigator.clipboard.writeText(txt).then(()=>{const btn=document.querySelector('.err-box .btn');if(btn){btn.textContent='✓ Copied!';setTimeout(()=>btn.textContent='📋 Copy Error',1500)}})}
 
-// ── RENDER ────────────────────────────────────────
-function setStage(type,lbl,sub){const card=document.getElementById('stage-card');card.className='stage-card'+(type?` ${type}`:'');sel('stage-lbl',lbl);if(sub!==undefined)sel('stage-sub',sub)}
+// ═══════════════════════════════════════════════════════════════
+// RENDER UTILITIES
+// ═══════════════════════════════════════════════════════════════
+function setStage(type,lbl,sub){
+  const card=document.getElementById('stage-card');
+  card.className='stage-card '+(type||'idle');
+  sel('stage-lbl',lbl);if(sub!==undefined)sel('stage-sub',sub);
+}
 function showErr(msg){document.getElementById('err-box').style.display='';document.getElementById('err-body').textContent=msg}
-function renderTimeline(){const ico={pending:'',done:'✓',active:'→',failed:'✗'};document.getElementById('timeline').innerHTML=STEPS.map(s=>{const st=stepSt[s.id]||'pending';return`<div class="tl-item ${st}"><span class="tl-dot"></span><span class="tl-icon">${ico[st]}</span><span>${s.label}</span></div>`}).join('')}
-function renderMeta(){const rows=[{k:'Program',v:zipData.program||'—'},{k:'File',v:zipData.fileName||'—'},{k:'Bab dimuat',v:zipData.babsLoaded.length?`${zipData.babsLoaded.length} bab`:'—'},{k:'Commit SHA',v:shortSha(run.commitSha),hi:true},{k:'Nomor Run',v:run.runNumber?`#${run.runNumber}`:'—',hi:true},{k:'Artifact',v:run.artifactName||'—'},{k:'Elapsed',v:run.elapsed?fmtElapsed(run.elapsed):'—'}];document.getElementById('meta-table').innerHTML=rows.map(r=>`<div class="meta-r"><span class="meta-k">${r.k}</span><span class="meta-v${r.hi?' hi':''}">${r.v}</span></div>`).join('')}
-function startElapsed(){run.elapsed=0;if(run.elapsedTimer)clearInterval(run.elapsedTimer);run.elapsedTimer=setInterval(()=>{run.elapsed++;document.querySelectorAll('.meta-k').forEach(el=>{if(el.textContent==='Elapsed')el.nextElementSibling.textContent=fmtElapsed(run.elapsed)})},1000)}
+function updateRunStatusBadge(state){
+  const badge=document.getElementById('run-status-badge');
+  const configs={idle:{show:false},running:{show:true,cls:'blue',text:'● Berjalan'},success:{show:true,cls:'green',text:'✓ Selesai'},failed:{show:true,cls:'red',text:'✗ Gagal'}};
+  const cfg=configs[state]||configs.idle;
+  badge.style.display=cfg.show?'':'none';
+  if(cfg.show){badge.className='badge '+cfg.cls;badge.textContent=cfg.text}
+  if(state==='running')autoExpandRunAcc();
+}
+
+function renderTimeline(){
+  const icons={pending:'',done:'✓',active:'→',failed:'✗'};
+  document.getElementById('timeline').innerHTML=STEPS.map((s,idx)=>{
+    const st=stepSt[s.id]||'pending';
+    const isLast=idx===STEPS.length-1;
+    return`<div class="tl-item">
+      <div class="tl-dot-wrap">
+        <div class="tl-dot ${st}">${icons[st]}</div>
+        ${!isLast?`<div class="tl-line"></div>`:''}
+      </div>
+      <span class="tl-label ${st}">${s.label}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderMeta(){
+  const rows=[
+    {k:'Program',v:zipData.program||'—'},
+    {k:'File',v:zipData.fileName||'—'},
+    {k:'Bab',v:zipData.babsLoaded.length?`${zipData.babsLoaded.length} bab`:'—'},
+    {k:'Commit SHA',v:shortSha(run.commitSha),hi:true},
+    {k:'Run #',v:run.runNumber?`#${run.runNumber}`:'—',hi:true},
+    {k:'Artifact',v:run.artifactName||'—'},
+    {k:'Elapsed',v:run.elapsed?fmtElapsed(run.elapsed):'—'}
+  ];
+  document.getElementById('meta-table').innerHTML=rows.map(r=>`<div class="meta-r"><span class="meta-k">${r.k}</span><span class="meta-v${r.hi?' hi':''}">${esc(String(r.v))}</span></div>`).join('');
+}
+
+function startElapsed(){run.elapsed=0;if(run.elapsedTimer)clearInterval(run.elapsedTimer);run.elapsedTimer=setInterval(()=>{run.elapsed++;renderMeta()},1000)}
 function stopElapsed(){if(run.elapsedTimer)clearInterval(run.elapsedTimer)}
 
-// ── TOGGLE UI ─────────────────────────────────────
+function setSubmitStatus(type,msg){const el=document.getElementById('submit-status');el.className='submit-status'+(type?' '+type:'');el.textContent=msg}
+
+// ── ACCORDIONS ────────────────────────────────────
 let advOpen=false;
-function toggleAdv(){advOpen=!advOpen;document.getElementById('adv-body').className='adv-body'+(advOpen?' open':'');document.getElementById('adv-arrow').className='adv-arrow'+(advOpen?' open':'')}
-function toggleStatusPanel(){statusCollapsed=!statusCollapsed;document.getElementById('status-body').classList.toggle('hidden',statusCollapsed);document.getElementById('status-arrow').className='adv-arrow'+(statusCollapsed?'':' open')}
+function toggleAdv(){advOpen=!advOpen;document.getElementById('adv-body').className='acc-body'+(advOpen?' open':'');document.getElementById('adv-arrow').className='acc-arrow'+(advOpen?' open':'')}
 let metaOpen=false;
-function toggleMeta(){metaOpen=!metaOpen;document.getElementById('meta-body').className='adv-body'+(metaOpen?' open':'');document.getElementById('meta-arrow').className='adv-arrow'+(metaOpen?' open':'')}
-function showPanel(idx){['panel-0','panel-mid','panel-1'].forEach((id,i)=>{const el=document.getElementById(id);if(window.innerWidth<=768)el.classList.toggle('mob-active',i===idx)});document.querySelectorAll('.mob-tab').forEach((t,i)=>t.classList.toggle('active',i===idx))}
+function toggleMeta(){metaOpen=!metaOpen;document.getElementById('meta-body').className='acc-body'+(metaOpen?' open':'');document.getElementById('meta-arrow').className='acc-arrow'+(metaOpen?' open':'')}
+
+// ── MOBILE ────────────────────────────────────────
+function showPanel(idx){
+  ['panel-0','panel-mid','panel-1'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(window.innerWidth<=768)el.classList.toggle('mob-active',i===idx);
+  });
+  document.querySelectorAll('.mob-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+}
 window.addEventListener('resize',()=>{if(window.innerWidth>768)['panel-0','panel-mid','panel-1'].forEach(id=>document.getElementById(id).classList.remove('mob-active'))});
 
+// ── INIT RENDER ───────────────────────────────────
 renderTimeline();renderMeta();
 </script>
 </body>
