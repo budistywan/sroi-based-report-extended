@@ -34,7 +34,7 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 .bdot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
 .bdot.pulse{animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.main{display:grid;grid-template-columns:320px 1fr;flex:1;overflow:hidden}
+.main{display:grid;grid-template-columns:280px 1fr 300px;flex:1;overflow:hidden}
 .panel{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .panel:last-child{border-right:none}
 .panel-hd{padding:13px 16px 9px;border-bottom:1px solid var(--border);flex-shrink:0}
@@ -160,6 +160,18 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 .submit-status.ok{color:var(--green)}
 .submit-status.err{color:var(--red)}
 .submit-status.warn{color:var(--yellow-text)}
+/* Bab cards */
+.bab-card{border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;background:var(--surface);display:flex;align-items:flex-start;gap:10px;transition:border-color .15s}
+.bab-card.ok{border-left:3px solid var(--green)}
+.bab-card.warn{border-left:3px solid #fcd34d}
+.bab-card.err{border-left:3px solid var(--red)}
+.bab-card.orig{border-left:3px solid var(--border2);opacity:.65}
+.bab-num{font-size:9px;font-weight:700;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:3px 6px;white-space:nowrap;flex-shrink:0;margin-top:1px}
+.bab-info{flex:1;min-width:0}
+.bab-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bab-title.detected{color:var(--blue)}
+.bab-meta{font-size:10px;color:var(--text3);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+.bab-meta span{display:inline-flex;align-items:center;gap:3px}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 .mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);height:52px;z-index:100;box-shadow:0 -2px 8px rgba(16,24,40,.06)}
@@ -175,6 +187,7 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
   .panel{display:none;border-right:none;border-bottom:1px solid var(--border);min-height:calc(100vh - 110px)}
   .panel.mob-active{display:flex}
   .mob-nav{display:block}
+  .mob-nav-tabs .mob-tab{font-size:9px}
 }
 </style>
 </head>
@@ -197,8 +210,8 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 <!-- ══ PANEL KIRI ══ -->
 <div class="panel" id="panel-0">
   <div class="panel-hd">
-    <div class="panel-title">Workspace</div>
-    <div class="panel-sub">Unggah enriched semantics dan validasi sebelum render</div>
+    <div class="panel-title">File</div>
+    <div class="panel-sub">Unggah enriched semantics ZIP untuk dirender</div>
   </div>
   <div class="panel-body">
 
@@ -221,21 +234,6 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
           <button class="btn sm" onclick="document.getElementById('file-input-2').click()">↑ Ganti File</button>
           <input type="file" id="file-input-2" accept=".zip" onchange="loadZip(event)" style="display:none">
         </div>
-      </div>
-
-      <!-- Manifest per bab -->
-      <div style="margin-bottom:12px;">
-        <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);">Manifest Bab</div>
-        <table class="manifest-table" id="manifest-table">
-          <thead><tr><th>Bab</th><th>File</th><th>Status</th></tr></thead>
-          <tbody id="manifest-tbody"></tbody>
-        </table>
-      </div>
-
-      <!-- Validation issues -->
-      <div id="val-issues-wrap" style="display:none;margin-bottom:12px;">
-        <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border);">Detail Validasi</div>
-        <div class="val-issues" id="val-issues"></div>
       </div>
     </div>
 
@@ -295,6 +293,29 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
   </div>
 </div><!-- /panel kiri -->
 
+<!-- ══ PANEL TENGAH ══ -->
+<div class="panel" id="panel-mid">
+  <div class="panel-hd">
+    <div class="panel-title">Workspace</div>
+    <div class="panel-sub">Struktur bab yang terdeteksi dari file JSON</div>
+  </div>
+  <div class="panel-body">
+    <div id="mid-empty" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:8px;color:var(--text3)">
+      <div style="font-size:28px;opacity:.35">📄</div>
+      <div style="font-size:12px;text-align:center;line-height:1.6;">Muat file ZIP dari panel<br>File untuk melihat struktur bab</div>
+    </div>
+    <div id="mid-content" style="display:none">
+      <!-- Bab cards -->
+      <div id="bab-cards" style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;"></div>
+      <!-- Validation issues -->
+      <div id="val-issues-wrap" style="display:none;margin-bottom:12px;">
+        <div class="sec-label">Detail Validasi</div>
+        <div class="val-issues" id="val-issues"></div>
+      </div>
+    </div>
+  </div>
+</div><!-- /panel tengah -->
+
 <!-- ══ PANEL KANAN ══ -->
 <div class="panel" id="panel-1" style="display:flex;flex-direction:column;overflow:hidden;">
   <button class="status-collapse-btn" onclick="toggleStatusPanel()">
@@ -335,8 +356,9 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 
 <nav class="mob-nav">
   <div class="mob-nav-tabs">
-    <button class="mob-tab active" onclick="showPanel(0)" id="tab-0"><span class="tab-icon">☰</span><span>Workspace</span></button>
-    <button class="mob-tab" onclick="showPanel(1)" id="tab-1"><span class="tab-icon">◉</span><span>Status</span></button>
+    <button class="mob-tab active" onclick="showPanel(0)" id="tab-0"><span class="tab-icon">📄</span><span>File</span></button>
+    <button class="mob-tab" onclick="showPanel(1)" id="tab-1"><span class="tab-icon">☰</span><span>Workspace</span></button>
+    <button class="mob-tab" onclick="showPanel(2)" id="tab-2"><span class="tab-icon">◉</span><span>Status</span></button>
   </div>
 </nav>
 
@@ -344,6 +366,7 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 // ── CONSTANTS ─────────────────────────────────────
 const PROG={EHS:'Enduro Home Service',ESL:'Enduro Sahabat Lapas',ESD:'Enduro Sahabat Difabel',ESP:'Enduro Student Program',ESS:'Enduro Sahabat Santri',ETB:'Enduro Tapal Batas',PSN:'Pertamina Sahabat Nelayan'};
 const ALL_BABS=['bab_1','bab_2','bab_3','bab_4','bab_5','bab_6','bab_7','bab_8','bab_9'];
+const BAB_TITLES={bab_1:'Pendahuluan',bab_2:'Metodologi',bab_3:'Profil Program',bab_4:'Pemetaan Dampak',bab_5:'Analisis Dampak',bab_6:'Perhitungan SROI',bab_7:'Analisis Sensitivitas',bab_8:'Pembelajaran',bab_9:'Kesimpulan & Rekomendasi'};
 const VALID_BLOCK_TYPES=new Set(['heading_1','heading_2','heading_3','paragraph','paragraph_lead','paragraph_small','table','table_borderless','callout_info','callout_warning','callout_success','callout_neutral','callout_gap','metric_card_3col','bar_chart_text','bullet_list','numbered_list','divider','divider_thick']);
 const NUM_PAT=/Rp\s*[\d.,]+|1\s*:\s*[\d.,]+|\d{6,}|\d+[.,]\d{2,}/g;
 const FIN_TYPES=new Set(['table','table_borderless','metric_card_3col','bar_chart_text']);
@@ -568,6 +591,10 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
   document.getElementById('upload-card').style.display='none';
   document.getElementById('loaded-card').style.display='';
 
+  // Show middle panel content
+  document.getElementById('mid-empty').style.display='none';
+  document.getElementById('mid-content').style.display='';
+
   const card=document.getElementById('prog-card');
   card.className='prog-card'+(valResult.valid?' valid':valResult.hasErr?' invalid':'');
 
@@ -591,17 +618,8 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
     sb.innerHTML=`<div class="val-summary warn">⚠ ${wc} peringatan — substance lock sebagian dilewati</div>`;
   }
 
-  // Manifest table
-  const tbody=document.getElementById('manifest-tbody');
-  tbody.innerHTML=ALL_BABS.map(bab=>{
-    const hasFile=babsFound.includes(bab);
-    const br=valResult.babResults[bab];
-    const status=hasFile?(br?.status==='err'?'err':br?.status==='warn'?'warn':'ok'):'orig';
-    const tagLabel={ok:'✓ valid',warn:'⚠ warning',err:'✗ error',orig:'— original'}[status];
-    const rowCls={ok:'row-ok',warn:'row-warn',err:'row-err',orig:''}[status];
-    const isFormatA=hasFile&&!zipData.originalFiles[bab];const fileName=hasFile?(isFormatA?`${bab} (enriched)`:`${bab}_editable.json`):'(dari pipeline)';
-    return`<tr class="${rowCls}"><td>${bab}</td><td>${fileName}</td><td><span class="mtag ${status}">${tagLabel}</span></td></tr>`;
-  }).join('');
+  // Bab cards
+  renderBabCards(babsFound, valResult);
 
   // Issues
   const issuesWrap=document.getElementById('val-issues-wrap');
@@ -621,6 +639,71 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
     const ec=valResult.issues.filter(i=>i.sev==='err').length;
     setSubmitStatus('err',`✗ ${ec} error — perbaiki file lalu upload ulang`);
   }
+}
+
+// ── RENDER BAB CARDS ──────────────────────────────
+function renderBabCards(babsFound, valResult){
+  const container=document.getElementById('bab-cards');
+
+  // Extract title + block count from each detected bab
+  const babMeta={};
+  for(const bab of babsFound){
+    const txt=zipData.editableFiles[bab];
+    if(!txt)continue;
+    try{
+      const raw=JSON.parse(txt);
+      const ch=Array.isArray(raw)?raw[0]:raw;
+      const blocks=ch.blocks||[];
+      // Title: dari field title di chapter, atau dari heading_1 block pertama, atau fallback BAB_TITLES
+      let title=ch.title||ch.chapter_title||null;
+      if(!title){
+        const h1=blocks.find(b=>b.type==='heading_1');
+        if(h1)title=h1.text||h1.content||null;
+      }
+      babMeta[bab]={
+        title: title||null,
+        blockCount: blocks.length,
+        hasOriginal: !!zipData.originalFiles[bab],
+        programCode: ch.program_code||null
+      };
+    }catch(e){babMeta[bab]={title:null,blockCount:0,hasOriginal:false,programCode:null}}
+  }
+
+  container.innerHTML=ALL_BABS.map(bab=>{
+    const hasFile=babsFound.includes(bab);
+    const br=valResult.babResults[bab];
+    const status=hasFile?(br?.status==='err'?'err':br?.status==='warn'?'warn':'ok'):'orig';
+    const meta=babMeta[bab]||{};
+
+    // Title resolution: detected from JSON > fallback BAB_TITLES
+    const detectedTitle=meta.title||null;
+    const fallbackTitle=BAB_TITLES[bab]||bab;
+    const displayTitle=detectedTitle||fallbackTitle;
+    const titleIsDetected=!!detectedTitle;
+
+    const babNum=bab.replace('_',' ').toUpperCase(); // "BAB 1"
+    const statusIcon={ok:'✓',warn:'⚠',err:'✗',orig:'·'}[status];
+    const statusColor={ok:'var(--green)',warn:'#d97706',err:'var(--red)',orig:'var(--text3)'}[status];
+
+    const metaParts=[];
+    if(hasFile){
+      if(meta.blockCount>0)metaParts.push(`<span>⬜ ${meta.blockCount} blok</span>`);
+      if(meta.hasOriginal)metaParts.push(`<span>🔒 substance lock aktif</span>`);
+      else metaParts.push(`<span style="color:var(--text3)">tanpa _original</span>`);
+      if(meta.programCode)metaParts.push(`<span style="font-family:var(--mono)">${meta.programCode}</span>`);
+    }else{
+      metaParts.push(`<span>dari pipeline (tidak dimodifikasi)</span>`);
+    }
+
+    return`<div class="bab-card ${status}">
+      <div class="bab-num">${babNum}</div>
+      <div class="bab-info">
+        <div class="bab-title${titleIsDetected?' detected':''}" title="${displayTitle}">${displayTitle}</div>
+        <div class="bab-meta">${metaParts.join('')}</div>
+      </div>
+      <span style="font-size:11px;font-weight:700;color:${statusColor};flex-shrink:0;margin-top:2px">${statusIcon}</span>
+    </div>`;
+  }).join('');
 }
 
 // ── CONNECTION ────────────────────────────────────
@@ -748,8 +831,8 @@ function toggleAdv(){advOpen=!advOpen;document.getElementById('adv-body').classN
 function toggleStatusPanel(){statusCollapsed=!statusCollapsed;document.getElementById('status-body').classList.toggle('hidden',statusCollapsed);document.getElementById('status-arrow').className='adv-arrow'+(statusCollapsed?'':' open')}
 let metaOpen=false;
 function toggleMeta(){metaOpen=!metaOpen;document.getElementById('meta-body').className='adv-body'+(metaOpen?' open':'');document.getElementById('meta-arrow').className='adv-arrow'+(metaOpen?' open':'')}
-function showPanel(idx){['panel-0','panel-1'].forEach((id,i)=>{const el=document.getElementById(id);if(window.innerWidth<=768)el.classList.toggle('mob-active',i===idx)});document.querySelectorAll('.mob-tab').forEach((t,i)=>t.classList.toggle('active',i===idx))}
-window.addEventListener('resize',()=>{if(window.innerWidth>768)['panel-0','panel-1'].forEach(id=>document.getElementById(id).classList.remove('mob-active'))});
+function showPanel(idx){['panel-0','panel-mid','panel-1'].forEach((id,i)=>{const el=document.getElementById(id);if(window.innerWidth<=768)el.classList.toggle('mob-active',i===idx)});document.querySelectorAll('.mob-tab').forEach((t,i)=>t.classList.toggle('active',i===idx))}
+window.addEventListener('resize',()=>{if(window.innerWidth>768)['panel-0','panel-mid','panel-1'].forEach(id=>document.getElementById(id).classList.remove('mob-active'))});
 
 renderTimeline();renderMeta();
 </script>
