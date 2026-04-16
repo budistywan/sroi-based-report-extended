@@ -1,0 +1,331 @@
+name: Render Laporan dari Enriched Semantics (Fase 2)
+
+on:
+  # Trigger manual dari UI Fase 2
+  workflow_dispatch:
+    inputs:
+      program:
+        description: 'Kode program (ESL / EHS / dll.)'
+        required: true
+        default: 'ESL'
+        type: string
+      semantics:
+        description: 'Path file zip enriched semantics di repo'
+        required: true
+        default: 'data/enriched_semantics/exports.zip'
+        type: string
+      mode:
+        description: 'Mode render'
+        required: false
+        default: 'render-only'
+        type: choice
+        options:
+          - render-only
+
+  # Trigger otomatis saat zip di-push ke data/enriched_semantics/
+  push:
+    paths:
+      - 'data/enriched_semantics/**.zip'
+
+jobs:
+  render-from-semantics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ── 1. Checkout ───────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Python ───────────────────────────
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # ── 3. Setup Node.js ──────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      # ── 4. Resolve inputs ─────────────────────────
+      - name: Resolve program and zip path
+        id: inputs
+        run: |
+          # Program: dari input manual atau deteksi dari push path
+          if [ -n "${{ github.event.inputs.program }}" ]; then
+            PROGRAM="${{ github.event.inputs.program }}"
+          else
+            # Deteksi dari file yang berubah saat push
+            PROGRAM=$(git diff --name-only HEAD~1 HEAD \
+              | grep 'data/enriched_semantics/' \
+              | head -1 \
+              | grep -oiE 'ESL|EHS|ESD|ESP|ESS|ETB|PSN' \
+              | head -1 \
+              | tr '[:lower:]' '[:upper:]')
+            PROGRAM=${PROGRAM:-ESL}
+          fi
+
+          # Zip path
+          if [ -n "${{ github.event.inputs.semantics }}" ]; then
+            ZIP_PATH="${{ github.event.inputs.semantics }}"
+          else
+            ZIP_PATH=$(git diff --name-only HEAD~1 HEAD \
+              | grep 'data/enriched_semantics/.*\.zip' \
+              | head -1)
+          fi
+
+          echo "program=${PROGRAM}" >> $GITHUB_OUTPUT
+          echo "zip_path=${ZIP_PATH}" >> $GITHUB_OUTPUT
+          echo "Program : ${PROGRAM}"
+          echo "Zip path: ${ZIP_PATH}"
+
+      # ── 5. Extract zip dan siapkan semantic files ──
+      - name: Extract enriched semantics dari zip
+        run: |
+          PROGRAM="${{ steps.inputs.outputs.program }}"
+          ZIP_PATH="${{ steps.inputs.outputs.zip_path }}"
+
+          if [ ! -f "${ZIP_PATH}" ]; then
+            echo "ERROR: File zip tidak ditemukan: ${ZIP_PATH}"
+            exit 1
+          fi
+
+          echo "Extracting: ${ZIP_PATH}"
+          EXTRACT_DIR="semantic_editor/extracted_${PROGRAM}"
+          mkdir -p "${EXTRACT_DIR}"
+          unzip -o "${ZIP_PATH}" -d "${EXTRACT_DIR}"
+
+          echo ""
+          echo "=== Files in zip ==="
+          ls -la "${EXTRACT_DIR}/"
+
+          # Buat work dir untuk assembler
+          WORK_DIR="output/${PROGRAM,,}/work"
+          mkdir -p "${WORK_DIR}"
+
+          echo ""
+          echo "=== Menyiapkan chapter semantic files ==="
+
+          # Strip _edit_note dan _protected annotations dari _editable.json
+          # lalu tempatkan sebagai chapter_semantic_bab_X.json
+          python3 - << PYEOF
+          import json, os, re
+          from pathlib import Path
+
+          extract_dir = Path("${EXTRACT_DIR}")
+          work_dir    = Path("${WORK_DIR}")
+          program     = "${PROGRAM}"
+
+          # Cari semua *_editable.json
+          editable_files = sorted(extract_dir.rglob("*_editable.json"))
+          print(f"  Editable files ditemukan: {len(editable_files)}")
+
+          processed = []
+          for f in editable_files:
+              stem = f.stem.replace("_editable", "")  # e.g. bab_4
+              try:
+                  data = json.load(open(f, encoding="utf-8"))
+                  chapter = data[0] if isinstance(data, list) else data
+
+                  # Hapus _export_metadata
+                  chapter.pop("_export_metadata", None)
+
+                  # Bersihkan annotation fields dari setiap block
+                  cleaned_blocks = []
+                  for block in chapter.get("blocks", []):
+                      clean = {k: v for k, v in block.items() if not k.startswith("_")}
+                      cleaned_blocks.append(clean)
+                  chapter["blocks"] = cleaned_blocks
+                  chapter["render_source"] = "enriched_semantics_fase2"
+
+                  # Tentukan nama output file yang diharapkan assembler
+                  # bab_7 → chapter_semantic_bab7.json (tanpa underscore)
+                  # bab_1..6,8,9 → chapter_semantic_bab_N.json
+                  chapter_id = chapter.get("chapter_id", stem)
+                  bab_num_match = re.search(r"\d+", chapter_id)
+                  if not bab_num_match:
+                      print(f"  SKIP {f.name}: chapter_id tidak valid")
+                      continue
+                  bab_num = int(bab_num_match.group())
+
+                  if bab_num == 7:
+                      out_name = "chapter_semantic_bab7.json"
+                  else:
+                      out_name = f"chapter_semantic_bab_{bab_num}.json"
+
+                  out_path = work_dir / out_name
+                  json.dump([chapter], open(out_path, "w"), indent=2, ensure_ascii=False)
+                  processed.append((bab_num, out_name))
+                  print(f"  ✓ {f.name} → {out_name} ({len(cleaned_blocks)} blocks)")
+
+              except Exception as e:
+                  print(f"  ✗ {f.name}: {e}")
+
+          print(f"\nTotal processed: {len(processed)} bab")
+
+          # Cek bab mana yang tidak ada — fallback ke original pipeline output
+          all_babs = set(range(1, 10))
+          processed_nums = set(n for n, _ in processed)
+          missing = all_babs - processed_nums
+
+          if missing:
+              print(f"\nBab tidak ada di zip (akan fallback ke data/semantic/): {sorted(missing)}")
+              # Copy dari data/semantic/ jika ada
+              semantic_fallback = Path("data/semantic")
+              for n in sorted(missing):
+                  candidates = [
+                      semantic_fallback / f"chapter_semantic_bab{n}.json",
+                      semantic_fallback / f"chapter_semantic_bab_{n}.json",
+                  ]
+                  for c in candidates:
+                      if c.exists():
+                          import shutil
+                          out_name = f"chapter_semantic_bab{n}.json" if n==7 else f"chapter_semantic_bab_{n}.json"
+                          shutil.copy2(c, work_dir / out_name)
+                          print(f"  fallback: {c.name} → {out_name}")
+                          break
+                  else:
+                      print(f"  WARN: bab_{n} tidak ditemukan di zip maupun data/semantic/")
+          PYEOF
+
+          echo ""
+          echo "=== Work dir contents ==="
+          ls -la "${WORK_DIR}/"
+
+      # ── 6. Cari canonical ─────────────────────────
+      - name: Resolve canonical file
+        id: canonical
+        run: |
+          PROGRAM="${{ steps.inputs.outputs.program }}"
+          PROG_LOWER=$(echo "${PROGRAM}" | tr '[:upper:]' '[:lower:]')
+
+          # Cari canonical
+          CANONICAL_PATH="data/canonical/canonical_${PROG_LOWER}_v1.json"
+          if [ ! -f "${CANONICAL_PATH}" ]; then
+            # Fallback ke sprint0
+            CANONICAL_PATH="sprint0/canonical_${PROG_LOWER}_v1.json"
+          fi
+          if [ ! -f "${CANONICAL_PATH}" ]; then
+            # Fallback ke ESL canonical untuk cover page
+            CANONICAL_PATH="data/canonical/canonical_esl_v1.json"
+            echo "WARN: Canonical ${PROGRAM} tidak ditemukan, pakai ESL sebagai fallback"
+          fi
+
+          echo "canonical=${CANONICAL_PATH}" >> $GITHUB_OUTPUT
+          echo "Canonical: ${CANONICAL_PATH}"
+
+      # ── 7. Run full assembler ──────────────────────
+      - name: Render full report dengan Full Assembler
+        run: |
+          PROGRAM="${{ steps.inputs.outputs.program }}"
+          PROG_LOWER=$(echo "${PROGRAM}" | tr '[:upper:]' '[:lower:]')
+          WORK_DIR="output/${PROG_LOWER}/work"
+          CANONICAL="${{ steps.canonical.outputs.canonical }}"
+          OUTPUT_DIR="output/${PROG_LOWER}"
+          OUTPUT_FILE="${OUTPUT_DIR}/${PROGRAM}_SROI_Laporan_Fase2.docx"
+
+          mkdir -p "${OUTPUT_DIR}"
+
+          echo "Running Full Assembler..."
+          echo "  Semantic dir : ${WORK_DIR}"
+          echo "  Canonical    : ${CANONICAL}"
+          echo "  Output       : ${OUTPUT_FILE}"
+
+          node sprint8/full_assembler.js \
+            --semantic-dir  "${WORK_DIR}" \
+            --semantic-dir6 "${WORK_DIR}" \
+            --canonical     "${CANONICAL}" \
+            --output        "${OUTPUT_FILE}"
+
+          if [ ! -f "${OUTPUT_FILE}" ]; then
+            echo "ERROR: Output docx tidak dihasilkan"
+            exit 1
+          fi
+
+          SIZE=$(du -h "${OUTPUT_FILE}" | cut -f1)
+          echo ""
+          echo "✓ Laporan berhasil dirender: ${OUTPUT_FILE} (${SIZE})"
+
+      # ── 8. Generate render report ──────────────────
+      - name: Generate render report
+        run: |
+          PROGRAM="${{ steps.inputs.outputs.program }}"
+          PROG_LOWER=$(echo "${PROGRAM}" | tr '[:upper:]' '[:lower:]')
+          WORK_DIR="output/${PROG_LOWER}/work"
+          ZIP_PATH="${{ steps.inputs.outputs.zip_path }}"
+
+          python3 - << PYEOF
+          import json, os
+          from pathlib import Path
+          from datetime import datetime
+
+          work_dir = Path("${WORK_DIR}")
+          program  = "${PROGRAM}"
+
+          # Hitung bab yang berhasil dirender
+          bab_files = sorted(work_dir.glob("chapter_semantic_bab*.json"))
+          bab_info  = []
+          for f in bab_files:
+              try:
+                  data = json.load(open(f))
+                  ch   = data[0] if isinstance(data, list) else data
+                  source = ch.get("render_source", "original_pipeline")
+                  bab_info.append({
+                      "file": f.name,
+                      "chapter_id": ch.get("chapter_id", "?"),
+                      "blocks": len(ch.get("blocks", [])),
+                      "source": source,
+                  })
+              except:
+                  pass
+
+          report = {
+              "run_type":      "fase2_render",
+              "program":       program,
+              "rendered_at":   datetime.now().isoformat(),
+              "zip_source":    "${ZIP_PATH}",
+              "babs_rendered": len(bab_info),
+              "chapters":      bab_info,
+              "enriched_count": sum(1 for b in bab_info if b["source"] == "enriched_semantics_fase2"),
+              "original_count": sum(1 for b in bab_info if b["source"] != "enriched_semantics_fase2"),
+          }
+
+          out = Path("${WORK_DIR}") / "render_report_fase2.json"
+          json.dump(report, open(out, "w"), indent=2, ensure_ascii=False)
+          print(f"Render report: {out}")
+          print(f"  Bab enriched : {report['enriched_count']}")
+          print(f"  Bab original : {report['original_count']}")
+          print(f"  Total        : {report['babs_rendered']}")
+          PYEOF
+
+      # ── 9. Upload artifact ────────────────────────
+      - name: Collect artifacts
+        run: |
+          PROGRAM="${{ steps.inputs.outputs.program }}"
+          PROG_LOWER=$(echo "${PROGRAM}" | tr '[:upper:]' '[:lower:]')
+
+          mkdir -p artifacts
+          # Docx output
+          cp output/${PROG_LOWER}/${PROGRAM}_SROI_Laporan_Fase2.docx artifacts/ 2>/dev/null || true
+          # Render report
+          cp output/${PROG_LOWER}/work/render_report_fase2.json artifacts/ 2>/dev/null || true
+
+          echo "=== Artifacts ==="
+          ls -lh artifacts/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sroi-laporan-fase2-${{ steps.inputs.outputs.program }}-${{ github.run_number }}
+          path: artifacts/
+          retention-days: 30
