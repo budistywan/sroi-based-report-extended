@@ -71,9 +71,27 @@ jobs:
           if [ -n "${{ github.event.inputs.semantics }}" ]; then
             ZIP_PATH="${{ github.event.inputs.semantics }}"
           else
+            # Coba dari git diff dulu
             ZIP_PATH=$(git diff --name-only HEAD~1 HEAD \
               | grep 'data/enriched_semantics/.*\.zip' \
               | head -1)
+            # Fallback: ambil file zip terbaru di folder
+            if [ -z "${ZIP_PATH}" ]; then
+              ZIP_PATH=$(find data/enriched_semantics -name "*.zip" \
+                -newer data/enriched_semantics/.gitkeep 2>/dev/null \
+                | sort -t_ -k1 | tail -1)
+            fi
+            # Fallback terakhir: zip apapun yang ada
+            if [ -z "${ZIP_PATH}" ]; then
+              ZIP_PATH=$(find data/enriched_semantics -name "*.zip" \
+                | head -1)
+            fi
+          fi
+
+          if [ -z "${ZIP_PATH}" ]; then
+            echo "ERROR: Tidak ada file zip di data/enriched_semantics/"
+            echo "Pastikan file zip sudah di-push ke repo"
+            exit 1
           fi
 
           echo "program=${PROGRAM}" >> $GITHUB_OUTPUT
