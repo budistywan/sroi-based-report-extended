@@ -205,6 +205,39 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);height:100vh
 .json-bool{color:#8250df}
 .preview-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow)}
 
+/* Workspace program bar */
+.ws-prog-bar{background:linear-gradient(to right,var(--blue-l),var(--surface));border-bottom:1px solid var(--blue-m);padding:7px 16px;display:flex;align-items:center;gap:9px;flex-shrink:0}
+.ws-prog-code{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;background:var(--blue);color:#fff;padding:2px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0;font-family:var(--mono)}
+.ws-prog-name{font-size:12px;font-weight:600;color:var(--blue);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+
+/* JSON copy button */
+.json-toolbar{display:flex;justify-content:flex-end;margin-bottom:8px}
+.copy-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:4px 10px;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--surface);color:var(--text2);cursor:pointer;font-family:var(--sans);transition:all .12s;box-shadow:var(--shadow)}
+.copy-btn:hover{background:var(--surface2);color:var(--text)}
+.copy-btn.copied{background:var(--green-l);border-color:var(--green-m);color:var(--green)}
+
+/* KPI score cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.kpi-card{border-radius:var(--r);border:1px solid var(--border);padding:10px 8px 8px;text-align:center;background:var(--surface);position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border2)}
+.kpi-card.ok{border-color:var(--green-m);background:var(--green-l)}
+.kpi-card.ok::before{background:var(--green)}
+.kpi-card.warn{border-color:var(--yellow-b);background:var(--yellow-l)}
+.kpi-card.warn::before{background:#f59e0b}
+.kpi-card.err{border-color:var(--red-m);background:var(--red-l)}
+.kpi-card.err::before{background:var(--red)}
+.kpi-val{font-size:20px;font-weight:800;font-family:var(--mono);line-height:1.1}
+.kpi-card.ok .kpi-val{color:var(--green)}
+.kpi-card.warn .kpi-val{color:#d97706}
+.kpi-card.err .kpi-val{color:var(--red)}
+.kpi-denom{font-size:11px;font-weight:500;opacity:.55}
+.kpi-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text3);margin-top:4px;display:block}
+.kpi-bar{height:3px;border-radius:2px;background:rgba(0,0,0,.08);margin-top:7px;overflow:hidden}
+.kpi-bar-fill{height:100%;border-radius:2px;transition:width .5s ease}
+.kpi-card.ok .kpi-bar-fill{background:var(--green)}
+.kpi-card.warn .kpi-bar-fill{background:#f59e0b}
+.kpi-card.err .kpi-bar-fill{background:var(--red)}
+
 /* ── ANALYSIS PANEL ── */
 .ap-hd{padding:12px 16px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
 .ap-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em}
@@ -442,6 +475,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);height:100vh
     <div class="panel-sub">Klik bab di panel File untuk melihat isi</div>
   </div>
 
+  <!-- Program bar (muncul saat bab dipilih) -->
+  <div id="ws-prog-bar" class="ws-prog-bar" style="display:none">
+    <span class="ws-prog-code" id="ws-prog-code">—</span>
+    <span class="ws-prog-name" id="ws-prog-name">—</span>
+  </div>
+
   <!-- Header dinamis (saat bab dipilih) -->
   <div id="ws-hd" class="ws-hd" style="display:none;background:var(--surface)">
     <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:0">
@@ -486,11 +525,23 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);height:100vh
     <!-- Diagnosis (muncul saat bab dipilih) -->
     <div id="ap-content" style="display:none">
 
-      <!-- Skor ringkasan -->
-      <div class="diag-scores" id="diag-scores">
-        <div class="diag-score-chip" id="score-struktur"><span class="diag-score-label">Struktur</span>—</div>
-        <div class="diag-score-chip" id="score-flow"><span class="diag-score-label">Flow</span>—</div>
-        <div class="diag-score-chip" id="score-logika"><span class="diag-score-label">Logika</span>—</div>
+      <!-- KPI scores -->
+      <div class="kpi-grid" id="diag-scores">
+        <div class="kpi-card" id="score-struktur">
+          <div class="kpi-val"><span id="kpi-val-struktur">—</span><span class="kpi-denom" id="kpi-den-struktur"></span></div>
+          <span class="kpi-label">Struktur</span>
+          <div class="kpi-bar"><div class="kpi-bar-fill" id="kpi-bar-struktur" style="width:0%"></div></div>
+        </div>
+        <div class="kpi-card" id="score-flow">
+          <div class="kpi-val"><span id="kpi-val-flow">—</span><span class="kpi-denom" id="kpi-den-flow"></span></div>
+          <span class="kpi-label">Flow</span>
+          <div class="kpi-bar"><div class="kpi-bar-fill" id="kpi-bar-flow" style="width:0%"></div></div>
+        </div>
+        <div class="kpi-card" id="score-logika">
+          <div class="kpi-val"><span id="kpi-val-logika">—</span><span class="kpi-denom" id="kpi-den-logika"></span></div>
+          <span class="kpi-label">Logika</span>
+          <div class="kpi-bar"><div class="kpi-bar-fill" id="kpi-bar-logika" style="width:0%"></div></div>
+        </div>
       </div>
 
       <!-- Checklist rule-based -->
@@ -817,6 +868,11 @@ function selectBab(bab){
   document.querySelectorAll('.bab-card').forEach(c=>c.classList.remove('active'));
   const card=document.getElementById('babcard-'+bab);if(card)card.classList.add('active');
   _currentBab=bab;
+  // Program bar
+  const progBar=document.getElementById('ws-prog-bar');
+  progBar.style.display='';
+  sel('ws-prog-code',zipData.program||'—');
+  sel('ws-prog-name',PROG[zipData.program]||zipData.program||'Program tidak terdeteksi');
   // Switch workspace header
   document.getElementById('ws-static-hd').style.display='none';
   document.getElementById('ws-hd').style.display='';
@@ -845,6 +901,7 @@ function setViewMode(mode){
 
 function resetWorkspace(){
   _currentBab=null;
+  document.getElementById('ws-prog-bar').style.display='none';
   document.getElementById('ws-hd').style.display='none';
   document.getElementById('ws-static-hd').style.display='';
   document.getElementById('ws-empty').style.display='flex';
@@ -912,7 +969,7 @@ function renderJsonView(ch){
     if(/true|false|null/.test(m))return`<span class="json-bool">${m}</span>`;
     return`<span class="json-num">${m}</span>`;
   });
-  return`<pre class="json-view">${highlighted}</pre>`;
+  return`<div class="json-toolbar"><button class="copy-btn" id="copy-json-btn" onclick="copyJson()">⎘ Copy JSON</button></div><pre class="json-view">${highlighted}</pre>`;
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -994,19 +1051,22 @@ function runDiagnosis(bab,blocks){
 }
 
 function renderDiagnosisUI(diag){
-  const scoreEl=(id,items)=>{
+  const setKPI=(dim,items)=>{
     const total=items.length;
     const ok=items.filter(i=>i.ok).length;
     const hasCritFail=items.some(i=>!i.ok&&i.crit);
     const hasErr=items.some(i=>!i.ok&&!i.warn);
     const cls=hasCritFail||hasErr?'err':ok<total?'warn':'ok';
-    const el=document.getElementById(id);
-    el.className='diag-score-chip '+cls;
-    el.innerHTML=`<span class="diag-score-label">${el.querySelector('.diag-score-label')?.textContent||''}</span>${ok}/${total}`;
+    const pct=total>0?Math.round((ok/total)*100):0;
+    document.getElementById('score-'+dim).className='kpi-card '+cls;
+    document.getElementById('kpi-val-'+dim).textContent=ok;
+    document.getElementById('kpi-den-'+dim).textContent='/'+total;
+    // Animate bar after a tick
+    setTimeout(()=>{document.getElementById('kpi-bar-'+dim).style.width=pct+'%'},30);
   };
-  scoreEl('score-struktur',diag.struktur);
-  scoreEl('score-flow',diag.flow);
-  scoreEl('score-logika',diag.logika);
+  setKPI('struktur',diag.struktur);
+  setKPI('flow',diag.flow);
+  setKPI('logika',diag.logika);
 
   const container=document.getElementById('diag-checklist');
   const sections=[['STRUKTUR',diag.struktur],['FLOW',diag.flow],['LOGIKA',diag.logika]];
@@ -1023,6 +1083,15 @@ function renderDiagnosisUI(diag){
       }).join('')}
     </div>
   `).join('');
+}
+
+function copyJson(){
+  if(!_currentBab||!zipData.editableFiles[_currentBab])return;
+  let ch;try{const raw=JSON.parse(zipData.editableFiles[_currentBab]);ch=Array.isArray(raw)?raw[0]:raw}catch(e){return}
+  navigator.clipboard.writeText(JSON.stringify(ch,null,2)).then(()=>{
+    const btn=document.getElementById('copy-json-btn');
+    if(btn){btn.textContent='✓ Tersalin!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='⎘ Copy JSON';btn.classList.remove('copied')},1800)}
+  });
 }
 
 // ── AI ANALYSIS ───────────────────────────────────
