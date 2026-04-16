@@ -161,17 +161,64 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
 .submit-status.err{color:var(--red)}
 .submit-status.warn{color:var(--yellow-text)}
 /* Bab cards */
-.bab-card{border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;background:var(--surface);display:flex;align-items:flex-start;gap:10px;transition:border-color .15s}
+.bab-card{border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;background:var(--surface);display:flex;align-items:flex-start;gap:10px;transition:all .15s;cursor:pointer;user-select:none}
+.bab-card:hover{border-color:var(--blue-mid);background:var(--blue-light)}
+.bab-card.active{border-color:var(--blue)!important;background:var(--blue-light);box-shadow:0 0 0 2px rgba(21,112,239,.12)}
 .bab-card.ok{border-left:3px solid var(--green)}
 .bab-card.warn{border-left:3px solid #fcd34d}
 .bab-card.err{border-left:3px solid var(--red)}
-.bab-card.orig{border-left:3px solid var(--border2);opacity:.65}
+.bab-card.orig{border-left:3px solid var(--border2);opacity:.65;cursor:default}
+.bab-card.orig:hover{background:var(--surface);border-color:var(--border)}
 .bab-num{font-size:9px;font-weight:700;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:3px 6px;white-space:nowrap;flex-shrink:0;margin-top:1px}
 .bab-info{flex:1;min-width:0}
 .bab-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bab-title.detected{color:var(--blue)}
 .bab-meta{font-size:10px;color:var(--text3);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
 .bab-meta span{display:inline-flex;align-items:center;gap:3px}
+/* Workspace viewer */
+.ws-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);flex-shrink:0;gap:8px;min-height:42px}
+.ws-bab-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;font-family:var(--mono)}
+.ws-bab-title{font-size:13px;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ws-toggle{display:flex;border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0}
+.ws-toggle-btn{padding:3px 10px;font-size:11px;font-weight:500;border:none;background:var(--surface);color:var(--text3);cursor:pointer;font-family:var(--sans);transition:all .12s}
+.ws-toggle-btn.active{background:var(--blue);color:#fff}
+.ws-body{flex:1;overflow-y:auto;padding:14px 16px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
+/* Block preview rendering */
+.blk{margin-bottom:10px}
+.blk-h1{font-size:15px;font-weight:700;color:var(--text);line-height:1.4;padding-bottom:6px;border-bottom:2px solid var(--border)}
+.blk-h2{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-top:4px}
+.blk-h3{font-size:12px;font-weight:600;color:var(--text2);line-height:1.4}
+.blk-p{font-size:12px;color:var(--text2);line-height:1.7}
+.blk-p.lead{font-size:13px;font-weight:500;color:var(--text)}
+.blk-p.small{font-size:11px;color:var(--text3)}
+.blk-callout{border-radius:var(--radius-sm);padding:8px 10px;font-size:11px;line-height:1.6;border-left:3px solid}
+.blk-callout.info{background:var(--blue-light);border-color:var(--blue);color:var(--blue)}
+.blk-callout.warning{background:var(--yellow-bg);border-color:#f59e0b;color:var(--yellow-text)}
+.blk-callout.success{background:var(--green-light);border-color:var(--green);color:var(--green)}
+.blk-callout.neutral,.blk-callout.gap{background:var(--surface2);border-color:var(--border2);color:var(--text2)}
+.blk-divider{height:1px;background:var(--border);margin:4px 0}
+.blk-divider.thick{height:2px;background:var(--border2)}
+.blk-list{font-size:12px;color:var(--text2);line-height:1.7;padding-left:16px}
+.blk-list li{margin-bottom:2px}
+.blk-table{width:100%;border-collapse:collapse;font-size:11px}
+.blk-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;padding:5px 8px;text-align:left;border:1px solid var(--border)}
+.blk-table td{padding:5px 8px;border:1px solid var(--border);color:var(--text2)}
+.blk-table.borderless th,.blk-table.borderless td{border-color:transparent;border-bottom:1px solid var(--border)}
+.blk-metric-row{display:flex;gap:6px;margin-bottom:4px}
+.blk-metric{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:7px 8px;text-align:center}
+.blk-metric-val{font-size:14px;font-weight:700;color:var(--blue);font-family:var(--mono)}
+.blk-metric-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.blk-type-tag{display:inline-block;font-size:9px;font-weight:600;padding:1px 5px;border-radius:4px;background:var(--surface2);color:var(--text3);border:1px solid var(--border);font-family:var(--mono)}
+/* JSON view */
+.json-view{font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--text2);white-space:pre-wrap;word-break:break-all}
+.json-key{color:#0550ae}
+.json-str{color:#0a7a3e}
+.json-num{color:#c4622d}
+.json-bool{color:#8250df}
+/* Workspace empty */
+.ws-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;color:var(--text3);text-align:center}
+.ws-empty-icon{font-size:32px;opacity:.3}
+.ws-empty-msg{font-size:12px;line-height:1.7}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 .mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);height:52px;z-index:100;box-shadow:0 -2px 8px rgba(16,24,40,.06)}
@@ -237,6 +284,18 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
       </div>
     </div>
 
+    <!-- Bab list (muncul setelah file dimuat) -->
+    <div id="bab-list-wrap" style="display:none;margin-bottom:4px;">
+      <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;padding-top:4px;">Daftar Bab</div>
+      <div id="bab-cards" style="display:flex;flex-direction:column;gap:5px;"></div>
+    </div>
+
+    <!-- Val issues (inline, di bawah bab list) -->
+    <div id="val-issues-wrap" style="display:none;margin-bottom:12px;margin-top:8px;">
+      <div class="sec-label">Isu Validasi</div>
+      <div class="val-issues" id="val-issues"></div>
+    </div>
+
     <!-- Koneksi -->
     <div class="conn-area">
       <span class="badge" id="lft-conn"><span class="bdot" id="lft-dot"></span><span id="lft-lbl">Tidak terhubung ke server pipeline</span></span>
@@ -293,26 +352,31 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:0
   </div>
 </div><!-- /panel kiri -->
 
-<!-- ══ PANEL TENGAH ══ -->
-<div class="panel" id="panel-mid">
-  <div class="panel-hd">
-    <div class="panel-title">Workspace</div>
-    <div class="panel-sub">Struktur bab yang terdeteksi dari file JSON</div>
+<!-- ══ PANEL TENGAH — WORKSPACE VIEWER ══ -->
+<div class="panel" id="panel-mid" style="display:flex;flex-direction:column;overflow:hidden;">
+  <!-- Header: muncul saat bab dipilih -->
+  <div id="ws-hd" class="ws-hd" style="display:none">
+    <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:1px">
+      <span class="ws-bab-label" id="ws-bab-label">—</span>
+      <span class="ws-bab-title" id="ws-bab-title">—</span>
+    </div>
+    <div class="ws-toggle" id="ws-toggle">
+      <button class="ws-toggle-btn active" id="btn-preview" onclick="setViewMode('preview')">Preview</button>
+      <button class="ws-toggle-btn" id="btn-json" onclick="setViewMode('json')">JSON</button>
+    </div>
   </div>
-  <div class="panel-body">
-    <div id="mid-empty" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:8px;color:var(--text3)">
-      <div style="font-size:28px;opacity:.35">📄</div>
-      <div style="font-size:12px;text-align:center;line-height:1.6;">Muat file ZIP dari panel<br>File untuk melihat struktur bab</div>
+  <!-- Panel header statis (saat belum ada bab dipilih) -->
+  <div id="ws-static-hd" class="panel-hd">
+    <div class="panel-title">Workspace</div>
+    <div class="panel-sub">Klik bab di panel File untuk melihat isi</div>
+  </div>
+  <!-- Body -->
+  <div class="ws-body" id="ws-body">
+    <div class="ws-empty" id="ws-empty">
+      <div class="ws-empty-icon">📄</div>
+      <div class="ws-empty-msg">Belum ada file dimuat.<br>Unggah ZIP dari panel File,<br>lalu klik salah satu bab.</div>
     </div>
-    <div id="mid-content" style="display:none">
-      <!-- Bab cards -->
-      <div id="bab-cards" style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;"></div>
-      <!-- Validation issues -->
-      <div id="val-issues-wrap" style="display:none;margin-bottom:12px;">
-        <div class="sec-label">Detail Validasi</div>
-        <div class="val-issues" id="val-issues"></div>
-      </div>
-    </div>
+    <div id="ws-content" style="display:none"></div>
   </div>
 </div><!-- /panel tengah -->
 
@@ -591,9 +655,17 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
   document.getElementById('upload-card').style.display='none';
   document.getElementById('loaded-card').style.display='';
 
-  // Show middle panel content
-  document.getElementById('mid-empty').style.display='none';
-  document.getElementById('mid-content').style.display='';
+  // Show bab list in left panel
+  document.getElementById('bab-list-wrap').style.display='';
+
+  // Reset workspace viewer
+  resetWorkspace();
+
+  // Show middle panel content — remove old mid refs (no longer used)
+  const midEmpty=document.getElementById('mid-empty');
+  const midContent=document.getElementById('mid-content');
+  if(midEmpty)midEmpty.style.display='none';
+  if(midContent)midContent.style.display='';
 
   const card=document.getElementById('prog-card');
   card.className='prog-card'+(valResult.valid?' valid':valResult.hasErr?' invalid':'');
@@ -641,11 +713,16 @@ function renderLoadedCard(fileName,prog,babsFound,valResult){
   }
 }
 
-// ── RENDER BAB CARDS ──────────────────────────────
+// ── RENDER BAB CARDS (clickable) ─────────────────
+let _currentBab=null;
+let _viewMode='preview'; // 'preview' | 'json'
+let _valResultCache=null;
+
 function renderBabCards(babsFound, valResult){
+  _valResultCache=valResult;
   const container=document.getElementById('bab-cards');
 
-  // Extract title + block count from each detected bab
+  // Extract metadata per bab
   const babMeta={};
   for(const bab of babsFound){
     const txt=zipData.editableFiles[bab];
@@ -654,18 +731,9 @@ function renderBabCards(babsFound, valResult){
       const raw=JSON.parse(txt);
       const ch=Array.isArray(raw)?raw[0]:raw;
       const blocks=ch.blocks||[];
-      // Title: dari field title di chapter, atau dari heading_1 block pertama, atau fallback BAB_TITLES
       let title=ch.title||ch.chapter_title||null;
-      if(!title){
-        const h1=blocks.find(b=>b.type==='heading_1');
-        if(h1)title=h1.text||h1.content||null;
-      }
-      babMeta[bab]={
-        title: title||null,
-        blockCount: blocks.length,
-        hasOriginal: !!zipData.originalFiles[bab],
-        programCode: ch.program_code||null
-      };
+      if(!title){const h1=blocks.find(b=>b.type==='heading_1');if(h1)title=h1.text||h1.content||null}
+      babMeta[bab]={title:title||null,blockCount:blocks.length,hasOriginal:!!zipData.originalFiles[bab],programCode:ch.program_code||null};
     }catch(e){babMeta[bab]={title:null,blockCount:0,hasOriginal:false,programCode:null}}
   }
 
@@ -674,28 +742,21 @@ function renderBabCards(babsFound, valResult){
     const br=valResult.babResults[bab];
     const status=hasFile?(br?.status==='err'?'err':br?.status==='warn'?'warn':'ok'):'orig';
     const meta=babMeta[bab]||{};
-
-    // Title resolution: detected from JSON > fallback BAB_TITLES
     const detectedTitle=meta.title||null;
-    const fallbackTitle=BAB_TITLES[bab]||bab;
-    const displayTitle=detectedTitle||fallbackTitle;
+    const displayTitle=detectedTitle||BAB_TITLES[bab]||bab;
     const titleIsDetected=!!detectedTitle;
-
-    const babNum=bab.replace('_',' ').toUpperCase(); // "BAB 1"
+    const babNum=bab.replace('_',' ').toUpperCase();
     const statusIcon={ok:'✓',warn:'⚠',err:'✗',orig:'·'}[status];
     const statusColor={ok:'var(--green)',warn:'#d97706',err:'var(--red)',orig:'var(--text3)'}[status];
-
     const metaParts=[];
     if(hasFile){
-      if(meta.blockCount>0)metaParts.push(`<span>⬜ ${meta.blockCount} blok</span>`);
-      if(meta.hasOriginal)metaParts.push(`<span>🔒 substance lock aktif</span>`);
-      else metaParts.push(`<span style="color:var(--text3)">tanpa _original</span>`);
-      if(meta.programCode)metaParts.push(`<span style="font-family:var(--mono)">${meta.programCode}</span>`);
+      if(meta.blockCount>0)metaParts.push(`<span>${meta.blockCount} blok</span>`);
+      if(meta.hasOriginal)metaParts.push(`<span>🔒 locked</span>`);
     }else{
-      metaParts.push(`<span>dari pipeline (tidak dimodifikasi)</span>`);
+      metaParts.push(`<span>pipeline</span>`);
     }
-
-    return`<div class="bab-card ${status}">
+    const clickAttr=hasFile?`onclick="selectBab('${bab}')" id="babcard-${bab}"`:`id="babcard-${bab}"`;
+    return`<div class="bab-card ${status}" ${clickAttr}>
       <div class="bab-num">${babNum}</div>
       <div class="bab-info">
         <div class="bab-title${titleIsDetected?' detected':''}" title="${displayTitle}">${displayTitle}</div>
@@ -706,7 +767,132 @@ function renderBabCards(babsFound, valResult){
   }).join('');
 }
 
-// ── CONNECTION ────────────────────────────────────
+// ── WORKSPACE VIEWER ─────────────────────────────
+function selectBab(bab){
+  if(!zipData.editableFiles[bab])return;
+  // Update active card
+  document.querySelectorAll('.bab-card').forEach(c=>c.classList.remove('active'));
+  const card=document.getElementById('babcard-'+bab);
+  if(card)card.classList.add('active');
+  _currentBab=bab;
+  // Switch header
+  document.getElementById('ws-static-hd').style.display='none';
+  document.getElementById('ws-hd').style.display='';
+  const babNum=bab.replace('_',' ').toUpperCase();
+  sel('ws-bab-label',babNum);
+  // Parse chapter
+  let ch;
+  try{const raw=JSON.parse(zipData.editableFiles[bab]);ch=Array.isArray(raw)?raw[0]:raw}
+  catch(e){renderWorkspaceError('JSON tidak valid: '+e.message);return}
+  const title=ch.title||ch.chapter_title||BAB_TITLES[bab]||bab;
+  sel('ws-bab-title',title);
+  renderWorkspace(bab,ch);
+  // On mobile: switch to workspace panel
+  if(window.innerWidth<=768)showPanel(1);
+}
+
+function setViewMode(mode){
+  _viewMode=mode;
+  document.getElementById('btn-preview').classList.toggle('active',mode==='preview');
+  document.getElementById('btn-json').classList.toggle('active',mode==='json');
+  if(_currentBab&&zipData.editableFiles[_currentBab]){
+    let ch;try{const raw=JSON.parse(zipData.editableFiles[_currentBab]);ch=Array.isArray(raw)?raw[0]:raw}catch(e){return}
+    renderWorkspace(_currentBab,ch);
+  }
+}
+
+function resetWorkspace(){
+  _currentBab=null;
+  document.getElementById('ws-hd').style.display='none';
+  document.getElementById('ws-static-hd').style.display='';
+  document.getElementById('ws-static-hd').querySelector('.panel-sub').textContent='Klik bab di panel File untuk melihat isi';
+  document.getElementById('ws-empty').style.display='flex';
+  document.getElementById('ws-empty').querySelector('.ws-empty-msg').innerHTML='File dimuat. Klik salah satu bab di kiri.';
+  document.getElementById('ws-content').style.display='none';
+  document.getElementById('ws-content').innerHTML='';
+}
+
+function renderWorkspace(bab,ch){
+  const wsEmpty=document.getElementById('ws-empty');
+  const wsContent=document.getElementById('ws-content');
+  wsEmpty.style.display='none';
+  wsContent.style.display='';
+  if(_viewMode==='json'){
+    wsContent.innerHTML=renderJsonView(ch);
+  }else{
+    wsContent.innerHTML=renderPreview(ch);
+  }
+}
+
+function renderWorkspaceError(msg){
+  const wsContent=document.getElementById('ws-content');
+  document.getElementById('ws-empty').style.display='none';
+  wsContent.style.display='';
+  wsContent.innerHTML=`<div class="blk"><div style="color:var(--red);font-size:12px;font-family:var(--mono)">✗ ${msg}</div></div>`;
+}
+
+// ── PREVIEW RENDERER ─────────────────────────────
+function renderPreview(ch){
+  const blocks=ch.blocks||[];
+  if(blocks.length===0)return`<div style="color:var(--text3);font-size:12px;font-style:italic">Tidak ada blok ditemukan.</div>`;
+  return blocks.map(renderBlock).join('');
+}
+
+function renderBlock(b){
+  const t=b.type||'';
+  const text=b.text||b.content||b.title||'';
+  if(t==='heading_1')return`<div class="blk blk-h1">${esc(text)}</div>`;
+  if(t==='heading_2')return`<div class="blk blk-h2">${esc(text)}</div>`;
+  if(t==='heading_3')return`<div class="blk blk-h3">${esc(text)}</div>`;
+  if(t==='paragraph')return`<div class="blk blk-p">${esc(text)}</div>`;
+  if(t==='paragraph_lead')return`<div class="blk blk-p lead">${esc(text)}</div>`;
+  if(t==='paragraph_small')return`<div class="blk blk-p small">${esc(text)}</div>`;
+  if(t==='divider')return`<div class="blk blk-divider"></div>`;
+  if(t==='divider_thick')return`<div class="blk blk-divider thick"></div>`;
+  if(t.startsWith('callout_')){const variant=t.replace('callout_','');return`<div class="blk blk-callout ${variant}">${esc(text||b.message||b.body||'')}</div>`;}
+  if(t==='bullet_list'||t==='numbered_list'){
+    const items=b.items||[];
+    const tag=t==='numbered_list'?'ol':'ul';
+    return`<div class="blk"><${tag} class="blk-list">${items.map(i=>`<li>${esc(typeof i==='string'?i:i.text||JSON.stringify(i))}</li>`).join('')}</${tag}></div>`;
+  }
+  if(t==='table'||t==='table_borderless'){
+    const rows=b.rows||[];
+    const headers=b.headers||[];
+    const cls=t==='table_borderless'?'borderless':'';
+    const thead=headers.length?`<thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>`:'';
+    const tbody=rows.map(r=>`<tr>${(Array.isArray(r)?r:Object.values(r)).map(c=>`<td>${esc(String(c))}</td>`).join('')}</tr>`).join('');
+    return`<div class="blk" style="overflow-x:auto"><table class="blk-table ${cls}">${thead}<tbody>${tbody}</tbody></table></div>`;
+  }
+  if(t==='metric_card_3col'){
+    const items=b.items||b.metrics||[];
+    return`<div class="blk"><div class="blk-metric-row">${items.map(m=>`<div class="blk-metric"><div class="blk-metric-val">${esc(String(m.value||m.val||'—'))}</div><div class="blk-metric-lbl">${esc(m.label||m.name||'')}</div></div>`).join('')}</div></div>`;
+  }
+  if(t==='bar_chart_text'){
+    const points=b.data_points||b.items||[];
+    return`<div class="blk">${points.map(p=>{const pct=Math.min(100,Math.max(0,parseFloat(p.pct||p.value||0)));return`<div style="margin-bottom:5px"><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px"><span style="color:var(--text2)">${esc(p.label||'')}</span><span style="font-family:var(--mono);color:var(--text3)">${esc(String(p.value||p.pct||''))}</span></div><div style="height:5px;background:var(--border);border-radius:3px"><div style="height:100%;width:${pct}%;background:var(--blue);border-radius:3px"></div></div></div>`}).join('')}</div>`;
+  }
+  // Fallback: tampilkan type tag
+  return`<div class="blk" style="padding:6px 8px;background:var(--surface2);border-radius:var(--radius-sm);display:flex;gap:8px;align-items:center"><span class="blk-type-tag">${esc(t)}</span><span style="font-size:11px;color:var(--text3);font-style:italic">blok tidak dirender</span></div>`;
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+// ── JSON VIEWER ───────────────────────────────────
+function renderJsonView(ch){
+  const raw=JSON.stringify(ch,null,2);
+  // Syntax highlight
+  const highlighted=raw.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,match=>{
+    if(/^"/.test(match)){
+      if(/:$/.test(match))return`<span class="json-key">${match}</span>`;
+      return`<span class="json-str">${match}</span>`;
+    }
+    if(/true|false|null/.test(match))return`<span class="json-bool">${match}</span>`;
+    return`<span class="json-num">${match}</span>`;
+  });
+  return`<pre class="json-view">${highlighted}</pre>`;
+}
+
+
 async function testConnection(){
   const btn=document.getElementById('btn-connect');btn.disabled=true;btn.textContent='Menghubungkan…';
   document.getElementById('conn-err').innerHTML='';showConnMsg('Memverifikasi…','info');
