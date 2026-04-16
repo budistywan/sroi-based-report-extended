@@ -481,7 +481,11 @@ function validateZip(editableFiles,originalFiles,babsFound){
     let edited,original;
 
     // 1. JSON parseable
-    try{edited=JSON.parse(editTxt)}
+    try{
+      const _raw=JSON.parse(editTxt);
+      // Unwrap array wrapper (Format A stores chapters as [ch])
+      edited=Array.isArray(_raw)?_raw[0]:_raw;
+    }
     catch(e){babIssues.push({sev:'err',msg:`${bab}: JSON tidak valid — ${e.message}`});babResults[bab]={status:'err',issues:babIssues};issues.push(...babIssues);continue}
 
     // 2. chapter_id ada
@@ -501,7 +505,8 @@ function validateZip(editableFiles,originalFiles,babsFound){
     // 5. Substance lock (hanya kalau ada _original)
     if(origTxt){
       try{
-        original=JSON.parse(origTxt);
+        const _rawOrig=JSON.parse(origTxt);
+        original=Array.isArray(_rawOrig)?_rawOrig[0]:_rawOrig;
         const origBlocks=original.blocks||[];
         // Check chapter_id tidak berubah
         if(original.chapter_id&&edited.chapter_id&&original.chapter_id!==edited.chapter_id)
@@ -524,7 +529,7 @@ function validateZip(editableFiles,originalFiles,babsFound){
         });
       }catch(e){babIssues.push({sev:'warn',msg:`${bab}: original JSON tidak bisa diparse — substance lock dilewati`})}
     }else{
-      babIssues.push({sev:'warn',msg:`${bab}: file _original.json tidak ada di zip — substance lock dilewati`});
+      if(Object.keys(originalFiles).length>0){babIssues.push({sev:'warn',msg:`${bab}: file _original.json tidak ada di zip — substance lock dilewati`});}
     }
 
     const hasErr=babIssues.some(i=>i.sev==='err');
