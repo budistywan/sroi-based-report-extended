@@ -33,6 +33,10 @@ jobs:
       # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # fetch-depth: 0 diperlukan agar git diff bisa membandingkan commit
+          # tanpa ini, push trigger akan gagal dengan "HEAD~1 unknown revision"
+          fetch-depth: 0
 
       # 2. Setup Python
       - name: Setup Python
@@ -56,23 +60,48 @@ jobs:
         run: npm install
 
       # 6. Determine program code
-      # - Jika trigger dari push: ekstrak dari nama file canonical yang berubah
+      # - Jika trigger dari push: coba dari commit message dulu,
+      #   fallback ke nama file canonical yang berubah
       # - Jika trigger dari workflow_dispatch: gunakan input manual
       - name: Set program code
         id: program
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
-            # Baca program dari commit message UI
-            # Format commit message: "ui-v1 submit | program=ehs | requestId=..."
-            COMMIT_MSG=$(git log -1 --format="%s" ${{ github.sha }})
-            echo "Commit message: $COMMIT_MSG"
+            BEFORE="${{ github.event.before }}"
+            SHA="${{ github.sha }}"
 
-            PROGRAM=$(echo "$COMMIT_MSG" \
-              | grep -oP '(?<=program=)[a-z]+' \
-              | tr '[:lower:]' '[:upper:]')
+            # Strategi 1: baca dari commit message
+            # Format: "ui-v1 submit | program=ehs | requestId=..."
+            COMMIT_MSG=$(git log -1 --format="%s" "${SHA}")
+            echo "Commit message: ${COMMIT_MSG}"
 
-            echo "Detected program: $PROGRAM"
+            PROGRAM=$(echo "${COMMIT_MSG}" \
+              | grep -oP '(?<=program=)[a-zA-Z]+' \
+              | tr '[:lower:]' '[:upper:]' \
+              | head -1)
+
+            echo "Detected from commit msg: ${PROGRAM}"
+
+            # Strategi 2: fallback — baca dari nama file canonical yang berubah
+            # Menggunakan before/sha (aman, tidak bergantung HEAD~1)
+            if [ -z "${PROGRAM}" ]; then
+              CHANGED=$(git diff --name-only "${BEFORE}" "${SHA}" \
+                2>/dev/null \
+                | grep 'data/canonical/canonical_.*_v1\.json' \
+                | head -1)
+              echo "Changed canonical file: ${CHANGED}"
+
+              PROGRAM=$(echo "${CHANGED}" \
+                | grep -oiE 'ESL|EHS|ESD|ESP|ESS|ETB|PSN' \
+                | head -1 \
+                | tr '[:lower:]' '[:upper:]')
+
+              echo "Detected from filename: ${PROGRAM}"
+            fi
+
+            # Strategi 3: last resort fallback
             PROGRAM=${PROGRAM:-ESL}
+
           else
             PROGRAM="${{ github.event.inputs.program || 'ESL' }}"
           fi
@@ -80,12 +109,11 @@ jobs:
           echo "code=${PROGRAM}" >> $GITHUB_OUTPUT
           echo "Running pipeline for program: ${PROGRAM}"
 
-      # 7. Run production pipeline
+      # 7. Run core pipeline
       - name: Run core pipeline
         if: ${{ github.event.inputs.mode != 'refine-only' }}
         run: |
           PROG=$(echo "${{ steps.program.outputs.code }}" | tr '[:upper:]' '[:lower:]')
-          # Gunakan lowercase untuk WORK_DIR agar konsisten dengan orchestrator
           WORK_DIR="output/${PROG}/work"
           mkdir -p "$WORK_DIR"
           SRC="data/canonical/canonical_${PROG}_v1.json"
@@ -104,8 +132,6 @@ jobs:
             --skip-extract
         env:
           PROGRAM: ${{ steps.program.outputs.code }}
-
-
 
       # 7b. Debug on failure — auto detect step yang gagal
       - name: Debug on failure
@@ -200,7 +226,7 @@ jobs:
           echo "=== Artifact contents ==="
           ls -lh artifacts/
 
-      # 10. Upload docx sebagai GitHub artifact (bisa didownload)
+      # 10. Upload artifacts
       - name: Upload report artifacts
         uses: actions/upload-artifact@v4
         with:
