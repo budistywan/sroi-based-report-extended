@@ -33,6 +33,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # fetch-depth: 0 diperlukan agar git diff bisa membandingkan commit
+          # tanpa ini, push trigger akan gagal dengan "HEAD~1 unknown revision"
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -56,35 +60,40 @@ jobs:
       - name: Resolve program and zip path
         id: inputs
         run: |
-          if [ -n "${{ github.event.inputs.program }}" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual trigger: gunakan input langsung
             PROGRAM="${{ github.event.inputs.program }}"
+            ZIP_PATH="${{ github.event.inputs.semantics }}"
+
           else
-            PROGRAM=$(git diff --name-only HEAD~1 HEAD \
-              | grep 'data/enriched_semantics/' \
-              | head -1 \
+            # Push trigger: gunakan before/sha yang aman (tidak bergantung HEAD~1)
+            BEFORE="${{ github.event.before }}"
+            SHA="${{ github.sha }}"
+
+            # Deteksi file zip yang berubah
+            CHANGED_ZIP=$(git diff --name-only "${BEFORE}" "${SHA}" \
+              2>/dev/null \
+              | grep 'data/enriched_semantics/.*\.zip' \
+              | head -1)
+
+            echo "Changed zip: ${CHANGED_ZIP}"
+
+            # Ekstrak kode program dari nama file zip yang berubah
+            PROGRAM=$(echo "${CHANGED_ZIP}" \
               | grep -oiE 'ESL|EHS|ESD|ESP|ESS|ETB|PSN' \
               | head -1 \
               | tr '[:lower:]' '[:upper:]')
-            PROGRAM=${PROGRAM:-ESL}
-          fi
 
-          if [ -n "${{ github.event.inputs.semantics }}" ]; then
-            ZIP_PATH="${{ github.event.inputs.semantics }}"
-          else
-            # Coba dari git diff dulu
-            ZIP_PATH=$(git diff --name-only HEAD~1 HEAD \
-              | grep 'data/enriched_semantics/.*\.zip' \
-              | head -1)
-            # Fallback: ambil file zip terbaru di folder
+            ZIP_PATH="${CHANGED_ZIP}"
+
+            # Fallback program jika tidak terdeteksi dari nama file
+            PROGRAM=${PROGRAM:-ESL}
+
+            # Fallback zip: ambil file terbaru di folder jika diff kosong
             if [ -z "${ZIP_PATH}" ]; then
               ZIP_PATH=$(find data/enriched_semantics -name "*.zip" \
-                -newer data/enriched_semantics/.gitkeep 2>/dev/null \
-                | sort -t_ -k1 | tail -1)
-            fi
-            # Fallback terakhir: zip apapun yang ada
-            if [ -z "${ZIP_PATH}" ]; then
-              ZIP_PATH=$(find data/enriched_semantics -name "*.zip" \
-                | head -1)
+                | sort | tail -1)
+              echo "WARN: ZIP tidak terdeteksi dari diff, pakai fallback: ${ZIP_PATH}"
             fi
           fi
 
@@ -162,8 +171,6 @@ jobs:
           processed = []
 
           # ── FORMAT A: file tunggal berisi array semua bab ──────────
-          # Nama file: enriched_EHS.json, bab_1-9_enriched.json, dsb.
-          # Isi: [ {chapter_id: bab_1, ...}, {chapter_id: bab_2, ...}, ... ]
           single_files = [
               f for f in extract_dir.rglob("*.json")
               if not f.name.endswith("_editable.json")
@@ -194,7 +201,7 @@ jobs:
                                 f"({len(chapter['blocks'])} blocks)")
                   continue
 
-              # Deteksi: single chapter object (Format B tanpa _editable suffix)
+              # Deteksi: single chapter object
               if isinstance(raw, dict) and "chapter_id" in raw and "blocks" in raw:
                   result = write_chapter(clean_chapter(raw), work_dir)
                   if result:
@@ -212,6 +219,9 @@ jobs:
                       processed.append(n)
                       print(f"  Format B (wrapped): {sf.name} → {out_name}")
                   continue
+
+              # Bukan chapter file (misal canonical) — skip diam-diam
+              print(f"  SKIP {sf.name}: bukan format chapter yang dikenal")
 
           # ── FORMAT B: file per bab dengan suffix _editable ────────
           editable_files = sorted(extract_dir.rglob("*_editable.json"))
@@ -315,7 +325,7 @@ jobs:
           SIZE=$(du -h "${OUTPUT_FILE}" | cut -f1)
           echo "✓ Render selesai: ${OUTPUT_FILE} (${SIZE})"
 
-      # ── Render report JSON ────────────────────────
+      # ── Generate render report JSON ───────────────
       - name: Generate render report
         run: |
           PROGRAM="${{ steps.inputs.outputs.program }}"
